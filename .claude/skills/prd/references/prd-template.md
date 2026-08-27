@@ -168,14 +168,6 @@ name the closest existing proxy surfaces and say so.]
 - **Minimum Allowed:** [Floor the feature must not drop below — use **Maximum Allowed:** instead for ceilings such as error or leakage limits]
 - **Timeline:** [Ongoing / Timeline]
 
-<!--
-  AI FEATURES: add a `Model-Quality Metric` here, and an `AI Behavior and
-  Acceptance` section after Data and Analytics. Both live in
-  `references/prd-ai-sections.md` — load that file only when the discovery gate
-  answered Yes (including "we consume an upstream model"). Deterministic
-  features skip it entirely.
--->
-
 ### Required Events / Signals
 
 | Event / Signal | Trigger | Key Properties | Purpose | Required for MVP |

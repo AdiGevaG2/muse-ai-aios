@@ -19,7 +19,6 @@ while IFS= read -r changed; do
 PRD changed: $changed
 Product intent moved. Downstream artifacts are stale until re-checked:
   - $feature_dir/spec/        (build behavior may no longer match intent)
-  - $feature_dir/ai-eval/     (if this feature has AI behavior, the pass bar may have moved)
   - $feature_dir/validation/  (prior Pass verdicts were against the old PRD)
   - any external handoff already published (Jira / Confluence / deck)
 Bump the PRD version, then propagate deliberately. Do not treat downstream as current.

@@ -13,9 +13,10 @@ has someone accountable for keeping it true.
 ## Org knowledge
 | Path | Owner | Notes |
 |---|---|---|
-| `domains/unified-platform/second-brain/context/org-policies.md` | <compliance / security lead> | Governed. Human-owned, never LLM-maintained. |
-| `domains/unified-platform/second-brain/context/org-systems.md` | <platform / eng lead> | Shared systems facts. |
-| `domains/unified-platform/second-brain/glossary/`, `domains/unified-platform/second-brain/decisions/` | <org owner> | Company-wide. |
+| `org-brain/context/policies.md` | <compliance / security lead> | Governed. Human-owned, never LLM-maintained. |
+| `org-brain/context/systems.md` | <platform / eng lead> | Shared systems facts. |
+| `org-brain/glossary/`, `org-brain/decisions/` | <org owner> | Company-wide. |
+| `org-brain/ingestion/`, `org-brain/source/` | <org owner> | LLM-maintained org wiki. `/ingest` confirms before writing here. |
 
 ## Domain: unified-platform
 | Path | Owner | Notes |

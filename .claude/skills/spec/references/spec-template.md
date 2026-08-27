@@ -215,14 +215,6 @@ flowchart TD
 |---|---|---|---|
 | [State] | [UI] | [Behavior] | [Notes] |
 
-<!--
-  AI FEATURES: insert the `AI Behavior Contract` here — inference contract,
-  confidence thresholds and routing, failure-mode behavior, human-in-the-loop,
-  probabilistic acceptance criteria, and versioning. It lives in
-  `references/spec-ai-contract.md`; load that file only when the feature has AI
-  behavior. Deterministic features skip it entirely.
--->
-
 ## Error / Empty / Loading States
 
 ```mermaid
@@ -242,14 +234,9 @@ flowchart TD
 
 ## Analytics Events
 
-Events a product analyst would use to understand how this feature is used. Each
-row must read standalone: `snake_case` verb_noun name, one-sentence description
-of what happened and why it matters, exact trigger. Not QA, release-validation,
-or deployment signals — those belong in a QA plan.
-
-| Event | Description | Trigger | Key Properties | Business Purpose |
-|---|---|---|---|---|
-| [event_name] | [What happened and why it matters] | [Exact trigger] | [property1, property2] | [Decision or measurement it enables] |
+<!-- If the feature emits events, load `spec-analytics-sections.md` and paste
+     both analytics sections (here, and before Approval Readiness). If it emits
+     none, delete this heading and state that in Out Of Scope. -->
 
 ## Assumptions
 
@@ -287,20 +274,8 @@ or deployment signals — those belong in a QA plan.
 
 ## Analytics And Measurement Requirements
 
-Property definitions and validation rules that engineering needs to implement
-the events above.
-
-| Property | Type | Required | Description | Example |
-|---|---|---|---|---|
-| [property_name] | string / number / boolean / enum / timestamp | Yes / No | [Description] | [Example] |
-
-| Validation requirement | Reason | Owner |
-|---|---|---|
-| [Requirement] | [Reason] | Product / Data / Engineering |
-
-Measurement design — metric definitions, grain, window, baselines, funnels,
-segmentation, dashboards, and data governance — belongs to `/analytics-plan`
-and its `analytics-plan.md`. Do not restate it here; the two would drift.
+<!-- Second half of `spec-analytics-sections.md`. Omit with the section above if
+     the feature emits no events. Measurement design belongs to /analytics-plan. -->
 
 ## Approval Readiness
 

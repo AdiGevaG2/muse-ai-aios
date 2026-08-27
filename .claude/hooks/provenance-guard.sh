@@ -6,7 +6,8 @@
 # checks it. Prose rules are not runtime enforcement.
 #
 # Scope: files under a second-brain hypotheses/, decisions/, or stakeholders/
-# directory. Schema and README templates are exempt.
+# directory, and under org-brain/decisions/. Schema and README templates are
+# exempt.
 #
 # Two tiers, deliberately:
 #   BLOCKING (exit 2) — an evidence row with NO tag at all. Always fixable in
@@ -36,8 +37,11 @@ while IFS= read -r target; do
   [[ -f "$target" ]] || continue
 
   # Only brain claim-files. Templates define the shape, they don't assert.
+  # Both brains: the domain second-brain and the org brain carry the same
+  # provenance discipline.
   case "$target" in
     */second-brain/hypotheses/*|*/second-brain/decisions/*|*/second-brain/stakeholders/*) ;;
+    */org-brain/decisions/*) ;;
     *) continue ;;
   esac
   case "$(basename "$target")" in

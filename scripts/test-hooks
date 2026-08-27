@@ -128,6 +128,14 @@ check "BLOCK: evidence row with no tag" 2 "$(pv_payload "$PVDIR/untagged.md")" "
 check "pass: empty-state and placeholder rows" 0 "$(pv_payload "$PVDIR/emptystate.md")" "$H/provenance-guard.sh"
 check "pass: _SCHEMA.md exempt" 0 "$(pv_payload "$PVDIR/_SCHEMA.md")" "$H/provenance-guard.sh"
 check "pass: file outside second-brain ignored" 0 '{"hook_event_name":"PostToolUse","tool_name":"Write","tool_input":{"file_path":"README.md"}}' "$H/provenance-guard.sh"
+
+# The org brain is a separate tree; it carries the same provenance discipline.
+OBDIR="$(mktemp -d)/org-brain/decisions"; mkdir -p "$OBDIR"
+cp "$PVDIR/untagged.md" "$OBDIR/untagged.md"
+cp "$PVDIR/tagged.md" "$OBDIR/tagged.md"
+check "BLOCK: untagged row in org-brain/decisions" 2 "$(pv_payload "$OBDIR/untagged.md")" "$H/provenance-guard.sh"
+check "pass: tagged row in org-brain/decisions" 0 "$(pv_payload "$OBDIR/tagged.md")" "$H/provenance-guard.sh"
+rm -rf "$(dirname "$(dirname "$OBDIR")")"
 rm -rf "$(dirname "$(dirname "$PVDIR")")"
 
 echo

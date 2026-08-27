@@ -6,7 +6,6 @@ the current task needs it.
 | Need | Read |
 |---|---|
 | Active feature work | `../../outputs/<feature-name>/README.md` |
-| AI accuracy bar and eval results | `../../outputs/<feature-name>/ai-eval/` |
 | Measurement plan and event spec | `../../outputs/<feature-name>/analytics-plan/` |
 | Current-state figures pulled from tools | `outputs/<feature-name>/baseline/` |
 | What was published externally | `../../outputs/<feature-name>/publish/` |
@@ -24,8 +23,14 @@ the current task needs it.
 | Glossary | `second-brain/glossary/` |
 | Stakeholders | `second-brain/stakeholders/` |
 | Ingested source wiki | `second-brain/ingestion/index.md` |
-| Org systems | `context/org-systems.md` |
-| Org/company context | `context/org-company.md` |
+| Org systems | `../../org-brain/context/systems.md` |
+| Org/company context | `../../org-brain/context/company.md` |
+| Org policy (governed) | `../../org-brain/context/policies.md` |
+| Org glossary | `../../org-brain/glossary/g2rs-terms.md` |
+
+Org-brain rows are a separate tree, deliberately. Org facts bind every domain
+and win over a domain fact on conflict; a domain page may extend one, never
+contradict it.
 
 Indexes and repo maps route search. They are not evidence. Verify important
 implementation facts against source files.

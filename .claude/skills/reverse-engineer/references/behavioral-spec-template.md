@@ -1,26 +1,20 @@
-# Behavioral Reference — <system / module name>
+# Reverse Engineering: <feature>
 
-> Reference / completeness artifact. Not a build input, not a code walkthrough.
-> Derived from source only. Every rule is source-cited.
+> PM behavior evidence. Not a build input, not a code walkthrough, not a
+> completeness audit. Every rule is source-cited.
 
-## Coverage map
-_What was examined, and what was NOT. A gap must be visible here at a glance._
-
-| Module / path / entry point | Status | Notes |
-|---|---|---|
-| e.g. kyc/onboarding.py | covered | full trace |
-| e.g. notifications/service.py | not-covered | out of scope this pass |
-
-**Not covered (explicit):** <list, or "none">
+## Product questions this pass answered
+1. <question> — <short answer>
+2. ...
 
 ---
 
 ## Confirmed rules
-_The code demonstrably does this._
+_The code demonstrably does this. Normally ~15 per pass, product-visible first._
 
-| ID | Rule (trigger -> outcome) | Source (file + fn/line) | Significance | Edge cases |
-|---|---|---|---|---|
-| BR-001 | When X happens, system does Y. | kyc/onboarding.py :: verify() L42 | core | on timeout, retries once |
+| ID | Rule (trigger -> outcome) | Source (file + fn/line) | Edge cases |
+|---|---|---|---|
+| BR-001 | When X happens, system does Y. | kyc/onboarding.py :: verify() L42 | on timeout, retries once |
 
 ---
 
@@ -28,14 +22,20 @@ _The code demonstrably does this._
 _Intent read from the code but NOT stated by it. Each carries an open question.
 Never treat these as fact._
 
-| ID | Rule (trigger -> outcome) | Source | Significance | Confidence | Open question |
-|---|---|---|---|---|---|
-| BR-014 | Merchant auto-suspended after 2 KYC fails in 24h. | risk/limits.py :: check() L88 | core | medium | Is the 24h window a business rule or an artifact of the cron schedule? |
+| ID | Rule (trigger -> outcome) | Source | Confidence | Open question |
+|---|---|---|---|---|
+| BR-014 | Merchant auto-suspended after 2 KYC fails in 24h. | risk/limits.py :: check() L88 | medium | Is the 24h window a business rule or an artifact of the cron schedule? |
 
 ---
 
+## Evidence gaps
+_What could not be reached, and why it matters to a PM decision. A short list —
+not an enumeration of everything in scope._
+
+- <area> — <why unreachable> — <what conclusion it limits>
+- Freshness: source `<repo>` was N days stale as of this analysis.
+- `NOT VERIFIED`: <platform, if a requested source was inaccessible>
+
 ## Closing summary
 - Confirmed rules: <n>   Inferred rules: <n>
-- Core rules: <n>
-- Not-covered modules: <list>
-- Escalated to human: <list of open questions, if any>
+- Open questions for the PM: <list, or "none">

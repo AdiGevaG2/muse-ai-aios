@@ -18,12 +18,18 @@ Return a delta to the parent with four sections. For each legacy behavioral rule
 Reference rules by their stable BR-ID so every delta entry traces straight back
 to the behavioral spec.
 
-## Propagate the coverage caveat (mandatory)
-Your delta is only as complete as the legacy spec you were given. Read the legacy
-coverage map. If any module was **not-covered**, carry that forward explicitly:
-"Delta is incomplete for <module> — it was not analyzed in the legacy spec, so
-any changes there are unaccounted for." Do NOT let an incomplete legacy scan
-silently become a delta that looks complete.
+Keep the delta at product level. Include a detail only when it affects user
+behavior, business rules, permissions, data ownership, migration parity,
+UX/state, implementation feasibility, or significant risk. Do not expand the
+delta beyond the rules you were given — matching the source spec's scope is
+correct, not a shortfall.
+
+## Propagate the evidence gaps (mandatory)
+Your delta is only as complete as the legacy spec you were given. Read its
+evidence gaps. Carry each one forward explicitly: "Delta is incomplete for
+<area> — it was not analyzed in the legacy spec, so any changes there are
+unaccounted for." Do NOT let an incomplete legacy pass silently become a delta
+that looks complete.
 
 ## Hard rules
 - Only classify rules that exist in the legacy spec. Do not invent legacy
@@ -31,6 +37,6 @@ silently become a delta that looks complete.
   for legacy-analyzer, do not fabricate a rule.
 - `New` items still need a source on the target side (where the requirement comes
   from), same traceability standard.
-- End by restating any not-covered legacy modules so the completeness caveat is
-  the last thing the reader sees.
+- End by restating the inherited evidence gaps so the completeness caveat is the
+  last thing the reader sees.
 - Do not write files.

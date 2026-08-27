@@ -6,8 +6,9 @@ before producing analysis from that source.
 ## Steps
 1. **Identify which repos are in scope.** Use the feature README, domain index,
   and `code-repos-git/REPO-MAP.md` to resolve the question to a concrete list
-  of local repo paths. Do not guess - if there is no repo route, ask the PM
-   which repos are in scope before continuing.
+  of local repo paths. If no repo route resolves, record that as an evidence gap
+   and continue with the sources that did resolve; ask only when no source at all
+   can be reached and the analysis cannot proceed.
 2. **Check freshness per repo automatically**, without mutating anything:
   - Use `git ls-remote` to read the remote branch tip without changing local
     refs or `FETCH_HEAD`. If remote access is unavailable, state that limitation.
@@ -15,30 +16,23 @@ before producing analysis from that source.
     otherwise report only whether the commit IDs match.
    - Note the local last-commit date, and whether the working tree is dirty
      (uncommitted changes) — `git status --porcelain`.
-3. **Flag stale repos to the PM.** A repo counts as stale if it's behind
-  the remote branch at all, or its last local commit is older than ~3 weeks
-   (a default threshold — adjust if the domain context specifies otherwise).
-   Report each stale repo with: how far behind, last local commit date, and
-   whether it has uncommitted local changes.
-4. **Ask before mutation.** If current remote content is needed, ask: *"These
-  repos are stale — pull latest before analyzing?"*
-   - **PM says yes:**
-     - For clean repos (no uncommitted changes): fast-forward pull.
-     - For dirty repos: do NOT pull automatically — local uncommitted work
-       could conflict. Tell the PM which repos have local changes.
-       Never stash or otherwise modify a dirty working tree merely to inspect
-       current source. Skip updating that clone. If remote content is required,
-       request explicit scoped approval to download it separately.
-     - Confirm the result (new HEAD, what moved) before proceeding to analysis.
-   - **PM says no:** do not pull. Proceed with what exists locally, but carry
-     the staleness forward as a visible caveat in the stage's output artifact
-     itself (not just said in chat) — e.g. in the behavioral spec's coverage
-     section: "Source `<repo>` was N days stale as of this analysis; recent
-     changes may not be reflected." This is the same "show evidence, not
-     assertion" principle as everywhere else in this engine — a silent
-     staleness gap is exactly the kind of failure that has to surface in the
-     artifact, not disappear into the chat log.
+3. **Record staleness as a caveat and continue.** A repo counts as stale if it's
+   behind the remote branch at all, or its last local commit is older than
+   ~3 weeks (a default threshold — adjust if the domain context specifies
+   otherwise). Do not stop the analysis for staleness. Carry it forward as a
+   visible caveat in the stage's output artifact itself (not just in chat) —
+   e.g. "Source `<repo>` was N days stale as of this analysis; recent changes may
+   not be reflected", with how far behind and the last local commit date. A
+   silent staleness gap is exactly the kind of failure that has to surface in
+   the artifact rather than disappear into the chat log.
+4. **When freshness materially changes the answer,** read current remote content
+   without mutating the clone — remote reads via GitHub MCP, or `git ls-remote`
+   for refs. Prefer reading the specific file remotely over updating the clone.
+   If current content cannot be read without mutation, analyze what is available
+   and mark the freshness limitation.
 
-Read-only inspection never needs approval. Pulling, stashing, switching refs, or
-otherwise changing repository state does. A stale source can make current-
-behavior analysis wrong, so carry unresolved freshness limits into the output.
+Read-only inspection never needs approval. Never pull, fetch, checkout, switch
+branches, stash, or otherwise change repository state as part of an analysis
+task — and do not ask whether to, merely to continue analyzing. Ask about repo
+mutation only when the PM explicitly asked to update or change the local repo,
+and never modify a dirty working tree.

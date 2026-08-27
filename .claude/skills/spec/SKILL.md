@@ -18,6 +18,14 @@ when the feature README or user routes you there.
 - Read only relevant design, context, or source evidence.
 - Do not load org/domain brains wholesale.
 
+## Sense-check against intent (before drafting)
+Product intent is settled by now, so do not reopen the premise. Apply the
+common-sense pass from `../_shared/business-interrogation.md` (pass 1, items 6–8)
+to the build behavior: does each behavior actually serve its requirement, do the
+edge cases and volumes hold up arithmetically, and would a user of the described
+flow get the outcome the PRD promises. Where behavior and intent do not line up,
+surface it as a mismatch for PM arbitration — do not quietly correct either side.
+
 ## Steps
 1. **Write the spec** using `references/spec-template.md` for shape. Stamp the
    PRD version/source. Mark unresolved requirements inline with
@@ -32,20 +40,12 @@ when the feature README or user routes you there.
    (performance/scale targets, hosting, language/storage) are explicitly out of
    scope — those belong to the target repo's own technical planning, not this
    spec.
-3. **Fill the AI Behavior Contract when the feature has AI behavior** — any
-   model, score, ranking, generation, classification, or extraction, including
-   one another team owns. Load `references/spec-ai-contract.md` for it. Every
-   threshold is a number or a `[NEEDS CLARIFICATION: ...]` marker; "high
-   confidence" is not a specification. Trace the accuracy bar to the PRD rather
-   than inventing it, and hand the eval design to `/ai-eval` — this skill
-   specifies behavior, it does not decide whether the model is good enough.
-   Delete the section outright for deterministic features.
-4. **Reconcile when routed** — compare against Figma or code only when the user
+3. **Reconcile when routed** — compare against Figma or code only when the user
    asks or the README routes there. Delegate to `spec-reconciler` for large or
    high-stakes Figma comparison. It does not decide which side is right.
-5. **You arbitrate.** For each mismatch, the user decides: fix the spec, or fix
+4. **You arbitrate.** For each mismatch, the user decides: fix the spec, or fix
    the Figma. Neither is automatically ground truth.
-6. **Route requirement changes through the PRD.** Cosmetic/design-only fixes can
+5. **Route requirement changes through the PRD.** Cosmetic/design-only fixes can
    update Figma or the spec directly.
 
 ## Scope boundary (stop here, do not draft plan.md/tasks.md)
@@ -64,18 +64,17 @@ reconcile section. For historical features, follow the README.
 
 ## Folder resources (read these)
 - `references/spec-template.md` — the spec template to fill (see Step 1).
-- `references/spec-ai-contract.md` — the AI section (see Step 3); load only
-  for AI features.
+- `references/spec-analytics-sections.md` — the two analytics sections; load
+  only when the feature emits events.
 - `references/clarify-checklist.md` — the clarify pass to run (see Step 2).
 - `references/figma-deltas-template.md` — structure for `reconcile-notes.md`
-  (see Step 4).
+  (see Step 3).
 - `../../../domains/<domain>/INDEX.md` — routes domain context.
 - `../../../domains/<domain>/config.json` — tool IDs and approval defaults.
-- `corrections/` — skill-specific corrections; apply them every run.
+- `corrections/` — if it holds entries, apply them; empty is normal (see `../_shared/corrections.md`).
 
 ## Run mode (standalone)
-If invoked directly, ask **Quick one-off** or **Strict**. Follow
-`../_shared/run-mode.md`. High-stakes gaps still stop.
+Default to Quick; do not ask. Follow `../_shared/run-mode.md`.
 
 ## Evidence on completion
 Do not just claim done. Show the artifact: the file path written, the actual

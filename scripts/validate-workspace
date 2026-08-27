@@ -71,28 +71,23 @@ for file in "CLAUDE.md" ".claude/CLAUDE.md" "AGENTS.md" "domains/unified-platfor
 done
 
 # Warning-only budgets use the portable approximation bytes / 4.
-# 930: the Context Cost section (~97 tok) was added deliberately — it prevents
-# multi-thousand-token tool dumps, so it pays for itself on first use. The rest
-# of the file was compressed to absorb most of its cost.
-warn_token_budget "CLAUDE.md" 930 "root instructions"
+# 1050: raised from 930 for the "Act, Don't Ask" + "Speed" sections. They are the
+# highest-value rules in the file — they stop the ask-loop that made the engine
+# unusable — and they save far more context than they cost. Context Cost (~97 tok)
+# also stays: it prevents multi-thousand-token tool dumps.
+warn_token_budget "CLAUDE.md" 1050 "root instructions"
 warn_token_budget "AGENTS.md" 300 "Codex contract"
 warn_token_budget "domains/unified-platform/CLAUDE.md" 250 "domain instructions"
-# 470: the PRD skill gained two routing lines (outputs/README.md init, and the
-# lazy prd-ai-sections.md). Both are load-bearing; the prose is already trimmed.
 warn_token_budget ".claude/skills/prd/SKILL.md" 470 "PRD skill"
-# AI content lives in lazily-loaded references (prd-ai-sections.md,
-# spec-ai-contract.md, ai-solution-gate.md); the draw.io instruction lives in
-# _shared/diagram-drawio.md. Budgets below reflect the adopted canonical
-# templates (richer AC guidance, Mixpanel framing, assumptions table) measured
-# after that deduplication. Run scripts/measure-template-cost before changing.
+# The draw.io instruction lives in _shared/diagram-drawio.md. Budgets below
+# reflect the adopted canonical templates (richer AC guidance, Mixpanel framing,
+# assumptions table) measured after that deduplication. Run
+# scripts/measure-template-cost before changing.
 warn_token_budget ".claude/skills/prd/references/prd-template.md" 1500 "PRD template"
 warn_token_budget ".claude/skills/discovery/references/discovery-template.md" 1350 "discovery template"
 warn_token_budget ".claude/skills/_shared/diagram-drawio.md" 350 "diagram reference (lazy)"
 warn_token_budget ".claude/skills/validation/references/alignment-report-template.md" 400 "alignment report"
 warn_token_budget ".claude/skills/analytics-plan/references/analytics-plan-template.md" 1800 "analytics plan (lazy)"
-warn_token_budget ".claude/skills/prd/references/prd-ai-sections.md" 1600 "PRD AI sections (lazy)"
-warn_token_budget ".claude/skills/spec/references/spec-ai-contract.md" 1700 "spec AI contract (lazy)"
-warn_token_budget ".claude/skills/discovery/references/ai-solution-gate.md" 900 "AI gate (lazy)"
 
 max_feature_router_tokens=0
 while IFS= read -r feature_readme; do
@@ -119,8 +114,8 @@ for file in \
   prd_context_tokens=$((prd_context_tokens + ((bytes + 3) / 4)))
 done
 prd_context_tokens=$((prd_context_tokens + max_feature_router_tokens))
-if (( prd_context_tokens > 3600 )); then
-  echo "warning: simple PRD required-read path exceeds token budget: ~$prd_context_tokens > 3600" >&2
+if (( prd_context_tokens > 4100 )); then
+  echo "warning: simple PRD required-read path exceeds token budget: ~$prd_context_tokens > 4100" >&2
   warnings=$((warnings + 1))
 fi
 

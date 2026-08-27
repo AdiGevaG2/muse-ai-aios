@@ -22,5 +22,10 @@ time. You rarely edit these by hand.
 
 ## Scope (important)
 This wiki is for domain RESEARCH knowledge. Governed facts — compliance,
-access-controlled policy — do NOT live here; they stay in `context/org-*.md` and
-`context/compliance.md` as human-owned facts, not LLM-maintained pages.
+access-controlled policy — do NOT live here; they stay in `org-brain/context/`
+(org-wide) and `context/compliance.md` (domain-specific) as human-owned facts,
+not LLM-maintained pages.
+
+Org-wide material does not belong here either. Company policy, shared systems,
+competitors, and company-wide terms live in `org-brain/`. `/ingest` routes by
+scope; on conflict the org brain wins.

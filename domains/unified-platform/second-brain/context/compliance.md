@@ -1,7 +1,7 @@
 # Compliance Context — unified-platform (domain-specific only)
 
 Org-wide compliance and data-handling policy lives in
-`domains/unified-platform/second-brain/context/org-policies.md`. Only unified-platform-SPECIFIC regulatory
+`org-brain/context/policies.md`. Only unified-platform-SPECIFIC regulatory
 constraints belong here — the ones that bound how solutions in THIS domain may
 be designed.
 
@@ -18,7 +18,7 @@ Human-owned; never auto-written by `/ingest`, `/retro`, or `/review`. Treat a
 
 G2RS is a Mastercard-registered MMSP; its customers are FIs, acquirers, payment
 facilitators, and processors who use it to meet card-brand merchant-monitoring
-obligations (`domains/unified-platform/second-brain/context/org-company.md`, `[documented]`). That is
+obligations (`org-brain/context/company.md`, `[documented]`). That is
 **market-facing context** — what the product sells. It is not the same as the
 **internal constraints** below, which govern how this domain's features may
 behave. Do not substitute one for the other.
@@ -62,7 +62,7 @@ including features that only display an upstream model's output.
 
 | Constraint | Detail | Source | Status |
 |---|---|---|---|
-| Human review requirement | A machine-derived risk outcome never takes effect on a merchant without human review. Binding on every feature in this domain, including ones that only display an upstream scan result. | PM decision 2026-08-27; see `domains/unified-platform/second-brain/context/org-policies.md` | ACTIVE |
+| Human review requirement | A machine-derived risk outcome never takes effect on a merchant without human review. Binding on every feature in this domain, including ones that only display an upstream scan result. | PM decision 2026-08-27; see `org-brain/context/policies.md` | ACTIVE |
 | Explainability owed | [What the customer FI or the merchant must be able to see behind a determination] | [TBD] | TBD |
 | Fairness / consistency testing | [Whether determinations must be tested for consistency across merchant segments, and by what method] | [TBD] | TBD |
 | Contestability | [Whether a determination must be reversible or appealable, and the product mechanism for it] | [TBD] | TBD |

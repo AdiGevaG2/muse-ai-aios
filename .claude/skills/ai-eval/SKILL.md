@@ -1,6 +1,6 @@
 ---
 name: ai-eval
-description: Define, run, or review an eval for a feature's AI behavior — the accuracy bar, the eval set, whether the model clears it. Use for "eval", "is the model good enough", "accuracy bar", "precision/recall", "build an eval set", or whether AI output is shippable. Not /validation, which checks build against spec.
+description: Define, run, or review an eval for a feature's AI behavior — accuracy bar, eval set, whether the model clears it. Use for "eval", "is the model good enough", "accuracy bar", "precision/recall", "build an eval set", or whether AI output is shippable. Not /validation, which checks build against spec.
 ---
 
 # AI Eval
@@ -87,11 +87,10 @@ the recommendation with unresolved items.
   case. Read it once when learning the shape; skip it after that.
 - `references/metric-selection.md` — choosing the metric and reading the result.
 - `../../../domains/<domain>/config.json` — tool IDs and approval defaults.
-- `corrections/` — skill-specific corrections; apply them every run.
+- `corrections/` — if it holds entries, apply them; empty is normal (see `../_shared/corrections.md`).
 
 ## Run mode (standalone)
-If invoked directly, ask **Quick one-off** or **Strict**. Follow
-`../_shared/run-mode.md`. High-stakes gaps still stop.
+Default to Quick; do not ask. Follow `../_shared/run-mode.md`.
 
 ## Evidence on completion
 Show the artifact path, the actual numbers with the bar next to them, the model

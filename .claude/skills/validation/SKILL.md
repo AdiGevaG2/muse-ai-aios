@@ -8,13 +8,8 @@ description: Validate implementation, Figma, tests, or release evidence against 
 Validate evidence against the approved spec. This is acceptance validation, not
 user research feedback collection.
 
-**Scope boundary:** this checks whether the build matches the spec. It does not
-judge whether AI output is good enough — that is `/ai-eval`, against the
-accuracy bar in `ai-eval.md`. The two fail independently. If the feature has AI
-behavior, validate the deterministic contract here (thresholds enforced,
-fallbacks fire, overrides work, invariants hold) and report model quality as
-`Not checked - see ai-eval` rather than eyeballing a few outputs and calling it
-a Pass. A handful of good-looking samples is not an eval.
+**Scope boundary:** this checks whether the build matches the spec. Acceptance
+results and artifact drift fail independently — keep them separate.
 
 ## Before you start
 - Confirm active domain and feature name.
@@ -34,11 +29,7 @@ a Pass. A handful of good-looking samples is not an eval.
    Figma frames, logs, or manual QA notes.
 4. Classify each item: `Pass`, `Fail`, `Blocked`, or `Not checked`.
 5. For failures, state the exact mismatch and owner: product/spec, design,
-   implementation, data, model quality, or unknown.
-6. For AI features, confirm the deterministic contract holds: every confidence
-   band routes as specified, malformed output falls back rather than surfacing,
-   human override takes precedence as written, and no invariant is violated.
-   Route the accuracy question to `/ai-eval`.
+   implementation, data, or unknown.
 
 ## Two artifacts, two questions
 This skill covers both; they fail independently, so keep them separate.
@@ -67,15 +58,14 @@ For historical features, follow the README. If no durable artifact is needed,
 return a concise validation summary in chat.
 
 ## Stop Conditions
-- Stop on product ambiguity and ask the PM.
+- On product ambiguity: take the most likely reading, validate against it, and
+  record the ambiguity as a finding. Do not stop to ask.
 - Stop on external writes unless explicitly approved.
 - Do not rewrite PRD or spec during validation; propose amendments instead.
-- Do not declare an AI feature ready on spec conformance alone when no eval has
-  cleared its bar. Report it as blocked on `/ai-eval`.
 
 ## Folder resources
 - `references/alignment-report-template.md` — the drift-check template.
-- `corrections/` — skill-specific corrections; apply them every run.
+- `corrections/` — if it holds entries, apply them; empty is normal (see `../_shared/corrections.md`).
 
 ## Evidence
 Show the evidence reviewed: command output summary, source paths, test names,

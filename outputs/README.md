@@ -14,7 +14,7 @@ new feature:
 3. When the stage creates a durable artifact, create its folder and artifact
    together. Do not pre-create empty stage folders or placeholder artifacts.
 4. Name each artifact `<feature-name>-<artifact>.md` and keep it in the matching
-   stage folder.
+   stage folder, including reverse-engineering outputs.
 5. Update the feature README with the current stage, status, artifact links,
    relevant evidence and repositories, open decisions, blockers, and last
    verification state.
@@ -26,16 +26,14 @@ new feature:
 ```text
 outputs/<feature-name>/
 ├── README.md
-├── reverse/
-│   └── <feature-name>-reverse.md
+├── current-state/
+│   └── <feature-name>-reverse-engineering.md
 ├── discovery/
 │   └── <feature-name>-discovery.md
 ├── prd/
 │   └── <feature-name>-prd.md
 ├── spec/
 │   └── <feature-name>-spec.md
-├── ai-eval/
-│   └── <feature-name>-ai-eval.md
 ├── analytics-plan/
 │   └── <feature-name>-analytics-plan.md
 ├── validation/

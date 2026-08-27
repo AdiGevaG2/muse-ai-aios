@@ -1,6 +1,6 @@
 ---
 name: baseline-data
-description: Pull current-state numbers from Mixpanel, Coralogix, or Looker via MCP. Use for "get the baseline", "pull current metrics", "what does the data say", "query Mixpanel", "check the error rate", or before a PRD that needs success metrics anchored to real figures.
+description: Pull current-state numbers from Mixpanel, Coralogix, or Looker via MCP. Use for "get the baseline", "pull current metrics", "what does the data say", "query Mixpanel", "check the error rate", or before a PRD needing metrics anchored to real figures.
 ---
 
 # Baseline Data
@@ -17,7 +17,7 @@ measuring stick post-launch. Record them so re-measurement is a straight re-run.
   for a new feature workspace.
 - Read `config.json` → `tools` for project IDs, endpoints, and the customer-only
   default. Do not re-ask for what is already there.
-- Check `domains/unified-platform/second-brain/context/org-policies.md` only for a specific unresolved question
+- Check `org-brain/context/policies.md` only for a specific unresolved question
   about what may be queried or exported — not wholesale.
 
 ## Sources
@@ -72,11 +72,10 @@ against, and naming anything that could not be pulled.
 - `references/mcp-queries.md` — per-source mechanics and query discipline.
 - `references/connect-looker.md` — one-time Looker setup, when it is needed.
 - `../../../domains/<domain>/config.json` — project IDs, endpoints, readiness.
-- `corrections/` — skill-specific corrections; apply them every run.
+- `corrections/` — if it holds entries, apply them; empty is normal (see `../_shared/corrections.md`).
 
 ## Run mode (standalone)
-If invoked directly, ask **Quick one-off** or **Strict**. Follow
-`../_shared/run-mode.md`. High-stakes gaps still stop.
+Default to Quick; do not ask. Follow `../_shared/run-mode.md`.
 
 ## Evidence on completion
 Show each figure with its source, query, and window. Name every metric that

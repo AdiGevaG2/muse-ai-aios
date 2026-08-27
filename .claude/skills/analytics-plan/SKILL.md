@@ -1,6 +1,6 @@
 ---
 name: analytics-plan
-description: Write a feature's measurement plan — decision supported, hypotheses, metric definitions, events, analysis design, governance. Use for "analytics plan", "measurement plan", "what should we instrument", "define the events", "how will we know it worked". Runs after the spec.
+description: Write a feature's measurement plan — metrics, events, analysis design, governance. Use for "analytics plan", "measurement plan", "what should we instrument", "define the events", "how will we know it worked". Runs after the spec.
 ---
 
 # Analytics Plan
@@ -25,6 +25,13 @@ does not need one — say so rather than producing a plan nobody reads.
 - Read `../../../domains/<domain>/config.json` for the Mixpanel project and the
   customer-only default.
 - Do not load org/domain brains wholesale.
+
+## Sense-check the measurement logic (before drafting)
+Apply the common-sense pass from `../_shared/business-interrogation.md`
+(pass 1, items 7–8) to the metrics: would the proposed events actually detect
+the business outcome the PRD claims, is the expected volume high enough to reach
+significance, and is there a defined result that would tell us the feature
+failed. A success metric that cannot fail is not a metric — surface it.
 
 ## Write
 Follow `references/analytics-plan-template.md`. Its shape is authoritative;
@@ -51,13 +58,6 @@ Rules that matter more than the table structure:
   feature work; an unprioritized event list gets cut arbitrarily by engineering.
 - Do not invent owners, dashboards, baselines, or thresholds.
 
-## AI features
-When the feature has AI behavior, this plan covers **product** measurement.
-Model quality belongs to `/ai-eval` and its `ai-eval.md`. Keep them separate:
-adoption and accuracy are different questions and fail independently. Where the
-feature captures human corrections of model output, record that here as a data
-source and cross-reference the eval — those events are the label pipeline.
-
 ## Output
 Default for new features:
 `outputs/<feature-name>/analytics-plan/<feature-name>-analytics-plan.md`.
@@ -75,11 +75,10 @@ If no durable artifact is needed, return the plan summary in chat.
 ## Folder resources
 - `references/analytics-plan-template.md` — the template to fill.
 - `../../../domains/<domain>/config.json` — Mixpanel project, customer filter.
-- `corrections/` — skill-specific corrections; apply them every run.
+- `corrections/` — if it holds entries, apply them; empty is normal (see `../_shared/corrections.md`).
 
 ## Run mode (standalone)
-If invoked directly, ask **Quick one-off** or **Strict**. Follow
-`../_shared/run-mode.md`. High-stakes gaps still stop.
+Default to Quick; do not ask. Follow `../_shared/run-mode.md`.
 
 ## Evidence on completion
 Show the artifact path, the metric definitions with their baselines, and the

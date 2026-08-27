@@ -1,12 +1,12 @@
 # Platform Context — unified-platform (domain-specific only)
 
 Org-wide systems (Mixpanel, Coralogix, Confluence, Jira, Figma) live in
-`domains/unified-platform/second-brain/context/org-systems.md`. Only put unified-platform-SPECIFIC facts here.
+`org-brain/context/systems.md`. Only put unified-platform-SPECIFIC facts here.
 
 ## Domain-specific systems
 - **Target platform:** [hunch] Unified Platform (UP) — the consolidation of the
   G2RS, ex-EverC, and ex-WebShield UIs/APIs into a single platform. Source
-  material (see `context/org-company.md`) describes this as
+  material (see `org-brain/context/company.md`) describes this as
   inferred roadmap direction (~12–18 months), not a confirmed/committed
   timeline; the consolidation intent itself is [documented].
 - **Legacy system(s):** [documented] Three separate stacks being consolidated:
@@ -82,5 +82,5 @@ resulting spec as based on an unverified branch. Full hypothesis:
   Jun 2026) — expect fragmentation between legacy G2RS and legacy EverC
   tooling in some workflows; treat "current behavior" claims as needing a
   legacy-analyze pass per capability rather than assumed-uniform.
-- Full company/history context: `context/org-company.md` and
-  `context/org-everc.md`.
+- Full company/history context: `org-brain/context/company.md` and
+  `org-brain/context/everc.md`.

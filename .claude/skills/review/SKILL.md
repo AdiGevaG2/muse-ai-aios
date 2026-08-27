@@ -35,20 +35,14 @@ decisions, ingestion, hypotheses, stakeholders).
    cross-links (isolated nodes that should connect to the graph).
 6. **Hypotheses to resolve** — open hypotheses that now have enough evidence to
    mark supported/refuted, or promote into `context/`.
-7. **AI artifacts going stale** — for features with `ai-eval.md`: a result whose
-   model ID or prompt version no longer matches what the spec pins, a bar that
-   was moved without a recorded decision and owner, an eval set older than the
-   traffic it claims to represent, or a spec threshold still written as words
-   rather than a number. A stale eval reads as passing evidence long after it
-   stopped being true.
-8. **Confirmed-repeatedly** — a claim reinforced across features; note it's
+7. **Confirmed-repeatedly** — a claim reinforced across features; note it's
    durable (keep). A claim contradicted repeatedly; propose cutting it.
-9. **Recurrence** — anything flagged in a previous sweep and still open. Report
+8. **Recurrence** — anything flagged in a previous sweep and still open. Report
    how many sweeps it has survived. Three or more means nobody owns it: escalate
    rather than re-listing. Skip items the PM explicitly deferred.
-10. **Decision debt** — `pending` decision records, oldest first. Prioritize
-    those blocking active work. A conflict pending past two sweeps is itself the
-    finding (failure mode 4, tension graveyards).
+9. **Decision debt** — `pending` decision records, oldest first. Prioritize
+   those blocking active work. A conflict pending past two sweeps is itself the
+   finding (failure mode 4, tension graveyards).
 
 ## Staleness thresholds
 Flag, never auto-decay. Defaults from `system-evolution.md`: market intel 30–60

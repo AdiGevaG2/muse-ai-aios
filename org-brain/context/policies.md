@@ -47,7 +47,7 @@ default.
 
 ## Analytics and observability querying
 
-These bound what `/analytics-plan`, `/ai-eval`, and any baseline query may do.
+These bound what `/analytics-plan` and any baseline query may do.
 
 | Rule | Requirement | Source | Status |
 |---|---|---|---|
@@ -69,8 +69,8 @@ These bound what `/analytics-plan`, `/ai-eval`, and any baseline query may do.
 
 ## AI and automated decisioning
 
-Applies to any feature routed through `/ai-eval`, including features that merely
-display another team's model output.
+Applies to any feature where a model, score, or ranking affects a user-visible
+outcome, including features that merely display another team's model output.
 
 | Rule | Requirement | Source | Status |
 |---|---|---|---|

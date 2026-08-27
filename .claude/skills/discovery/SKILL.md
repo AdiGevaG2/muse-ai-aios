@@ -1,6 +1,6 @@
 ---
 name: discovery
-description: Write or amend a feature discovery artifact from a business requirement and only the relevant evidence. Use when the user says "write discovery", "start discovery", or has a requirement ready to explore. Ends at an approval gate before PRD.
+description: Write or amend a feature discovery artifact from a business requirement and only the relevant evidence. Use when the user says "write discovery", "start discovery", or has a requirement ready to explore. Stops after the artifact, before the PRD.
 ---
 
 # Discovery
@@ -17,6 +17,13 @@ not provided).
   amending, and exact domain context from `INDEX.md`.
 - Do not load org/domain brains wholesale.
 
+## Interrogate the business logic (before drafting)
+Run `../_shared/business-interrogation.md` in full. Discovery is the stage where
+a weak premise is cheapest to catch — sense-check the problem, the value
+mechanism, why now, and the cheaper path before you write a word of the
+artifact. Do this silently — unresolved premise questions go into the artifact's
+open-questions section, not to the user as questions.
+
 ## What to produce
 Follow `references/discovery-template.md` for shape, but keep the artifact
 decision-grade and scoped. It calls for:
@@ -30,9 +37,10 @@ decision-grade and scoped. It calls for:
 - Proposed solution (feature behavior + user journey), scope (in/out/future),
   success signals, and open questions.
 
-## Approval gate (hard stop)
-After writing, STOP and ask the user to review and approve. Do not proceed to
-the PRD until the user approves.
+## Handoff
+After writing, report the artifact and stop there — do not roll straight into the
+PRD in the same turn. Do not ask for approval; the PM reviews the file and says
+what's next.
 
 ## Output
 Default for new features:
@@ -42,15 +50,11 @@ For historical features, follow the artifact path listed in the feature README.
 ## Folder resources (read these)
 - `../../../domains/<domain>/INDEX.md` — routes domain context.
 - `../../../domains/<domain>/config.json` — tool IDs and approval defaults.
-- `corrections/` — skill-specific corrections; apply them every run.
+- `corrections/` — if it holds entries, apply them; empty is normal (see `../_shared/corrections.md`).
 - `references/discovery-template.md` — structure to fill.
-- `references/ai-solution-gate.md` — run this unless the feature is obviously
-  deterministic; it catches features that merely display another team's model
-  output, which are AI features too.
 
 ## Run mode (standalone)
-If invoked directly, ask **Quick one-off** or **Strict**. Follow
-`../_shared/run-mode.md`. High-stakes gaps still stop.
+Default to Quick; do not ask. Follow `../_shared/run-mode.md`.
 
 ## Evidence on completion
 Do not just claim done. Show the artifact: the file path written, the actual

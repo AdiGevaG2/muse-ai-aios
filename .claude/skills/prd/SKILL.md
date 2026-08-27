@@ -14,12 +14,19 @@ Create or amend a PRD from approved discovery or explicit PM direction.
 2. Approved discovery, or the explicit PM direction replacing it.
 3. Existing PRD only when amending.
 4. `references/prd-template.md`.
-5. `references/prd-ai-sections.md` — AI features only, including ones built on
-   another team's model.
 
 README links are routing candidates, not required reads. Do not load `INDEX.md`,
 `config.json`, style guides, samples, corrections, brains, repos, analytics,
 designs, integrations, or agents unless the source exposes a gap.
+
+## Interrogate the business logic (before drafting)
+Work `../_shared/business-interrogation.md` silently. Carry forward what
+discovery already answered. What the evidence cannot answer goes into the PRD's
+open-questions section — do not put it to the user as questions.
+
+Requirements are the specific target: for each one, be able to say which
+business outcome it serves. A requirement that traces to no outcome is either
+missing its rationale or does not belong in the PRD — surface which.
 
 ## Write
 - Preserve every template section and order. Mark N/A sections `N/A - [reason]`.
@@ -37,5 +44,5 @@ Default for new features:
 `outputs/<feature-name>/prd/<feature-name>-prd.md`, with the version stamped at
 the top. For historical features, follow the README.
 
-After writing, inspect the artifact or diff, report unresolved items, and stop.
-Do not proceed to spec without approval.
+After writing, report the artifact and unresolved items, then stop — do not roll
+into the spec in the same turn. Do not ask for approval.

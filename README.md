@@ -5,7 +5,7 @@ Top-level map. This is a router, not a methodology warehouse.
 - `CLAUDE.md` - single canonical PM/Claude contract.
 - `AGENTS.md` - Codex implementation contract.
 - `.claude/skills/` - the workflow skills: reverse-engineer, baseline-data,
-  discovery, prd, spec, ai-eval, analytics-plan, validation, publish, plus the
+  discovery, prd, spec, analytics-plan, validation, publish, plus the
   compounding loops ingest, retro, review.
 - `.claude/agents/` - isolated specialists for evidence-heavy work.
 - `.claude/hooks/` - mechanical guardrails.
@@ -24,18 +24,15 @@ actually happens.
 
 ```
 reverse-engineer -> discovery -> prd -> figma delta (in /spec) -> spec
-                 -> ai-eval (AI features) -> validation
+                 -> validation
                  -> analytics-plan (when measurement is warranted)
-                 -> publish (Jira handoff; Confluence only when asked)
+                 -> publish (Jira handoff only when asked; Confluence only when asked)
 
 baseline-data  -- pull real numbers; run before any stage that needs them
 ```
 
-Three pairs are deliberately not interchangeable:
+Two pairs are deliberately not interchangeable:
 
-- `/ai-eval` vs `/validation` — one asks whether the model output is good enough
-  to ship, the other whether the build matches the spec. A feature can pass one
-  and fail the other.
 - `validation.md` vs `alignment-report.md` — acceptance results vs. artifact
   drift against a moved spec.
 - `spec.md` vs the Confluence spec page — the markdown is the source of truth;

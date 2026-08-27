@@ -50,18 +50,6 @@ per sentence.]
 
 ## Proposed Solution
 
-### Solution Nature: Deterministic or Probabilistic
-
-<!--
-  Run the gate in `references/ai-solution-gate.md` unless the feature is
-  obviously deterministic, then paste the filled result here and delete this
-  comment. It catches the case most often missed: a feature that merely
-  DISPLAYS another team's model output is still an AI feature, because you own
-  how its errors reach your user.
--->
-
-[Deterministic — no model, score, ranking, or generated output affects the user]
-
 ### Feature Behavior
 
 [Explain in simple language what should change for the user and any key rules

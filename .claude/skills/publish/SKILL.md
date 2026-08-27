@@ -1,6 +1,6 @@
 ---
 name: publish
-description: Publish the PRD to Confluence and create Jira work items (Initiative/Milestone/Epic/Story/Bug/Subtask hierarchy). Use when the user says "publish to Confluence", "create the Jira tickets", or "push to Jira". Always behind an approval gate — shows a diff and writes only on approval.
+description: Publish the PRD to Confluence and create Jira work items (Initiative/Milestone/Epic/Story/Bug/Subtask). Use when the user says "publish to Confluence", "create the Jira tickets", or "push to Jira". Approval-gated — shows a diff, writes only on approval.
 ---
 
 # Publish (Confluence + Jira)
@@ -74,7 +74,7 @@ Historical features may keep these elsewhere; follow the feature README.
 ## Folder resources (read these)
 - `../../../domains/<domain>/config.json` — standing setup (domain, tool IDs,
   naming, gates). Use it instead of re-asking; only ask for what is still blank.
-- `corrections/` — skill-specific corrections; apply them every run.
+- `corrections/` — if it holds entries, apply them; empty is normal (see `../_shared/corrections.md`).
 - `references/jira-confluence.md` — how to call Jira/Confluence.
 - `references/initiative-template.md`, `milestone-template.md`,
   `epic-template.md`, `story-template.md` — Jira Description templates. Story
@@ -84,11 +84,10 @@ Historical features may keep these elsewhere; follow the feature README.
 - `../_shared/diagram-drawio.md` — generating the draw.io SVGs to attach.
 
 ## Run mode (standalone)
-If invoked directly, first ask the PM: **Quick one-off**
-(assume low-stakes gaps, flag each inline) or **Strict** (ask on every gap)?
-Follow `../_shared/run-mode.md`. Either way, high-stakes gaps (compliance,
-requirement/behavior decisions, invented components, unanchored metrics, or any
-write to PRD/Jira/Confluence/brain) are ALWAYS asked, never assumed.
+Default to Quick; do not ask which mode. Follow `../_shared/run-mode.md`.
+Prepare the full payload and diff on assumptions, marking each inline. The one
+approval this skill needs is the external write itself: show the diff of what
+goes to Confluence/Jira and publish only on the PM's go-ahead.
 
 ## Evidence on completion
 Do not just claim done. Show the artifact: the file path written, the actual

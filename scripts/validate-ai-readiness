@@ -31,7 +31,7 @@ is_stub() {
 # happens in the AI-feature check below, where an unanswered row actually
 # blocks something. Only a genuinely empty stub is a blocker.
 echo "=== Governance context (human-owned; fill a row when a decision needs it) ==="
-for f in domains/unified-platform/second-brain/context/org-policies.md \
+for f in org-brain/context/policies.md \
          domains/unified-platform/second-brain/context/compliance.md; do
   if [[ ! -f "$f" ]]; then
     B "$f missing"
@@ -90,44 +90,6 @@ if [[ -f "$cfg" ]] && command -v jq >/dev/null 2>&1; then
   done < <(jq -r '.tools | to_entries[] | "\(.key)\t\(.value.readiness // "unset")"' "$cfg")
 else
   W "cannot read $cfg (missing file or jq)"
-fi
-
-echo
-echo "=== AI features: artifact completeness ==="
-found_ai=0
-for fdir in outputs/*/; do
-  [[ -d "$fdir" ]] || continue
-  name="$(basename "$fdir")"
-  [[ "$name" == "README.md" ]] && continue
-
-  # Does any artifact in this feature describe AI behavior?
-  if grep -rqilE '\b(model|inference|llm|classifier|confidence score|precision|recall|prompt)\b' "$fdir" 2>/dev/null; then
-    ai_hits="$(grep -rilE '\bAI Behavior|confidence threshold|eval set|ship bar\b' "$fdir" 2>/dev/null | wc -l | tr -d ' ')"
-    has_spec=0; has_eval=0
-    compgen -G "$fdir"'{spec.md,spec/*.md}' >/dev/null 2>&1 && has_spec=1
-    [[ -f "$fdir/spec.md" ]] && has_spec=1
-    [[ -f "$fdir/ai-eval.md" ]] && has_eval=1
-    compgen -G "${fdir}ai-eval/*.md" >/dev/null 2>&1 && has_eval=1
-
-    if [[ "$ai_hits" -gt 0 ]]; then
-      found_ai=1
-      if [[ "$has_eval" -eq 0 && "$has_spec" -eq 1 ]]; then
-        W "$name: spec exists and describes AI behavior, but no ai-eval.md — run /ai-eval"
-      elif [[ "$has_eval" -eq 1 ]]; then
-        K "$name: has ai-eval.md"
-      fi
-    fi
-  fi
-done
-[[ "$found_ai" -eq 0 ]] && echo "  (no feature currently declares an AI behavior contract)"
-
-echo
-echo "=== Unpinned model versions (a 'latest' alias is not a specification) ==="
-if grep -rn "claude-.*latest\|gpt-.*latest\|model: *latest" --include="*.md" domains/ outputs/ 2>/dev/null | grep -v template | head -5 | grep -q .; then
-  grep -rn "claude-.*latest\|gpt-.*latest\|model: *latest" --include="*.md" domains/ outputs/ 2>/dev/null | grep -v template | head -5 | sed 's/^/  WARN     /'
-  warns=$((warns+1))
-else
-  K "no unpinned model aliases in feature artifacts"
 fi
 
 echo
