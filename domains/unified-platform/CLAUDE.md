@@ -1,0 +1,20 @@
+# Unified Platform Domain Router
+
+Active domain: `unified-platform`. New feature work lives in
+`outputs/<feature-name>/` at the workspace root. Existing work under
+`features/<feature-name>/` is historical and continues to follow its README.
+
+Start with the feature `README.md`. Its links and the links in `INDEX.md` are
+routing candidates, never automatic reads. Load only the artifact required for
+the current stage. Load domain context only for a specific unresolved gap.
+
+`config.json`, the full style guide, writing samples, brains, repository maps,
+historical features, and integrations are lazy. A skill may request the exact
+one needed; otherwise do not load them. Writing samples are optional even during
+artifact drafting.
+
+The PRD owns product intent. The spec owns exact build behavior. Domain context
+provides evidence and constraints but cannot silently override either artifact.
+
+Compliance and policy context is human-owned. Brain and external-system writes
+require explicit approval.

@@ -1,0 +1,80 @@
+{
+  "_comment": "Standing setup answers for this domain. Skills read this instead of re-asking every run. First-run setup fills the blanks; edit here to change. Shared across all skills (kept at domain level, not per-skill, so answers live in one place).",
+  "domain": "unified-platform",
+  "feature_defaults": {
+    "naming": "kebab-case",
+    "outputs_root": "features/<feature-name>/"
+  },
+  "voice": {
+    "reference": "second-brain/writing-samples.md",
+    "banned_words": [
+      "leverage",
+      "seamless",
+      "robust",
+      "delve"
+    ]
+  },
+  "tools": {
+    "mixpanel": {
+      "readiness": "VERIFIED_READ",
+      "project_name": "Unified Platform Production",
+      "project_id": "3482888",
+      "auth": "service-account",
+      "workspace_name": "All Project Data",
+      "workspace_id": "3985028",
+      "query_default": "customer-only traffic unless explicitly asked otherwise",
+      "customer_filter": "is_customer = true",
+      "verified": "2026-08-27 via Get-Projects; both project IDs confirmed (MerchantView Production 2040581, Unified Platform Production 3482888). Read only \u2014 writes untested."
+    },
+    "coralogix": {
+      "readiness": "UNVERIFIED",
+      "region_endpoint": "https://api.us1.coralogix.com/mgmt/api/v1/mcp",
+      "dashboard": "https://everc-prod.app.coralogix.us/#/dashboard",
+      "mcp_version": "v2",
+      "auth": "local environment variable or secret store only \u2014 never in repo files or prompts"
+    },
+    "jira": {
+      "readiness": "UNVERIFIED",
+      "project_key": "UPG2",
+      "default_epic_prefix": "UP",
+      "issue_hierarchy": "Initiative (multi-quarter strategic only) -> Milestone -> Epic -> Story/Bug -> Subtask (optional)",
+      "requires_explicit_approval": true
+    },
+    "confluence": {
+      "readiness": "UNVERIFIED",
+      "space": "UP",
+      "space_name": "Unified Platform",
+      "parent_page": "choose per feature \u2014 never assume a global default; ask before publishing and record the chosen destination in feature handoff metadata",
+      "requires_explicit_approval": true
+    },
+    "figma": {
+      "readiness": "UNVERIFIED",
+      "design_kit_file": "not configured globally \u2014 ask for the file/link per feature when design validation is needed",
+      "requires_explicit_approval": true
+    },
+    "looker": {
+      "readiness": "NOT_CONNECTED",
+      "purpose": "business and warehouse metrics not available in Mixpanel",
+      "product": "Looker Core, Google-hosted (NOT Looker Studio, which has no MCP server)",
+      "mcp_endpoint": "https://<YOUR-LOOKER-HOST>/mcp \u2014 official Google-published server, built into hosted instances",
+      "setup": ".claude/skills/baseline-data/references/connect-looker.md \u2014 one-time browser OAuth, cannot be done by an agent",
+      "note": "Until connected, /baseline-data reports Looker-only figures as unavailable rather than approximating them from another source."
+    },
+    "github": {
+      "readiness": "VERIFIED_READ",
+      "purpose": "reverse-engineering source not cloned locally: repo search, file contents, commit history, PR context",
+      "access": "read-only. Cloning, branching, commits, and PR creation require explicit scoped approval.",
+      "verified": "2026-08-27 via search_repositories org:evercompliant (437 repos visible, private included). Read only \u2014 writes untested."
+    }
+  },
+  "security": {
+    "credentials": "Never store API keys, service account credentials, session cookies, or access tokens in repo files, markdown artifacts, prompts, Jira, Confluence, or chat. Use environment variables, local secret storage, or the workspace's MCP credential mechanism. If a required credential is missing, ask the user to configure it locally \u2014 never ask for the secret value in chat."
+  },
+  "gates": {
+    "discovery_approval": true,
+    "jira_confluence_approval": true,
+    "brain_write_approval": true,
+    "figma_or_design_followup_approval": true,
+    "major_artifact_write_requires_approval": true
+  }
+}

@@ -1,0 +1,3 @@
+# Keep structure, ignore local scratch
+.DS_Store
+*.tmp
