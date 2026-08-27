@@ -2,7 +2,7 @@
 
 Active domain: `unified-platform`. New feature work lives in
 `outputs/<feature-name>/` at the workspace root. Existing work under
-`features/<feature-name>/` is historical and continues to follow its README.
+Feature work lives at `outputs/<feature-name>/`, not under this domain.
 
 Start with the feature `README.md`. Its links and the links in `INDEX.md` are
 routing candidates, never automatic reads. Load only the artifact required for

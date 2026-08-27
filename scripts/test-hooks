@@ -83,11 +83,10 @@ check "FAIL-CLOSED: empty stdin" 2 "" "$H/destructive-operation-guard.sh"
 
 echo
 echo "prd-change-guard - NOTIFY on prd paths, silent elsewhere"
-notify_check "notify: features/f/prd.md" '{"hook_event_name":"PostToolUse","tool_name":"Write","tool_input":{"file_path":"domains/d/features/f/prd.md"}}' yes
-notify_check "notify: features/f/prd/prd.md (nested)" '{"hook_event_name":"PostToolUse","tool_name":"Write","tool_input":{"file_path":"domains/d/features/f/prd/prd.md"}}' yes
 notify_check "notify: outputs/f/prd/f-prd.md" '{"hook_event_name":"PostToolUse","tool_name":"Write","tool_input":{"file_path":"outputs/f/prd/f-prd.md"}}' yes
-notify_check "silent: features/f/spec.md" '{"hook_event_name":"PostToolUse","tool_name":"Write","tool_input":{"file_path":"domains/d/features/f/spec.md"}}' no
+notify_check "notify: outputs/f/prd/nested-prd.md" '{"hook_event_name":"PostToolUse","tool_name":"Write","tool_input":{"file_path":"outputs/f/prd/nested-prd.md"}}' yes
 notify_check "silent: outputs/f/spec/f-spec.md" '{"hook_event_name":"PostToolUse","tool_name":"Write","tool_input":{"file_path":"outputs/f/spec/f-spec.md"}}' no
+notify_check "silent: retired domains/d/features/f/prd.md" '{"hook_event_name":"PostToolUse","tool_name":"Write","tool_input":{"file_path":"domains/d/features/f/prd.md"}}' no
 
 echo
 echo "provenance-guard - BLOCK (2) untagged evidence, PASS (0) tagged"

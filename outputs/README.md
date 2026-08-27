@@ -62,5 +62,5 @@ Each feature README records:
 - open decisions and blockers
 - last verified date and source state
 
-Existing features under `domains/<domain>/features/` are historical. Do not move
-or normalize them unless the user explicitly approves that migration.
+This is the only feature path. `domains/<domain>/` holds domain knowledge and
+routing only, never feature outputs.

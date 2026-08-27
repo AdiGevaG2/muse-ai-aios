@@ -106,7 +106,7 @@ while IFS= read -r feature_readme; do
     echo "warning: feature router exceeds token budget: $relative_path (~$feature_tokens > 300)" >&2
     warnings=$((warnings + 1))
   fi
-done < <(find "$repo_root/domains" -path '*/features/*/README.md' -type f -print)
+done < <(find "$repo_root/outputs" -mindepth 2 -maxdepth 2 -name 'README.md' -type f -print)
 
 prd_context_tokens=0
 for file in \

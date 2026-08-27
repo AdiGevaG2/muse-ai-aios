@@ -17,7 +17,7 @@ are the *how*; that file is the *why*. Then read the last two reports in
 different finding from a new one.
 
 ## Scope
-Sweep `org-brain/` and the active domain `second-brain/` (glossary, context,
+Sweep the active domain `second-brain/` (glossary, context,
 decisions, ingestion, hypotheses, stakeholders).
 
 ## What to flag

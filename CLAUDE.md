@@ -26,9 +26,8 @@ Optimize for minimum irrelevant context. For feature work, load in order:
 4. The exact artifact needed now.
 5. Exact domain or source evidence only when a real gap routes there.
 
-New feature work lives at `outputs/<feature-name>/`; follow `outputs/README.md`
-for initialization and layout. Existing features under
-`domains/<domain>/features/` keep their routed paths.
+Feature work lives at `outputs/<feature-name>/`; follow `outputs/README.md`
+for initialization and layout. This is the only feature path.
 
 README and index links are routing candidates, never automatic reads. Do not
 preload brains, historical features, repositories, integrations, unrelated
@@ -73,4 +72,5 @@ analytics export is a defect, not evidence. Delegate verbose exploration whose
 raw output will not be reused; skip delegation for small or context-dependent
 work. `/compact` between phases, `/clear` between features.
 
-Prefer short, direct outputs.
+## Response Style
+See `.claude/style.md`.

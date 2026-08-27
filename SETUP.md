@@ -9,7 +9,7 @@ plain markdown. Here's how to stand it up.
 - A Claude subscription that includes Claude Code.
 - **`jq`** — required. The guard hooks parse their payload with it and fail
   closed without it. `brew install jq`.
-- **Python 3** — required for `tools/scripts/mermaid_to_drawio.py`, which turns
+- **Python 3** — required for `scripts/mermaid_to_drawio.py`, which turns
   a mermaid block into an inline, editable draw.io SVG. Install the Draw.io VS
   Code extension to edit the result.
 
@@ -52,7 +52,7 @@ The structure is built; the knowledge is not. Fill these before a real run:
 - `domains/unified-platform/CLAUDE.md` — the `<...>` in strategy, voice, delegation.
 - `domains/unified-platform/second-brain/writing-samples.md` — paste 2–4 REAL
   examples of how you write. Highest-leverage file for output quality.
-- `org-brain/context/policies.md` and
+- `domains/unified-platform/second-brain/context/org-policies.md` and
   `domains/unified-platform/second-brain/context/compliance.md` — your real
   governance facts (human-owned; never auto-written).
 - `OWNERSHIP.md` — fill `<owners>` when the pilot expands past you.
@@ -128,5 +128,5 @@ The system maintains itself only if someone runs the loops. An empty
 When it's proven and you want the team on it: add `.claude-plugin/plugin.json`,
 move `skills/` + `agents/` to the plugin root, swap relative refs for
 `${CLAUDE_PLUGIN_ROOT}`, and publish to a private marketplace. Knowledge
-(`org-brain/`, `domains/`) stays out of the plugin so the engine stays portable.
+(`domains/`) stays out of the plugin so the engine stays portable.
 See `OWNERSHIP.md` for who owns what at team scale.

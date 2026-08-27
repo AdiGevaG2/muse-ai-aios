@@ -56,7 +56,7 @@ while IFS= read -r target; do
         # [documented] asserts a written artifact exists. Look for one.
         if (row ~ /\[documented\]/ &&
             row !~ /`[^`]+`/ && row !~ /\]\([^)]+\)/ &&
-            row !~ /(source|ingestion|org-brain|domains|outputs)\// &&
+            row !~ /(source|ingestion|domains|outputs)\// &&
             row !~ /\.(md|py|ts|tsx|js|java|json|yaml|yml)/) {
           warn = warn sprintf("    line %d: [documented] with no artifact cited :: %s\n", rowline, substr(row, 1, 88))
         }

@@ -54,7 +54,7 @@ loading order exists to prevent.
 candidates, never automatic reads.
 
 **6. Canonical ownership drift.** The same fact stated differently in
-`org-brain/` and a domain `second-brain/`. A metric defined twice. Product
+two brains. A metric defined twice. Product
 intent drifting between a PRD and a decision record.
 → Reassert single ownership; replace the duplicate with a reference. Surface
 drift, never silently overwrite. `CLAUDE.md § Authority` sets who wins:

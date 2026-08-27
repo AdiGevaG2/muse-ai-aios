@@ -97,7 +97,7 @@ never present a guess as a fact.
   actions, complex sequencing, architecture disagreements.
 
 ## Diagrams
-STATUS: future — draw.io tooling (`tools/scripts/mermaid_to_drawio.py`) not yet
+STATUS: future — draw.io tooling (`scripts/mermaid_to_drawio.py`) not yet
 in repo. Rules below apply once it exists.
 - PM diagrams: editable, transparent draw.io SVG embedded inline in the Markdown.
 - Provenance comment above each: `<!-- diagram: {feature}-{name}.drawio.svg -->`.

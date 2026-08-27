@@ -13,9 +13,9 @@ has someone accountable for keeping it true.
 ## Org knowledge
 | Path | Owner | Notes |
 |---|---|---|
-| `org-brain/context/policies.md` | <compliance / security lead> | Governed. Human-owned, never LLM-maintained. |
-| `org-brain/context/systems.md` | <platform / eng lead> | Shared systems facts. |
-| `org-brain/glossary/`, `org-brain/decisions/` | <org owner> | Company-wide. |
+| `domains/unified-platform/second-brain/context/org-policies.md` | <compliance / security lead> | Governed. Human-owned, never LLM-maintained. |
+| `domains/unified-platform/second-brain/context/org-systems.md` | <platform / eng lead> | Shared systems facts. |
+| `domains/unified-platform/second-brain/glossary/`, `domains/unified-platform/second-brain/decisions/` | <org owner> | Company-wide. |
 
 ## Domain: unified-platform
 | Path | Owner | Notes |
@@ -25,7 +25,7 @@ has someone accountable for keeping it true.
 | `second-brain/context/platform.md` | <domain PM / eng> | Target + legacy systems. |
 | `second-brain/ingestion/` (wiki), `source/` | <domain PM> | LLM-maintained; PM curates. |
 | `second-brain/stakeholders/`, `hypotheses/` | <domain PM> | |
-| `features/` | <feature PM per feature> | Each feature's outputs owned by its PM. |
+| `outputs/` | <feature PM per feature> | Each feature's outputs owned by its PM. |
 | analytics / baseline outputs | <data scientist / analytics owner> | Metric definitions + queries. |
 
 ## Rules

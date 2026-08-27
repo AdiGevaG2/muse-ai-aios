@@ -13,7 +13,7 @@ hook_read_payload
 while IFS= read -r changed; do
   [[ -z "$changed" ]] && continue
   case "$changed" in
-    *outputs/*/prd/*.md|*features/*prd*.md|*features/*/prd.md|*features/*/prd/prd.md)
+    *outputs/*/prd/*.md)
       feature_dir="${changed%/prd*}"
       cat <<MSG
 PRD changed: $changed

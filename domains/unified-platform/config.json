@@ -3,7 +3,7 @@
   "domain": "unified-platform",
   "feature_defaults": {
     "naming": "kebab-case",
-    "outputs_root": "features/<feature-name>/"
+    "outputs_root": "outputs/<feature-name>/"
   },
   "voice": {
     "reference": "second-brain/writing-samples.md",

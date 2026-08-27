@@ -1,12 +1,12 @@
 # Second Brain — unified-platform (domain knowledge)
 
-Accumulated **domain-specific** knowledge. Agents read this AFTER `org-brain/`
+Accumulated knowledge for this domain. This is the single brain: agents read it
 (which holds company-wide knowledge), and it wins on conflict because it's more
 specific. Keep it current — stale context here silently corrupts every
 downstream artifact.
 
 **Only put domain-specific facts here.** Anything that applies across all
-domains (shared systems, org-wide policy) belongs in `org-brain/`, not here.
+domains (shared systems, org-wide policy) is prefixed `org-` in `context/`.
 
 ## Structure
 - `source/` — **immutable originals.** Ingested material copied untouched

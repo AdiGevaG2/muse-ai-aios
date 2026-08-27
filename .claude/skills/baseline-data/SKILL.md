@@ -17,7 +17,7 @@ measuring stick post-launch. Record them so re-measurement is a straight re-run.
   for a new feature workspace.
 - Read `config.json` → `tools` for project IDs, endpoints, and the customer-only
   default. Do not re-ask for what is already there.
-- Check `org-brain/context/policies.md` only for a specific unresolved question
+- Check `domains/unified-platform/second-brain/context/org-policies.md` only for a specific unresolved question
   about what may be queried or exported — not wholesale.
 
 ## Sources

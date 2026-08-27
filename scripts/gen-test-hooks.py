@@ -138,11 +138,11 @@ def notify(name, path, want):
                f'{{"file_path":"{path}"}}}}')
     return f"notify_check \"{name}\" '{payload}' {want}"
 
-A(notify("notify: features/f/prd.md", "domains/d/features/f/prd.md", "yes"))
-A(notify("notify: features/f/prd/prd.md (nested)", "domains/d/features/f/prd/prd.md", "yes"))
 A(notify("notify: outputs/f/prd/f-prd.md", "outputs/f/prd/f-prd.md", "yes"))
-A(notify("silent: features/f/spec.md", "domains/d/features/f/spec.md", "no"))
+A(notify("notify: outputs/f/prd/nested-prd.md", "outputs/f/prd/nested-prd.md", "yes"))
 A(notify("silent: outputs/f/spec/f-spec.md", "outputs/f/spec/f-spec.md", "no"))
+# domains/*/features/ is retired: outputs/ is the only feature path.
+A(notify("silent: retired domains/d/features/f/prd.md", "domains/d/features/f/prd.md", "no"))
 A('')
 A('echo')
 A('echo "provenance-guard - BLOCK (2) untagged evidence, PASS (0) tagged"')

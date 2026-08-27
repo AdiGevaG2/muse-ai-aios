@@ -35,7 +35,7 @@ truth for every agent — so learnings are PROPOSED and only written on approval
    - `eval-signal` — a real failure worth adding to a feature's eval set. Field
      failures are the highest-value eval cases there are; capture them while
      they are fresh rather than rediscovering them next release.
-2. **Scope each learning.** Org-wide -> `org-brain/`. Domain-specific ->
+2. **Scope each learning.** Org-wide -> `second-brain/context/org-*.md`. Domain-specific ->
    `domains/<domain>/second-brain/`. When unsure, default to domain (narrower).
 3. **Validate inferred learnings.** A "learning" is often an inference. Before it
    becomes brain ground truth, sanity-check it — optionally delegate to the

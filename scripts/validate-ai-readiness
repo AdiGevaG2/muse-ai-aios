@@ -31,7 +31,7 @@ is_stub() {
 # happens in the AI-feature check below, where an unanswered row actually
 # blocks something. Only a genuinely empty stub is a blocker.
 echo "=== Governance context (human-owned; fill a row when a decision needs it) ==="
-for f in org-brain/context/policies.md \
+for f in domains/unified-platform/second-brain/context/org-policies.md \
          domains/unified-platform/second-brain/context/compliance.md; do
   if [[ ! -f "$f" ]]; then
     B "$f missing"
@@ -95,7 +95,7 @@ fi
 echo
 echo "=== AI features: artifact completeness ==="
 found_ai=0
-for fdir in outputs/*/ domains/*/features/*/; do
+for fdir in outputs/*/; do
   [[ -d "$fdir" ]] || continue
   name="$(basename "$fdir")"
   [[ "$name" == "README.md" ]] && continue

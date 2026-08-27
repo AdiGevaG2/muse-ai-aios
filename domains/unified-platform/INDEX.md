@@ -5,12 +5,12 @@ the current task needs it.
 
 | Need | Read |
 |---|---|
-| Active feature work | `features/<feature-name>/README.md` |
-| AI accuracy bar and eval results | `features/<feature-name>/ai-eval.md` |
-| Measurement plan and event spec | `features/<feature-name>/analytics-plan.md` |
+| Active feature work | `../../outputs/<feature-name>/README.md` |
+| AI accuracy bar and eval results | `../../outputs/<feature-name>/ai-eval/` |
+| Measurement plan and event spec | `../../outputs/<feature-name>/analytics-plan/` |
 | Current-state figures pulled from tools | `outputs/<feature-name>/baseline/` |
-| What was published externally | `features/<feature-name>/publish/` |
-| Feature list | `features/` |
+| What was published externally | `../../outputs/<feature-name>/publish/` |
+| Feature list | `../../outputs/` |
 | Tool IDs and approval defaults | `config.json` |
 | Writing style | `second-brain/style-guide.md` |
 | Voice examples | `second-brain/writing-samples.md` |
@@ -24,8 +24,8 @@ the current task needs it.
 | Glossary | `second-brain/glossary/` |
 | Stakeholders | `second-brain/stakeholders/` |
 | Ingested source wiki | `second-brain/ingestion/index.md` |
-| Org systems | `../../../org-brain/context/systems.md` |
-| Org/company context | `../../../org-brain/context/company.md` |
+| Org systems | `context/org-systems.md` |
+| Org/company context | `context/org-company.md` |
 
 Indexes and repo maps route search. They are not evidence. Verify important
 implementation facts against source files.

@@ -7,16 +7,13 @@ Top-level map. This is a router, not a methodology warehouse.
 - `.claude/skills/` - the workflow skills: reverse-engineer, baseline-data,
   discovery, prd, spec, ai-eval, analytics-plan, validation, publish, plus the
   compounding loops ingest, retro, review.
-- `.claude/skills-archive/` - preserved optional/legacy skills, intentionally
-  not part of the default discoverable workflow.
 - `.claude/agents/` - isolated specialists for evidence-heavy work.
 - `.claude/hooks/` - mechanical guardrails.
 - `outputs/` - canonical workspace for new feature artifacts, grouped by stage.
 - `domains/<domain>/` - domain routers, context, decisions, and historical
   features.
-- `org-brain/` - org-wide context, loaded only when routed.
-- `scripts/` - deterministic validators.
-- `tools/scripts/` - diagram conversion (mermaid -> editable draw.io SVG).
+- `scripts/` - deterministic validators, plus diagram conversion
+  (mermaid -> editable draw.io SVG).
 
 Start feature work at `outputs/<feature-name>/README.md`. On a new requirement
 or standalone feature stage, follow `outputs/README.md` to initialize the

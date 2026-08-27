@@ -53,4 +53,4 @@ Create only approved items. Leave rejected ones flagged
 
 ## Output
 Record what was pushed (with IDs/links) and what was left diverged in
-`features/<feature>/prd/publish-log.md`.
+`outputs/<feature>/publish/publish-log.md`.

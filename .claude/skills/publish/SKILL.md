@@ -20,7 +20,7 @@ and skip the rest cleanly — the PM may want Confluence without touching Jira.
   first.
 - Require a current PRD (default `prd/<feature-name>-prd.md`; follow the README
   for historical features). Note its version.
-- Read `config.json` for space, project key, and hierarchy. Load org-brain
+- Read `config.json` for space, project key, and hierarchy. Load domain brain
   systems/policy only for a specific unresolved convention question — not
   wholesale.
 - Ask which of Confluence, Jira, or both the PM wants this run — do not assume

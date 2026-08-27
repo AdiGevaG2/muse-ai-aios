@@ -33,7 +33,7 @@ URL, or pasted material — ask if none given).
 
 ## Rules
 - **Governance boundary:** do NOT create wiki pages for compliance /
-  access-controlled policy. Those stay human-owned in `org-brain/` and
+  access-controlled policy. Those stay human-owned in `context/org-*.md` and
   `context/compliance.md`. The wiki is research knowledge only.
 - Compile, don't dump — synthesize in our own words; the raw stays in `source/`.
 - If the source conflicts with an existing page, surface the conflict with both

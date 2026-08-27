@@ -22,5 +22,5 @@ time. You rarely edit these by hand.
 
 ## Scope (important)
 This wiki is for domain RESEARCH knowledge. Governed facts — compliance,
-access-controlled policy — do NOT live here; they stay in `org-brain/` and
+access-controlled policy — do NOT live here; they stay in `context/org-*.md` and
 `context/compliance.md` as human-owned facts, not LLM-maintained pages.

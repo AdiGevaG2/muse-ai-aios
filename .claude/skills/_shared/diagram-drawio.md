@@ -6,7 +6,7 @@ actually being produced.
 Write the flow as a fenced ` ```mermaid ` block, then run:
 
 ```bash
-python3 tools/scripts/mermaid_to_drawio.py <path-to-artifact.md>
+python3 scripts/mermaid_to_drawio.py <path-to-artifact.md>
 ```
 
 It replaces the mermaid block **in place** with inline `<svg>` markup, preceded
