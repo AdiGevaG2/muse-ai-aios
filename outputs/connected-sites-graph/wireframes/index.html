@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connected Sites — Findings Triage (wireframer skill)</title>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/wired-elements?module"></script>
+<style>
+  html { font-size: 18px; }
+  body {
+    margin: 0; font-size: 18px;
+    font-family: 'Patrick Hand', cursive;
+    color: #333;
+    background-color: #fff;
+    background-image: radial-gradient(#d7d7d7 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  .text-xs   { font-size: 14px; line-height: 1.4; }
+  .text-sm   { font-size: 18px; line-height: 1.5; }
+  .text-base { font-size: 22px; line-height: 1.5; }
+  .text-md   { font-size: 28px; line-height: 1.3; }
+  .text-lg   { font-size: 35px; line-height: 1.2; }
+
+  .sketch {
+    border: 2px solid #333;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    background: white;
+  }
+  .btn-primary, .btn-secondary {
+    border: 2px solid #333;
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    font-family: 'Patrick Hand', cursive; font-size: 18px;
+    padding: 10px 22px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary { background: #333; color: white; }
+  .btn-secondary { background: white; color: #333; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 24px 20px 60px; }
+  .app { padding: 0; overflow: hidden; }
+  .topbar {
+    display: flex; align-items: center; gap: 16px;
+    padding: 14px 22px; border-bottom: 2px solid #333;
+  }
+  .logo { border: 2px solid #333; padding: 2px 10px; font-size: 20px; letter-spacing: 1px; }
+  .topbar .spacer { flex: 1; }
+  .crumb { color: #777; }
+
+  .body { display: flex; min-height: 620px; }
+  .side { width: 210px; border-right: 2px solid #333; padding: 18px 14px; }
+  .side .navitem {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 10px; margin-bottom: 4px; color: #333;
+    text-decoration: none; border-radius: 8px;
+  }
+  .side .navitem.active { background: #f0f0f0; border: 2px solid #333; }
+  .main { flex: 1; padding: 20px 24px; }
+
+  .screen { display: none; }
+  .screen.active { display: block; }
+
+  .head { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 6px; }
+  .head h1 { margin: 0; font-weight: normal; }
+  .sub { color: #777; margin: 0 0 18px; }
+
+  .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    text-align: left; font-weight: normal; color: #666;
+    border-bottom: 2px solid #333; padding: 8px 10px; font-size: 14px;
+    text-transform: uppercase; letter-spacing: .5px;
+  }
+  tbody td { padding: 12px 10px; border-bottom: 1.5px dashed #c9c9c9; vertical-align: middle; }
+  tbody tr:hover { background: #fafafa; cursor: pointer; }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 2px solid #333; border-radius: 20px;
+    padding: 1px 12px; font-size: 14px; background: white;
+  }
+  .chip.connected { border-style: dashed; color: #555; }
+  .dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; border: 1.5px solid #333; }
+  .d-high { background: #b9b9b9; }
+  .d-med  { background: #dcdcdc; }
+  .d-low  { background: #fff; }
+  .new { font-size: 14px; border: 2px solid #333; border-radius: 20px; padding: 0 9px; background: #ececec; }
+
+  .url { display: flex; align-items: center; gap: 9px; }
+  .muted { color: #888; }
+  .rowactions { display: flex; gap: 6px; justify-content: flex-end; }
+
+  .panelgrid { display: grid; grid-template-columns: 1fr 320px; gap: 20px; align-items: start; }
+  .panel { padding: 16px 18px; }
+  .panel h3 { margin: 0 0 12px; font-size: 22px; font-weight: normal; }
+  .kv { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1.5px dashed #d5d5d5; font-size: 18px; }
+  .kv:last-child { border-bottom: 0; }
+  .kv span:first-child { color: #777; }
+
+  .finding { padding: 14px 16px; margin-bottom: 12px; }
+  .finding .fhead { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .finding .fhead .t { flex: 1; font-size: 22px; }
+  .fmeta { color: #888; font-size: 14px; margin-bottom: 10px; }
+  .factions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .path { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 14px; }
+  .node { border: 2px solid #333; border-radius: 8px; padding: 2px 9px; background: white; }
+  .node.self { background: #333; color: white; }
+
+  .ph { height: 11px; background: #dedede; border-radius: 6px; margin: 6px 0; }
+  .ph.s { width: 55%; } .ph.m { width: 78%; }
+
+  .legend { margin-top: 18px; font-size: 14px; color: #777; display: flex; gap: 18px; flex-wrap: wrap; }
+  .note { margin-top: 26px; padding: 14px 18px; font-size: 18px; }
+  .note b { font-weight: normal; border-bottom: 2px solid #333; }
+  svg.ic { flex: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="app sketch">
+
+    <!-- top bar -->
+    <div class="topbar">
+      <div class="logo">UP</div>
+      <div class="crumb text-sm">Merchants &nbsp;›&nbsp; Nordic Home Goods &nbsp;›&nbsp; Sites</div>
+      <div class="spacer"></div>
+      <svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <path d="M18 8.2c0-3.4-2.7-6.1-6-6.1S6 4.8 6 8.2c0 7-2.5 9-2.5 9h17S18 15.2 18 8.2"/>
+        <path d="M13.7 21.3c-.9 1-2.5 1-3.4 0"/>
+      </svg>
+      <span class="chip">AG</span>
+    </div>
+
+    <div class="body">
+
+      <!-- sidebar -->
+      <div class="side">
+        <a class="navitem text-sm" href="#" onclick="return false">
+          <svg class="ic" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3.2 11.4 12 3.6l8.8 7.8"/><path d="M5.4 12.6v7.6h13.2v-7.6"/></svg>
+          Overview
+        </a>
+        <a class="navitem text-sm active" href="#" onclick="return false">
+          <svg class="ic" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8M12 3.5c4.6 5 4.6 12 0 17-4.6-5-4.6-12 0-17"/></svg>
+          Sites
+        </a>
+        <a class="navitem text-sm" href="#" onclick="return false">
+          <svg class="ic" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4.3 5.6h15.4M4.3 12h15.4M4.3 18.4h9.6"/></svg>
+          Findings
+        </a>
+        <a class="navitem text-sm" href="#" onclick="return false">
+          <svg class="ic" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8.4" r="3.6"/><path d="M5 20c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>
+          Analysts
+        </a>
+        <a class="navitem text-sm" href="#" onclick="return false">
+          <svg class="ic" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.6v3M12 18.4v3M21.4 12h-3M5.6 12h-3M18.6 5.4l-2.1 2.1M7.5 16.5l-2.1 2.1M18.6 18.6l-2.1-2.1M7.5 7.5 5.4 5.4"/></svg>
+          Settings
+        </a>
+      </div>
+
+      <div class="main">
+
+        <!-- ================= SCREEN 1: LIST ================= -->
+        <div class="screen active" id="screen-list">
+
+          <div class="head">
+            <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8M12 3.5c4.6 5 4.6 12 0 17-4.6-5-4.6-12 0-17"/></svg>
+            <div>
+              <h1 class="text-lg">Sites &amp; Findings</h1>
+            </div>
+          </div>
+          <p class="sub text-sm">14 URLs under this merchant · 4 reported, 10 connected · 6 with open findings</p>
+
+          <div class="toolbar">
+            <wired-search-input placeholder="Filter URLs"></wired-search-input>
+            <wired-select selected="all" style="width:180px">
+              <wired-item value="all">All URL types</wired-item>
+              <wired-item value="reported">Reported only</wired-item>
+              <wired-item value="connected">Connected only</wired-item>
+            </wired-select>
+            <wired-select selected="open" style="width:180px">
+              <wired-item value="open">Open findings</wired-item>
+              <wired-item value="any">Any status</wired-item>
+              <wired-item value="snoozed">Snoozed</wired-item>
+            </wired-select>
+            <span style="flex:1"></span>
+            <button class="btn-secondary">
+              <svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3.4v11.4M7.6 10.6 12 15l4.4-4.4M4.4 19.4h15.2"/></svg>
+              Export
+            </button>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th style="width:34%">URL</th>
+                <th>Type</th>
+                <th>Findings</th>
+                <th>Top severity</th>
+                <th>Owner</th>
+                <th>Status</th>
+                <th style="text-align:right">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr onclick="go('screen-detail')">
+                <td>
+                  <div class="url">
+                    <svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8"/></svg>
+                    nordichomegoods.com
+                  </div>
+                </td>
+                <td><span class="chip">Reported</span></td>
+                <td>3 <span class="new">2 new</span></td>
+                <td><span class="dot d-high"></span> High</td>
+                <td>A. Geva</td>
+                <td>In review</td>
+                <td class="rowactions"><span class="muted text-xs">⋯</span></td>
+              </tr>
+
+              <tr onclick="go('screen-detail')">
+                <td>
+                  <div class="url">
+                    <svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 2"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8"/></svg>
+                    nordic-outlet-deals.net
+                  </div>
+                </td>
+                <td><span class="chip connected">Connected</span></td>
+                <td>5 <span class="new">3 new</span></td>
+                <td><span class="dot d-high"></span> High</td>
+                <td class="muted">Unassigned</td>
+                <td class="muted">New</td>
+                <td class="rowactions"><span class="muted text-xs">⋯</span></td>
+              </tr>
+
+              <tr onclick="go('screen-detail')">
+                <td><div class="url"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 2"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8"/></svg> nhg-clearance.shop</div></td>
+                <td><span class="chip connected">Connected</span></td>
+                <td>2</td>
+                <td><span class="dot d-med"></span> Medium</td>
+                <td>J. Rowe</td>
+                <td>Snoozed 7d</td>
+                <td class="rowactions"><span class="muted text-xs">⋯</span></td>
+              </tr>
+
+              <tr onclick="go('screen-detail')">
+                <td><div class="url"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8"/></svg> shop.nordichomegoods.com</div></td>
+                <td><span class="chip">Reported</span></td>
+                <td>1</td>
+                <td><span class="dot d-low"></span> Low</td>
+                <td>A. Geva</td>
+                <td>Cleared</td>
+                <td class="rowactions"><span class="muted text-xs">⋯</span></td>
+              </tr>
+
+              <tr onclick="go('screen-detail')">
+                <td><div class="url"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 2"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8"/></svg> vividstream-checkout.io</div></td>
+                <td><span class="chip connected">Connected</span></td>
+                <td>4 <span class="new">1 new</span></td>
+                <td><span class="dot d-med"></span> Medium</td>
+                <td class="muted">Unassigned</td>
+                <td class="muted">New</td>
+                <td class="rowactions"><span class="muted text-xs">⋯</span></td>
+              </tr>
+
+              <tr onclick="go('screen-detail')">
+                <td><div class="url"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 2"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8"/></svg> apexgaming-pay.co</div></td>
+                <td><span class="chip connected">Connected</span></td>
+                <td>1</td>
+                <td><span class="dot d-low"></span> Low</td>
+                <td>M. Haddad</td>
+                <td>Disputed</td>
+                <td class="rowactions"><span class="muted text-xs">⋯</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="legend">
+            <span><span class="chip">Reported</span> customer-supplied URL</span>
+            <span><span class="chip connected">Connected</span> discovered by crawler</span>
+            <span><span class="dot d-high"></span> severity uses the reported/connected scale</span>
+          </div>
+
+          <div class="note sketch">
+            <b>What this wireframe is testing</b> — whether a collapsed row carries enough
+            signal (type, count, new-finding marker, top severity, owner, status) that an
+            analyst can pick the next URL without expanding anything. Click any row to see
+            the URL-level triage surface.
+          </div>
+        </div>
+
+        <!-- ================= SCREEN 2: DETAIL ================= -->
+        <div class="screen" id="screen-detail">
+
+          <div class="toolbar" style="margin-bottom:14px">
+            <button class="btn-secondary" onclick="go('screen-list')">
+              <svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M19.4 12H4.6M10.4 6.2 4.6 12l5.8 5.8"/></svg>
+              Back to sites
+            </button>
+          </div>
+
+          <div class="head">
+            <svg class="ic" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 2"><circle cx="12" cy="12" r="8.6"/><path d="M3.6 12h16.8"/></svg>
+            <div>
+              <h1 class="text-lg">nordic-outlet-deals.net</h1>
+            </div>
+            <span class="chip connected" style="margin-top:10px">Connected</span>
+          </div>
+          <p class="sub text-sm">5 findings · 3 new since last review · discovered 2026-08-24</p>
+
+          <!-- URL-LEVEL ACTIONS -->
+          <div class="toolbar">
+            <button class="btn-primary">
+              <svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8.4" r="3.4"/><path d="M5 20c0-3.5 3.1-5.5 7-5.5s7 2 7 5.5"/></svg>
+              Assign owner
+            </button>
+            <wired-select selected="new" style="width:190px">
+              <wired-item value="new">Status: New</wired-item>
+              <wired-item value="review">In review</wired-item>
+              <wired-item value="cleared">Cleared</wired-item>
+              <wired-item value="escalated">Escalated</wired-item>
+            </wired-select>
+            <button class="btn-secondary">
+              <svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3.4v11.4M7.6 10.6 12 15l4.4-4.4M4.4 19.4h15.2"/></svg>
+              Download URL report
+            </button>
+          </div>
+
+          <div class="panelgrid">
+
+            <!-- findings -->
+            <div>
+              <h3 class="text-md" style="font-weight:normal;margin:8px 0 12px">Findings</h3>
+
+              <div class="finding sketch">
+                <div class="fhead">
+                  <span class="dot d-high"></span>
+                  <span class="t">Prohibited product listing — replica goods</span>
+                  <span class="new">New</span>
+                </div>
+                <div class="fmeta">Rule R-114 · last matched 2026-08-30 · confidence high</div>
+                <div class="factions">
+                  <button class="btn-secondary" style="padding:6px 14px;font-size:14px">Review evidence</button>
+                  <wired-select selected="open" style="width:150px">
+                    <wired-item value="open">Open</wired-item>
+                    <wired-item value="confirmed">Confirmed</wired-item>
+                    <wired-item value="false">False positive</wired-item>
+                  </wired-select>
+                  <button class="btn-secondary" style="padding:6px 14px;font-size:14px">Snooze</button>
+                  <button class="btn-secondary" style="padding:6px 14px;font-size:14px">Dispute</button>
+                  <button class="btn-secondary" style="padding:6px 14px;font-size:14px">Add note</button>
+                  <button class="btn-secondary" style="padding:6px 14px;font-size:14px">History</button>
+                </div>
+              </div>
+
+              <div class="finding sketch">
+                <div class="fhead">
+                  <span class="dot d-high"></span>
+                  <span class="t">Undisclosed payment processor detected</span>
+                  <span class="new">New</span>
+                </div>
+                <div class="fmeta">Rule R-208 · last matched 2026-08-29 · confidence medium</div>
+                <div class="factions">
+                  <button class="btn-secondary" style="padding:6px 14px;font-size:14px">Review evidence</button>
+                  <wired-select selected="open" style="width:150px">
+                    <wired-item value="open">Open</wired-item>
+                    <wired-item value="confirmed">Confirmed</wired-item>
+                    <wired-item value="false">False positive</wired-item>
+                  </wired-select>
+                  <button class="btn-secondary" style="padding:6px 14px;font-size:14px">Snooze</button>
+                  <button class="btn-secondary" style="padding:6px 14px;font-size:14px">Dispute</button>
+                </div>
+              </div>
+
+              <div class="finding sketch">
+                <div class="fhead">
+                  <span class="dot d-med"></span>
+                  <span class="t">Missing refund policy</span>
+                </div>
+                <div class="fmeta">Rule R-051 · last matched 2026-08-24 · confidence high</div>
+                <div class="ph m"></div>
+                <div class="ph s"></div>
+              </div>
+
+              <div class="finding sketch" style="opacity:.7">
+                <div class="fhead">
+                  <span class="dot d-low"></span>
+                  <span class="t">Contact page incomplete</span>
+                  <span class="chip">Snoozed 7d</span>
+                </div>
+                <div class="fmeta">Rule R-019 · snoozed by J. Rowe on 2026-08-27</div>
+              </div>
+            </div>
+
+            <!-- why connected -->
+            <div>
+              <div class="panel sketch">
+                <h3>Why this is connected</h3>
+                <div class="kv"><span>Discovered via</span><span>Shared analytics ID</span></div>
+                <div class="kv"><span>Depth</span><span>2 hops</span></div>
+                <div class="kv"><span>Nodes in path</span><span>3</span></div>
+                <div class="kv"><span>Connection score</span><span>0.82</span></div>
+                <div class="kv"><span>First seen</span><span>2026-08-24</span></div>
+
+                <div style="margin-top:14px" class="muted text-xs">Connection path</div>
+                <div class="path" style="margin-top:8px">
+                  <span class="node self">nordichomegoods.com</span>
+                  <span>→</span>
+                  <span class="node">GA-4471…</span>
+                  <span>→</span>
+                  <span class="node">nordic-outlet-deals.net</span>
+                </div>
+              </div>
+
+              <div class="panel sketch" style="margin-top:16px">
+                <h3>Activity</h3>
+                <div class="kv"><span>Crawled</span><span>2026-08-30</span></div>
+                <div class="kv"><span>Findings added</span><span>3</span></div>
+                <div class="kv"><span>Last analyst action</span><span class="muted">None</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="note sketch">
+            <b>What this wireframe is testing</b> — that a connected URL gets the same
+            URL-level and finding-level action set as a reported one, and that
+            "why is this connected" is answerable on the page rather than requiring a
+            separate graph view.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <p class="text-xs muted" style="text-align:center;margin-top:22px">
+    Built with the <b>wireframer</b> skill · wired-elements + Patrick Hand + graph-paper ground · synthetic merchants
+  </p>
+</div>
+
+<script>
+  function go(id) {
+    document.querySelectorAll('.screen').forEach(function (s) { s.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
