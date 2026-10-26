@@ -15,9 +15,17 @@ Create or amend a PRD from approved discovery or explicit PM direction.
 3. Existing PRD only when amending.
 4. `references/prd-template.md`.
 
+5. `../_shared/brain-grounding.md`, and the brain files it routes you to.
+
 README links are routing candidates, not required reads. Do not load `INDEX.md`,
-`config.json`, style guides, samples, corrections, brains, repos, analytics,
-designs, integrations, or agents unless the source exposes a gap.
+`config.json`, style guides, samples, corrections, repos, analytics, designs,
+integrations, or agents unless the source exposes a gap.
+
+## Ground in the brains (before drafting)
+Run `../_shared/brain-grounding.md`. Required. Discovery's brain reads carry
+forward — re-read only the feature note, hypotheses, and decisions, plus
+anything the PRD asserts that discovery did not. Requirements use glossary
+terms. Cite the brain files behind any requirement's rationale.
 
 ## Interrogate the business logic (before drafting)
 Work `../_shared/business-interrogation.md` silently. Carry forward what
@@ -32,10 +40,19 @@ missing its rationale or does not belong in the PRD — surface which.
 - Preserve every template section and order. Mark N/A sections `N/A - [reason]`.
 - Direct, concise, verdict first. No hype or invented precision.
 - Keep product behavior in the PRD, not implementation or Figma detail.
+- Prototype section: when `outputs/<feature-name>/prototype/` holds a
+  prototype, add an `Open prototype` link and one captioned screenshot per
+  screen, captured from the prototype per `../_shared/prototype-screenshots.md`.
 - AC as Gherkin: happy paths, failures, permissions, stale/conflicting state,
   empty data, boundaries.
 - Use `Unknown` or `TBD` for missing evidence. Do not invent owners, dates,
   metrics, targets, behavior, or decisions.
+- **Open or unclear items live only in the Open Questions section.** Never
+  mention them in the body: no "is open", "not confirmed", "see Open
+  Questions", or hedged current-state notes in goals, requirements, behavior,
+  or acceptance criteria. The body states only decided behavior. Write the
+  open item once at the bottom as an action, e.g. "Check with Core the current
+  implementation and future plans for X."
 - Stamp version `vN`. Intent changes flow through the PRD first.
 - Surface source conflicts for PM arbitration.
 

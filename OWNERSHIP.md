@@ -18,15 +18,18 @@ has someone accountable for keeping it true.
 | `org-brain/glossary/`, `org-brain/decisions/` | <org owner> | Company-wide. |
 | `org-brain/ingestion/`, `org-brain/source/` | <org owner> | LLM-maintained org wiki. `/ingest` confirms before writing here. |
 
-## Domain: unified-platform
+## Domain: atlas
+Domain PM: **Adi Geva** (Senior PM, UP). Peer PM: **Alla Avgustinov**. Design:
+**Dana Friedman**. See `domains/atlas/second-brain/stakeholders/`.
+
 | Path | Owner | Notes |
 |---|---|---|
-| `domains/unified-platform/CLAUDE.md` + `config.json` | <domain PM — you> | Domain index + setup. |
+| `domains/atlas/CLAUDE.md` + `config.json` | Adi Geva | Domain index + setup. |
 | `second-brain/context/compliance.md` | <compliance lead> | Governed, human-owned. |
-| `second-brain/context/platform.md` | <domain PM / eng> | Target + legacy systems. |
-| `second-brain/ingestion/` (wiki), `source/` | <domain PM> | LLM-maintained; PM curates. |
-| `second-brain/stakeholders/`, `hypotheses/` | <domain PM> | |
-| `outputs/` | <feature PM per feature> | Each feature's outputs owned by its PM. |
+| `second-brain/context/platform.md` | Adi Geva | Target + legacy systems. |
+| `second-brain/ingestion/` (wiki), `source/` | Adi Geva | LLM-maintained; PM curates. |
+| `second-brain/stakeholders/`, `hypotheses/` | Adi Geva | |
+| `outputs/` | Adi Geva or Alla Avgustinov, per feature | Each feature's outputs owned by its PM. PM↔product-area split is TODO. |
 | analytics / baseline outputs | <data scientist / analytics owner> | Metric definitions + queries. |
 
 ## Rules

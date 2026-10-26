@@ -24,6 +24,10 @@ UX/state, implementation feasibility, or significant risk. Do not expand the
 delta beyond the rules you were given — matching the source spec's scope is
 correct, not a shortfall.
 
+**Return at most ~2,000 tokens.** Read as much target-side code as the
+classification requires — that cost stays in your context, not the parent's — but
+return the classified delta and the inherited gaps, never the investigation.
+
 ## Propagate the evidence gaps (mandatory)
 Your delta is only as complete as the legacy spec you were given. Read its
 evidence gaps. Carry each one forward explicitly: "Delta is incomplete for
@@ -37,6 +41,12 @@ that looks complete.
   for legacy-analyzer, do not fabricate a rule.
 - `New` items still need a source on the target side (where the requirement comes
   from), same traceability standard.
+- Never classify a rule as `Drop` or "genuinely missing" from a target repo you
+  were not told is the complete target codebase. You were given specific
+  repos/paths to search — a capability absent from those is absent **from what
+  you searched**, not from the platform. State exactly which repos you searched
+  next to any "not found" claim, so the parent can tell a real gap from an
+  unsearched repo.
 - End by restating the inherited evidence gaps so the completeness caveat is the
   last thing the reader sees.
 - Do not write files.

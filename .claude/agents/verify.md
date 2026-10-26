@@ -39,6 +39,10 @@ prose.
   is itself the signal.
 
 ## Output
+**Return at most ~2,000 tokens.** Re-derive as widely as the three checks
+require — that cost stays in your context, not the parent's — but return the
+verdicts and open items, never the re-derivation.
+
 A verdict per check, the current open-items list (with counts), and an explicit
 "resolved / escalate to human" tag on each remaining disagreement. State whether
 the loop should continue or has terminated.

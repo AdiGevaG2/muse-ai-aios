@@ -26,6 +26,12 @@ does not need one — say so rather than producing a plan nobody reads.
   customer-only default.
 - Do not load org/domain brains wholesale.
 
+## Ground in the brains (before drafting)
+Run `../_shared/brain-grounding.md`. Required. The high-value reads here are the
+feature note (prior baselines and known measurement traps), hypotheses (what the
+plan needs to be able to confirm or kill), and the glossary (event and property
+names match the domain's terms). Cite the files you used.
+
 ## Sense-check the measurement logic (before drafting)
 Apply the common-sense pass from `../_shared/business-interrogation.md`
 (pass 1, items 7–8) to the metrics: would the proposed events actually detect
@@ -65,9 +71,13 @@ For historical features, follow the artifact path in the feature README.
 If no durable artifact is needed, return the plan summary in chat.
 
 ## Stop conditions
-- Stop and ask when the success metric was never defined in the PRD — do not
-  invent one here; route back to `/prd`.
-- Stop on product ambiguity about what counts as success.
+- When the success metric was never defined in the PRD, do not invent one and do
+  not stop to ask. Draft the plan against the most reasonable reading of the
+  PRD's stated outcome, mark it `ASSUMED:`, and note in the closing report that
+  the metric belongs in the PRD — route it back to `/prd` as a recommendation,
+  not a blocking question.
+- On product ambiguity about what counts as success: take the most likely
+  reading, plan against it, and record the ambiguity as an open item.
 - Do not rewrite the PRD or spec; propose amendments.
 - External writes (creating dashboards, editing tracking plans) require
   explicit scoped approval.

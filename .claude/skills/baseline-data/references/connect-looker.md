@@ -57,7 +57,7 @@ OAuth flow does not need it.
 ## 4. Verify and record readiness
 
 Back in Claude Code, ask for a real read — listing LookML models is enough.
-Then update `domains/unified-platform/config.json`:
+Then update `domains/atlas/config.json`:
 
 ```json
 "looker": {

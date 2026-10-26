@@ -32,6 +32,12 @@ enables.
 
 - [Goal]
 
+**Why we need it:** [the problem this solves for the business]
+
+**Value for the client:** [what the client's user can do or see that they cannot today]
+
+**Why now:** [the trigger, such as a client requirement, migration, or deadline; if unknown, list it in Open Questions]
+
 ## Assumptions
 
 - [Assumption and validation need]
@@ -113,7 +119,23 @@ Then [the system handles it safely and shows a clear recovery path]
 | --- | --- | --- | --- |
 | [Action] | [Role] | [Allowed / Denied] | [Notes] |
 
+## Prototype
+
+[Open prototype]([hosted link])
+
+**1. [Screen and state]**
+
+![1. Screen and state](../prototype/screenshots/01-[screen].png)
+
+[One captioned screenshot per screen, in flow order, left-aligned under its numbered caption. `N/A - no prototype` if the feature has none. See `.claude/skills/_shared/prototype-screenshots.md`.]
+
 ## UX and Product Behavior
+
+### Prerequisites
+
+- [Condition that must hold before the flow starts. Write "None" if nothing gates the flow.]
+
+### Requirements
 
 | Area | Requirement |
 | --- | --- |

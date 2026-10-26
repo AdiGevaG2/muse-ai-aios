@@ -1,0 +1,3733 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Atlas API",
+    "description": "The Atlas API connects your merchant systems to G2 Atlas. Merchants you add are screened by G2 before you approve them and monitored by G2 after, and your systems receive the results and record your decisions, without file uploads or work in the Atlas screens.\n\n**What you can do**\n\n- **Screen new merchants.** Add a merchant to Onboarding, one at a time or up to 100 in one request, and approve or reject it once G2 has reviewed its websites.\n- **Monitor approved merchants.** Add merchants to Monitoring the same way. G2 rescans them on your portfolio's cadence for each service (CC, MCC, GRAPH). Add a merchant to the monitoring cycle or remove it at any time.\n- **Track your merchants.** Get a merchant by its id, or list merchants by bulk request, portfolio, status or date range, so your records match Atlas.\n- **Act on what G2 finds.** List a merchant's findings and mark them as risk or no risk. Approve, reject or terminate the merchant. A terminated merchant cannot be reinstated.\n- **Keep merchant details current.** Update one merchant or up to 100 at once; only the fields you send change.\n- **Share the outcome.** Download a merchant's Merchant Summary report, a PDF of its identity, risk and findings with evidence, once it has been requested in Atlas.\n\n**How it works**\n\nA merchant belongs to one portfolio. In a bulk request, each merchant is saved or rejected on its own: the response lists the result for every merchant and a bulkId to retrieve them later. Every endpoint needs an OAuth 2.0 client-credentials token.\n\n**Request id.** Every response carries an `X-Request-Id` header. Quote it when contacting support.\n\n**Timeouts.** Set the client timeout to at least 60 seconds; bulk requests and merchants with many stores take longer.\n\n**Rate limits.** Requests over the limit get 429. Retry with exponential backoff.\n\n**Retries.** 502 and 503 are safe to retry for reads. Retrying a merchant create that succeeded returns 409 MERCHANT_ALREADY_EXISTS.\n",
+    "version": "1.2.0"
+  },
+  "servers": [
+    {
+      "url": "/mlrc-external-api",
+      "description": "API server, relative to the host this document was served from"
+    }
+  ],
+  "security": [
+    {
+      "oauth2": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Portfolios",
+      "description": "Your portfolios, their products and the scan cadence of each service"
+    },
+    {
+      "name": "Merchants",
+      "description": "Add merchants to Onboarding or Monitoring, one at a time or up to 100, update and find them, and set their review and monitoring status"
+    },
+    {
+      "name": "Findings",
+      "description": "What scans found on a merchant's stores, and your review decision on them"
+    },
+    {
+      "name": "Reports",
+      "description": "Merchant Summary reports requested in Atlas"
+    }
+  ],
+  "paths": {
+    "/api/v1/portfolios": {
+      "get": {
+        "tags": [
+          "Portfolios"
+        ],
+        "summary": "List portfolios",
+        "description": "Returns every portfolio in your account with its products. Call it once to get the portfolioId values other endpoints need.",
+        "operationId": "listPortfolios",
+        "responses": {
+          "200": {
+            "description": "Portfolios retrieved",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "Response containing a list of items.",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "description": "All items in the list",
+                      "items": {
+                        "$ref": "#/components/schemas/Portfolio"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ]
+      }
+    },
+    "/api/v1/portfolios/{portfolioId}": {
+      "get": {
+        "tags": [
+          "Portfolios"
+        ],
+        "summary": "Get a portfolio",
+        "description": "Returns one portfolio by id, with each product's scan cadence per service. Use it to check a single portfolio's settings when your account has many. To add a merchant to or remove it from the monitoring cycle, set monitoringStatus to ACTIVE or PAUSED with PATCH /api/v1/portfolios/{portfolioId}/merchants/{merchantId}.",
+        "operationId": "getPortfolio",
+        "parameters": [
+          {
+            "name": "portfolioId",
+            "in": "path",
+            "description": "Portfolio ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Portfolio retrieved",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Portfolio"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Portfolio not found",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A path or query parameter is not valid",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ]
+      }
+    },
+    "/api/v1/merchants": {
+      "get": {
+        "tags": [
+          "Merchants"
+        ],
+        "summary": "List merchants",
+        "description": "Returns a page of merchants. Omit the filters to list all merchants in your account. clientMerchantKey matches exactly and case-sensitively; URL-encode the value. portfolioId restricts results to merchants in that portfolio. When both filters are sent, both must match. items is empty when no merchants match. Omit cursor for the first page; pass nextCursor unchanged with the same filters and size to fetch the next page. When nextCursor is absent, there are no more results.",
+        "operationId": "listMerchants",
+        "parameters": [
+          {
+            "name": "clientMerchantKey",
+            "in": "query",
+            "description": "Your clientMerchantKey, matched exactly and case-sensitively",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "portfolioId",
+            "in": "query",
+            "description": "Filter by portfolio ID",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          },
+          {
+            "name": "bulkId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            },
+            "description": "Return the merchants created by this bulk request"
+          },
+          {
+            "name": "merchantStatus",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "TO_REVIEW",
+                "APPROVED",
+                "REJECTED",
+                "IN_PROCESS",
+                "TERMINATED"
+              ]
+            },
+            "description": "Return merchants with this status in any portfolio, or in portfolioId when set"
+          },
+          {
+            "name": "monitoringStatus",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ACTIVE",
+                "PAUSED"
+              ]
+            },
+            "description": "Return merchants with this monitoring status in any portfolio, or in portfolioId when set"
+          },
+          {
+            "name": "createdFrom",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Return merchants created at or after this time"
+          },
+          {
+            "name": "createdTo",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "description": "Return merchants created before this time"
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "Opaque nextCursor from the previous response; omit for the first page",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Page size",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 20,
+              "maximum": 100,
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Page of matching merchants",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MerchantPage"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid filter or pagination parameters",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ]
+      }
+    },
+    "/api/v1/merchants/{merchantId}": {
+      "get": {
+        "tags": [
+          "Merchants"
+        ],
+        "summary": "Get a merchant",
+        "description": "Returns the merchant's profile with its review and monitoring status. Use it to check a merchant's current state before acting on it.",
+        "operationId": "getMerchant",
+        "parameters": [
+          {
+            "name": "merchantId",
+            "in": "path",
+            "description": "Merchant ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Merchant retrieved",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Merchant"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Merchant not found",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A path or query parameter is not valid",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Merchants"
+        ],
+        "summary": "Update a merchant's details",
+        "description": "Changes only the fields you send. A null or absent field is left unchanged. An empty list clears a profile list. An empty string clears a text field. legalName cannot be cleared. clientMerchantKey cannot be changed. To add stores, use POST /api/v1/merchants/{merchantId}/stores.",
+        "operationId": "updateMerchant",
+        "parameters": [
+          {
+            "name": "merchantId",
+            "in": "path",
+            "description": "Merchant ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Update a merchant's details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMerchantRequest"
+              },
+              "example": {
+                "dbas": [
+                  "Acme Flowers",
+                  "Acme Weddings"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Merchant updated successfully",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Merchant"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error, or the request tries to change clientMerchantKey",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Merchant not found",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ]
+      }
+    },
+    "/api/v1/merchants/bulk": {
+      "patch": {
+        "tags": [
+          "Merchants"
+        ],
+        "summary": "Update up to 100 merchants' details",
+        "description": "Partially updates up to 100 merchants in one request, with the rules of PATCH /api/v1/merchants/{merchantId}. Each merchant is updated or rejected on its own; the response lists a result per merchant.",
+        "operationId": "bulkUpdateMerchants",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkUpdateMerchantsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Request processed; see status and results",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error, or the request tries to change clientMerchantKey",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ]
+      }
+    },
+    "/api/v1/portfolios/{portfolioId}/onboarding/merchants": {
+      "post": {
+        "tags": [
+          "Merchants"
+        ],
+        "summary": "Add a merchant to Onboarding",
+        "description": "Creates a merchant with its stores in the portfolio in the path. The portfolio must have the ONBOARDING product; otherwise the request fails with 422 and nothing is saved. Create each merchant once; to change an existing merchant, update it instead. A create is all or nothing: if any store cannot be added, nothing is saved and the request fails with 422.",
+        "operationId": "addOnboardingMerchant",
+        "requestBody": {
+          "description": "Create a merchant",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMerchantRequest"
+              },
+              "example": {
+                "legalName": "Acme Corporation",
+                "clientMerchantKey": "BUS123456",
+                "stores": [
+                  {
+                    "url": "https://store.example.com"
+                  }
+                ],
+                "mccs": [
+                  5992
+                ],
+                "mids": [
+                  "MID123456"
+                ],
+                "dbas": [
+                  "Acme Flowers"
+                ],
+                "productsServicesDescription": "Flowers sales and delivery",
+                "mastercardIca": "123456",
+                "visaBin": "654321",
+                "billingDescriptor": "ACME*FLOWERS",
+                "contacts": [
+                  {
+                    "contactInfoType": "BUSINESS",
+                    "name": "Acme Corporation",
+                    "phone": {
+                      "number": "+14155550123"
+                    },
+                    "email": {
+                      "address": "compliance@acme.example.com"
+                    },
+                    "address": {
+                      "line1": "123 Main St",
+                      "line2": "Suite 400",
+                      "city": "New York",
+                      "state": "NY",
+                      "country": "US",
+                      "postalCode": "10001"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Merchant created successfully",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              },
+              "Location": {
+                "description": "URI of the created resource",
+                "schema": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateMerchantResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request data",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A store could not be added. Nothing is saved; detail says which store. Fix or remove that store and send the create again.",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                },
+                "example": {
+                  "title": "Unprocessable Entity",
+                  "status": 422,
+                  "detail": "The request is valid but could not be carried out",
+                  "instance": "/api/v1/merchants"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "A merchant with this clientMerchantKey already exists. The body carries code=MERCHANT_ALREADY_EXISTS and existingMerchantId, the id of that merchant. If that merchant cannot be looked up at the moment of the request, existingMerchantId is omitted.",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MerchantConflictError"
+                },
+                "example": {
+                  "title": "Conflict",
+                  "status": 409,
+                  "detail": "clientMerchantKey acme-123 is already taken",
+                  "instance": "/api/v1/merchants",
+                  "code": "MERCHANT_ALREADY_EXISTS",
+                  "clientMerchantKey": "acme-123",
+                  "existingMerchantId": "0f8fad5b-d9cb-469f-a165-70867728950e"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "portfolioId",
+            "in": "path",
+            "required": true,
+            "description": "The portfolio the merchant is created in. It must have the ONBOARDING product.",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/portfolios/{portfolioId}/onboarding/merchants/bulk": {
+      "post": {
+        "tags": [
+          "Merchants"
+        ],
+        "summary": "Add up to 100 merchants to Onboarding",
+        "description": "Creates up to 100 merchants in one request, all in the portfolio in the path. Each merchant follows the rules of POST /api/v1/portfolios/{portfolioId}/onboarding/merchants. Each merchant is saved or rejected on its own; the response lists a result per merchant and a bulkId.",
+        "operationId": "bulkAddOnboardingMerchants",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkCreateMerchantsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Request processed; see status and results",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request data",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "portfolioId",
+            "in": "path",
+            "required": true,
+            "description": "The portfolio the merchant is created in. It must have the ONBOARDING product.",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/portfolios/{portfolioId}/monitoring/merchants": {
+      "post": {
+        "tags": [
+          "Merchants"
+        ],
+        "summary": "Add a merchant to Monitoring",
+        "description": "Creates a merchant with its stores in the portfolio in the path. The portfolio must have the MONITORING product; otherwise the request fails with 422 and nothing is saved. Create each merchant once; to change an existing merchant, update it instead. A create is all or nothing: if any store cannot be added, nothing is saved and the request fails with 422.",
+        "operationId": "addMonitoringMerchant",
+        "requestBody": {
+          "description": "Create a merchant",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMerchantRequest"
+              },
+              "example": {
+                "legalName": "Acme Corporation",
+                "clientMerchantKey": "BUS123456",
+                "stores": [
+                  {
+                    "url": "https://store.example.com"
+                  }
+                ],
+                "mccs": [
+                  5992
+                ],
+                "mids": [
+                  "MID123456"
+                ],
+                "dbas": [
+                  "Acme Flowers"
+                ],
+                "productsServicesDescription": "Flowers sales and delivery",
+                "mastercardIca": "123456",
+                "visaBin": "654321",
+                "billingDescriptor": "ACME*FLOWERS",
+                "contacts": [
+                  {
+                    "contactInfoType": "BUSINESS",
+                    "name": "Acme Corporation",
+                    "phone": {
+                      "number": "+14155550123"
+                    },
+                    "email": {
+                      "address": "compliance@acme.example.com"
+                    },
+                    "address": {
+                      "line1": "123 Main St",
+                      "line2": "Suite 400",
+                      "city": "New York",
+                      "state": "NY",
+                      "country": "US",
+                      "postalCode": "10001"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Merchant created successfully",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              },
+              "Location": {
+                "description": "URI of the created resource",
+                "schema": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateMerchantResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request data",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A store could not be added. Nothing is saved; detail says which store. Fix or remove that store and send the create again.",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                },
+                "example": {
+                  "title": "Unprocessable Entity",
+                  "status": 422,
+                  "detail": "The request is valid but could not be carried out",
+                  "instance": "/api/v1/merchants"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "A merchant with this clientMerchantKey already exists. The body carries code=MERCHANT_ALREADY_EXISTS and existingMerchantId, the id of that merchant. If that merchant cannot be looked up at the moment of the request, existingMerchantId is omitted.",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MerchantConflictError"
+                },
+                "example": {
+                  "title": "Conflict",
+                  "status": 409,
+                  "detail": "clientMerchantKey acme-123 is already taken",
+                  "instance": "/api/v1/merchants",
+                  "code": "MERCHANT_ALREADY_EXISTS",
+                  "clientMerchantKey": "acme-123",
+                  "existingMerchantId": "0f8fad5b-d9cb-469f-a165-70867728950e"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "portfolioId",
+            "in": "path",
+            "required": true,
+            "description": "The portfolio the merchant is created in. It must have the MONITORING product.",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/portfolios/{portfolioId}/monitoring/merchants/bulk": {
+      "post": {
+        "tags": [
+          "Merchants"
+        ],
+        "summary": "Add up to 100 merchants to Monitoring",
+        "description": "Creates up to 100 merchants in one request, all in the portfolio in the path. Each merchant follows the rules of POST /api/v1/portfolios/{portfolioId}/monitoring/merchants. Each merchant is saved or rejected on its own; the response lists a result per merchant and a bulkId.",
+        "operationId": "bulkAddMonitoringMerchants",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkCreateMerchantsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Request processed; see status and results",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request data",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "portfolioId",
+            "in": "path",
+            "required": true,
+            "description": "The portfolio the merchant is created in. It must have the MONITORING product.",
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ]
+      }
+    },
+    "/api/v1/portfolios/{portfolioId}/merchants/{merchantId}": {
+      "patch": {
+        "tags": [
+          "Merchants"
+        ],
+        "summary": "Set a merchant's review status and add it to or remove it from Monitoring",
+        "description": "Records your decision on a merchant and sets whether G2 monitors it. After G2 screens a merchant you added to Onboarding, send your decision in merchantStatus and, to move the merchant to Monitoring, monitoringStatus ACTIVE in the same request; PAUSED removes it from monitoring. A field you leave out is unchanged, and neither field affects the other.",
+        "operationId": "updatePortfolioMerchant",
+        "parameters": [
+          {
+            "name": "portfolioId",
+            "in": "path",
+            "description": "Portfolio ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          },
+          {
+            "name": "merchantId",
+            "in": "path",
+            "description": "Merchant ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Set a merchant's review and monitoring status",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePortfolioMerchantRequest"
+              },
+              "example": {
+                "merchantStatus": "TERMINATED",
+                "monitoringStatus": "PAUSED"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Status updated",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request, or neither field sent",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Merchant not found in this portfolio",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "merchantStatus was sent and either equals the merchant's current status or the merchant is TERMINATED; nothing was changed",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                },
+                "example": {
+                  "title": "Conflict",
+                  "status": 409,
+                  "detail": "The request conflicts with the current state of the resource",
+                  "instance": "/api/v1/portfolios/0f8fad5b-d9cb-469f-a165-70867728950e/merchants/0f8fad5b-d9cb-469f-a165-70867728950e",
+                  "code": "CONFLICT"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ]
+      }
+    },
+    "/api/v1/findings/{portfolioId}/{merchantId}": {
+      "get": {
+        "tags": [
+          "Findings"
+        ],
+        "summary": "List a merchant's findings",
+        "description": "Returns every finding on the merchant's stores with its review status, current risk severity, evidence and any active snooze. Use it when a merchant comes up for review to decide which findings to confirm (RISK) or dismiss (NO_RISK). Snoozed findings and findings on ignored stores are listed too.",
+        "operationId": "listFindings",
+        "parameters": [
+          {
+            "name": "portfolioId",
+            "in": "path",
+            "description": "Portfolio ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          },
+          {
+            "name": "merchantId",
+            "in": "path",
+            "description": "Merchant ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Findings retrieved",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "Response containing a list of items.",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "description": "All items in the list",
+                      "items": {
+                        "$ref": "#/components/schemas/Finding"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Merchant not found in this portfolio",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A path or query parameter is not valid",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ]
+      }
+    },
+    "/api/v1/portfolios/{portfolioId}/merchants/{merchantId}/findings/status": {
+      "patch": {
+        "tags": [
+          "Findings"
+        ],
+        "summary": "Set the review status of a merchant's findings",
+        "description": "Sets one review status on up to 100 findings of a merchant in one atomic update: if any finding is not this merchant's in this portfolio, the request fails with 422 and no finding changes.",
+        "operationId": "updateMerchantFindingsStatus",
+        "parameters": [
+          {
+            "name": "portfolioId",
+            "in": "path",
+            "description": "Portfolio ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          },
+          {
+            "name": "merchantId",
+            "in": "path",
+            "description": "Merchant ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MerchantFindingsStatusUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Status updated",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid status",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Finding not found",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "A store could not be added. Nothing is saved; detail says which store. Fix or remove that store and send the create again.",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                },
+                "example": {
+                  "title": "Unprocessable Entity",
+                  "status": 422,
+                  "detail": "The request is valid but could not be carried out",
+                  "instance": "/api/v1/merchants"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ]
+      }
+    },
+    "/api/v1/portfolios/{portfolioId}/reports/merchant-summary": {
+      "get": {
+        "tags": [
+          "Reports"
+        ],
+        "summary": "List Merchant Summary reports",
+        "description": "Returns the Merchant Summary reports in the portfolio, newest first. Reports are requested in Atlas. Once READY, download from reportDownloadUrl. Pass merchantId to see one merchant's PDFs.",
+        "operationId": "listMerchantSummaryReports",
+        "parameters": [
+          {
+            "name": "portfolioId",
+            "in": "path",
+            "description": "Portfolio ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          },
+          {
+            "name": "merchantId",
+            "in": "query",
+            "description": "Merchant ID to filter summaries",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reports retrieved",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "description": "Response containing a list of items.",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "description": "All items in the list",
+                      "items": {
+                        "$ref": "#/components/schemas/MerchantSummaryReport"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Not permitted to read this report type or missing required scope",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Temporary failure; safe to retry reads with backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded; wait, then retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Temporarily unavailable; retry with exponential backoff",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "A path or query parameter is not valid",
+            "headers": {
+              "X-Request-Id": {
+                "$ref": "#/components/headers/X-Request-Id"
+              }
+            },
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Unexpected server error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MerchantSummaryReport": {
+        "type": "object",
+        "description": "Merchant Summary PDF for one merchant",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Report identifier"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the report was requested"
+          },
+          "createdBy": {
+            "type": "string",
+            "description": "Identity of the user or API client that requested the report"
+          },
+          "status": {
+            "type": "string",
+            "description": "PENDING: queued. GENERATING: being built. READY: reportDownloadUrl is set. FAILED: request a new one.",
+            "enum": [
+              "PENDING",
+              "GENERATING",
+              "READY",
+              "FAILED"
+            ]
+          },
+          "fileName": {
+            "type": "string",
+            "description": "File name: report type, portfolio or merchant name, and UTC creation time"
+          },
+          "reportDownloadUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Download link, available when READY. Valid for one hour; no authentication required. List reports again to get a fresh link."
+          },
+          "fileSize": {
+            "type": "integer",
+            "format": "int64",
+            "description": "File size in bytes, once READY",
+            "maximum": 9.223372036854776,
+            "minimum": -9.223372036854776
+          },
+          "portfolioId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Portfolio identifier"
+          },
+          "merchantId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Merchant identifier"
+          },
+          "merchantName": {
+            "type": "string",
+            "description": "Merchant legal name"
+          }
+        }
+      },
+      "AddressInput": {
+        "type": "object",
+        "description": "Postal address to set on a merchant contact.",
+        "properties": {
+          "line1": {
+            "type": "string",
+            "description": "Street address, first line",
+            "maxLength": 255,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,255}$"
+          },
+          "line2": {
+            "type": "string",
+            "description": "Street address, second line",
+            "maxLength": 255,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,255}$"
+          },
+          "city": {
+            "type": "string",
+            "description": "City",
+            "maxLength": 100,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,100}$"
+          },
+          "state": {
+            "type": "string",
+            "description": "State, province or region",
+            "maxLength": 100,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,100}$"
+          },
+          "country": {
+            "type": "string",
+            "description": "Country code (ISO 3166-1 alpha-2)",
+            "maxLength": 2,
+            "pattern": "^[A-Z]{2}$"
+          },
+          "postalCode": {
+            "type": "string",
+            "description": "Postal or ZIP code",
+            "maxLength": 20,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,20}$"
+          }
+        }
+      },
+      "ContactInput": {
+        "type": "object",
+        "description": "Contact details to set on a merchant.",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "description": "The person's first name, for PRINCIPAL contacts. Kept on the contact for your records. G2 monitors the person by the name field, so put the full name there too",
+            "maxLength": 100,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,100}$"
+          },
+          "lastName": {
+            "type": "string",
+            "description": "The person's last name, for PRINCIPAL contacts. Kept on the contact for your records. G2 monitors the person by the name field, so put the full name there too",
+            "maxLength": 100,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,100}$"
+          },
+          "name": {
+            "type": "string",
+            "description": "Full name of the person (PRINCIPAL) or the company name (BUSINESS); part of the identity G2 monitors the merchant against. firstName and lastName are not, so set name even when you send them"
+          },
+          "phone": {
+            "$ref": "#/components/schemas/PhoneInput",
+            "description": "Phone number; part of the identity G2 monitors the merchant against"
+          },
+          "email": {
+            "$ref": "#/components/schemas/EmailInput",
+            "description": "Email address; part of the identity G2 monitors the merchant against"
+          },
+          "address": {
+            "$ref": "#/components/schemas/AddressInput",
+            "description": "Postal address; part of the identity G2 monitors the merchant against"
+          },
+          "contactInfoType": {
+            "type": "string",
+            "description": "PRINCIPAL for a person, BUSINESS for a company",
+            "enum": [
+              "PRINCIPAL",
+              "BUSINESS"
+            ]
+          }
+        },
+        "required": [
+          "contactInfoType"
+        ]
+      },
+      "CreateMerchantRequest": {
+        "type": "object",
+        "description": "Request to create a merchant with stores",
+        "properties": {
+          "legalName": {
+            "type": "string",
+            "description": "The merchant's registered company name. It is part of the identity G2 monitors the merchant against.",
+            "maxLength": 255,
+            "minLength": 2,
+            "pattern": "^[\\s\\S]{2,255}$"
+          },
+          "clientMerchantKey": {
+            "type": "string",
+            "description": "Your own unique id for the merchant. Use it to match G2's records to yours; it cannot be changed, and a duplicate returns 409.",
+            "maxLength": 255,
+            "minLength": 2,
+            "pattern": "^[\\s\\S]{2,255}$"
+          },
+          "stores": {
+            "type": "array",
+            "description": "The merchant's stores, one per URL. If any of them cannot be added, the merchant is not created and the request fails with 422.",
+            "items": {
+              "$ref": "#/components/schemas/StoreInput"
+            },
+            "maxItems": 500,
+            "minItems": 1
+          },
+          "mccs": {
+            "type": "array",
+            "description": "The MCCs you have on file. If MCC checking is on for the portfolio, a finding is raised when the store's business does not match them.",
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "maximum": 9999,
+              "minimum": 1
+            },
+            "maxItems": 100,
+            "minItems": 0
+          },
+          "mids": {
+            "type": "array",
+            "description": "Your acquirer merchant IDs (MIDs) for this merchant. They are part of the identity G2 monitors the merchant against.",
+            "items": {
+              "type": "string",
+              "maxLength": 255,
+              "minLength": 0,
+              "pattern": "^[\\s\\S]{0,255}$"
+            },
+            "maxItems": 100,
+            "minItems": 0
+          },
+          "dbas": {
+            "type": "array",
+            "description": "The merchant's trading names (DBAs)",
+            "items": {
+              "type": "string",
+              "maxLength": 255,
+              "minLength": 0,
+              "pattern": "^[\\s\\S]{0,255}$"
+            },
+            "maxItems": 100,
+            "minItems": 0
+          },
+          "productsServicesDescription": {
+            "type": "string",
+            "description": "What the merchant sells",
+            "maxLength": 255,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,255}$"
+          },
+          "mastercardIca": {
+            "type": "string",
+            "description": "Your acquirer's Mastercard ICA (4-6 digits)",
+            "maxLength": 6,
+            "pattern": "^[1-9][0-9]{3,5}$"
+          },
+          "visaBin": {
+            "type": "string",
+            "description": "Your acquirer's Visa BIN (6 or 8 digits)",
+            "maxLength": 8,
+            "pattern": "^[1-9][0-9]{5}([0-9]{2})?$"
+          },
+          "billingDescriptor": {
+            "type": "string",
+            "description": "The name shown on cardholder statements",
+            "maxLength": 255,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,255}$"
+          },
+          "contacts": {
+            "type": "array",
+            "description": "The merchant's people or business contacts as you have them on file. Their names, emails, phones and addresses are part of the identity G2 monitors the merchant against.",
+            "items": {
+              "$ref": "#/components/schemas/ContactInput"
+            },
+            "maxItems": 100,
+            "minItems": 0
+          }
+        },
+        "required": [
+          "clientMerchantKey",
+          "legalName",
+          "stores"
+        ]
+      },
+      "EmailInput": {
+        "type": "object",
+        "description": "Email address to set on a merchant contact.",
+        "properties": {
+          "address": {
+            "type": "string",
+            "format": "email",
+            "description": "Email address: standard email syntax without spaces or commas",
+            "maxLength": 100,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,100}$"
+          }
+        },
+        "required": [
+          "address"
+        ]
+      },
+      "PhoneInput": {
+        "type": "object",
+        "description": "Phone number to set on a merchant contact.",
+        "properties": {
+          "number": {
+            "type": "string",
+            "description": "Phone number in E.164 format (+ followed by country code and number, digits only)",
+            "maxLength": 16,
+            "minLength": 1,
+            "pattern": "^\\+[1-9]\\d{1,14}$"
+          }
+        },
+        "required": [
+          "number"
+        ]
+      },
+      "StoreInput": {
+        "type": "object",
+        "description": "A store to add to the merchant: a URL the merchant sells from",
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL of a store the merchant sells from",
+            "maxLength": 3000,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,3000}$"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      },
+      "Address": {
+        "type": "object",
+        "description": "Postal address held on a merchant contact.",
+        "properties": {
+          "line1": {
+            "type": "string",
+            "description": "Street address, first line"
+          },
+          "line2": {
+            "type": "string",
+            "description": "Street address, second line"
+          },
+          "city": {
+            "type": "string",
+            "description": "City"
+          },
+          "state": {
+            "type": "string",
+            "description": "State, province or region"
+          },
+          "country": {
+            "type": "string",
+            "description": "Country code (ISO 3166-1 alpha-2)"
+          },
+          "postalCode": {
+            "type": "string",
+            "description": "Postal or ZIP code"
+          }
+        }
+      },
+      "Contact": {
+        "type": "object",
+        "description": "Contact details held on a merchant.",
+        "properties": {
+          "contactInfoType": {
+            "type": "string",
+            "description": "PRINCIPAL for a person, BUSINESS for a company",
+            "enum": [
+              "PRINCIPAL",
+              "BUSINESS"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "Full name of the person (PRINCIPAL) or the company name (BUSINESS); absent when not set"
+          },
+          "firstName": {
+            "type": "string",
+            "description": "First name, PRINCIPAL contacts"
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Last name, PRINCIPAL contacts"
+          },
+          "phone": {
+            "$ref": "#/components/schemas/Phone",
+            "description": "Phone number"
+          },
+          "email": {
+            "$ref": "#/components/schemas/Email",
+            "description": "Email address"
+          },
+          "address": {
+            "$ref": "#/components/schemas/Address",
+            "description": "Postal address"
+          }
+        }
+      },
+      "CreateMerchantResponse": {
+        "type": "object",
+        "description": "Merchant creation response",
+        "properties": {
+          "merchant": {
+            "$ref": "#/components/schemas/Merchant",
+            "description": "The created merchant. Review and monitoring status are not included here."
+          }
+        }
+      },
+      "Email": {
+        "type": "object",
+        "description": "Email address held on a merchant contact.",
+        "properties": {
+          "address": {
+            "type": "string",
+            "format": "email",
+            "description": "Email address"
+          }
+        }
+      },
+      "Merchant": {
+        "type": "object",
+        "description": "Merchant information",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "G2's id for the merchant. Use it for get, status, findings and snooze calls."
+          },
+          "legalName": {
+            "type": "string",
+            "description": "The merchant's registered company name"
+          },
+          "clientMerchantKey": {
+            "type": "string",
+            "description": "Your own unique id for the merchant; use it to match G2's records to yours"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the merchant was created (ISO-8601 UTC)"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the merchant was last updated (ISO-8601 UTC)"
+          },
+          "mids": {
+            "type": "array",
+            "description": "Your acquirer merchant IDs for this merchant",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dbas": {
+            "type": "array",
+            "description": "The merchant's trading names (DBAs)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mccs": {
+            "type": "array",
+            "description": "The MCCs you have on file",
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "maximum": 2147483647,
+              "minimum": -2147483648
+            }
+          },
+          "storesAmount": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Number of the merchant's stores, including connected stores (connected=true)",
+            "maximum": 2147483647,
+            "minimum": -2147483648
+          },
+          "contacts": {
+            "type": "array",
+            "description": "The merchant's people or business contacts",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            }
+          },
+          "productsServicesDescription": {
+            "type": "string",
+            "description": "What the merchant sells"
+          },
+          "mastercardIca": {
+            "type": "string",
+            "description": "Your acquirer's Mastercard ICA (4-6 digits)"
+          },
+          "visaBin": {
+            "type": "string",
+            "description": "Your acquirer's Visa BIN (6 or 8 digits)"
+          },
+          "billingDescriptor": {
+            "type": "string",
+            "description": "The name shown on cardholder statements"
+          },
+          "merchantStatus": {
+            "type": "string",
+            "description": "Review status of the merchant",
+            "enum": [
+              "TO_REVIEW",
+              "APPROVED",
+              "REJECTED",
+              "IN_PROCESS",
+              "TERMINATED"
+            ]
+          },
+          "monitoringStatus": {
+            "type": "string",
+            "description": "Monitoring status of the merchant",
+            "enum": [
+              "ACTIVE",
+              "PAUSED"
+            ]
+          },
+          "bulkId": {
+            "type": "string",
+            "format": "uuid",
+            "maxLength": 36,
+            "description": "ID of the bulk request that created the merchant. Absent for merchants created one at a time."
+          },
+          "portfolioId": {
+            "type": "string",
+            "format": "uuid",
+            "maxLength": 36,
+            "description": "The portfolio the merchant belongs to"
+          }
+        }
+      },
+      "Phone": {
+        "type": "object",
+        "description": "Phone number held on a merchant contact.",
+        "properties": {
+          "number": {
+            "type": "string",
+            "description": "Phone number in E.164 format"
+          }
+        }
+      },
+      "MerchantConflictError": {
+        "type": "object",
+        "description": "The error returned when a merchant cannot be created because one already exists, carrying a machine-readable code alongside the standard error fields.",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Short summary of the problem"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "description": "HTTP status code, 409",
+            "maximum": 2147483647,
+            "minimum": -2147483648
+          },
+          "detail": {
+            "type": "string",
+            "description": "Human-readable explanation"
+          },
+          "instance": {
+            "type": "string",
+            "format": "uri-reference",
+            "description": "Request path that caused the problem"
+          },
+          "code": {
+            "type": "string",
+            "description": "Machine-readable reason, MERCHANT_ALREADY_EXISTS"
+          },
+          "clientMerchantKey": {
+            "type": "string",
+            "description": "The clientMerchantKey that is already taken"
+          },
+          "existingMerchantId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Id of the merchant holding that key; may be absent"
+          }
+        }
+      },
+      "UpdatePortfolioMerchantRequest": {
+        "type": "object",
+        "description": "The merchant's review and monitoring status in a portfolio to change; send at least one field",
+        "minProperties": 1,
+        "properties": {
+          "merchantStatus": {
+            "type": "string",
+            "description": "Your review decision for the merchant in this portfolio: TO_REVIEW (not reviewed yet), IN_PROCESS (being reviewed), APPROVED, REJECTED or TERMINATED. Approve or reject a merchant after Onboarding or after Monitoring. REJECTED does not change monitoringStatus. TERMINATED also cancels the merchant's snoozes in this portfolio; finding statuses and monitoringStatus are left as they are. Once TERMINATED, merchantStatus cannot be changed: sending it returns 409, as does sending the status the merchant already has.",
+            "enum": [
+              "TO_REVIEW",
+              "APPROVED",
+              "REJECTED",
+              "IN_PROCESS",
+              "TERMINATED"
+            ]
+          },
+          "monitoringStatus": {
+            "type": "string",
+            "description": "Whether G2 keeps scanning the merchant in this portfolio: ACTIVE or PAUSED. PAUSED stops monitoring scans until it is set back to ACTIVE; merchantStatus, findings and snoozes are left as they are. Sending the status the merchant already has changes nothing.",
+            "enum": [
+              "ACTIVE",
+              "PAUSED"
+            ]
+          }
+        }
+      },
+      "UpdateMerchantRequest": {
+        "type": "object",
+        "description": "Fields to change on a merchant. All are optional; a null or absent field is left unchanged.",
+        "properties": {
+          "legalName": {
+            "type": "string",
+            "description": "The merchant's registered company name. It is part of the identity G2 monitors the merchant against. Cannot be cleared.",
+            "maxLength": 255,
+            "minLength": 2,
+            "pattern": "^[\\s\\S]{2,255}$"
+          },
+          "contacts": {
+            "type": "array",
+            "description": "The merchant's people or business contacts as you have them on file. Their names, emails, phones and addresses are part of the identity G2 monitors the merchant against. Replaces the list; [] clears it.",
+            "items": {
+              "$ref": "#/components/schemas/ContactInput"
+            },
+            "maxItems": 100,
+            "minItems": 0
+          },
+          "mids": {
+            "type": "array",
+            "description": "Your acquirer merchant IDs (MIDs) for this merchant. They are part of the identity G2 monitors the merchant against. Replaces the list; [] clears it.",
+            "items": {
+              "type": "string",
+              "maxLength": 255,
+              "minLength": 0,
+              "pattern": "^[\\s\\S]{0,255}$"
+            },
+            "maxItems": 100,
+            "minItems": 0
+          },
+          "dbas": {
+            "type": "array",
+            "description": "The merchant's trading names (DBAs). Replaces the list; [] clears it.",
+            "items": {
+              "type": "string",
+              "maxLength": 255,
+              "minLength": 0,
+              "pattern": "^[\\s\\S]{0,255}$"
+            },
+            "maxItems": 100,
+            "minItems": 0
+          },
+          "mccs": {
+            "type": "array",
+            "description": "Replaces the MCC list; [] clears it.",
+            "items": {
+              "type": "integer",
+              "format": "int32",
+              "maximum": 2147483647,
+              "minimum": -2147483648
+            },
+            "maxItems": 100,
+            "minItems": 0
+          },
+          "productsServicesDescription": {
+            "type": "string",
+            "description": "What the merchant sells. \"\" clears it.",
+            "maxLength": 255,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,255}$"
+          },
+          "mastercardIca": {
+            "type": "string",
+            "description": "Your acquirer's Mastercard ICA (4-6 digits). \"\" clears it.",
+            "maxLength": 6,
+            "pattern": "^$|^[1-9][0-9]{3,5}$"
+          },
+          "visaBin": {
+            "type": "string",
+            "description": "Your acquirer's Visa BIN (6 or 8 digits). \"\" clears it.",
+            "maxLength": 8,
+            "pattern": "^$|^[1-9][0-9]{5}([0-9]{2})?$"
+          },
+          "billingDescriptor": {
+            "type": "string",
+            "description": "The name shown on cardholder statements. \"\" clears it.",
+            "maxLength": 255,
+            "minLength": 0,
+            "pattern": "^[\\s\\S]{0,255}$"
+          }
+        }
+      },
+      "Portfolio": {
+        "type": "object",
+        "description": "A portfolio of the account",
+        "properties": {
+          "portfolioId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Portfolio identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Portfolio name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Portfolio description"
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether the portfolio is enabled"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the portfolio was created"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the portfolio was last updated"
+          },
+          "products": {
+            "type": "array",
+            "description": "The portfolio's products",
+            "items": {
+              "$ref": "#/components/schemas/PortfolioProduct"
+            }
+          }
+        }
+      },
+      "PortfolioProduct": {
+        "type": "object",
+        "description": "A product on a portfolio; it scans only when at least one of its checks (ccEnabled, mccEnabled, graphEnabled) is on",
+        "properties": {
+          "productType": {
+            "type": "string",
+            "description": "Which product this is: ONBOARDING, the one-time scan of each new merchant, or MONITORING, the scheduled rescans of the portfolio's merchants",
+            "enum": [
+              "MONITORING",
+              "ONBOARDING"
+            ]
+          },
+          "ccEnabled": {
+            "type": "boolean",
+            "description": "Whether content compliance checking is on: when it is, scans review the store's content and raise a finding for each risk category found"
+          },
+          "mccEnabled": {
+            "type": "boolean",
+            "description": "Whether MCC checking is on: when it is, scans compare the store's business with the merchant's reported MCC and raise a finding on a mismatch"
+          },
+          "graphEnabled": {
+            "type": "boolean",
+            "description": "Whether connected-store discovery is on: when it is, scans also find stores connected to the merchant's stores, which appear with connected=true and their own findings"
+          },
+          "cadences": {
+            "type": "array",
+            "description": "Scan cadence of each service enabled on this product: one entry per service among CC, MCC and GRAPH",
+            "items": {
+              "$ref": "#/components/schemas/Cadence"
+            }
+          }
+        }
+      },
+      "MerchantPage": {
+        "type": "object",
+        "description": "One cursor page of merchants matching the supplied filters",
+        "properties": {
+          "items": {
+            "type": "array",
+            "description": "Merchants on this page",
+            "items": {
+              "$ref": "#/components/schemas/Merchant"
+            }
+          },
+          "nextCursor": {
+            "type": "string",
+            "description": "Opaque cursor for the next page; absent when there are no more results"
+          }
+        },
+        "required": [
+          "items"
+        ]
+      },
+      "Finding": {
+        "type": "object",
+        "description": "A finding detected on one of the merchant's stores",
+        "properties": {
+          "findingId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the finding. Use it for status and comment calls."
+          },
+          "storeId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Store the finding was detected on. Pass it as storeId when snoozing."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "The address that was scanned when the finding was raised: the store's URL or another page of the same store, such as the page it redirects to. Use it as the link a reviewer opens to check the finding."
+          },
+          "redirectedUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Redirect (61) findings only: the address the store redirects to. Absent on other findings, and on Redirect findings whose evidence does not name an address."
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32",
+            "description": "What kind of issue this is. Findings of the same category on the same store are reviewed as one item in Atlas UI. mccDetection tells MCC detections apart from other findings.",
+            "maximum": 2147483647,
+            "minimum": -2147483648
+          },
+          "categoryName": {
+            "type": "string",
+            "description": "Readable name of the category, for display"
+          },
+          "status": {
+            "type": "string",
+            "description": "Your review decision on this finding. It stays TO_REVIEW until someone sets it. It returns to TO_REVIEW when a FINDING snooze that selected it ends or is cancelled. A URL snooze on its store also resets it when it ends or is cancelled.",
+            "enum": [
+              "TO_REVIEW",
+              "IN_PROGRESS",
+              "RISK",
+              "NO_RISK"
+            ]
+          },
+          "riskSeverity": {
+            "type": "string",
+            "description": "How severe this finding is: the category's severity for your account, or NO_RISK once the finding is dismissed. Use it to prioritise review.",
+            "enum": [
+              "NO_RISK",
+              "LOW",
+              "MEDIUM",
+              "HIGH",
+              "CRITICAL"
+            ]
+          },
+          "evidenceUrl": {
+            "type": "string",
+            "description": "The page the evidence was seen on, as the scanner reported it. Usually a full URL on the scanned store, but it can be a bare host or N/A, so show it as text and use url as the link."
+          },
+          "evidenceText": {
+            "type": "string",
+            "description": "What the scanner found, as text to show a reviewer. Its form depends on the category: a JSON object (for example the detected email or phone in raw_entity, or keyword counts), an address for Online (59) and Redirect (61), or a short label such as UNSUPPORTED DOMAIN. Show it as text; its JSON keys are not part of the contract."
+          },
+          "lastModifyDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When a scan last wrote this finding (UTC). Setting a status does not change it."
+          },
+          "snooze": {
+            "$ref": "#/components/schemas/FindingSnooze",
+            "description": "The active snooze covering this finding; absent when not snoozed. A snoozed finding still counts toward the merchant's risk."
+          },
+          "ignored": {
+            "type": "boolean",
+            "description": "True when the store does not count toward the merchant's risk. Only stores G2 found connected to the merchant can be ignored: your portfolio is set to leave connected stores out of the risk, or a reviewer excluded the store in Atlas UI. Read-only; you can usually skip these findings."
+          },
+          "mccDetection": {
+            "type": "boolean",
+            "description": "True when the finding is an MCC detection: its category is a merchant category code the scan matched to the store's business, not an issue found on the store. False for every other finding."
+          }
+        }
+      },
+      "FindingSnooze": {
+        "type": "object",
+        "description": "Active snooze covering a finding",
+        "properties": {
+          "snoozeId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "ID of the snooze; use it to change or cancel the snooze"
+          },
+          "level": {
+            "type": "string",
+            "description": "FINDING: this category on this store is snoozed. URL: the whole store is snoozed.",
+            "enum": [
+              "FINDING",
+              "URL"
+            ]
+          },
+          "wakeDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the snooze ends; the findings then go back to TO_REVIEW."
+          }
+        }
+      },
+      "Problem": {
+        "description": "The error body the API returns, as RFC 9457 problem details in application/problem+json. Branch on status and code, not on title or detail.",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "The HTTP reason phrase; do not branch on it"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Same as the HTTP status; branch on this",
+            "maximum": 2147483647,
+            "minimum": -2147483648
+          },
+          "detail": {
+            "type": "string",
+            "description": "Human-readable reason for logs and support; the wording can change"
+          },
+          "instance": {
+            "type": "string",
+            "format": "uri-reference",
+            "description": "Request path that caused the problem"
+          },
+          "code": {
+            "type": "string",
+            "description": "Machine-readable reason; branch on it, not on detail. One of INVALID_REQUEST (400), UNAUTHENTICATED (401), FORBIDDEN (403), NOT_FOUND (404), CONFLICT (409), RATE_LIMITED (429), INTERNAL_ERROR (500), BAD_GATEWAY (502), SERVICE_UNAVAILABLE (503), or MERCHANT_ALREADY_EXISTS (409 when creating a merchant whose clientMerchantKey is taken). New values may be added; when code is absent or unknown, branch on status"
+          }
+        }
+      },
+      "BulkCreateMerchantsRequest": {
+        "type": "object",
+        "description": "Up to 100 merchants to create in one request",
+        "required": [
+          "merchants"
+        ],
+        "properties": {
+          "merchants": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/CreateMerchantRequest"
+            },
+            "description": "The merchants to create, 1 to 100. Each follows the rules of the single add."
+          }
+        }
+      },
+      "BulkItemResult": {
+        "type": "object",
+        "description": "Result for one item in a bulk request, in the order the items were sent",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "description": "Position of the item in the request, starting at 0"
+          },
+          "clientMerchantKey": {
+            "type": "string",
+            "description": "Your clientMerchantKey for the merchant in this item, as sent"
+          },
+          "merchantId": {
+            "type": "string",
+            "format": "uuid",
+            "maxLength": 36,
+            "description": "ID of the merchant created or updated. Absent when status is ERROR."
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "OK",
+              "WARNING",
+              "ERROR"
+            ],
+            "description": "OK: saved. WARNING: saved, with a note in message. ERROR: not saved; message gives the reason."
+          },
+          "field": {
+            "type": "string",
+            "description": "Field that caused the WARNING or ERROR"
+          },
+          "message": {
+            "type": "string",
+            "description": "Why the item has a WARNING or ERROR. Absent when status is OK."
+          }
+        }
+      },
+      "BulkResponse": {
+        "type": "object",
+        "description": "Outcome of a bulk request. Each item is saved or rejected on its own: valid items are saved and invalid items are reported, as in the Atlas file upload.",
+        "properties": {
+          "bulkId": {
+            "type": "string",
+            "format": "uuid",
+            "maxLength": 36,
+            "description": "Use to retrieve the merchants of this request with GET /api/v1/merchants?bulkId="
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "COMPLETED",
+              "COMPLETED_WITH_ISSUES",
+              "FAILED"
+            ],
+            "description": "COMPLETED: every item OK. COMPLETED_WITH_ISSUES: at least one item has WARNING or ERROR. FAILED: no item was saved."
+          },
+          "total": {
+            "type": "integer",
+            "description": "Number of items in the request"
+          },
+          "succeeded": {
+            "type": "integer",
+            "description": "Number of items saved, with status OK or WARNING"
+          },
+          "failed": {
+            "type": "integer",
+            "description": "Number of items not saved, with status ERROR"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BulkItemResult"
+            },
+            "description": "One result per item, in the order the items were sent"
+          }
+        }
+      },
+      "BulkUpdateMerchantItem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateMerchantRequest"
+          },
+          {
+            "type": "object",
+            "required": [
+              "merchantId"
+            ],
+            "properties": {
+              "merchantId": {
+                "type": "string",
+                "format": "uuid",
+                "maxLength": 36,
+                "description": "ID of the merchant to update"
+              }
+            }
+          }
+        ],
+        "description": "Fields to change on one merchant; a field left out is unchanged"
+      },
+      "BulkUpdateMerchantsRequest": {
+        "type": "object",
+        "required": [
+          "merchants"
+        ],
+        "properties": {
+          "merchants": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "$ref": "#/components/schemas/BulkUpdateMerchantItem"
+            },
+            "description": "The merchants to update, 1 to 100. Each item names one merchant and the fields to change."
+          }
+        }
+      },
+      "Cadence": {
+        "type": "object",
+        "description": "When one service of a portfolio product runs its scheduled scans",
+        "properties": {
+          "service": {
+            "type": "string",
+            "enum": [
+              "CC",
+              "MCC",
+              "GRAPH"
+            ],
+            "description": "The scan type this cadence applies to: CC, MCC or GRAPH, matching ccEnabled, mccEnabled and graphEnabled on the portfolio product"
+          },
+          "frequency": {
+            "type": "string",
+            "enum": [
+              "DAILY",
+              "WEEKLY",
+              "MONTHLY",
+              "CUSTOM"
+            ],
+            "description": "CUSTOM: a schedule that is not daily, weekly or monthly"
+          },
+          "dayOfWeek": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7,
+            "description": "Set when frequency is WEEKLY"
+          },
+          "dayOfMonth": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 31,
+            "description": "Set when frequency is MONTHLY"
+          },
+          "hour": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 23,
+            "description": "Hour of the day the scan starts, 0 to 23, in UTC"
+          },
+          "minute": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 59,
+            "description": "Minute of the hour the scan starts, 0 to 59"
+          }
+        },
+        "required": [
+          "service",
+          "frequency"
+        ]
+      },
+      "MerchantFindingsStatusUpdateRequest": {
+        "type": "object",
+        "required": [
+          "findingIds",
+          "status"
+        ],
+        "properties": {
+          "findingIds": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 100,
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "maxLength": 36
+            },
+            "description": "Findings of this merchant to update"
+          },
+          "status": {
+            "type": "string",
+            "description": "The review decision to record; it replaces the finding's current status.",
+            "enum": [
+              "TO_REVIEW",
+              "IN_PROGRESS",
+              "RISK",
+              "NO_RISK"
+            ]
+          }
+        }
+      }
+    },
+    "headers": {
+      "X-Request-Id": {
+        "description": "Identifier of this request. Quote it when contacting support.",
+        "schema": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    },
+    "securitySchemes": {
+      "oauth2": {
+        "type": "oauth2",
+        "description": "OAuth 2.0 client-credentials flow. Request an access token from the token URL with your client id, client secret and audience https://mlrc-external-api.everc.com/ (also published as x-audience), then send it as Authorization: Bearer. G2 links the client to your account when it sets the client up; a token without that link gets 403.",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "/mlrc-external-api/api-docs/oauth/token",
+            "scopes": {}
+          }
+        }
+      }
+    }
+  }
+}

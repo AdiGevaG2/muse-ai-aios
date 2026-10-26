@@ -23,13 +23,23 @@ still be unshippable because the model is wrong too often. Do not merge them.
   route back to `/prd` rather than inventing one.
 - Do not load org/domain brains wholesale.
 
+## Ground in the brains (before drafting)
+Run `../_shared/brain-grounding.md`. Required. Read the feature note and
+hypotheses for what the model is actually expected to get right, `ingestion/`
+pages on the systems the AI reasons over, and `context/compliance.md` when a
+wrong answer carries regulatory cost — that shapes the accuracy bar. Cite what
+you used.
+
 ## Which mode
-Ask which one applies if it is not obvious from the request:
+Derive the mode from what exists; do not ask. State the call in one line.
 
 - **Define** — no eval exists yet. Produce the bar, the set design, and the
   labeling plan.
 - **Run** — an eval set exists. Execute it and report against the bar.
 - **Review** — results exist. Judge whether they support shipping.
+
+Routing: no eval set on disk → Define. A frozen set but no results → Run.
+Results present → Review. When the request names a mode explicitly, that wins.
 
 ## Define
 1. **State the decision the eval informs.** "Ship / do not ship at bar X." An
@@ -75,7 +85,10 @@ by metric and segment, concrete failure examples, model/prompt/set versions, and
 the recommendation with unresolved items.
 
 ## Stop conditions
-- Stop and ask when the bar was never set — do not infer one.
+- When the bar was never set, do not infer one and do not stop to ask. Record it
+  as `TBD` with an owner, report that the bar belongs in the PRD, and deliver
+  everything the eval can produce without it (set design, baseline, results).
+  A missing bar blocks the ship *verdict*, not the artifact.
 - Stop when no ground-truth data exists and none can be sampled; building the
   set is the deliverable, not the eval.
 - Do not rewrite the PRD or spec here; propose amendments.

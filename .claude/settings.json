@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "outputStyle": "Concise",
   "permissions": {
     "defaultMode": "bypassPermissions",
     "allow": [
@@ -41,6 +42,30 @@
       "Task",
       "Edit(//tmp/**)",
       "mcp__claude_ai_Atlassian__searchJiraIssuesUsingJql",
+      "mcp__claude_ai_Atlassian__getContentFormatGuide",
+      "mcp__claude_ai_Atlassian__getJiraIssue",
+      "mcp__claude_ai_Atlassian__getVisibleJiraProjects",
+      "mcp__claude_ai_Atlassian__getJiraIssueTypeMetaWithFields",
+      "mcp__claude_ai_Atlassian__getJiraProjectIssueTypesMetadata",
+      "mcp__claude_ai_Atlassian__getTransitionsForJiraIssue",
+      "mcp__claude_ai_Atlassian__getJiraIssueRemoteIssueLinks",
+      "mcp__claude_ai_Atlassian__getIssueLinkTypes",
+      "mcp__claude_ai_Atlassian__lookupJiraAccountId",
+      "mcp__claude_ai_Atlassian__getConfluencePage",
+      "mcp__claude_ai_Atlassian__getConfluencePageDescendants",
+      "mcp__claude_ai_Atlassian__getConfluencePageFooterComments",
+      "mcp__claude_ai_Atlassian__getConfluencePageInlineComments",
+      "mcp__claude_ai_Atlassian__getConfluenceCommentChildren",
+      "mcp__claude_ai_Atlassian__getConfluenceSpaces",
+      "mcp__claude_ai_Atlassian__getPagesInConfluenceSpace",
+      "mcp__claude_ai_Atlassian__searchConfluenceUsingCql",
+      "mcp__claude_ai_Atlassian__search",
+      "mcp__claude_ai_Atlassian__getAccessibleAtlassianResources",
+      "mcp__claude_ai_Atlassian__atlassianUserInfo",
+      "mcp__claude_ai_Atlassian__getCompassComponent",
+      "mcp__claude_ai_Atlassian__getCompassComponents",
+      "mcp__claude_ai_Atlassian__getTeamworkGraphContext",
+      "mcp__claude_ai_Atlassian__getTeamworkGraphObject",
       "mcp__claude_ai_Slack__slack_search_public_and_private",
       "mcp__mixpanel__Run-Query",
       "mcp__claude_ai_monday_com__get_board_items_page"
@@ -65,6 +90,15 @@
             "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/destructive-operation-guard.sh"
           }
         ]
+      },
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/ask-gate-guard.sh"
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -73,15 +107,25 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/secret-guard.sh"
-          },
-          {
-            "type": "command",
             "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/prd-change-guard.sh"
           },
           {
             "type": "command",
             "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/provenance-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/validate-docs-guard.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/validate-docs-gate.sh"
           }
         ]
       }

@@ -71,7 +71,7 @@ number here.
 
 **Standing domain constraint:** a machine-derived risk outcome never takes
 effect on a merchant without human review
-(`domains/unified-platform/second-brain/context/compliance.md`, ACTIVE). This
+(`domains/atlas/second-brain/context/compliance.md`, ACTIVE). This
 applies even when the model belongs to another team and this feature only
 displays its output. A spec that lets a machine outcome auto-apply contradicts
 it — surface that as a conflict for PM arbitration rather than specifying it.

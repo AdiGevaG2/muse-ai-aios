@@ -91,17 +91,24 @@ Source: internal business-context brief, dated 2026-06-22.
 - [hunch] LegitScript stronger in high-risk vertical certification (pharmacy,
   telemedicine).
 
-## Unified Platform (this workspace's domain)
-- [hunch] "Unified Platform" (UP) is the consolidation of G2RS + ex-EverC +
-  ex-WebShield UIs/APIs into a single platform. Source describes this as inferred
-  roadmap direction over ~12–18 months, not a confirmed/committed product.
-- [documented] The strategic rationale is real: G2RS acquired WebShield and EverC
-  (former competitors) and is integrating them; a single platform is the stated
-  direction of that consolidation.
-- Practical meaning for PM work: UP is the target platform this domain builds. It
-  must reconcile overlapping capabilities (e.g. merchant monitoring exists in both
-  legacy stacks) into one coherent model. Treat the timeline as [hunch]; treat the
-  consolidation intent as [documented].
+## Atlas (this workspace's domain)
+- [verbal] Atlas is the new platform being built to **replace** MerchantView
+  (ex-EverC), WebShield, and Single Platform (legacy G2RS). Confirmed by the
+  Atlas domain PM, 2026-08-30. This supersedes the earlier [hunch] framing of
+  Atlas as merely inferred roadmap direction, replacement is the stated goal.
+- [verbal] G2RS acquired EverC and WebShield, and **all clients must be
+  migrated** onto Atlas. Migration is a committed requirement, not an option.
+- [documented] The strategic rationale is corroborated: G2RS acquired WebShield
+  and EverC (former competitors) and is integrating them; a single platform is
+  the stated direction of that consolidation.
+- [hunch] Timeline. The ~12–18 month figure is inferred from source material,
+  not a committed date.
+- Practical meaning for PM work: Atlas is the target platform this domain builds,
+  and each of the three legacy products has a real client base that must land on
+  it. Overlapping capabilities (e.g. merchant monitoring exists in more than one
+  legacy stack) must resolve to one behavior, not a superset.
+- Domain detail, incl. legacy-name↔stack mapping:
+  `domains/atlas/second-brain/context/platform.md`.
 
 ## Roadmap direction
 - [hunch] Inferred (not confirmed): full EverC marketplace integration into

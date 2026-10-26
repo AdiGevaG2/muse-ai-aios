@@ -52,7 +52,7 @@ them, preventing fraud rings from "merchant jumping" between institutions.
 Combined text + image + metadata analysis used to classify marketplace products
 (counterfeit, hazardous, illegal, recalled). Ex-EverC capability.
 
-### Unified Platform (UP)
+### Atlas (UP)
 [hunch on timeline / documented on intent] The consolidation of G2RS + ex-EverC +
 ex-WebShield UIs/APIs into a single platform. The target platform this workspace's
 domain builds. Must reconcile capabilities that overlap across the legacy stacks.

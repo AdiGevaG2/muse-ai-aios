@@ -22,6 +22,14 @@ results and artifact drift fail independently — keep them separate.
   question.
 - Do not load org/domain brains wholesale.
 
+## Ground in the brains (before validating)
+Run `../_shared/brain-grounding.md`, scoped tightly. The spec is what you
+validate against — the brains do not override it. Read them for constraints a
+build can violate without violating the spec's letter: `context/compliance.md`,
+the relevant `ingestion/` pages, and the glossary for whether shipped UI uses
+the domain's terminology. Anything you find that the spec omits is a finding,
+not a pass/fail criterion.
+
 ## Process
 1. Identify the spec version and acceptance criteria in scope.
 2. Map evidence to AC IDs or behavior IDs.

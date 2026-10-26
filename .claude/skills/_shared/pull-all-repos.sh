@@ -2,7 +2,7 @@
 # Pull all locally-cloned repos onto their own current branch (whatever it's
 # named — master/develop/main/feature). Never pulls a dirty repo. Never
 # switches branches. Repo list source of truth:
-# domains/unified-platform/second-brain/context/platform.md
+# domains/atlas/second-brain/context/platform.md
 #
 # Usage: ./pull-all-repos.sh [--include-worktrees]
 

@@ -1,0 +1,153 @@
+﻿Event,Description,Platform area,Interaction stage,NAB event count,Description basis
+findings_grid_domain_expand,Expand a domain row in the findings grid.,Findings navigation and review,Interaction / navigation,3027,Inferred from event name
+findings_grid_domain_collapse,Collapse a domain row in the findings grid.,Findings navigation and review,Interaction / navigation,2708,Inferred from event name
+filter,Use filtering in MV; exact filter and target are not established by this generic event.,General interface,Interaction / navigation,2320,Inferred from event name
+findings_grid_finding_log,Open a finding log or reviewer-note panel.,Notes and finding log,Interaction / navigation,2030,Inferred from event name
+PM_PV_underwriting_editmerchant,Open/use merchant editing in the underwriting portfolio; saving is not established by this event.,Underwriting,Interaction / navigation,1873,Inferred from event name
+findings_grid_finding_log_note_add,Add a reviewer note to a finding log.,Notes and finding log,Action / submission,1696,Inferred from event name
+findings_grid_status_dropdown_open,Open the finding-status selector.,Findings actioning,Interaction / navigation,1533,Inferred from event name
+findings_grid_review_evidence,Open or review evidence for a finding.,Evidence review,Interaction / navigation,1458,Inferred from event name
+findings_grid_status_apply,Apply a finding-status selection.,Findings actioning,Action / submission,1424,Inferred from event name
+findings_grid_finding_log_cancel,Cancel or dismiss the finding-log interaction.,Notes and finding log,Cancel / close / exit,698,Inferred from event name
+findings_grid_evidence_openweb,Open a website from finding evidence.,Evidence review,Interaction / navigation,479,Inferred from event name
+PM_PV_portfolio_monitoring_search,Search in the monitored portfolio.,Portfolio management,Interaction / navigation,469,Inferred from event name
+findings_grid_openweb,Open a website from the findings grid.,Findings navigation and review,Interaction / navigation,421,Inferred from event name
+PM_PV_underwriting_check,Select a merchant row in the underwriting portfolio.,Underwriting,Interaction / navigation,415,Inferred from event name
+portfolio_section,Visit the portfolio section.,Portfolio management,Interaction / navigation,279,Inferred from event name
+findings_grid_assignee_dropdown_open,Open the assignee selector in the findings grid.,Findings actioning,Interaction / navigation,275,Inferred from event name
+PM_PV_underwriting_pegination,Change pages in the underwriting portfolio.,Underwriting,Interaction / navigation,251,Inferred from event name
+findings_section,Visit the findings section.,Findings navigation and review,Interaction / navigation,221,Inferred from event name
+portfolio_merchant_deboard_cancel,Cancel the action to deboard a merchant from the portfolio.,Merchant lifecycle,Cancel / close / exit,191,Inferred from event name
+portfolio_merchant_deboard_click,Open/start the action to deboard a merchant from the portfolio.,Merchant lifecycle,Interaction / navigation,191,Inferred from event name
+portfolio_merchant_deboard_apply,Submit the action to deboard a merchant from the portfolio.,Merchant lifecycle,Action / submission,182,Inferred from event name
+portfolio_merchant_deboard_result,Record the result step of the action to deboard a merchant from the portfolio; success is not established.,Merchant lifecycle,Result event (success unverified),182,Inferred from event name
+PM_PV_portfolio_monitoring_editmerchant,Open/use merchant editing in the monitored portfolio; saving is not established by this event.,Portfolio management,Interaction / navigation,154,Inferred from event name
+PM_PV_underwriting_checkall,Select all merchant rows in the underwriting portfolio.,Underwriting,Interaction / navigation,154,Inferred from event name
+PM_PV_underwriting_page,Visit the underwriting portfolio.,Underwriting,Interaction / navigation,151,Inferred from event name
+PM_PV_portfolio_monitoring_check,Select a merchant row in the monitored portfolio.,Portfolio management,Interaction / navigation,149,Inferred from event name
+findings_grid_owner_change_bulk,Invoke a bulk finding-owner change; success is not established by the event name.,Findings actioning,Interaction / navigation,149,Inferred from event name
+details_delete_website,Delete a website from merchant details.,Merchant details,Interaction / navigation,119,Inferred from event name
+findings_tab,Open the findings tab.,Findings navigation and review,Interaction / navigation,112,Inferred from event name
+add_remove_diagnostic,Use the diagnostic view in the merchant add/remove workflow; exact operation is unverified.,Merchant onboarding and files,Interaction / navigation,90,Inferred from event name
+findings_grid_assignee_confirm,Confirm an assignee selection.,Findings actioning,Action / submission,90,Inferred from event name
+details_edit_website,Edit a website in merchant details.,Merchant details,Interaction / navigation,87,Inferred from event name
+add_merchant_bulk,Start or open bulk merchant onboarding.,Merchant onboarding and files,Interaction / navigation,79,Inferred from event name
+add_merchant_bulk_confirm,Confirm a bulk merchant onboarding submission.,Merchant onboarding and files,Action / submission,77,Inferred from event name
+findings_merchant_deboard_click,Open/start the action to deboard a merchant from findings.,Merchant lifecycle,Interaction / navigation,75,Inferred from event name
+findings_grid_status_bulk_confirm,Confirm a bulk finding-status change.,Findings actioning,Action / submission,66,Inferred from event name
+sort,Use sorting in MV; exact column and target are not established by this generic event.,General interface,Interaction / navigation,65,Inferred from event name
+add_remove_file,Interact with a file in the merchant add/remove workflow; exact operation is unverified.,Merchant onboarding and files,Interaction / navigation,63,Inferred from event name
+PM_PV_underwriting_start,Start underwriting from the underwriting portfolio.,Underwriting,Interaction / navigation,60,Inferred from event name
+PM_PV_underwriting_start_cancel,Cancel underwriting initiation from the underwriting portfolio.,Underwriting,Cancel / close / exit,60,Inferred from event name
+PM_PV_underwriting_start_apply,Submit an underwriting-start action from the underwriting portfolio.,Underwriting,Action / submission,52,Inferred from event name
+PM_PV_underwriting_start_result,Record the result step of underwriting initiation from the underwriting portfolio; success is not established.,Underwriting,Result event (success unverified),52,Inferred from event name
+add_remove_page,Visit the merchant add/remove page.,Merchant onboarding and files,Interaction / navigation,49,Inferred from event name
+PM_PV_portfolio_monitoring_pegination,Change pages in the monitored portfolio.,Portfolio management,Interaction / navigation,46,Inferred from event name
+MV_login,Log in to MerchantView.,Access and account context,Interaction / navigation,42,Inferred from event name
+PM_PV_portfolio_monitoring_gotofindings,Navigate from the monitored portfolio to findings.,Portfolio management,Interaction / navigation,38,Inferred from event name
+findings_findings_merchant_back,Navigate back from a merchant-specific findings view.,Findings navigation and review,Interaction / navigation,35,Inferred from event name
+findings_history_scans,View scan history in findings.,Findings navigation and review,Interaction / navigation,31,Inferred from event name
+add_remove_pegination,Change pages in the merchant add/remove workflow.,Merchant onboarding and files,Interaction / navigation,29,Inferred from event name
+findings_grid_goto_merchant,Navigate from the findings grid to the merchant.,Findings navigation and review,Interaction / navigation,29,Inferred from event name
+findings_grid_loadmore,Load more findings in the grid.,Findings navigation and review,Interaction / navigation,29,Inferred from event name
+findings_details_page,Visit the findings details page.,Findings navigation and review,Interaction / navigation,28,Inferred from event name
+findings_grid_snooze_start,Start the finding-snooze workflow.,Findings actioning,Interaction / navigation,27,Inferred from event name
+MV_logout,Log out of MerchantView.,Access and account context,Interaction / navigation,26,Inferred from event name
+PM_PV_all_search,Search in the all-merchants portfolio.,Portfolio management,Interaction / navigation,24,Inferred from event name
+PM_PV_portfolio_monitoring_page,Visit the monitored portfolio.,Portfolio management,Interaction / navigation,23,Inferred from event name
+PM_PV_all_editmerchant,Open/use merchant editing in the all-merchants portfolio; saving is not established by this event.,Portfolio management,Interaction / navigation,22,Inferred from event name
+findings_grid_domain_view_all_findings,View all findings for a domain.,Findings navigation and review,Interaction / navigation,19,Inferred from event name
+findings_grid_status_dropdown_close,Close the finding-status selector.,Findings actioning,Cancel / close / exit,17,Inferred from event name
+findings_grid_snooze_submit,Submit a finding snooze.,Findings actioning,Action / submission,16,Inferred from event name
+PM_PV_underwriting_domain_list,Open a merchant domain list in the underwriting portfolio.,Underwriting,Interaction / navigation,15,Inferred from event name
+merchantview_general_network,Access the general MerchantView network view.,Network investigation,Interaction / navigation,15,Inferred from event name
+PM_PV_page,Visit the portfolio-management page.,Portfolio management,Interaction / navigation,14,Inferred from event name
+PM_PV_portfolio_monitoring_checkall,Select all merchant rows in the monitored portfolio.,Portfolio management,Interaction / navigation,14,Inferred from event name
+findings_history_page,Visit findings history.,Findings navigation and review,Interaction / navigation,13,Inferred from event name
+findings_network_page,Visit the findings network view.,Network investigation,Interaction / navigation,13,Inferred from event name
+ExecDashboard_Tab,Open the executive dashboard tab.,Executive dashboard,Interaction / navigation,11,Inferred from event name
+bank_switch,Switch the active bank/account context.,Access and account context,Interaction / navigation,11,Inferred from event name
+findings_grid_owner_change_all,Invoke changing the owner for all findings in the current scope.,Findings actioning,Interaction / navigation,11,Inferred from event name
+findings_grid_snooze_turn_off,Turn off a finding snooze.,Findings actioning,Interaction / navigation,11,Inferred from event name
+PM_PV_underwriting_search,Search in the underwriting portfolio.,Underwriting,Interaction / navigation,10,Inferred from event name
+findings_grid_url_report_generate,Request generation of a URL/domain report.,Reports and files,Action / submission,10,Inferred from event name
+findings_summary_page,Visit the findings summary page.,Findings navigation and review,Interaction / navigation,10,Inferred from event name
+PM_History_button,Open portfolio history.,Portfolio history,Interaction / navigation,9,Inferred from event name
+PM_PV_all_page,Visit the all-merchants portfolio.,Portfolio management,Interaction / navigation,9,Inferred from event name
+PM_PV_portfolio_notmonitoring_page,Visit the unmonitored portfolio.,Portfolio management,Interaction / navigation,9,Inferred from event name
+dispute_Tab,Open the disputes tab.,Disputes,Interaction / navigation,8,Inferred from event name
+PM_PV_underwriting_show100,Select a 100-row display in the underwriting portfolio.,Underwriting,Interaction / navigation,7,Inferred from event name
+PM_PV_underwriting_sort_scandate,Sort by scan date in the underwriting portfolio.,Underwriting,Interaction / navigation,7,Inferred from event name
+censoring_approve,Approve a censoring-related interaction; exact object and effect are unverified.,General interface,Interaction / navigation,7,Inferred from event name
+findings_grid_assignee_dropdown_close,Close the assignee selector in the findings grid.,Findings actioning,Cancel / close / exit,7,Inferred from event name
+PM_PV_all_check,Select a merchant row in the all-merchants portfolio.,Portfolio management,Interaction / navigation,6,Inferred from event name
+add_merchant_solo,Start or open single-merchant onboarding.,Merchant onboarding and files,Interaction / navigation,6,Inferred from event name
+evidence_modal_navigation,Navigate within an evidence modal.,Evidence review,Interaction / navigation,6,Inferred from event name
+files_download,Download a file.,Reports and files,Action / submission,6,Inferred from event name
+add_merchant_solo_exit,Exit single-merchant onboarding.,Merchant onboarding and files,Cancel / close / exit,5,Inferred from event name
+add_merchant_solo_upload,Submit/upload a single merchant.,Merchant onboarding and files,Action / submission,5,Inferred from event name
+findings_merchant_hide,Hide the merchant panel/list in findings.,Findings navigation and review,Interaction / navigation,5,Inferred from event name
+findings_merchant_search,Enter or use merchant search in findings.,Findings navigation and review,Interaction / navigation,5,Inferred from event name
+PM_PV_underwriting_gotofindings,Navigate from the underwriting portfolio to findings.,Underwriting,Interaction / navigation,4,Inferred from event name
+create_report_modal_generate,Request report generation from the report modal.,Reports and files,Action / submission,4,Inferred from event name
+create_report_modal_open,Open the report-generation modal.,Reports and files,Interaction / navigation,4,Inferred from event name
+details_add_website,Add a website to merchant details.,Merchant details,Interaction / navigation,4,Inferred from event name
+findings_grid_dispute,Open or start a dispute from a finding.,Disputes,Interaction / navigation,4,Inferred from event name
+findings_merchant_action_button_open,Open the merchant actions menu in findings.,Findings navigation and review,Interaction / navigation,4,Inferred from event name
+findings_merchant_search_apply,Apply merchant search in findings.,Findings navigation and review,Action / submission,4,Inferred from event name
+findings_summary_content_violations_critical,Select critical content violations in the findings summary.,Findings navigation and review,Interaction / navigation,4,Inferred from event name
+PM_History_gotofindings,Navigate from portfolio history to findings.,Portfolio history,Interaction / navigation,3,Inferred from event name
+PM_PV_underwriting_start_filepopup,Open the underwriting-start file popup from the underwriting portfolio.,Underwriting,Interaction / navigation,3,Inferred from event name
+PM_PV_underwriting_start_filepopup_cancel,Cancel the underwriting-start file popup from the underwriting portfolio.,Underwriting,Cancel / close / exit,3,Inferred from event name
+create_report_modal_view_files,View files from the report-generation modal.,Reports and files,Interaction / navigation,3,Inferred from event name
+files_button,Open the files area.,Reports and files,Interaction / navigation,3,Inferred from event name
+files_pagination,Change pages in the files area.,Reports and files,Interaction / navigation,3,Inferred from event name
+findings_grid_owner_change_bulk_cancel,Cancel a bulk finding-owner change.,Findings actioning,Cancel / close / exit,3,Inferred from event name
+findings_grid_url_report_view_files,Open generated URL/domain report files.,Reports and files,Interaction / navigation,3,Inferred from event name
+findings_merchant_action_button_close,Close the merchant actions menu in findings.,Findings navigation and review,Cancel / close / exit,3,Inferred from event name
+findings_merchant_click,Select a merchant in findings.,Findings navigation and review,Interaction / navigation,3,Inferred from event name
+PM_PV_all_underwriting,Open/start the underwriting action from the all-merchants portfolio.,Portfolio management,Interaction / navigation,2,Inferred from event name
+PM_PV_all_underwriting_apply,Submit the underwriting action from the all-merchants portfolio.,Portfolio management,Action / submission,2,Inferred from event name
+PM_PV_all_underwriting_cancel,Cancel the underwriting action from the all-merchants portfolio.,Portfolio management,Cancel / close / exit,2,Inferred from event name
+PM_PV_all_underwriting_result,Record the underwriting result step from the all-merchants portfolio; success is not established.,Portfolio management,Result event (success unverified),2,Inferred from event name
+PM_PV_portfolio_monitoring_show100,Select a 100-row display in the monitored portfolio.,Portfolio management,Interaction / navigation,2,Inferred from event name
+PM_PV_portfolio_notmonitoring_goto_underwriting_merchant_details,Navigate from the unmonitored portfolio to underwriting merchant details.,Portfolio management,Interaction / navigation,2,Inferred from event name
+PM_PV_underwriting_filter_scanType,Filter by scan type in the underwriting portfolio.,Underwriting,Interaction / navigation,2,Inferred from event name
+PM_UW_merchant_details_back,Navigate back from underwriting merchant details.,Underwriting,Interaction / navigation,2,Inferred from event name
+PM_UW_merchant_details_merchant_notes,Open merchant notes in underwriting details.,Underwriting,Interaction / navigation,2,Inferred from event name
+PM_UW_merchant_details_merchant_notes_cancel,Cancel/dismiss merchant notes in underwriting details.,Underwriting,Cancel / close / exit,2,Inferred from event name
+RM_button,Open the risk matrix.,Risk matrix and rules,Interaction / navigation,2,Inferred from event name
+findings_grid_dispute_cancel,Cancel a finding-dispute interaction.,Disputes,Cancel / close / exit,2,Inferred from event name
+findings_grid_group_collapse,Collapse a group in the findings grid.,Findings navigation and review,Interaction / navigation,2,Inferred from event name
+findings_merchant_show,Show the merchant panel/list in findings.,Findings navigation and review,Interaction / navigation,2,Inferred from event name
+PM_History_editmerchant,Open/use merchant editing from portfolio history.,Portfolio history,Interaction / navigation,1,Inferred from event name
+PM_PV_all_gotofindings,Navigate from the all-merchants portfolio to findings.,Portfolio management,Interaction / navigation,1,Inferred from event name
+PM_PV_portfolio_monitoring_domain_list,Open a merchant domain list in the monitored portfolio.,Portfolio management,Interaction / navigation,1,Inferred from event name
+PM_PV_portfolio_monitoring_goto_underwriting_merchant_details,Navigate from the monitored portfolio to underwriting merchant details.,Portfolio management,Interaction / navigation,1,Inferred from event name
+PM_PV_portfolio_monitoring_sort_risklevel,Sort by risk level in the monitored portfolio.,Portfolio management,Interaction / navigation,1,Inferred from event name
+PM_PV_portfolio_monitoring_underwriting,Open/start the underwriting action from the monitored portfolio.,Portfolio management,Interaction / navigation,1,Inferred from event name
+PM_PV_portfolio_monitoring_underwriting_apply,Submit the underwriting action from the monitored portfolio.,Portfolio management,Action / submission,1,Inferred from event name
+PM_PV_portfolio_monitoring_underwriting_cancel,Cancel the underwriting action from the monitored portfolio.,Portfolio management,Cancel / close / exit,1,Inferred from event name
+PM_PV_portfolio_monitoring_underwriting_result,Record the underwriting result step from the monitored portfolio; success is not established.,Portfolio management,Result event (success unverified),1,Inferred from event name
+PM_PV_portfolio_notmonitoring_check,Select a merchant row in the unmonitored portfolio.,Portfolio management,Interaction / navigation,1,Inferred from event name
+PM_PV_portfolio_notmonitoring_editmerchant,Open/use merchant editing in the unmonitored portfolio; saving is not established by this event.,Portfolio management,Interaction / navigation,1,Inferred from event name
+PM_PV_portfolio_notmonitoring_search,Search in the unmonitored portfolio.,Portfolio management,Interaction / navigation,1,Inferred from event name
+PM_PV_underwriting_report,Request/access a report from the underwriting portfolio; successful generation is not established.,Reports and files,Interaction / navigation,1,Inferred from event name
+PM_UW_merchant_details_goto_findings,Navigate from underwriting merchant details to findings.,Underwriting,Interaction / navigation,1,Inferred from event name
+PM_UW_merchant_details_toggle_merchant_list,Toggle the merchant list in underwriting details.,Underwriting,Interaction / navigation,1,Inferred from event name
+RM_MCC,Access the MCC section of the risk matrix.,Risk matrix and rules,Interaction / navigation,1,Inferred from event name
+findings_grid_dispute_close,Close a dispute; exact lifecycle meaning requires instrumentation validation.,Disputes,Cancel / close / exit,1,Inferred from event name
+findings_grid_dispute_withdraw,Withdraw a finding dispute.,Disputes,Interaction / navigation,1,Inferred from event name
+findings_grid_domain_view_filtered_findings,View filtered findings for a domain.,Findings navigation and review,Interaction / navigation,1,Inferred from event name
+findings_grid_finding_log_close,Close the finding-log panel.,Notes and finding log,Cancel / close / exit,1,Inferred from event name
+findings_grid_group_expand,Expand a group in the findings grid.,Findings navigation and review,Interaction / navigation,1,Inferred from event name
+findings_history_evidence,View evidence from findings history.,Evidence review,Interaction / navigation,1,Inferred from event name
+findings_merchant_deboard_apply,Submit the action to deboard a merchant from findings.,Merchant lifecycle,Action / submission,1,Inferred from event name
+findings_merchant_notes_cancel,Cancel or dismiss merchant notes from findings.,Notes and finding log,Cancel / close / exit,1,Inferred from event name
+findings_merchant_notes_clicked,Open merchant notes from findings.,Notes and finding log,Interaction / navigation,1,Inferred from event name
+findings_network_filter_critical,Filter network findings to critical severity.,Network investigation,Interaction / navigation,1,Inferred from event name
+findings_summary_unreported,Select the unreported section/filter in the findings summary; exact semantics are unverified.,Reports and files,Interaction / navigation,1,Inferred from event name
+help_button,Open help.,General interface,Interaction / navigation,1,Inferred from event name
+portfolio_merchant_pause_monitoring_cancel,Cancel the action to pause monitoring from the portfolio.,Merchant lifecycle,Cancel / close / exit,1,Inferred from event name
+portfolio_merchant_pause_monitoring_click,Open/start the action to pause monitoring from the portfolio.,Merchant lifecycle,Interaction / navigation,1,Inferred from event name
+rules_customizer_clicked,Open/click the rules customizer; this does not establish a saved rule change.,Risk matrix and rules,Interaction / navigation,1,Inferred from event name

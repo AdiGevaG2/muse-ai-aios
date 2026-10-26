@@ -1,6 +1,6 @@
 ---
 name: baseline-data
-description: Pull current-state numbers from Mixpanel, Coralogix, or Looker via MCP. Use for "get the baseline", "pull current metrics", "what does the data say", "query Mixpanel", "check the error rate", or before a PRD needing metrics anchored to real figures.
+description: Pull current-state numbers from Mixpanel, Coralogix, or Looker. Use for "get the baseline", "pull current metrics", "what does the data say", "query Mixpanel", "check the error rate", or before a PRD needing metrics anchored to real figures.
 ---
 
 # Baseline Data
@@ -26,16 +26,31 @@ measuring stick post-launch. Record them so re-measurement is a straight re-run.
 |---|---|---|
 | **Mixpanel** | Product and funnel metrics: usage, coverage, conversion, drop-off, segmentation | see `config.json` |
 | **Coralogix** | Error and performance signals: error rate by service, latency, failure counts | see `config.json` |
-| **Looker** | Business and warehouse metrics not in Mixpanel | **Not connected** — see below |
+| **Looker** | Business and warehouse metrics not in Mixpanel | Connected via REST API — see below |
 
 `config.json` marks each integration `UNVERIFIED` until a real query succeeds.
 Configuration metadata is not a working connection: if a call fails, report the
 failure and the readiness state rather than substituting an estimate.
 
-**Looker is not currently connected.** If a question needs it, say so and stop
-for that figure — do not approximate it from Mixpanel. Setup is a one-time
-browser OAuth the user must run themselves: point them at
-`references/connect-looker.md`. An agent cannot complete it.
+**Looker is reached through its REST API, not MCP.** The Looker-managed MCP
+server needs an admin-registered OAuth client that is not available to us; the
+API key path is, and it works. Credentials live in `~/.looker.ini` — read them
+with `configparser`, POST to `/api/4.0/login` for a token, then query. Two
+things that will otherwise cost you a debugging round:
+
+- `base_url` includes port `19999`. The plain web host returns 403.
+- Never print, echo, log, or copy the client secret.
+
+Discover before querying: `/api/4.0/lookml_models/<model>` lists explores,
+`/api/4.0/lookml_models/<model>/explores/<explore>` lists fields.
+
+Route by subject: `mixpanel` (product usage, modeled — `sessions`, `mp_events`,
+`customers_rules_adoption`), `mv` (merchant scanning and findings — `merchant`,
+`fact_finding`, `fact_scan_event`), `core` (content findings, product DB).
+`everc` has no explores; do not route there.
+
+Queries inherit the key owner's Looker roles and content access. Read only —
+never create or modify Looker content.
 
 ## Steps
 1. **Identify the metrics that matter** for this feature — funnel steps, error
@@ -70,7 +85,8 @@ against, and naming anything that could not be pulled.
 
 ## Folder resources
 - `references/mcp-queries.md` — per-source mechanics and query discipline.
-- `references/connect-looker.md` — one-time Looker setup, when it is needed.
+- `references/connect-looker.md` — historical OAuth/MCP setup notes. Superseded
+  by the REST API path in § Sources; read only if the API path breaks.
 - `../../../domains/<domain>/config.json` — project IDs, endpoints, readiness.
 - `corrections/` — if it holds entries, apply them; empty is normal (see `../_shared/corrections.md`).
 

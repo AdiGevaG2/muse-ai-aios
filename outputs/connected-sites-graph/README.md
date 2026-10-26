@@ -1,7 +1,7 @@
 # Connected Sites - Graph
 
 UP feature for reviewing reported and connected URL rows under a merchant, with
-findings owned per URL. Domain: `unified-platform`. Legacy is precedent, not a
+findings owned per URL. Domain: `atlas`. Legacy is precedent, not a
 port target.
 
 ## Read first

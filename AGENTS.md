@@ -17,6 +17,13 @@ Do not clean up adjacent work. Record actual changed files, run the narrowest
 relevant checks, and compare changes with scope before completion. Report
 limitations; never claim completion while verification is pending.
 
+Edit, then report — no plan or file list announced first. For a targeted change
+to a long file, locate the anchor by search and read only that range; read a file
+whole only when rewriting it whole. Apply edits to independent files together
+rather than one file per turn, and use a whole-file rewrite once instead of a
+long chain of edits to the same file. Never re-read a file to confirm an edit
+landed; a failed edit reports itself.
+
 If architecture conflicts with the approved spec, record an `SC-###` conflict
 and stop only the affected dependency chain. Do not silently choose product
 behavior.

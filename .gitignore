@@ -1,3 +1,4 @@
 # Keep structure, ignore local scratch
 .DS_Store
 *.tmp
+.claude/.validate-docs-pending/

@@ -114,16 +114,16 @@ system.
 
 Files to fill, highest leverage first:
 
-1. **`domains/unified-platform/second-brain/writing-samples.md`** — paste 2–4
+1. **`domains/atlas/second-brain/writing-samples.md`** — paste 2–4
    **real** examples of how you write. Single highest-leverage file for output
    quality; without it every artifact reads generically.
-2. **`domains/unified-platform/config.json`** — replace every `<...>`: tool
+2. **`domains/atlas/config.json`** — replace every `<...>`: tool
    project IDs (Mixpanel, Coralogix, Looker, Jira, Confluence, Figma), naming,
    gates.
-3. **`domains/unified-platform/CLAUDE.md`** — the `<...>` in strategy, voice,
+3. **`domains/atlas/CLAUDE.md`** — the `<...>` in strategy, voice,
    delegation.
 4. **`org-brain/context/policies.md`** (org-wide) and
-   **`domains/unified-platform/second-brain/context/compliance.md`** (domain) —
+   **`domains/atlas/second-brain/context/compliance.md`** (domain) —
    your real governance facts. **Human-owned; never auto-written.**
 5. **`OWNERSHIP.md`** — fill `<owners>` when the pilot expands past you.
 

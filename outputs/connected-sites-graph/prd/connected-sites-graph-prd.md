@@ -1,13 +1,17 @@
-# PRD: Connected Sites — Findings Triage
+# PRD: Connected Sites, Findings Triage
 
 Document Name: connected-sites-graph-prd
 
-Feature Name: Connected Sites — Findings Triage
+Feature Name: Connected Sites, Findings Triage
 Owner: Adi Geva
-Product: Unified Platform
+Product: Atlas
 Status: Draft
-Version: 1.0
-Last Updated: 2026-09-01
+Version: 1.1
+Last Updated: 2026-09-02
+
+Amendment 1.1 (PM, 2026-09-02): Ignore is redefined as a **scope** judgment, not
+a risk lever, and its default is governed by the portfolio-level graph-isolation
+flag. Affects DEC-2, DEC-3, REQ-3 to REQ-6, AC-3 to AC-6, SC-3, SC-4, OQ-5.
 
 Upstream: [Discovery](../discovery/connected-sites-graph-discovery.md) ·
 [Reverse engineering V2](../current-state/connected-sites-graph-reverse-engineering-v2.md)
@@ -15,22 +19,25 @@ Upstream: [Discovery](../discovery/connected-sites-graph-discovery.md) ·
 ## 1. Summary
 
 A merchant declares its website. UP's scan follows the trail outward and finds
-other sites connected to it — shared WHOIS records, shared payment keys, shared
-infrastructure. Those connected sites are how an analyst catches a merchant who
+other sites connected to it, through shared WHOIS records, shared payment keys,
+or shared infrastructure. Those connected sites are how an analyst catches a merchant who
 reported a clean storefront and runs the risky business one hop away.
 
 In Merchant View, an analyst can work a connected site exactly like a declared
 one: assign it, set its status, snooze or dispute its findings, and delete a
-connection that is plainly wrong. In Unified Platform the connected site is
-visible but inert — no durable marker saying why it is there, no URL-level
-actions, one resolution dropdown per finding, and no way to correct a false
-connection that is inflating the merchant's risk score.
+connection that is wrong. In Atlas the connected URL is
+presented in the Findings tab and its findings affect merchant risk, but the
+analyst has no way to act on the site itself. There is no durable marker
+saying why it is there, no URL-level actions, no way to say this one site is
+not the merchant's without reviewing its findings first, and the only lever
+is a portfolio-wide flag affecting every merchant at once.
 
 This PRD makes a connected site workable in UP. It delivers a flat list of
 connected sites under the merchant, the triage actions to act on them, and a
-reversible exclusion that lets an analyst remove a wrong connection's risk
-contribution without deleting anything. Two of the gaps it closes are silent
-regressions that would otherwise reach every migrating MV customer.
+reversible **Ignore** that lets an analyst declare a site is not part of this
+merchant, taking it out of merchant risk and out of future scans without
+deleting anything. Two of the gaps it closes are silent regressions that would
+otherwise reach every migrating MV customer.
 
 **This feature is rows, not a graph.** The Network Evidence tab is a later
 phase. Reported URLs are out of scope entirely.
@@ -99,7 +106,7 @@ another. This reframes the feature from "low usage, deprioritize" to "high value
 for a known cohort, plus a silent regression for everyone".
 
 **Validation cohort:** CBA, MVB-bank, Fresno First, Afterpay.
-**Regression-watch cohort:** Adyen, NAB, Moneris — high volume, near-zero
+**Regression-watch cohort:** Adyen, NAB, Moneris, high volume, near-zero
 connected usage. They feel P3 without wanting any new surface.
 
 Source: Mixpanel MV project `2040581`, 90-day customer-only window, 2026-08-31.
@@ -112,7 +119,7 @@ Decisions already made. These are constraints on the spec, not open items.
 |---|---|---|
 | DEC-1 | Phase 1 is a **flat list** of connected sites as rows under the merchant. No graph, hierarchy, or node expansion. | The Network Evidence tab is a later phase and a separate decision. |
 | DEC-2 | A connected site can be **excluded from merchant risk, reversibly**. | This is UP's answer to a false connection, replacing MV's graph-edit workflow. |
-| DEC-3 | The exclusion **control is a UX decision**. This PRD states behavior only — not a toggle, dropdown, or status list. | The product designer chooses the mechanism. |
+| DEC-3 | An analyst can exclude a connected site from merchant risk, and can reverse it. This PRD states behavior only, not a toggle, dropdown, or status list. | This PRD owns the required behavior, not the control's form. |
 | DEC-4 | **Reported URLs are out of scope entirely.** Whether a reported URL can be excluded is not a question this feature answers. | Scope discipline. Do not spec or raise it. |
 | DEC-5 | **Reported rows must not display their connections.** UP's BFF returns connections only for connected rows; this is correct behavior. | Showing the same link on both sides is redundant noise. Retires the "projection gap" in reverse-engineering V2 § Gaps 2. |
 | DEC-6 | **Redirects are not connection edges.** | A redirect destination's findings are absorbed onto the reported store; a doorway is skipped. Neither produces a connected row. The discarded doorway finding belongs to the findings pipeline, not here. |
@@ -124,16 +131,16 @@ All decisions: PM, 2026-09-01.
 
 Phased by rising UI investment. Phase 1 is the release gate for MV migration.
 
-### Phase 1 — Correctness and control
+### Phase 1, Correctness and control
 
 | ID | Requirement | Solves |
 |---|---|---|
 | REQ-1 | A connected URL row displays a durable marker identifying it as connected. The marker renders from the store's stored connected status, independent of whether any peer connection resolved. | P4 |
 | REQ-2 | Finding severity is selected by reported status, matching MV's dual reported/unreported scale, including each customer's configured risk matrix. | P3 |
-| REQ-3 | An analyst can exclude a connected site from merchant risk. On exclusion, every risk contribution from that site is removed from the merchant risk calculation. | P1 |
+| REQ-3 | An analyst can exclude a connected site from merchant risk in one action, without reviewing its findings first. On exclusion, every risk contribution from that site is removed from the merchant risk calculation immediately, and the site is excluded from that merchant's future scans until the exclusion is reversed. | P1 |
 | REQ-4 | An excluded connected site remains visible in the list and is identifiable as excluded. | P1 |
 | REQ-5 | An analyst can reverse an exclusion. On reversal, the site's original risk contribution is restored. | P1 |
-| REQ-6 | An exclusion and its reversal are attributable — who changed it and when is retrievable. | P1 |
+| REQ-6 | An exclusion and its reversal are attributable: who changed it and when is retrievable. | P1 |
 | REQ-7 | The `connectionInfo` payload is persisted in full from this release onward: depth, node count, per-entry score, and full path. | P7 |
 
 **REQ-3 default:** a connected site's findings contribute to merchant risk
@@ -143,7 +150,7 @@ automatically, with no user action. Exclusion is an explicit act.
 requirement exists because the data is unrecoverable once discarded, and every
 release without it grows the backfill.
 
-### Phase 2 — Triage actions
+### Phase 2, Triage actions
 
 Extending patterns that already exist in UP for reported URLs to connected rows.
 This is not new interaction design.
@@ -153,7 +160,7 @@ This is not new interaction design.
 | REQ-8 | URL-level on a connected row: assign an owner, set a URL status, download a URL report. | P2 |
 | REQ-9 | Finding-level on a connected row: review evidence, set status/resolution, snooze, dispute, add and view notes, view finding history, and see when a rule affected the finding. | P2 |
 
-### Phase 3 — Surfaces
+### Phase 3, Surfaces
 
 | ID | Requirement | Solves |
 |---|---|---|
@@ -161,7 +168,7 @@ This is not new interaction design.
 | REQ-11 | The list can be sorted and filtered by URL type, risk, assignee, status, and exclusion state. | P6 |
 | REQ-12 | Findings can be grouped by category, preserving per-finding risk, indicators, evidence, and status. | P6 |
 | REQ-13 | The connection popover additionally shows the connection path, hop count, and confidence score, for sites scanned after REQ-7 shipped. | P5, P7 |
-| REQ-14 | UP's existing redirect indicators and screenshot evidence popup are retained. | — |
+| REQ-14 | UP's existing redirect indicators and screenshot evidence popup are retained. | n/a |
 
 **Phase 3 is a decision gate, not a commitment.** Its value rests on analysts
 changing behavior once rows become workable. Review after Phase 2 ships against
@@ -217,7 +224,7 @@ not in aggregate — the aggregate is dominated by customers who do not use this
 | SC-3 | Exclusion is used, and reversals stay a small share of exclusions. | A high reversal rate means the control is being used to hide noise, or connection quality is wrong. |
 | SC-4 | Share of a merchant's connected sites excluded stays low per customer. | A customer excluding most connected sites is reporting a connection-quality problem, not using a feature. |
 | SC-5 | Migrating MV customers show no unexplained movement in merchant risk attributable to connected sites. | The regression watch. Applies to the regression-watch cohort, who will not appear in SC-1 to SC-4. |
-| SC-6 | Fewer support escalations asking why a connected site appears under a merchant. | Tests whether the marker and popover actually explain the row. |
+| SC-6 | Fewer support escalations asking why a connected site appears under a merchant. | Tests whether the marker and popover explain the row. |
 
 SC-5 needs a before/after baseline captured before Phase 1 ships. Flagged as a
 dependency, not an assumption.
@@ -262,10 +269,10 @@ must be answered before the spec sizes Phase 1.
   `../current-state/connected-sites-graph-reverse-engineering-v2.md`. Current;
   § Gaps 2 retired by DEC-5.
 - `/learn-feature` session note, sessions 1–2 —
-  `domains/unified-platform/second-brain/context/features/connected-sites-findings-view.md`.
+  `domains/atlas/second-brain/context/features/connected-sites-findings-view.md`.
   Source of DEC-1 to DEC-7 and the mechanism confirmations.
 - Open hypotheses —
-  `domains/unified-platform/second-brain/hypotheses/connected-sites-findings-view.md`.
+  `domains/atlas/second-brain/hypotheses/connected-sites-findings-view.md`.
 - Feature decisions — `../README.md`.
 - Mixpanel MV project `2040581`, 90-day customer-filtered queries, 2026-08-31.
 

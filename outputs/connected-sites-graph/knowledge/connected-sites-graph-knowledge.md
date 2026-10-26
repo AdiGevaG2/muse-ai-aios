@@ -7,9 +7,9 @@
 
 | Field | Value |
 | --- | --- |
-| Product Area | Unified Platform — merchant findings |
+| Product Area | Atlas — merchant findings |
 | Primary user | Risk and compliance analysts at banks, acquirers and PSPs; plus G2RS internal analysts |
-| Where it lives | The merchant's findings list in Unified Platform |
+| Where it lives | The merchant's findings list in Atlas |
 | Status | In build — phase 1 of the MerchantView migration |
 | Owner | Not recorded |
 | Last verified | 2026-09-01 |
@@ -97,7 +97,7 @@ Two terms worth pinning down, because they are used loosely in meetings:
 **Not yet / known limits:**
 
 - **No explanation of *how* two sites are connected beyond the shared
-  identifier.** Unified Platform records "these two share an email"; it discards
+  identifier.** Atlas records "these two share an email"; it discards
   the route between them, along with how many steps it took and how confident
   the scan was. MerchantView keeps the full trail. Recovering it would need a
   data change and a re-scan, not a screen change.
@@ -107,9 +107,9 @@ Two terms worth pinning down, because they are used loosely in meetings:
   connection list is just incomplete. How often this happens is unmeasured.
 - **Twelve ways to link two sites, against MerchantView's eighty-nine.** Where
   MerchantView distinguishes a shared billing contact from a shared technical
-  contact, Unified Platform records only "email".
+  contact, Atlas records only "email".
 - **No way to correct a wrong connection.** MerchantView lets analysts add,
-  edit, delete and undo connections. Unified Platform does not, so exclusion is
+  edit, delete and undo connections. Atlas does not, so exclusion is
   the only correction available.
 
 ## Where it sits
@@ -134,7 +134,7 @@ Two terms worth pinning down, because they are used loosely in meetings:
 | Does an exclusion survive a re-scan that rediscovers the site? | PM decision, then confirm feasibility | Adi Geva + merchant service team | Spec |
 | Does MerchantView's `Allowed` status actually remove a URL from risk? | Trace the status-to-risk path in MV | MV risk team | Nothing — parity context only |
 | How do per-site risks combine into the merchant score? | Read the risk aggregation service | Risk team | PRD — sizes the effect of one exclusion |
-| Does Unified Platform score a discovered site higher than a reported one, as MV does? | Read UP's risk service for a reported/unreported branch | Risk team | Spec — silent regression risk on migration |
+| Does Atlas score a discovered site higher than a reported one, as MV does? | Read UP's risk service for a reported/unreported branch | Risk team | Spec — silent regression risk on migration |
 | How often are connection records lost to the store-creation race? | Count the WARN in 30 days of production logs | Owner not recorded | Spec |
 | Is the 4% connected-site expansion rate a presentation failure or genuinely low volume? | Interview MV analysts | MV analyst team | Discovery |
 
@@ -161,10 +161,10 @@ Every claim above traces to something read, or is marked as a gap. Labels:
 - Whether MerchantView's `Allowed` status is risk-affecting. The status list is
   confirmed from the screen; its effect on risk is not traced.
 - Whether the lost-connection race resolves itself on the next scan.
-- Whether Unified Platform scores discovered sites higher than reported ones, as
+- Whether Atlas scores discovered sites higher than reported ones, as
   MerchantView does. If it does not, migrating customers' risk scores drop
   silently.
-- All Unified Platform claims describe inspected local source. Two of the four
+- All Atlas claims describe inspected local source. Two of the four
   repositories were last synced in June 2026 and lag current development, so a
   gap named here may already be closed.
 - WebShield behavior is entirely unverified — no source access.
@@ -177,7 +177,7 @@ Every claim above traces to something read, or is marked as a gap. Labels:
 | 4% | Share of those expansions on a discovered rather than reported site | 177,713 total expansions, same window | Mixpanel MV project `2040581` | 2026-08-31 |
 | ~50 customers | Distinct customers expanding discovered-site rows | Same window | Mixpanel MV project `2040581` | 2026-08-31 |
 
-No Unified Platform usage data exists — the feature is not yet in customers'
+No Atlas usage data exists — the feature is not yet in customers'
 hands. No new data was pulled on 2026-09-01.
 
 ## Keeping this current

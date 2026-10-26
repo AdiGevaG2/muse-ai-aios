@@ -12,35 +12,34 @@ This is a PM reverse-engineering workflow, not a forensic code audit. The
 deliverable is what a PM needs to make migration and scope decisions — not a
 description of the subsystem.
 
-## Scope questions (one round, before any research)
-Determine four things:
+## Scope (derive it, do not ask)
+Four things bound the run:
 
 1. **Feature**
 2. **Source platform(s)** — Merchant View, Single Platform, WebShield, Unified
    Platform, or multiple
 3. **Target platform**
-4. **Quick or Strict** (see below)
+4. **Quick or Strict** — default Quick per `../_shared/run-mode.md`
 
-Ask only the fields genuinely missing. If the user already supplied a field —
-including via abbreviation (MV, SP, WS, UP) — do not ask it again. Never ask for
-an output folder or feature-workspace name when it can be derived from the
-feature name; derive it and state it in one line.
+Derive every field the PM did not supply and state the derived scope in one line
+in the closing report. Abbreviations (MV, SP, WS, UP) count as supplied. Default
+the target platform to Unified Platform; default the source platforms to whichever
+legacy products plausibly hold the feature, and say which you picked. Never ask
+for an output folder or feature-workspace name — derive it from the feature name.
 
-`Reverse engineer Connected Sites from MV, WS and SP. Target UP. Strict.`
-supplies all four. It should require zero follow-up questions.
+`Reverse engineer Connected Sites from MV, WS and SP. Target UP. Strict.` and a
+bare `Reverse engineer Connected Sites` both run to completion with zero
+questions; the second just carries more `ASSUMED:` lines.
 
-## After research begins, do not interrupt
-Once research starts, the only two reasons to stop and ask:
+## Do not interrupt
+Make the safest reasonable interpretation, record the assumption or evidence gap,
+and continue. **Missing evidence is an `UNKNOWN`, not a question to the PM.** A
+technical uncertainty that changes no product decision is never a PM question.
 
-- Two materially different **product** interpretations would produce different
-  PM conclusions, or
-- A required source is completely inaccessible and the entire requested analysis
-  cannot reasonably continue without it.
-
-Otherwise: make the safest reasonable interpretation, record the assumption or
-evidence gap, and continue. **Missing evidence is usually an `UNKNOWN`, not a
-question to the PM.** A technical uncertainty that changes no product decision
-is never a PM question.
+Two materially different **product** interpretations that would lead to different
+PM conclusions get recorded as an open decision in the artifact, next to the
+evidence — not raised as a question mid-run (`../../../CLAUDE.md` → Act, Don't
+Ask).
 
 ## Steps
 
@@ -67,11 +66,30 @@ is never a PM question.
    These questions are the scope. Search only enough evidence to answer them.
    Do not attempt to document the entire subsystem.
 
-3. **Resolve sources.** Use the selected platforms to pick repositories;
-   `code-repos-git/REPO-MAP.md` targets the search. Prefer local clones; use
-   GitHub MCP for repos not cloned locally, for history, or to read current
-   remote content. Search to locate, then read the specific file — never page
-   whole files through the API.
+3. **Always invoke `company-brain` first to resolve sources, then probe
+   reachability before analyzing.** Local clones and `code-repos-git/REPO-MAP.md`
+   cover ~65 of ~430 org repos — a capability can be real and simply live outside
+   both. Route every source-platform and target-platform lookup through
+   `company-brain` before searching code, even when a repo already looks
+   obvious or is already cloned locally: a locally-cloned repo can still be the
+   wrong one, or only one of several that own the feature. Never conclude a
+   capability "does not exist" or "is a gap" from a search that skipped this
+   step — treat that as scoped to the repos actually searched, not to the
+   platform. Search to locate, then read the specific file — never page whole
+   files through the API.
+
+   **Search with Grep and Glob, not shell `grep`/`find`.** The dedicated tools
+   bound their own output; a shell grep across repos returns everything it
+   matches straight into context, and chained `cd &&` scripts trip permission
+   prompts. Reserve Bash for what only it can do — repo freshness, remote
+   probes, directory listings.
+
+   **Probe every resolved repo before any analysis begins** — one `git ls-remote`
+   (or equivalent single read) per repo, all in one batch. A repo that fails the
+   probe is marked `NOT VERIFIED` immediately and its platform is dropped from
+   the run per "Missing platform evidence" below. Do not discover an unreachable
+   source midway through the investigation, and do not troubleshoot access from
+   inside the analysis — one probe, one verdict, continue with what resolved.
 
 4. **Freshness is a caveat, not a workflow.** Inspect available repos read-only.
    Follow `../_shared/repo-freshness-check.md`: report stale evidence as a
@@ -95,9 +113,10 @@ is never a PM question.
    not launch a second full research pass. Stop when the critical claim is
    sufficiently supported, or leave it `Unknown`.
 
-7. **Report, then ask once to persist.** Present the concise findings and the
-   proposed artifact path. Persist only after explicit approval. Do not bundle
-   the persistence approval with research questions.
+7. **Write the artifact, then report.** Persist to the path below and report the
+   concise findings plus that path. A local artifact write is not an external
+   write — do it, do not ask (`../_shared/run-mode.md` → Gaps). Only an
+   overwrite of existing non-recoverable work needs approval first.
 
 ## Hard stopping rule
 Stop researching when either:
@@ -110,22 +129,13 @@ for its own sake. Once sufficient evidence exists, do not run further naming or
 synonym searches.
 
 ## Quick vs Strict
-Both modes share the **same bounded product scope**.
+Follow `../_shared/run-mode.md`. Default Quick; do not ask.
 
-**Quick** — targeted evidence; one strong source per important behavior when
-sufficient; prioritize product-visible behavior; unresolved technical detail
-becomes `Unknown`.
-
-**Strict** — same scope, higher confidence. Independently verify only high-risk
-or migration-critical claims; normally two strong sources for critical claims
-when available; verify contradictions and non-obvious business rules.
-
-Strict does **not** mean: inspect every possible file; enumerate every enum
-unless required; trace every call chain; produce dozens of behavioral rules;
-duplicate the investigation with a verifier; or search every naming synonym
-after sufficient evidence exists.
-
-**Strict increases confidence, not scope.**
+Applied to this workflow: Strict does **not** mean inspect every possible file,
+enumerate every enum, trace every call chain, produce dozens of behavioral rules,
+duplicate the investigation with a verifier, or search every naming synonym once
+sufficient evidence exists. Strict verification is the narrow inline pass in
+step 6.
 
 ## Missing platform evidence
 If a requested source platform cannot be accessed: attempt **one** reasonable

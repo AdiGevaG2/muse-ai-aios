@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add Merchant Flow — Enhancements (Lo-Fi)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#2a2a2a;--muted:#8a877f;--line:#dcdad2;--paper:#fdfdfb;--panel:#f6f5f1;--accent:#6b52a3;--accent-soft:#f2eef8}
+  body{margin:0;background:#eceae3;font-family:'Patrick Hand','Kalam',system-ui,sans-serif;color:var(--ink);display:flex;justify-content:center;padding:28px 16px}
+  .app *{font-style:normal}
+  a{color:var(--accent)}
+  .app{width:min(1160px,100%);background:var(--paper);border:2.5px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:6px 8px 0 rgba(42,42,42,.12)}
+  .chrome{display:flex;gap:6px;align-items:center;padding:8px 12px;background:var(--panel);border-bottom:2px solid var(--ink)}
+  .dot{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink)}
+  .curl{margin-left:8px;flex:1;height:16px;border:1.5px solid #c7c5bc;border-radius:8px;background:#fff;font-size:11px;color:var(--muted);display:flex;align-items:center;padding:0 8px}
+  .top{display:flex;align-items:center;gap:14px;padding:11px 20px;border-bottom:2px solid var(--ink)}
+  .logo{font-weight:700;font-size:16px;border:2px solid var(--ink);border-radius:6px;padding:1px 9px;cursor:pointer}
+  .search{flex:1;height:28px;border:1.5px solid #c7c5bc;border-radius:8px;background:#fff;display:flex;align-items:center;padding:0 12px;color:var(--muted);font-size:13px}
+  .avatar{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:12px;background:#fff}
+  .tile{border:2px solid var(--ink);border-radius:9px;padding:10px 12px;background:#fff;flex:1;min-width:0}
+  .tile .big{font-size:26px;font-weight:700;line-height:1}
+  .chip{display:inline-flex;align-items:center;gap:5px;border:2px solid var(--ink);border-radius:20px;padding:1px 10px;font-size:12px;font-weight:700;background:#fff}
+
+  .body{display:flex;min-height:640px}
+  .side{width:190px;border-right:2px solid var(--ink);background:var(--panel);padding:16px 12px;display:flex;flex-direction:column;gap:3px}
+  .nav{padding:8px 11px;border-radius:7px;font-size:15px;color:#4a4842;cursor:pointer}
+  .nav.on{background:var(--ink);color:#fff;font-weight:700}
+  .spacer{flex:1}
+
+  .main{flex:1;padding:26px 30px;min-width:0}
+  .h1{font-size:25px;font-weight:700;margin:0 0 4px}
+  .h2{font-size:16px;font-weight:700;margin:0}
+  .eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .sub{font-size:14px;color:var(--muted)}
+  .breadcrumb{font-size:14px;color:var(--muted);margin-bottom:18px}
+
+  .card{border:1.5px solid var(--line);border-radius:10px;background:#fff;padding:16px 18px;margin-bottom:16px}
+  .card.dashed{border-style:dashed;border-color:#c7c5bc}
+
+  .btn{border:1.5px solid var(--ink);border-radius:8px;padding:9px 18px;font-size:15px;font-weight:700;background:#fff;font-family:inherit;cursor:pointer}
+  .btn:hover{background:var(--panel)}
+  .btn.dark{background:var(--ink);color:#fff}.btn.dark:hover{background:#444}
+  .btn.dark:disabled{opacity:.35;cursor:not-allowed;background:var(--ink)}
+  .btn.ghost{border-color:var(--line);color:#4a4842}
+  .btn.danger{border-color:#b3453b;color:#a13a30}
+  .btn.danger:hover{background:#fbeceb}
+  .btn.sm{padding:5px 12px;font-size:13px}
+
+  .rt{width:11px;height:11px;border-radius:50%;flex:none;display:inline-block}
+  .r{background:#d76a60}.y{background:#e0b34e}.g{background:#5aa876}.gr{background:#cfccc4}.b{background:#8fb7e6}
+
+  .stepper{display:flex;align-items:center;gap:6px;margin-bottom:22px;flex-wrap:wrap}
+  .step{display:flex;align-items:center;gap:8px;padding:6px 13px;border:1.5px solid var(--line);border-radius:999px;font-size:14px;color:var(--muted);background:#fff}
+  .step.on{border-color:var(--ink);color:var(--ink);font-weight:700;background:#fdf3d9}
+  .step.done{border-color:var(--ink);color:var(--ink);background:#e9f5e9}
+  .step-arrow{color:var(--muted);font-size:13px}
+
+  .choice-row{display:flex;gap:16px;flex-wrap:wrap}
+  .choice-card{flex:1;min-width:220px;border:1.5px solid var(--line);border-radius:12px;background:#fff;padding:20px;cursor:pointer;text-align:center}
+  .choice-card:hover{background:var(--panel)}
+  .choice-card.selected{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .choice-card.selected .sub{color:#d8d6cf}
+  .choice-card .icon{font-size:26px;margin-bottom:8px}
+  .choice-card .label{font-size:18px;font-weight:700;margin-bottom:4px}
+
+  .field-row{margin-bottom:14px;max-width:440px}
+  .field-row label{display:block;margin-bottom:5px;font-size:14px;font-weight:700;color:#4a4842}
+  .field{border:1.5px solid #c7c5bc;border-radius:8px;background:#fff;min-height:36px;display:flex;align-items:center;padding:8px 11px;color:var(--muted);font-size:14px}
+  select.field{width:100%;font-family:inherit;font-size:14px;color:var(--ink);appearance:none;cursor:pointer}
+  .req{color:#d76a60}
+
+  table.wtable{width:100%;border-collapse:collapse;margin-top:6px}
+  table.wtable th,table.wtable td{border-bottom:1.5px dashed #c7c5bc;padding:9px 8px;text-align:left;font-size:14px}
+  table.wtable th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;border-bottom:1.5px solid var(--ink)}
+
+  .chip.dash{border-style:dashed;color:#5c5951}
+  .chip.gray{background:var(--panel);color:#4a4842;border-color:#c7c5bc}
+  .chip.on{background:var(--ink);color:#fff}
+
+  .service-list{display:flex;flex-direction:column;gap:8px}
+  .service-item{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;background:#fff}
+  .service-item.removed{opacity:.45}
+  .service-item .name{display:flex;align-items:center;gap:9px;font-size:15px}
+
+  .banner{border:1.5px solid var(--line);border-radius:9px;padding:12px 15px;font-size:14px;display:flex;align-items:flex-start;gap:9px;margin-bottom:16px}
+  .banner.warn{border-color:#e0b34e;background:#fdf7e8}
+  .banner.success{border-color:#5aa876;background:#eef7ef}
+  .banner.note{border-color:var(--accent);background:var(--accent-soft)}
+  .banner .ic{flex:none}
+
+  .flow-nav{display:flex;justify-content:space-between;margin-top:26px}
+  .assume{background:var(--ink);color:#fff;padding:6px 20px;font-size:13px;text-align:center}
+  .assume a{color:#fff}
+</style>
+</helmet>
+
+<div class="assume">Lo-fi wireframe — structure &amp; flow only, not final visual design. Open questions are flagged inline.</div>
+
+<div class="app">
+  <div class="chrome"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="curl">unifiedplatform.g2rs.com/merchants</span></div>
+  <div class="top">
+    <span class="logo" onClick="{{ goOrgHome }}">UP</span>
+    <span class="search">Search merchants, portfolios…</span>
+    <span class="chip">Acme Org</span>
+    <span class="avatar">AV</span>
+  </div>
+
+  <div class="body">
+    <div class="side">
+      <div class="nav {{ navOrgHome }}" onClick="{{ goOrgHome }}">● Organization Home</div>
+      <div class="nav">▢ Portfolio A</div>
+      <div class="nav">▢ Portfolio B (Monitoring)</div>
+      <div class="nav">▢ Portfolio C</div>
+      <div class="nav {{ navSettings }}" onClick="{{ goSettings }}">⚙ Portfolio Settings</div>
+      <div class="spacer"></div>
+      <div class="nav {{ navMode }}" onClick="{{ goModeSelect }}">+ Add Merchant</div>
+    </div>
+
+    <!-- SCREEN 0: ORG HOME -->
+    <sc-if value="{{ isOrgHome }}" hint-placeholder-val="{{ true }}">
+    <div class="main">
+      <div class="row" style="justify-content:space-between;align-items:baseline">
+        <div>
+          <div class="h1">Sites &amp; Merchants</div>
+          <div class="sub" style="margin:2px 0 0">142 merchants across 3 portfolios — org level, not scoped to any portfolio</div>
+        </div>
+        <button class="btn dark" onClick="{{ goModeSelect }}">+ Add Merchant</button>
+      </div>
+
+      <div class="row" style="margin:14px 0 12px">
+        <div class="tile"><div class="big">2</div><div class="sub">Onboarding in progress</div></div>
+        <div class="tile"><div class="big">1</div><div class="sub">Needs scan review</div></div>
+        <div class="tile"><div class="big">3</div><div class="sub">Portfolios</div></div>
+      </div>
+
+      <div class="row" style="margin-bottom:10px;flex-wrap:wrap">
+        <span class="chip" style="background:var(--ink);color:#fff">All</span>
+        <span class="chip">Onboarding</span>
+        <span class="chip">Monitoring</span>
+      </div>
+
+      <div class="card dashed sub" style="padding:12px 14px">AC-001: Add Merchant is reachable here, at the organization level — the user does not need a portfolio already open.</div>
+
+      <table class="wtable">
+        <tr><th>Merchant</th><th>Portfolio</th><th>Status</th><th></th></tr>
+        <tr><td>Acme Retail Co.</td><td>Portfolio A</td><td><span class="chip">Onboarding</span></td>
+          <td><a onClick="{{ goApproval }}">review scan →</a></td></tr>
+        <tr><td>Northwind Traders</td><td>Portfolio B</td><td><span class="chip gray">Monitoring</span></td>
+          <td><a onClick="{{ goManualMove }}">move →</a></td></tr>
+        <tr><td>Bluebird Goods</td><td>Portfolio C</td><td><span class="chip">Onboarding</span></td><td>—</td></tr>
+      </table>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 1: SINGLE / BULK -->
+    <sc-if value="{{ isModeSelect }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="stepper">
+        <div class="step on">1. Single or Bulk</div><span class="step-arrow">→</span>
+        <div class="step">2. Portfolio</div><span class="step-arrow">→</span>
+        <div class="step">3. Onboarding / Monitoring</div><span class="step-arrow">→</span>
+        <div class="step">4. Services</div><span class="step-arrow">→</span>
+        <div class="step">5. Merchant Details</div>
+      </div>
+      <div class="h1">Add Merchant</div>
+      <div class="sub" style="margin-bottom:18px;font-size:16px">Are you adding one merchant, or several at once?</div>
+
+      <div class="choice-row">
+        <div class="choice-card {{ singleSel }}" onClick="{{ pickSingle }}">
+          <div class="icon">👤</div>
+          <div class="label">Single Merchant</div>
+          <div class="sub">Add one merchant with full detail</div>
+        </div>
+        <div class="choice-card {{ bulkSel }}" onClick="{{ pickBulk }}">
+          <div class="icon">👥</div>
+          <div class="label">Bulk Add</div>
+          <div class="sub">Upload a list of merchants</div>
+        </div>
+      </div>
+
+      <div class="banner note" style="margin-top:18px">
+        <span class="ic">✎</span>
+        <span>Bulk file format and per-row validation are an open question in the PRD — this screen shows the entry choice only.</span>
+      </div>
+
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goOrgHome }}">← Cancel</button>
+        <button class="btn dark" disabled="{{ modeNextDisabled }}" onClick="{{ goPortfolioSelect }}">Next →</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 2: PORTFOLIO ASSIGNMENT -->
+    <sc-if value="{{ isPortfolioSelect }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="stepper">
+        <div class="step done">1. Single or Bulk</div><span class="step-arrow">→</span>
+        <div class="step on">2. Portfolio</div><span class="step-arrow">→</span>
+        <div class="step">3. Onboarding / Monitoring</div><span class="step-arrow">→</span>
+        <div class="step">4. Services</div><span class="step-arrow">→</span>
+        <div class="step">5. Merchant Details</div>
+      </div>
+      <div class="h1">Assign Portfolio</div>
+      <div class="sub" style="margin-bottom:16px;font-size:16px">Which portfolio will this merchant belong to?</div>
+
+      <div class="field-row">
+        <label>Portfolio</label>
+        <select class="field" onChange="{{ onPortfolioChange }}">
+          <option value="Portfolio A" selected="{{ isPortA }}">Portfolio A — Onboarding + Monitoring</option>
+          <option value="Portfolio B" selected="{{ isPortB }}">Portfolio B — Monitoring only</option>
+          <option value="Portfolio C" selected="{{ isPortC }}">Portfolio C — No products enabled</option>
+        </select>
+      </div>
+
+      <div class="card dashed sub">Selected portfolio's configured products will determine which modes you can choose next.</div>
+
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goModeSelect }}">← Back</button>
+        <button class="btn dark" onClick="{{ onPortfolioNext }}">Next →</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 3a: ONBOARDING/MONITORING CHOICE -->
+    <sc-if value="{{ isFlowChoice }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="stepper">
+        <div class="step done">1. Single or Bulk</div><span class="step-arrow">→</span>
+        <div class="step done">2. Portfolio</div><span class="step-arrow">→</span>
+        <div class="step on">3. Onboarding / Monitoring</div><span class="step-arrow">→</span>
+        <div class="step">4. Services</div><span class="step-arrow">→</span>
+        <div class="step">5. Merchant Details</div>
+      </div>
+      <div class="h1">Choose Flow</div>
+      <div class="sub" style="margin-bottom:16px;font-size:16px"><span class="chip">📁 Portfolio A</span> has both products configured. What do you want to do with this merchant?</div>
+
+      <div class="choice-row">
+        <div class="choice-card {{ onboardSel }}" onClick="{{ pickOnboarding }}">
+          <div class="icon">📋</div>
+          <div class="label">Onboarding</div>
+          <div class="sub">Screen once, then approve or reject</div>
+        </div>
+        <div class="choice-card {{ monitorSel }}" onClick="{{ pickMonitoring }}">
+          <div class="icon">👁</div>
+          <div class="label">Monitoring</div>
+          <div class="sub">Ongoing scanning on portfolio cadence</div>
+        </div>
+      </div>
+
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goPortfolioSelect }}">← Back</button>
+        <button class="btn dark" disabled="{{ flowNextDisabled }}" onClick="{{ goServices }}">Next →</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 3b: BLOCKED -->
+    <sc-if value="{{ isBlocked }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="h1">Add Merchant</div>
+      <div class="banner warn">
+        <span class="ic">⚠</span>
+        <span><strong>This portfolio can't accept a new merchant yet.</strong> Portfolio C has no onboarding or monitoring product enabled. Ask an admin to enable at least one product in Portfolio Settings, or choose a different portfolio.</span>
+      </div>
+      <div class="card dashed sub">AC-004: Portfolio with neither product configured blocks progress with the existing ineligible-portfolio message.</div>
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goPortfolioSelect }}">← Choose a different portfolio</button>
+        <span></span>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 4: SERVICES PREVIEW -->
+    <sc-if value="{{ isServices }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="stepper">
+        <div class="step done">1. Single or Bulk</div><span class="step-arrow">→</span>
+        <div class="step done">2. Portfolio</div><span class="step-arrow">→</span>
+        <div class="step done">3. Onboarding / Monitoring</div><span class="step-arrow">→</span>
+        <div class="step on">4. Services</div><span class="step-arrow">→</span>
+        <div class="step">5. Merchant Details</div>
+      </div>
+      <div class="h1">Services for this Merchant</div>
+      <div class="sub" style="margin-bottom:16px;font-size:16px">These services will run for this merchant's {{ modeWord }}, sourced from <strong>{{ selectedPortfolio }}</strong>'s configuration.</div>
+
+      <div class="service-list">
+        <sc-for list="{{ services }}" as="svc" hint-placeholder-count="4">
+        <div class="service-item {{ svc.removedClass }}">
+          <span class="name"><span>{{ svc.icon }}</span> {{ svc.label }}</span>
+          <sc-if value="{{ svc.locked }}" hint-placeholder-val="{{ false }}">
+            <span class="chip gray">🔒 Locked</span>
+          </sc-if>
+          <sc-if value="{{ svc.editable }}" hint-placeholder-val="{{ true }}">
+            <button class="btn sm ghost" onClick="{{ svc.toggle }}">{{ svc.toggleLabel }}</button>
+          </sc-if>
+        </div>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ isOnboardingMode }}" hint-placeholder-val="{{ true }}">
+      <div class="banner note" style="margin-top:16px">
+        <span class="ic">✎</span>
+        <span>You're removing services for <strong>this merchant only</strong>. Portfolio A's onboarding configuration is unchanged for all other merchants.</span>
+      </div>
+      </sc-if>
+      <sc-if value="{{ isMonitoringMode }}" hint-placeholder-val="{{ false }}">
+      <div class="banner note" style="margin-top:16px">
+        <span class="ic">🔒</span>
+        <span>Services are read-only in Monitoring — they always match the portfolio's configured products.</span>
+      </div>
+      </sc-if>
+
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goFlowChoice }}">← Back</button>
+        <button class="btn dark" onClick="{{ goMerchantDetails }}">Next →</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 5: MERCHANT DETAILS -->
+    <sc-if value="{{ isMerchantDetails }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="stepper">
+        <div class="step done">1. Single or Bulk</div><span class="step-arrow">→</span>
+        <div class="step done">2. Portfolio</div><span class="step-arrow">→</span>
+        <div class="step done">3. Onboarding / Monitoring</div><span class="step-arrow">→</span>
+        <div class="step done">4. Services</div><span class="step-arrow">→</span>
+        <div class="step on">5. Merchant Details</div>
+      </div>
+      <div class="h1">Merchant Details</div>
+      <div class="sub" style="margin-bottom:16px">Reused from the existing Add Single Merchant fields.</div>
+
+      <div class="field-row"><label>Legal Name <span class="req">*</span></label><div class="field">e.g. Acme Retail Co.</div></div>
+      <div class="field-row"><label>Client Merchant Key (Unique ID) <span class="req">*</span></label><div class="field">e.g. ACM-00214</div></div>
+      <div class="field-row"><label>Merchant URL <span class="req">*</span></label><div class="field">https://www.example.com</div></div>
+      <div class="field-row"><label>DBA (optional)</label><div class="field">Doing-business-as name</div></div>
+      <div class="field-row"><label>MID (optional)</label><div class="field">Merchant ID</div></div>
+
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goServices }}">← Back</button>
+        <button class="btn dark" onClick="{{ submitMerchant }}">Create Merchant →</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 6: CONFIRMATION -->
+    <sc-if value="{{ isConfirmation }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="banner success">
+        <span class="ic">✅</span>
+        <span><strong>Merchant created.</strong> {{ confirmSummary }}</span>
+      </div>
+      <div class="card">
+        <div class="h2" style="margin-bottom:8px">What happens next</div>
+        <div class="sub" style="font-size:15px;color:var(--ink)">{{ confirmDetail }}</div>
+      </div>
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goOrgHome }}">← Back to Organization Home</button>
+        <button class="btn dark" onClick="{{ goApproval }}">Simulate: Scan Complete →</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 7: APPROVAL -->
+    <sc-if value="{{ isApproval }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="h1">Review Scan Result</div>
+      <div class="breadcrumb">Acme Retail Co. · Portfolio A · Onboarding</div>
+      <div class="card">
+        <div class="h2" style="margin-bottom:8px">Scan Summary</div>
+        <table class="wtable">
+          <tr><td><span class="rt g"></span> MCC Check</td><td><span class="chip">Pass</span></td></tr>
+          <tr><td><span class="rt g"></span> Content Compliance (CC)</td><td><span class="chip">Pass</span></td></tr>
+          <tr><td><span class="rt y"></span> Web Presence</td><td><span class="chip gray">Needs review</span></td></tr>
+        </table>
+      </div>
+      <div class="flow-nav">
+        <button class="btn danger" onClick="{{ rejectMerchant }}">✕ Reject</button>
+        <button class="btn dark" onClick="{{ approveMerchant }}">✓ Approve</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 7b: REJECTED -->
+    <sc-if value="{{ isRejected }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="banner warn">
+        <span class="ic">✕</span>
+        <span><strong>Merchant rejected.</strong> Acme Retail Co. will not move to monitoring. (AC-009: no monitoring offer is shown on rejection.)</span>
+      </div>
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goOrgHome }}">← Back to Organization Home</button>
+        <span></span>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 8: MOVE TO MONITORING (pre-selected) -->
+    <sc-if value="{{ isMoveMonitoringPreselect }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="h1">Move to Monitoring?</div>
+      <div class="sub" style="margin-bottom:16px;font-size:16px">Acme Retail Co. was approved. Do you want to move it into ongoing monitoring?</div>
+      <div class="card">
+        <div class="sub" style="margin-bottom:8px">AC-007: Portfolio A has monitoring configured, so it's pre-selected below.</div>
+        <div class="field-row" style="margin-bottom:0">
+          <label>Monitoring Portfolio</label>
+          <select class="field">
+            <option selected>Portfolio A (current — pre-selected)</option>
+            <option>Portfolio B</option>
+          </select>
+        </div>
+      </div>
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goOrgHome }}">Not now</button>
+        <button class="btn dark" onClick="{{ goMonitoringConfirmed }}">Move to Monitoring →</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 9: MOVE TO MONITORING (must choose) -->
+    <sc-if value="{{ isMoveMonitoringPrompt }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="h1">Move to Monitoring?</div>
+      <div class="sub" style="margin-bottom:16px;font-size:16px">Bluebird Goods was approved. Its onboarding portfolio (Portfolio C) has no monitoring product configured.</div>
+      <div class="banner warn">
+        <span class="ic">⚠</span>
+        <span>AC-008 / AC-011: choose a target portfolio for monitoring — there's no pre-selection, and the move is never skipped silently.</span>
+      </div>
+      <div class="field-row">
+        <label>Monitoring Portfolio <span class="req">*</span></label>
+        <select class="field">
+          <option disabled selected>Choose a portfolio…</option>
+          <option>Portfolio A</option>
+          <option>Portfolio B</option>
+        </select>
+      </div>
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goOrgHome }}">Not now</button>
+        <button class="btn dark" onClick="{{ goMonitoringConfirmed }}">Move to Monitoring →</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 10: MONITORING CONFIRMED -->
+    <sc-if value="{{ isMonitoringConfirmed }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="banner success">
+        <span class="ic">✅</span>
+        <span><strong>Moved to monitoring.</strong> The merchant is now in ongoing monitoring under the selected portfolio.</span>
+      </div>
+      <div class="flow-nav">
+        <button class="btn dark" onClick="{{ goOrgHome }}">← Back to Organization Home</button>
+        <span></span>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 11: MANUAL PORTFOLIO MOVE -->
+    <sc-if value="{{ isManualMove }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="h1">Move Merchant to Portfolio</div>
+      <div class="breadcrumb">Northwind Traders · currently in Portfolio B · Monitoring</div>
+      <div class="banner note">
+        <span class="ic">⇄</span>
+        <span>AC-012: available any time, regardless of onboarding/monitoring status.</span>
+      </div>
+      <div class="field-row">
+        <label>Destination Portfolio</label>
+        <select class="field">
+          <option selected>Portfolio A</option>
+          <option>Portfolio C</option>
+        </select>
+      </div>
+      <div class="banner warn">
+        <span class="ic">✎</span>
+        <span>Open question: does the move re-apply the destination portfolio's services, or keep this merchant's current active service set? Not yet decided — see PRD Open Questions.</span>
+      </div>
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goOrgHome }}">Cancel</button>
+        <button class="btn dark" onClick="{{ goMoveConfirmed }}">Move Merchant →</button>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 12: MANUAL MOVE CONFIRMED -->
+    <sc-if value="{{ isMoveConfirmed }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="banner success">
+        <span class="ic">✅</span>
+        <span><strong>Merchant moved.</strong> Northwind Traders is now assigned to Portfolio A.</span>
+      </div>
+      <div class="flow-nav">
+        <button class="btn dark" onClick="{{ goOrgHome }}">← Back to Organization Home</button>
+        <span></span>
+      </div>
+    </div>
+    </sc-if>
+
+    <!-- SCREEN 13: PORTFOLIO SETTINGS -->
+    <sc-if value="{{ isSettings }}" hint-placeholder-val="{{ false }}">
+    <div class="main">
+      <div class="h1">Portfolio Settings — Portfolio A</div>
+      <div class="card">
+        <div class="h2" style="margin-bottom:10px">Onboarding → Monitoring Handoff</div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span class="chip {{ autoMoveBadgeClass }}" style="cursor:pointer" onClick="{{ toggleAutoMove }}">{{ autoMoveLabel }}</span>
+          <span style="font-size:15px">Automatically move approved merchants into monitoring</span>
+        </div>
+        <div class="sub" style="margin-top:10px">AC-010 / AC-011: if this portfolio has monitoring configured, the move happens automatically on approval. If not, the operator is still prompted to choose a target portfolio — the move is never silently skipped.</div>
+      </div>
+      <div class="flow-nav">
+        <button class="btn ghost" onClick="{{ goOrgHome }}">← Back</button>
+        <span></span>
+      </div>
+    </div>
+    </sc-if>
+
+  </div>
+</div>
+</x-dc>
+
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    screen: 'org-home',
+    mode: null,        // 'single' | 'bulk'
+    flowMode: null,     // 'onboarding' | 'monitoring'
+    selectedPortfolio: 'Portfolio A',
+    removedServices: {},
+    autoMoveOn: true,
+  };
+
+  servicesByMode = {
+    onboarding: [
+      { key: 'cc', label: 'CC (Content Compliance)' },
+      { key: 'mcc', label: 'MCC Check' },
+      { key: 'web', label: 'Web Presence Scan' },
+      { key: 'bo', label: 'Beneficial Owner Check' },
+    ],
+    monitoring: [
+      { key: 'cc', label: 'CC (Content Compliance)' },
+      { key: 'mcc', label: 'MCC Check' },
+      { key: 'web', label: 'Web Presence Scan' },
+    ],
+  };
+
+  go(screen) { this.setState({ screen }); }
+
+  pickSingle() { this.setState({ mode: 'single' }); }
+  pickBulk() { this.setState({ mode: 'bulk' }); }
+
+  onPortfolioChange(e) { this.setState({ selectedPortfolio: e.target.value }); }
+
+  onPortfolioNext() {
+    const p = this.state.selectedPortfolio;
+    if (p === 'Portfolio C') { this.go('portfolio-blocked'); return; }
+    if (p === 'Portfolio B') {
+      this.setState({ flowMode: 'monitoring', screen: 'services' });
+      return;
+    }
+    this.setState({ flowMode: null, screen: 'flow-choice' });
+  }
+
+  pickOnboarding() { this.setState({ flowMode: 'onboarding' }); }
+  pickMonitoring() { this.setState({ flowMode: 'monitoring' }); }
+
+  toggleService(key) {
+    this.setState(prev => ({
+      removedServices: { ...prev.removedServices, [key]: !prev.removedServices[key] },
+    }));
+  }
+
+  submitMerchant() { this.go('confirmation'); }
+
+  approveMerchant() {
+    this.go(this.state.selectedPortfolio === 'Portfolio A' ? 'move-monitoring-preselect' : 'move-monitoring-prompt');
+  }
+  rejectMerchant() { this.go('rejected'); }
+
+  toggleAutoMove() { this.setState(prev => ({ autoMoveOn: !prev.autoMoveOn })); }
+
+  renderVals() {
+    const s = this.state;
+    const screens = ['org-home','mode-select','portfolio-select','flow-choice','portfolio-blocked',
+      'services','merchant-details','confirmation','approval','rejected',
+      'move-monitoring-preselect','move-monitoring-prompt','monitoring-confirmed',
+      'manual-move','move-confirmed','settings'];
+    const on = k => s.screen === k;
+
+    const flowMode = s.flowMode || 'onboarding';
+    const rawServices = this.servicesByMode[flowMode];
+    const services = rawServices.map(svc => {
+      const removed = !!s.removedServices[svc.key];
+      return {
+        label: svc.label,
+        icon: removed ? '🚫' : '✅',
+        removedClass: removed ? 'removed' : '',
+        locked: flowMode === 'monitoring',
+        editable: flowMode === 'onboarding',
+        toggleLabel: removed ? 'Undo' : 'Remove',
+        toggle: () => this.toggleService(svc.key),
+      };
+    });
+
+    const confirmSummary = `Acme Retail Co. was added to <strong>${s.selectedPortfolio}</strong> for <strong>${flowMode === 'monitoring' ? 'Monitoring' : 'Onboarding'}</strong>.`;
+    const confirmDetail = flowMode === 'monitoring'
+      ? "The merchant is now in ongoing monitoring on the portfolio's scan cadence."
+      : "The merchant will be scanned. Once the scan completes, you'll be asked to approve or reject it.";
+
+    return {
+      isOrgHome: on('org-home'), isModeSelect: on('mode-select'), isPortfolioSelect: on('portfolio-select'),
+      isFlowChoice: on('flow-choice'), isBlocked: on('portfolio-blocked'), isServices: on('services'),
+      isMerchantDetails: on('merchant-details'), isConfirmation: on('confirmation'), isApproval: on('approval'),
+      isRejected: on('rejected'), isMoveMonitoringPreselect: on('move-monitoring-preselect'),
+      isMoveMonitoringPrompt: on('move-monitoring-prompt'), isMonitoringConfirmed: on('monitoring-confirmed'),
+      isManualMove: on('manual-move'), isMoveConfirmed: on('move-confirmed'), isSettings: on('settings'),
+
+      navOrgHome: on('org-home') ? 'on' : '',
+      navMode: screens.slice(1, 8).includes(s.screen) ? 'on' : '',
+      navSettings: on('settings') ? 'on' : '',
+
+      goOrgHome: () => this.go('org-home'),
+      goModeSelect: () => this.setState({ screen: 'mode-select', mode: null, flowMode: null, removedServices: {} }),
+      goPortfolioSelect: () => this.go('portfolio-select'),
+      goFlowChoice: () => this.go('flow-choice'),
+      goServices: () => this.go('services'),
+      goMerchantDetails: () => this.go('merchant-details'),
+      goApproval: () => this.go('approval'),
+      goManualMove: () => this.go('manual-move'),
+      goMonitoringConfirmed: () => this.go('monitoring-confirmed'),
+      goMoveConfirmed: () => this.go('move-confirmed'),
+      goSettings: () => this.go('settings'),
+
+      pickSingle: () => this.pickSingle(),
+      pickBulk: () => this.pickBulk(),
+      singleSel: s.mode === 'single' ? 'selected' : '',
+      bulkSel: s.mode === 'bulk' ? 'selected' : '',
+      modeNextDisabled: !s.mode,
+
+      isPortA: s.selectedPortfolio === 'Portfolio A',
+      isPortB: s.selectedPortfolio === 'Portfolio B',
+      isPortC: s.selectedPortfolio === 'Portfolio C',
+      onPortfolioChange: (e) => this.onPortfolioChange(e),
+      onPortfolioNext: () => this.onPortfolioNext(),
+
+      pickOnboarding: () => this.pickOnboarding(),
+      pickMonitoring: () => this.pickMonitoring(),
+      onboardSel: s.flowMode === 'onboarding' ? 'selected' : '',
+      monitorSel: s.flowMode === 'monitoring' ? 'selected' : '',
+      flowNextDisabled: !s.flowMode,
+
+      selectedPortfolio: s.selectedPortfolio,
+      modeWord: flowMode === 'monitoring' ? 'monitoring' : 'onboarding',
+      isOnboardingMode: flowMode === 'onboarding',
+      isMonitoringMode: flowMode === 'monitoring',
+      services,
+
+      submitMerchant: () => this.submitMerchant(),
+      confirmSummary, confirmDetail,
+
+      approveMerchant: () => this.approveMerchant(),
+      rejectMerchant: () => this.rejectMerchant(),
+
+      autoMoveOn: s.autoMoveOn,
+      autoMoveLabel: s.autoMoveOn ? '● On' : '○ Off',
+      autoMoveBadgeClass: s.autoMoveOn ? '' : 'gray',
+      toggleAutoMove: () => this.toggleAutoMove(),
+    };
+  }
+}
+</script>
+</body>
+</html>

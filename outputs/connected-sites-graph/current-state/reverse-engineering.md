@@ -5,7 +5,7 @@ findings. Grain: **per-URL rows under the merchant** (PM decision).
 Approach: **build from scratch** — legacy is precedent, not a port target.
 
 Sources read: WebShield (blocked), Merchant View (legacy), Single Platform
-(legacy), Unified Platform (target).
+(legacy), Atlas (target).
 Analysis date: 2026-08-27.
 
 ---

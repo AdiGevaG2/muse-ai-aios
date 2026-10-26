@@ -1,6 +1,6 @@
 # Reverse Engineering: Connected Sites — Graph View (V2)
 
-Strict second run. Unified Platform (UP) is the **target**. WebShield (WS),
+Strict second run. Atlas (UP) is the **target**. WebShield (WS),
 Merchant View (MV), and Single Platform (SP) are **legacy evidence sources**, not
 port targets. Analysis date: 2026-08-30.
 
@@ -34,7 +34,7 @@ first run; that artifact remains preserved as historical evidence.
 
 ## Current Behavior by Platform
 
-### Unified Platform — target
+### Atlas — target
 
 1. **The URL is the ownership grain.** A merchant store is unique by
    `(merchantId, urlHash)` and carries `connected` plus optional peer

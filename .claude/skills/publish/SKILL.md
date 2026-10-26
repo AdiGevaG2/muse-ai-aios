@@ -23,6 +23,12 @@ and skip the rest cleanly — the PM may want Confluence without touching Jira.
 - Read `config.json` for space, project key, and hierarchy. Load domain brain
   systems/policy only for a specific unresolved convention question — not
   wholesale.
+- Confluence pages and Jira items are renderings of an already-grounded PRD or
+  spec, so `../_shared/brain-grounding.md` does not run again here. What carries
+  over is terminology: check the source artifact's terms against
+  `second-brain/glossary/` before publishing, since these are the artifacts
+  people outside the team read. A mismatch is fixed in the source artifact
+  first, then republished — never patched only in the rendering.
 - Ask which of Confluence, Jira, or both the PM wants this run — do not assume
   "publish" means both.
 
@@ -35,11 +41,21 @@ and skip the rest cleanly — the PM may want Confluence without touching Jira.
    existing page ID in `references/confluence-metadata-template.md`. There is no
    global default parent; ask per feature and keep the answer. Attach diagrams
    as page files embedded with `<ac:image>` — inline SVG does not work here.
+   If the source artifact has a Figma link, embed it as a Figma embed card, not
+   plain text — see `references/jira-confluence.md`.
+   If the source artifact has a Prototype section, upload its screenshots as
+   attachments, embed them inline left-aligned under their captions, and link
+   `Open prototype` to the hosted
+   copy — see `../_shared/prototype-screenshots.md`.
    **Audit comments before any overwrite diff** (see
    `references/jira-confluence.md`): preserve comments whose referenced text is
-   unchanged; if commented text will be deleted or materially changed, append a
-   **Comment History** table. If tooling cannot verify preservation, report that
-   and stop before requesting approval.
+   unchanged; if commented text will be deleted or amended, keep the original
+   text struck through, marked **Old text, not part of the requirement:**, with
+   its comment still attached and the new text after it. If tooling cannot
+   verify preservation, report that and stop before requesting approval.
+   **Check authorship before any overwrite diff:** diff the page against the
+   last version Adi Geva authored and keep every other user's text verbatim; a
+   change that touches it is added next to it and flagged, never written over.
    Show what will be published/updated. On approval, upload via MCP.
 2. **Jira** (only if requested) **— hierarchy.** Default hierarchy (from `config.json` →
    `jira.issue_hierarchy`): **Initiative** (only for multi-quarter strategic
@@ -59,6 +75,8 @@ and skip the rest cleanly — the PM may want Confluence without touching Jira.
 ## Hard rules
 - Never write to Jira/Confluence without explicit approval on the shown diff.
 - Never silently resolve, dismiss, rewrite, or discard Confluence comments.
+- Never delete text that carries a comment; mark it as old text instead.
+- Never overwrite Confluence text written by anyone other than Adi Geva.
 - Inherit the authenticated user's permissions; don't broaden scope.
 - Record what was pushed vs. left diverged.
 

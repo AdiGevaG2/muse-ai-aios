@@ -1,0 +1,1606 @@
+- generic: Adi, join our Live Training Sessions with a monday.com expert on AI, everyday platform skills and more! 🤖
+- generic: Register now!
+- generic: 
+- text:  
+- button "Skip to"
+- banner:
+  - link "Home":
+    - /url: /
+  - button "Search everything":
+    - generic: Search for anything...
+  - navigation "Views and Tools":
+    - button "Notifications":
+    - generic "13":
+      - generic "13":
+        - generic: "13"
+    - button "Update feed":
+    - generic "99+":
+      - generic "99+":
+        - generic: 99+
+    - button "Invite members":
+    - button "monday marketplace, Update available":
+    - button "Help":
+    - button "Products switcher":
+    - button "User Menu":
+- navigation "main navigation":
+  - generic "Side navigation":
+    - button "Open workspace menu":
+    - button "Workspace":
+      - generic: Workspace
+    - button "Sidekick":
+      - generic: Sidekick
+    - button "Agents":
+      - generic: Agents
+    - button "Vibe":
+      - generic: Vibe
+    - button "Workflows":
+      - generic: Workflows
+    - button "Notetaker":
+      - generic: Notetaker
+    - button "Favorites":
+      - generic: Favorites
+    - button "More tools menu":
+      - generic: More
+  - generic "Workspace":
+    - button "open workspace menu":
+    - button "Search":
+    - button "Close workspace menu":
+    - button "workspaces dropdown button":
+      - generic: Workspaces selection and actions
+      - generic "Workspace selection":
+        - generic: Click to select or add a workspace
+        - generic "Workspace selection":
+          - generic "Workspace":
+          - generic: Unified Platform
+    - button "Add item to workspace":
+  - button "My agents":
+    - generic: My agents
+    - button "Migration Readiness Recalculator":
+      - img "Migration Readiness Recalculator"
+  - generic: Content
+  - button "Content section menu":
+  - button "Add item to workspace":
+  - button "Manage workspace":
+    - generic: Manage workspace
+  - listbox "Workspace":
+    - option "Atlas Migration Packages Roadmap" [selected]:
+      - generic: Board
+      - generic: Atlas Migration Packages Roadmap
+    - option "Horizon → Data Team Handoffs":
+      - generic: Board
+      - generic: Horizon → Data Team Handoffs
+    - option "UP Client Migration Plan":
+      - generic: Board
+      - generic: UP Client Migration Plan
+    - option "Q-Planning · App Group (Unified Platform)":
+      - generic: Board
+      - generic: Q-Planning · App Group (Unified Platform)
+    - option "UP Migration Roadmap":
+      - generic: Private board
+      - generic: UP Migration Roadmap
+    - option "Product Design":
+      - generic: Board
+      - generic: Product Design
+    - option "Q4 Data Plan — Gantt":
+      - generic: Board
+      - generic: Q4 Data Plan — Gantt
+  - status
+- main "main content":
+  - generic "Board header":
+    - region "Board information":
+      - button "Atlas Migration Packages Roadmap":
+        - heading "Atlas Migration Packages Roadmap" [level=1]
+    - region "More actions":
+      - button "Integrate":
+        - generic: Integrate
+      - button "Automate / 6":
+        - text: Automate / 6
+      - button "Menu":
+        - generic: Agents
+      - button "Start a board discussion":
+      - button "Board activity":
+        - button "Adi Geva":
+          - img "Adi Geva"
+        - button "Alla Avgustinov":
+          - img "Alla Avgustinov"
+      - button "Invite / 14 board members":
+        - text: Invite / 14
+        - generic: board members
+      - button "Copy Link":
+      - button "Options":
+    - region "Views manager":
+      - tablist "Views Tabs":
+        - tab "Main table ":
+          - button "Main table ":
+            - button "Main table":
+              - generic: Main table
+            - generic: 
+        - tab "Packages ":
+          - button "Packages ":
+            - button "Packages":
+              - generic: Packages
+            - generic: 
+        - tab "Epics Overview ":
+          - button "Epics Overview ":
+            - button "Epics Overview":
+              - generic: Epics Overview
+            - generic: 
+        - tab "Gantt ":
+          - button "Gantt ":
+            - button "Gantt":
+              - generic: Gantt
+            - generic: 
+        - tab "Calendar ":
+          - button "Calendar ":
+            - button "Calendar":
+              - generic: Calendar
+            - generic: 
+        - tab "NAB ":
+          - button "NAB ":
+            - button "NAB":
+              - generic [active]: NAB
+            - generic: 
+        - tab "Options" [disabled]:
+          - button "Options" [disabled]:
+            - button "Add view":
+              - img: 
+      - status
+    - region "Content organizer":
+      - button "New epic / workflow"
+      - button "New item options":
+        - generic: 
+      - generic: 
+      - textbox "Search / Filter Board":
+        - /placeholder: Search
+      - button "Filter board by person":
+        - generic: Person
+      - button "Filter board by anything":
+        - generic: Filter
+        - generic: / 1
+        - generic: 
+      - button "Sort board by any column":
+        - generic: Sort
+      - button "Hidden columns":
+        - generic: Hide
+      - button "Group items by column":
+        - generic: Group by
+      - button "Menu":
+      - button "Header Tabs" [expanded]:
+  - group "Atlas Migration Packages Roadmap":
+    - list "Q4 - end of Feb.27":
+      - button "Q4 - end of Feb.27 options"
+      - button "Collapse all group items" [expanded]:
+      - heading "Click to Edit Q4 - end of Feb.27" [level=2]:
+        - button "Click to Edit Q4 - end of Feb.27":
+          - generic: Click to Edit
+          - text: Q4 - end of Feb.27
+      - generic: 5 Epic / workflows
+      - generic: / 27 Subitems
+    - list "Q4 - end of Feb.27 column actions":
+      - generic: Header
+      - listitem "Epic / workflow":
+        - checkbox "Select all items in Q4 - end of Feb.27"
+        - button "Sort by Name":
+          - generic: 
+          - generic: 
+        - generic "Epic / workflow":
+          - button "Click to Edit Epic / workflow":
+            - generic: Click to Edit
+            - generic: Epic / workflow
+        - button "Options":
+          - generic: 
+      - listitem "Product":
+        - generic "Product":
+          - button "Click to Edit Product":
+            - generic: Click to Edit
+            - generic: Product
+        - button "Show column information":
+        - button "Options":
+          - generic: 
+        - button "Sort by Product":
+          - generic: 
+          - generic: 
+      - listitem "Must":
+        - generic "Must":
+          - button "Click to Edit Must":
+            - generic: Click to Edit
+            - generic: Must
+        - button "Options":
+          - generic: 
+        - button "Sort by Must":
+          - generic: 
+          - generic: 
+      - listitem "NAB":
+        - generic "NAB":
+          - button "Click to Edit NAB":
+            - generic: Click to Edit
+            - generic: NAB
+        - button "Options":
+          - generic: 
+        - button "Sort by NAB":
+          - generic: 
+          - generic: 
+      - listitem "Dev Team":
+        - generic "Dev Team":
+          - button "Click to Edit Dev Team":
+            - generic: Click to Edit
+            - generic: Dev Team
+        - button "Options":
+          - generic: 
+        - button "Sort by Dev Team":
+          - generic: 
+          - generic: 
+      - listitem "Epic Status":
+        - generic "Epic Status":
+          - button "Click to Edit Epic Status":
+            - generic: Click to Edit
+            - generic: Epic Status
+        - button "Options":
+          - generic: 
+        - button "Sort by Epic Status":
+          - generic: 
+          - generic: 
+      - listitem "Sprint":
+        - generic "Sprint":
+          - button "Click to Edit Sprint":
+            - generic: Click to Edit
+            - generic: Sprint
+        - button "Show column information":
+        - button "Options":
+          - generic: 
+        - button "Sort by Sprint":
+          - generic: 
+          - generic: 
+      - listitem "PRD ETA":
+        - generic "PRD ETA":
+          - button "Click to Edit PRD ETA":
+            - generic: Click to Edit
+            - generic: PRD ETA
+        - button "Options":
+          - generic: 
+        - button "Sort by PRD ETA":
+          - generic: 
+          - generic: 
+      - button "Add column":
+        - button "Options":
+    - list "Epic / workflow Finding Dispute and Reassessment (Q4)":
+      - button "More options for Finding Dispute and Reassessment (Q4)":
+      - heading "Finding Dispute and Reassessment (Q4)" [level=4]
+      - listitem "Product Finding Dispute and Reassessment (Q4)":
+        - button:
+      - listitem: Must Finding Dispute and Reassessment (Q4) v
+      - listitem: NAB Finding Dispute and Reassessment (Q4) v
+      - listitem: Dev Team Finding Dispute and Reassessment (Q4) Rocket
+      - listitem: Epic Status Finding Dispute and Reassessment (Q4) In Progress - Dev orange
+      - listitem: Sprint Finding Dispute and Reassessment (Q4) no labels selected
+      - listitem: PRD ETA Finding Dispute and Reassessment (Q4) Nov 2
+    - list "Epic / workflow WebID (Q4)":
+      - button "More options for WebID (Q4)":
+      - heading "WebID (Q4)" [level=4]
+      - listitem "Product WebID (Q4)":
+        - button:
+      - listitem: Must WebID (Q4) v
+      - listitem: NAB WebID (Q4) v
+      - listitem: Dev Team WebID (Q4) Rocket
+      - listitem: Epic Status WebID (Q4) Ready for Dev light_magic
+      - listitem: Sprint WebID (Q4) no labels selected
+      - listitem: PRD ETA WebID (Q4) Oct 13
+    - list "Epic / workflow Mismatch of Identifier Data":
+      - button "More options for Mismatch of Identifier Data":
+      - heading "Mismatch of Identifier Data" [level=4]
+      - listitem "Product Mismatch of Identifier Data":
+        - button:
+      - listitem: Must Mismatch of Identifier Data v
+      - listitem: NAB Mismatch of Identifier Data v
+      - listitem: Dev Team Mismatch of Identifier Data Horizon
+      - listitem: Epic Status Mismatch of Identifier Data In Progress - PM sunset
+      - listitem: Sprint Mismatch of Identifier Data no labels selected
+      - listitem: PRD ETA Mismatch of Identifier Data Oct 13
+    - list "Epic / workflow Client Data Migration":
+      - button "More options for Client Data Migration":
+      - heading "Client Data Migration" [level=4]
+      - listitem "Product Client Data Migration":
+        - button:
+      - listitem: Must Client Data Migration v
+      - listitem: NAB Client Data Migration v
+      - listitem: Dev Team Client Data Migration Rocket
+      - listitem: Epic Status Client Data Migration no status selected
+      - listitem: Sprint Client Data Migration no labels selected
+      - listitem: PRD ETA Client Data Migration, Empty PRD ETA
+    - list "Epic / workflow Website Policies (Website Compliance Assessment)":
+      - button "More options for Website Policies (Website Compliance Assessment)":
+      - heading "Website Policies (Website Compliance Assessment)" [level=4]
+      - listitem "Product Website Policies (Website Compliance Assessment)":
+        - button:
+      - listitem: Must Website Policies (Website Compliance Assessment) v
+      - listitem: NAB Website Policies (Website Compliance Assessment) v
+      - listitem: Dev Team Website Policies (Website Compliance Assessment) Horizon
+      - listitem: Epic Status Website Policies (Website Compliance Assessment) In Progress - PM sunset
+      - listitem: Sprint Website Policies (Website Compliance Assessment) no labels selected
+      - listitem: PRD ETA Website Policies (Website Compliance Assessment) Nov 9
+    - list "Q4 - end of Feb.27 summary":
+      - listitem "Epic / workflow":
+        - checkbox
+        - textbox "+ Add epic / workflow"
+    - list "Q4 - end of Feb.27 summary":
+      - listitem "Epic / workflow"
+      - listitem "Product":
+        - generic: "-"
+      - listitem "Must":
+        - generic: 5/5
+      - listitem "NAB":
+        - generic: 5/5
+      - listitem "Dev Team"
+      - listitem "Epic Status"
+      - listitem "Sprint"
+      - listitem "PRD ETA"
+    - button "Add new group":
+      - text: Add new group
+    - list "Column actions":
+      - generic: Header
+- dialog
+- combobox "AI credits have run out" [disabled]
+
+- generic: Adi, join our Live Training Sessions with a monday.com expert on AI, everyday platform skills and more! 🤖
+- generic: Register now!
+- generic: 
+- text:  
+- button "Skip to"
+- banner:
+  - link "Home":
+    - /url: /
+  - button "Search everything":
+    - generic: Search for anything...
+  - navigation "Views and Tools":
+    - button "Notifications":
+    - generic "13":
+      - generic "13":
+        - generic: "13"
+    - button "Update feed":
+    - generic "99+":
+      - generic "99+":
+        - generic: 99+
+    - button "Invite members":
+    - button "monday marketplace, Update available":
+    - button "Help":
+    - button "Products switcher":
+    - button "User Menu":
+- navigation "main navigation":
+  - generic "Side navigation":
+    - button "Open workspace menu":
+    - button "Workspace":
+      - generic: Workspace
+    - button "Sidekick":
+      - generic: Sidekick
+    - button "Agents":
+      - generic: Agents
+    - button "Vibe":
+      - generic: Vibe
+    - button "Workflows":
+      - generic: Workflows
+    - button "Notetaker":
+      - generic: Notetaker
+    - button "Favorites":
+      - generic: Favorites
+    - button "More tools menu":
+      - generic: More
+  - generic "Workspace":
+    - button "open workspace menu":
+    - button "Search":
+    - button "Close workspace menu":
+    - button "workspaces dropdown button":
+      - generic: Workspaces selection and actions
+      - generic "Workspace selection":
+        - generic: Click to select or add a workspace
+        - generic "Workspace selection":
+          - generic "Workspace":
+          - generic: Unified Platform
+    - button "Add item to workspace":
+  - button "My agents":
+    - generic: My agents
+    - button "Migration Readiness Recalculator":
+      - img "Migration Readiness Recalculator"
+  - generic: Content
+  - button "Content section menu":
+  - button "Add item to workspace":
+  - button "Manage workspace":
+    - generic: Manage workspace
+  - listbox "Workspace":
+    - option "Atlas Migration Packages Roadmap" [selected]:
+      - generic: Board
+      - generic: Atlas Migration Packages Roadmap
+    - option "Horizon → Data Team Handoffs":
+      - generic: Board
+      - generic: Horizon → Data Team Handoffs
+    - option "UP Client Migration Plan":
+      - generic: Board
+      - generic: UP Client Migration Plan
+    - option "Q-Planning · App Group (Unified Platform)":
+      - generic: Board
+      - generic: Q-Planning · App Group (Unified Platform)
+    - option "UP Migration Roadmap":
+      - generic: Private board
+      - generic: UP Migration Roadmap
+    - option "Product Design":
+      - generic: Board
+      - generic: Product Design
+    - option "Q4 Data Plan — Gantt":
+      - generic: Board
+      - generic: Q4 Data Plan — Gantt
+  - status
+- main "main content":
+  - generic "Board header":
+    - region "Board information":
+      - button "Atlas Migration Packages Roadmap":
+        - heading "Atlas Migration Packages Roadmap" [level=1]
+    - region "More actions":
+      - button "Integrate":
+        - generic: Integrate
+      - button "Automate / 6":
+        - text: Automate / 6
+      - button "Menu":
+        - generic: Agents
+      - button "Start a board discussion":
+      - button "Board activity":
+        - button "Adi Geva":
+          - img "Adi Geva"
+        - button "Alla Avgustinov":
+          - img "Alla Avgustinov"
+      - button "Invite / 14 board members":
+        - text: Invite / 14
+        - generic: board members
+      - button "Copy Link":
+      - button "Options":
+    - region "Views manager":
+      - tablist "Views Tabs":
+        - tab "Main table ":
+          - button "Main table ":
+            - button "Main table":
+              - generic: Main table
+            - generic: 
+        - tab "Packages ":
+          - button "Packages ":
+            - button "Packages":
+              - generic: Packages
+            - generic: 
+        - tab "Epics Overview ":
+          - button "Epics Overview ":
+            - button "Epics Overview":
+              - generic: Epics Overview
+            - generic: 
+        - tab "Gantt ":
+          - button "Gantt ":
+            - button "Gantt":
+              - generic: Gantt
+            - generic: 
+        - tab "Calendar ":
+          - button "Calendar ":
+            - button "Calendar":
+              - generic: Calendar
+            - generic: 
+        - tab "NAB ":
+          - button "NAB ":
+            - button "NAB":
+              - generic: NAB
+            - generic: 
+        - tab "Options" [disabled]:
+          - button "Options" [disabled]:
+            - button "Add view":
+              - img: 
+      - status
+    - region "Content organizer":
+      - button "New epic / workflow"
+      - button "New item options":
+        - generic: 
+      - generic: 
+      - textbox "Search / Filter Board":
+        - /placeholder: Search
+      - button "Filter board by person":
+        - generic: Person
+      - button "Filter board by anything":
+        - generic: Filter
+        - generic: 
+      - button "Sort board by any column":
+        - generic: Sort
+      - button "Hidden columns":
+        - generic: Hide
+      - button "Group items by column":
+        - generic: Group by
+      - button "Menu":
+      - button "Header Tabs" [expanded]:
+  - group "Atlas Migration Packages Roadmap":
+    - list "Q3":
+      - button "Q3 options":
+        - generic: 
+      - button "Collapse all group items" [expanded]:
+      - heading "Click to Edit Q3" [level=2]:
+        - button "Click to Edit Q3":
+          - generic: Click to Edit
+          - text: Q3
+      - generic: 32 Epic / workflows
+      - generic: / 78 Subitems
+    - list "Q3 column actions":
+      - generic: Header
+      - listitem "Epic / workflow":
+        - checkbox "Select all items in Q3"
+        - button "Sort by Name":
+          - generic: 
+          - generic: 
+        - generic "Epic / workflow":
+          - button "Click to Edit Epic / workflow":
+            - generic: Click to Edit
+            - generic: Epic / workflow
+        - button "Options":
+          - generic: 
+      - listitem "Product":
+        - generic "Product":
+          - button "Click to Edit Product":
+            - generic: Click to Edit
+            - generic: Product
+        - button "Show column information":
+        - button "Options":
+          - generic: 
+        - button "Sort by Product":
+          - generic: 
+          - generic: 
+      - listitem "Must":
+        - generic "Must":
+          - button "Click to Edit Must":
+            - generic: Click to Edit
+            - generic: Must
+        - button "Options":
+          - generic: 
+        - button "Sort by Must":
+          - generic: 
+          - generic: 
+      - listitem "NAB":
+        - generic "NAB":
+          - button "Click to Edit NAB":
+            - generic: Click to Edit
+            - generic: NAB
+        - button "Options":
+          - generic: 
+        - button "Sort by NAB":
+          - generic: 
+          - generic: 
+      - listitem "Dev Team":
+        - generic "Dev Team":
+          - button "Click to Edit Dev Team":
+            - generic: Click to Edit
+            - generic: Dev Team
+        - button "Options":
+          - generic: 
+        - button "Sort by Dev Team":
+          - generic: 
+          - generic: 
+      - listitem "Epic Status":
+        - generic "Epic Status":
+          - button "Click to Edit Epic Status":
+            - generic: Click to Edit
+            - generic: Epic Status
+        - button "Options":
+          - generic: 
+        - button "Sort by Epic Status":
+          - generic: 
+          - generic: 
+      - listitem "Sprint":
+        - generic "Sprint":
+          - button "Click to Edit Sprint":
+            - generic: Click to Edit
+            - generic: Sprint
+        - button "Show column information":
+        - button "Options":
+          - generic: 
+        - button "Sort by Sprint":
+          - generic: 
+          - generic: 
+      - listitem "PRD ETA":
+        - generic "PRD ETA":
+          - button "Click to Edit PRD ETA":
+            - generic: Click to Edit
+            - generic: PRD ETA
+        - button "Options":
+          - generic: 
+        - button "Sort by PRD ETA":
+          - generic: 
+          - generic: 
+      - button "Add column":
+        - button "Options":
+    - list "Epic / workflow Merchant Monitoring Controls":
+      - button "More options for Merchant Monitoring Controls":
+      - heading "Merchant Monitoring Controls" [level=4]
+      - listitem "Product Merchant Monitoring Controls":
+        - button:
+      - listitem: Must Merchant Monitoring Controls v
+      - listitem: NAB Merchant Monitoring Controls v
+      - listitem: Dev Team Merchant Monitoring Controls Rocket
+      - listitem: Epic Status Merchant Monitoring Controls Done green-shadow
+      - listitem: Sprint Merchant Monitoring Controls S45
+      - listitem: PRD ETA Merchant Monitoring Controls, Empty PRD ETA
+    - list "Epic / workflow Merchant Risk Summary Report":
+      - button "More options for Merchant Risk Summary Report":
+      - heading "Merchant Risk Summary Report" [level=4]
+      - listitem "Product Merchant Risk Summary Report":
+        - button "Owner Generate Merchant Risk Summary Report Alla Avgustinov":
+          - button "Owner Generate Merchant Risk Summary Report Alla Avgustinov":
+            - button "Alla Avgustinov":
+      - listitem: Must Merchant Risk Summary Report v
+      - listitem: NAB Merchant Risk Summary Report v
+      - listitem: Dev Team Merchant Risk Summary Report Horizon
+      - listitem: Epic Status Merchant Risk Summary Report Done green-shadow
+      - listitem: Sprint Merchant Risk Summary Report S49
+      - listitem: PRD ETA Merchant Risk Summary Report, Empty PRD ETA
+    - list "Epic / workflow Merchant List View Enhancements":
+      - button "More options for Merchant List View Enhancements":
+      - heading "Merchant List View Enhancements" [level=4]
+      - listitem "Product Merchant List View Enhancements":
+        - button:
+      - listitem: Must Merchant List View Enhancements v
+      - listitem: NAB Merchant List View Enhancements v
+      - listitem: Dev Team Merchant List View Enhancements Rocket
+      - listitem: Epic Status Merchant List View Enhancements Done green-shadow
+      - listitem: Sprint Merchant List View Enhancements S50
+      - listitem: PRD ETA Merchant List View Enhancements, Empty PRD ETA
+    - list "Epic / workflow Add Merchant & Finding Comments":
+      - button "More options for Add Merchant &amp; Finding Comments":
+      - heading "Add Merchant & Finding Comments" [level=4]
+      - listitem "Product Add Merchant & Finding Comments":
+        - button "Owner Add Merchant & Finding Comments Alla Avgustinov":
+          - button "Owner Add Merchant & Finding Comments Alla Avgustinov":
+            - button "Alla Avgustinov":
+      - listitem: Must Add Merchant & Finding Comments v
+      - listitem: NAB Add Merchant & Finding Comments v
+      - listitem: Dev Team Add Merchant & Finding Comments Horizon
+      - listitem: Epic Status Add Merchant & Finding Comments Done green-shadow
+      - listitem: Sprint Add Merchant & Finding Comments no labels selected
+      - listitem: PRD ETA Add Merchant & Finding Comments, Empty PRD ETA
+    - list "Epic / workflow Finding Investigation and Resolution":
+      - button "More options for Finding Investigation and Resolution":
+      - heading "Finding Investigation and Resolution" [level=4]
+      - listitem "Product Finding Investigation and Resolution":
+        - button:
+      - listitem: Must Finding Investigation and Resolution v
+      - listitem: NAB Finding Investigation and Resolution v
+      - listitem: Dev Team Finding Investigation and Resolution Rocket
+      - listitem: Epic Status Finding Investigation and Resolution Done green-shadow
+      - listitem: Sprint Finding Investigation and Resolution S45, S46
+      - listitem: PRD ETA Finding Investigation and Resolution, Empty PRD ETA
+    - list "Epic / workflow MMP Report":
+      - button "More options for MMP Report":
+      - heading "MMP Report" [level=4]
+      - listitem "Product MMP Report":
+        - button "Owner MMP Report Alla Avgustinov":
+          - button "Owner MMP Report Alla Avgustinov":
+            - button "Alla Avgustinov":
+      - listitem: Must MMP Report v
+      - listitem: NAB MMP Report v
+      - listitem: Dev Team MMP Report Horizon
+      - listitem: Epic Status MMP Report Done green-shadow
+      - listitem: Sprint MMP Report no labels selected
+      - listitem: PRD ETA MMP Report, Empty PRD ETA
+    - list "Epic / workflow Snooze and Reactivate Risk Work":
+      - button "More options for Snooze and Reactivate Risk Work":
+      - heading "Snooze and Reactivate Risk Work" [level=4]
+      - listitem "Product Snooze and Reactivate Risk Work":
+        - button:
+      - listitem: Must Snooze and Reactivate Risk Work v
+      - listitem: NAB Snooze and Reactivate Risk Work v
+      - listitem: Dev Team Snooze and Reactivate Risk Work Rocket
+      - listitem: Epic Status Snooze and Reactivate Risk Work Done green-shadow
+      - listitem: Sprint Snooze and Reactivate Risk Work S47
+      - listitem: PRD ETA Snooze and Reactivate Risk Work, Empty PRD ETA
+    - list "Epic / workflow Platform Hierarchy - Organization/Portfolio/Merchant":
+      - button "More options for Platform Hierarchy - Organization/Portfolio/Merchant":
+      - heading "Platform Hierarchy - Organization/Portfolio/Merchant" [level=4]
+      - listitem "Product Platform Hierarchy - Organization/Portfolio/Merchant":
+        - button "Owner hierarchy Adi Geva":
+          - button "Owner hierarchy Adi Geva":
+            - button "Adi Geva":
+      - listitem: Must Platform Hierarchy - Organization/Portfolio/Merchant v
+      - listitem: NAB Platform Hierarchy - Organization/Portfolio/Merchant v
+      - listitem: Dev Team Platform Hierarchy - Organization/Portfolio/Merchant Horizon
+      - listitem: Epic Status Platform Hierarchy - Organization/Portfolio/Merchant Done green-shadow
+      - listitem: Sprint Platform Hierarchy - Organization/Portfolio/Merchant S45
+      - listitem: PRD ETA Platform Hierarchy - Organization/Portfolio/Merchant, Empty PRD ETA
+    - list "Epic / workflow Merchant Status":
+      - button "More options for Merchant Status":
+      - heading "Merchant Status" [level=4]
+      - listitem "Product Merchant Status":
+        - button "Owner Update Merchant Status Adi Geva":
+          - button "Owner Update Merchant Status Adi Geva":
+            - button "Adi Geva":
+      - listitem: Must Merchant Status v
+      - listitem: NAB Merchant Status v
+      - listitem: Dev Team Merchant Status Rocket
+      - listitem: Epic Status Merchant Status Done green-shadow
+      - listitem: Sprint Merchant Status S45, S46
+      - listitem: PRD ETA Merchant Status, Empty PRD ETA
+    - list "Epic / workflow Add Bulk Merchant (Monitoring)":
+      - button "More options for Add Bulk Merchant (Monitoring)":
+      - heading "Add Bulk Merchant (Monitoring)" [level=4]
+      - listitem "Product Add Bulk Merchant (Monitoring)":
+        - button:
+      - listitem: Must Add Bulk Merchant (Monitoring) v
+      - listitem: NAB Add Bulk Merchant (Monitoring) v
+      - listitem: Dev Team Add Bulk Merchant (Monitoring) Rocket
+      - listitem: Epic Status Add Bulk Merchant (Monitoring) Done green-shadow
+      - listitem: Sprint Add Bulk Merchant (Monitoring) S48
+      - listitem: PRD ETA Add Bulk Merchant (Monitoring), Empty PRD ETA
+    - list "Epic / workflow Add Single Merchant (Monitoring)":
+      - button "More options for Add Single Merchant (Monitoring)":
+      - heading "Add Single Merchant (Monitoring)" [level=4]
+      - listitem "Product Add Single Merchant (Monitoring)":
+        - button:
+      - listitem: Must Add Single Merchant (Monitoring) v
+      - listitem: NAB Add Single Merchant (Monitoring) v
+      - listitem: Dev Team Add Single Merchant (Monitoring) Rocket
+      - listitem: Epic Status Add Single Merchant (Monitoring) Done green-shadow
+      - listitem: Sprint Add Single Merchant (Monitoring) S49, S50
+      - listitem: PRD ETA Add Single Merchant (Monitoring), Empty PRD ETA
+    - list "Epic / workflow Connected Sites / Graph":
+      - button "More options for Connected Sites / Graph":
+      - heading "Connected Sites / Graph" [level=4]
+      - listitem "Product Connected Sites / Graph":
+        - button:
+      - listitem: Must Connected Sites / Graph v
+      - listitem: NAB Connected Sites / Graph v
+      - listitem: Dev Team Connected Sites / Graph Rocket
+      - listitem: Epic Status Connected Sites / Graph Done green-shadow
+      - listitem: Sprint Connected Sites / Graph S49
+      - listitem: PRD ETA Connected Sites / Graph, Empty PRD ETA
+    - list "Epic / workflow Batch Release":
+      - button "More options for Batch Release":
+      - heading "Batch Release" [level=4]
+      - listitem "Product Batch Release":
+        - button "Owner Release Approved Findings in Batch Alla Avgustinov":
+          - button "Owner Release Approved Findings in Batch Alla Avgustinov":
+            - button "Alla Avgustinov":
+      - listitem: Must Batch Release v
+      - listitem: NAB Batch Release v
+      - listitem: Dev Team Batch Release Rocket
+      - listitem: Epic Status Batch Release Done green-shadow
+      - listitem: Sprint Batch Release S49, S50
+      - listitem: PRD ETA Batch Release Jul 9
+    - list "Column actions":
+      - generic: Header
+- dialog
+- combobox "AI credits have run out" [disabled]
+
+- generic: Adi, join our Live Training Sessions with a monday.com expert on AI, everyday platform skills and more! 🤖
+- generic: Register now!
+- generic: 
+- text:  
+- button "Skip to"
+- banner:
+  - link "Home":
+    - /url: /
+  - button "Search everything":
+    - generic: Search for anything...
+  - navigation "Views and Tools":
+    - button "Notifications":
+    - generic "13":
+      - generic "13":
+        - generic: "13"
+    - button "Update feed":
+    - generic "99+":
+      - generic "99+":
+        - generic: 99+
+    - button "Invite members":
+    - button "monday marketplace, Update available":
+    - button "Help":
+    - button "Products switcher":
+    - button "User Menu":
+- navigation "main navigation":
+  - generic "Side navigation":
+    - button "Open workspace menu":
+    - button "Workspace":
+      - generic: Workspace
+    - button "Sidekick":
+      - generic: Sidekick
+    - button "Agents":
+      - generic: Agents
+    - button "Vibe":
+      - generic: Vibe
+    - button "Workflows":
+      - generic: Workflows
+    - button "Notetaker":
+      - generic: Notetaker
+    - button "Favorites":
+      - generic: Favorites
+    - button "More tools menu":
+      - generic: More
+  - generic "Workspace":
+    - button "open workspace menu":
+    - button "Search":
+    - button "Close workspace menu":
+    - button "workspaces dropdown button":
+      - generic: Workspaces selection and actions
+      - generic "Workspace selection":
+        - generic: Click to select or add a workspace
+        - generic "Workspace selection":
+          - generic "Workspace":
+          - generic: Unified Platform
+    - button "Add item to workspace":
+  - button "My agents":
+    - generic: My agents
+    - button "Migration Readiness Recalculator":
+      - img "Migration Readiness Recalculator"
+  - generic: Content
+  - button "Content section menu":
+  - button "Add item to workspace":
+  - button "Manage workspace":
+    - generic: Manage workspace
+  - listbox "Workspace":
+    - option "Atlas Migration Packages Roadmap" [selected]:
+      - generic: Board
+      - generic: Atlas Migration Packages Roadmap
+    - option "Horizon → Data Team Handoffs":
+      - generic: Board
+      - generic: Horizon → Data Team Handoffs
+    - option "UP Client Migration Plan":
+      - generic: Board
+      - generic: UP Client Migration Plan
+    - option "Q-Planning · App Group (Unified Platform)":
+      - generic: Board
+      - generic: Q-Planning · App Group (Unified Platform)
+    - option "UP Migration Roadmap":
+      - generic: Private board
+      - generic: UP Migration Roadmap
+    - option "Product Design":
+      - generic: Board
+      - generic: Product Design
+    - option "Q4 Data Plan — Gantt":
+      - generic: Board
+      - generic: Q4 Data Plan — Gantt
+  - status
+- main "main content":
+  - generic "Board header":
+    - region "Board information":
+      - button "Atlas Migration Packages Roadmap":
+        - heading "Atlas Migration Packages Roadmap" [level=1]
+    - region "More actions":
+      - button "Integrate":
+        - generic: Integrate
+      - button "Automate / 6":
+        - text: Automate / 6
+      - button "Menu":
+        - generic: Agents
+      - button "Start a board discussion":
+      - button "Board activity":
+        - button "Adi Geva":
+          - img "Adi Geva"
+        - button "Alla Avgustinov":
+          - img "Alla Avgustinov"
+      - button "Invite / 14 board members":
+        - text: Invite / 14
+        - generic: board members
+      - button "Copy Link":
+      - button "Options":
+    - region "Views manager":
+      - tablist "Views Tabs":
+        - tab "Main table ":
+          - button "Main table ":
+            - button "Main table":
+              - generic: Main table
+            - generic: 
+        - tab "Packages ":
+          - button "Packages ":
+            - button "Packages":
+              - generic: Packages
+            - generic: 
+        - tab "Epics Overview ":
+          - button "Epics Overview ":
+            - button "Epics Overview":
+              - generic: Epics Overview
+            - generic: 
+        - tab "Gantt ":
+          - button "Gantt ":
+            - button "Gantt":
+              - generic: Gantt
+            - generic: 
+        - tab "Calendar ":
+          - button "Calendar ":
+            - button "Calendar":
+              - generic: Calendar
+            - generic: 
+        - tab "NAB ":
+          - button "NAB ":
+            - button "NAB":
+              - generic: NAB
+            - generic: 
+        - tab "Options" [disabled]:
+          - button "Options" [disabled]:
+            - button "Add view":
+              - img: 
+      - status
+    - region "Content organizer":
+      - button "New epic / workflow"
+      - button "New item options":
+        - generic: 
+      - generic: 
+      - textbox "Search / Filter Board":
+        - /placeholder: Search
+      - button "Filter board by person":
+        - generic: Person
+      - button "Filter board by anything":
+        - generic: Filter
+        - generic: 
+      - button "Sort board by any column":
+        - generic: Sort
+      - button "Hidden columns":
+        - generic: Hide
+      - button "Group items by column":
+        - generic: Group by
+      - button "Menu":
+      - button "Header Tabs" [expanded]:
+  - group "Atlas Migration Packages Roadmap":
+    - list "Epic / workflow Add Single Merchant (Monitoring)":
+      - button "More options for Add Single Merchant (Monitoring)":
+      - heading "Add Single Merchant (Monitoring)" [level=4]
+      - listitem "Product Add Single Merchant (Monitoring)":
+        - button:
+      - listitem: Must Add Single Merchant (Monitoring) v
+      - listitem: NAB Add Single Merchant (Monitoring) v
+      - listitem: Dev Team Add Single Merchant (Monitoring) Rocket
+      - listitem: Epic Status Add Single Merchant (Monitoring) Done green-shadow
+      - listitem: Sprint Add Single Merchant (Monitoring) S49, S50
+      - listitem: PRD ETA Add Single Merchant (Monitoring), Empty PRD ETA
+    - list "Epic / workflow Connected Sites / Graph":
+      - button "More options for Connected Sites / Graph":
+      - heading "Connected Sites / Graph" [level=4]
+      - listitem "Product Connected Sites / Graph":
+        - button:
+      - listitem: Must Connected Sites / Graph v
+      - listitem: NAB Connected Sites / Graph v
+      - listitem: Dev Team Connected Sites / Graph Rocket
+      - listitem: Epic Status Connected Sites / Graph Done green-shadow
+      - listitem: Sprint Connected Sites / Graph S49
+      - listitem: PRD ETA Connected Sites / Graph, Empty PRD ETA
+    - list "Epic / workflow Batch Release":
+      - button "More options for Batch Release":
+      - heading "Batch Release" [level=4]
+      - listitem "Product Batch Release":
+        - button "Owner Release Approved Findings in Batch Alla Avgustinov":
+          - button "Owner Release Approved Findings in Batch Alla Avgustinov":
+            - button "Alla Avgustinov":
+      - listitem: Must Batch Release v
+      - listitem: NAB Batch Release v
+      - listitem: Dev Team Batch Release Rocket
+      - listitem: Epic Status Batch Release Done green-shadow
+      - listitem: Sprint Batch Release S49, S50
+      - listitem: PRD ETA Batch Release Jul 9
+    - list "Epic / workflow Internal Finding Review":
+      - button "More options for Internal Finding Review":
+      - heading "Internal Finding Review" [level=4]
+      - listitem "Product Internal Finding Review":
+        - button:
+      - listitem: Must Internal Finding Review v
+      - listitem: NAB Internal Finding Review v
+      - listitem: Dev Team Internal Finding Review Rocket
+      - listitem: Epic Status Internal Finding Review Done green-shadow
+      - listitem: Sprint Internal Finding Review S49, S50
+      - listitem: PRD ETA Internal Finding Review Jul 9
+    - list "Epic / workflow Assign Analyst to Merchant":
+      - button "More options for Assign Analyst to Merchant":
+      - heading "Assign Analyst to Merchant" [level=4]
+      - listitem "Product Assign Analyst to Merchant":
+        - button "Owner Assign Analyst to Merchant Alla Avgustinov":
+          - button "Owner Assign Analyst to Merchant Alla Avgustinov":
+            - button "Alla Avgustinov":
+      - listitem: Must Assign Analyst to Merchant v
+      - listitem: NAB Assign Analyst to Merchant v
+      - listitem "Dev Team Assign Analyst to Merchant":
+        - button "Dev Team Assign Analyst to Merchant Horizon":
+          - generic "Horizon":
+            - generic: Horizon
+      - listitem: Epic Status Assign Analyst to Merchant In Progress - Dev orange
+      - listitem: Sprint Assign Analyst to Merchant S50, S51
+      - listitem: PRD ETA Assign Analyst to Merchant Jul 20
+    - list "Epic / workflow Billing Report":
+      - button "More options for Billing Report":
+      - heading "Billing Report" [level=4]
+      - listitem "Product Billing Report":
+        - button:
+      - listitem: Must Billing Report v
+      - listitem: NAB Billing Report v
+      - listitem: Dev Team Billing Report Horizon
+      - listitem: Epic Status Billing Report Dependency dark-red
+      - listitem: Sprint Billing Report S53
+      - listitem: PRD ETA Billing Report Jul 12
+    - list "Epic / workflow Users Management":
+      - button "More options for Users Management":
+      - heading "Users Management" [level=4]
+      - listitem "Product Users Management":
+        - button:
+      - listitem: Must Users Management v
+      - listitem: NAB Users Management v
+      - listitem: Dev Team Users Management Horizon
+      - listitem: Epic Status Users Management Partially Done eden
+      - listitem: Sprint Users Management S49, S52, S50, S51
+      - listitem: PRD ETA Users Management, Empty PRD ETA
+    - list "Epic / workflow URL Level Report":
+      - button "More options for URL Level Report":
+      - heading "URL Level Report" [level=4]
+      - listitem "Product URL Level Report":
+        - button "Owner Generate URL Findings Report Alla Avgustinov":
+          - button "Owner Generate URL Findings Report Alla Avgustinov":
+            - button "Alla Avgustinov":
+      - listitem: Must URL Level Report v
+      - listitem: NAB URL Level Report v
+      - listitem: Dev Team URL Level Report Horizon
+      - listitem: Epic Status URL Level Report In Progress - Dev orange
+      - listitem: Sprint URL Level Report S49, S52
+      - listitem: PRD ETA URL Level Report Aug 13
+    - list "Epic / workflow Merchant Category Code (MCC) Mismatch for PayPal in GO":
+      - button "More options for Merchant Category Code (MCC) Mismatch for PayPal in GO":
+      - heading "Merchant Category Code (MCC) Mismatch for PayPal in GO" [level=4]
+      - listitem "Product Merchant Category Code (MCC) Mismatch for PayPal in GO":
+        - button "Owner mismatch capabilities Adi Geva":
+          - button "Owner mismatch capabilities Adi Geva":
+            - button "Adi Geva":
+      - listitem: Must Merchant Category Code (MCC) Mismatch for PayPal in GO v
+      - listitem: NAB Merchant Category Code (MCC) Mismatch for PayPal in GO, Empty NAB
+      - listitem: Dev Team Merchant Category Code (MCC) Mismatch for PayPal in GO Rocket
+      - listitem: Epic Status Merchant Category Code (MCC) Mismatch for PayPal in GO Done green-shadow
+      - listitem: Sprint Merchant Category Code (MCC) Mismatch for PayPal in GO S49
+      - listitem: PRD ETA Merchant Category Code (MCC) Mismatch for PayPal in GO, Empty PRD ETA
+    - list "Epic / workflow Monitoring Cadence - MVP":
+      - button "More options for Monitoring Cadence - MVP":
+      - heading "Monitoring Cadence - MVP" [level=4]
+      - listitem "Product Monitoring Cadence - MVP":
+        - button "Owner Per Service Adi Geva":
+          - button "Owner Per Service Adi Geva":
+            - button "Adi Geva":
+      - listitem: Must Monitoring Cadence - MVP v
+      - listitem: NAB Monitoring Cadence - MVP, Empty NAB
+      - listitem: Dev Team Monitoring Cadence - MVP Rocket
+      - listitem: Epic Status Monitoring Cadence - MVP In Progress - Dev orange
+      - listitem: Sprint Monitoring Cadence - MVP S49, S50
+      - listitem: PRD ETA Monitoring Cadence - MVP Sep 15
+    - list "Epic / workflow Merchant & Finding Activity Log (aka Audit Trail)":
+      - button "More options for Merchant &amp; Finding Activity Log (aka Audit Trail)":
+      - heading "Merchant & Finding Activity Log (aka Audit Trail)" [level=4]
+      - listitem "Product Merchant & Finding Activity Log (aka Audit Trail)":
+        - button:
+      - listitem: Must Merchant & Finding Activity Log (aka Audit Trail) v
+      - listitem: NAB Merchant & Finding Activity Log (aka Audit Trail) v
+      - listitem: Dev Team Merchant & Finding Activity Log (aka Audit Trail) Horizon
+      - listitem: Epic Status Merchant & Finding Activity Log (aka Audit Trail) In Progress - Dev orange
+      - listitem: Sprint Merchant & Finding Activity Log (aka Audit Trail) S49, S50
+      - listitem: PRD ETA Merchant & Finding Activity Log (aka Audit Trail) Aug 13
+    - list "Epic / workflow Full MCC Parity - MVP":
+      - button "More options for Full MCC Parity - MVP":
+      - heading "Full MCC Parity - MVP" [level=4]
+      - listitem "Product Full MCC Parity - MVP":
+        - button:
+      - listitem: Must Full MCC Parity - MVP v
+      - listitem: NAB Full MCC Parity - MVP v
+      - listitem: Dev Team Full MCC Parity - MVP Rocket
+      - listitem: Epic Status Full MCC Parity - MVP Ready for Dev light_magic
+      - listitem: Sprint Full MCC Parity - MVP S53
+      - listitem: PRD ETA Full MCC Parity - MVP Sep 30
+    - list "Epic / workflow Policies - MVP":
+      - button "More options for Policies - MVP":
+      - heading "Policies - MVP" [level=4]
+      - listitem "Product Policies - MVP":
+        - button "Owner Divide the policies in finding (every service should have an header - UI only) Adi Geva":
+          - button "Owner Divide the policies in finding (every service should have an header - UI only) Adi Geva":
+            - button "Adi Geva":
+      - listitem: Must Policies - MVP v
+      - listitem: NAB Policies - MVP v
+      - listitem: Dev Team Policies - MVP Rocket
+      - listitem: Epic Status Policies - MVP In Progress - Dev orange
+      - listitem: Sprint Policies - MVP S52
+      - listitem: PRD ETA Policies - MVP Oct 7
+    - list "Q3":
+      - button "Q3 options"
+      - button "Collapse all group items" [expanded]:
+      - heading "Click to Edit Q3" [level=2]:
+        - button "Click to Edit Q3":
+          - generic: Click to Edit
+          - text: Q3
+      - generic: 32 Epic / workflows
+      - generic: / 78 Subitems
+    - list "Q3 column actions":
+      - generic: Header
+      - listitem "Epic / workflow":
+        - checkbox "Select all items in Q3"
+        - button "Sort by Name":
+          - generic: 
+          - generic: 
+        - generic "Epic / workflow":
+          - button "Click to Edit Epic / workflow":
+            - generic: Click to Edit
+            - generic: Epic / workflow
+        - button "Options":
+          - generic: 
+      - listitem "Product":
+        - generic "Product":
+          - button "Click to Edit Product":
+            - generic: Click to Edit
+            - generic: Product
+        - button "Show column information":
+        - button "Options":
+          - generic: 
+        - button "Sort by Product":
+          - generic: 
+          - generic: 
+      - listitem "Must":
+        - generic "Must":
+          - button "Click to Edit Must":
+            - generic: Click to Edit
+            - generic: Must
+        - button "Options":
+          - generic: 
+        - button "Sort by Must":
+          - generic: 
+          - generic: 
+      - listitem "NAB":
+        - generic "NAB":
+          - button "Click to Edit NAB":
+            - generic: Click to Edit
+            - generic: NAB
+        - button "Options":
+          - generic: 
+        - button "Sort by NAB":
+          - generic: 
+          - generic: 
+      - listitem "Dev Team":
+        - generic "Dev Team":
+          - button "Click to Edit Dev Team":
+            - generic: Click to Edit
+            - generic: Dev Team
+        - button "Options":
+          - generic: 
+        - button "Sort by Dev Team":
+          - generic: 
+          - generic: 
+      - listitem "Epic Status":
+        - generic "Epic Status":
+          - button "Click to Edit Epic Status":
+            - generic: Click to Edit
+            - generic: Epic Status
+        - button "Options":
+          - generic: 
+        - button "Sort by Epic Status":
+          - generic: 
+          - generic: 
+      - listitem "Sprint":
+        - generic "Sprint":
+          - button "Click to Edit Sprint":
+            - generic: Click to Edit
+            - generic: Sprint
+        - button "Show column information":
+        - button "Options":
+          - generic: 
+        - button "Sort by Sprint":
+          - generic: 
+          - generic: 
+      - listitem "PRD ETA":
+        - generic "PRD ETA":
+          - button "Click to Edit PRD ETA":
+            - generic: Click to Edit
+            - generic: PRD ETA
+        - button "Options":
+          - generic: 
+        - button "Sort by PRD ETA":
+          - generic: 
+          - generic: 
+      - button "Add column":
+        - button "Options":
+- dialog
+- combobox "AI credits have run out" [disabled]
+
+- generic: Adi, join our Live Training Sessions with a monday.com expert on AI, everyday platform skills and more! 🤖
+- generic: Register now!
+- generic: 
+- text:  
+- button "Skip to"
+- banner:
+  - link "Home":
+    - /url: /
+  - button "Search everything":
+    - generic: Search for anything...
+  - navigation "Views and Tools":
+    - button "Notifications":
+    - generic "13":
+      - generic "13":
+        - generic: "13"
+    - button "Update feed":
+    - generic "99+":
+      - generic "99+":
+        - generic: 99+
+    - button "Invite members":
+    - button "monday marketplace, Update available":
+    - button "Help":
+    - button "Products switcher":
+    - button "User Menu":
+- navigation "main navigation":
+  - generic "Side navigation":
+    - button "Open workspace menu":
+    - button "Workspace":
+      - generic: Workspace
+    - button "Sidekick":
+      - generic: Sidekick
+    - button "Agents":
+      - generic: Agents
+    - button "Vibe":
+      - generic: Vibe
+    - button "Workflows":
+      - generic: Workflows
+    - button "Notetaker":
+      - generic: Notetaker
+    - button "Favorites":
+      - generic: Favorites
+    - button "More tools menu":
+      - generic: More
+  - generic "Workspace":
+    - button "open workspace menu":
+    - button "Search":
+    - button "Close workspace menu":
+    - button "workspaces dropdown button":
+      - generic: Workspaces selection and actions
+      - generic "Workspace selection":
+        - generic: Click to select or add a workspace
+        - generic "Workspace selection":
+          - generic "Workspace":
+          - generic: Unified Platform
+    - button "Add item to workspace":
+  - button "My agents":
+    - generic: My agents
+    - button "Migration Readiness Recalculator":
+      - img "Migration Readiness Recalculator"
+  - generic: Content
+  - button "Content section menu":
+  - button "Add item to workspace":
+  - button "Manage workspace":
+    - generic: Manage workspace
+  - listbox "Workspace":
+    - option "Atlas Migration Packages Roadmap" [selected]:
+      - generic: Board
+      - generic: Atlas Migration Packages Roadmap
+    - option "Horizon → Data Team Handoffs":
+      - generic: Board
+      - generic: Horizon → Data Team Handoffs
+    - option "UP Client Migration Plan":
+      - generic: Board
+      - generic: UP Client Migration Plan
+    - option "Q-Planning · App Group (Unified Platform)":
+      - generic: Board
+      - generic: Q-Planning · App Group (Unified Platform)
+    - option "UP Migration Roadmap":
+      - generic: Private board
+      - generic: UP Migration Roadmap
+    - option "Product Design":
+      - generic: Board
+      - generic: Product Design
+    - option "Q4 Data Plan — Gantt":
+      - generic: Board
+      - generic: Q4 Data Plan — Gantt
+  - status
+- main "main content":
+  - generic "Board header":
+    - region "Board information":
+      - button "Atlas Migration Packages Roadmap":
+        - heading "Atlas Migration Packages Roadmap" [level=1]
+    - region "More actions":
+      - button "Integrate":
+        - generic: Integrate
+      - button "Automate / 6":
+        - text: Automate / 6
+      - button "Menu":
+        - generic: Agents
+      - button "Start a board discussion":
+      - button "Board activity":
+        - button "Adi Geva":
+          - img "Adi Geva"
+        - button "Alla Avgustinov":
+          - img "Alla Avgustinov"
+      - button "Invite / 14 board members":
+        - text: Invite / 14
+        - generic: board members
+      - button "Copy Link":
+      - button "Options":
+    - region "Views manager":
+      - tablist "Views Tabs":
+        - tab "Main table ":
+          - button "Main table ":
+            - button "Main table":
+              - generic: Main table
+            - generic: 
+        - tab "Packages ":
+          - button "Packages ":
+            - button "Packages":
+              - generic: Packages
+            - generic: 
+        - tab "Epics Overview ":
+          - button "Epics Overview ":
+            - button "Epics Overview":
+              - generic: Epics Overview
+            - generic: 
+        - tab "Gantt ":
+          - button "Gantt ":
+            - button "Gantt":
+              - generic: Gantt
+            - generic: 
+        - tab "Calendar ":
+          - button "Calendar ":
+            - button "Calendar":
+              - generic: Calendar
+            - generic: 
+        - tab "NAB ":
+          - button "NAB ":
+            - button "NAB":
+              - generic: NAB
+            - generic: 
+        - tab "Options" [disabled]:
+          - button "Options" [disabled]:
+            - button "Add view":
+              - img: 
+      - status
+    - region "Content organizer":
+      - button "New epic / workflow"
+      - button "New item options":
+        - generic: 
+      - generic: 
+      - textbox "Search / Filter Board":
+        - /placeholder: Search
+      - button "Filter board by person":
+        - generic: Person
+      - button "Filter board by anything":
+        - generic: Filter
+        - generic: 
+      - button "Sort board by any column":
+        - generic: Sort
+      - button "Hidden columns":
+        - generic: Hide
+      - button "Group items by column":
+        - generic: Group by
+      - button "Menu":
+      - button "Header Tabs" [expanded]:
+  - group "Atlas Migration Packages Roadmap":
+    - list "Epic / workflow Policies - MVP":
+      - button "More options for Policies - MVP":
+      - heading "Policies - MVP" [level=4]
+      - listitem "Product Policies - MVP":
+        - button "Owner Divide the policies in finding (every service should have an header - UI only) Adi Geva":
+          - button "Owner Divide the policies in finding (every service should have an header - UI only) Adi Geva":
+            - button "Adi Geva":
+      - listitem: Must Policies - MVP v
+      - listitem: NAB Policies - MVP v
+      - listitem: Dev Team Policies - MVP Rocket
+      - listitem: Epic Status Policies - MVP In Progress - Dev orange
+      - listitem: Sprint Policies - MVP S52
+      - listitem: PRD ETA Policies - MVP Oct 7
+    - list "Epic / workflow UI Enhancements":
+      - button "More options for UI Enhancements":
+      - heading "UI Enhancements" [level=4]
+      - listitem "Product UI Enhancements":
+        - button "Owner UI Enhancement Adi Geva":
+          - button "Owner UI Enhancement Adi Geva":
+            - button "Adi Geva":
+      - listitem: Must UI Enhancements v
+      - listitem: NAB UI Enhancements v
+      - listitem: Dev Team UI Enhancements Rocket
+      - listitem: Epic Status UI Enhancements In Progress - Dev orange
+      - listitem: Sprint UI Enhancements S51, S52
+      - listitem: PRD ETA UI Enhancements, Empty PRD ETA
+    - list "Epic / workflow":
+      - button "More options for API - Cross Product":
+      - listitem "Epic / workflow":
+        - 'checkbox "Select item: API - Cross Product"'
+        - button "Expand subitems":
+        - heading "API - Cross Product, editable" [level=3]:
+          - generic: API - Cross Product
+        - button "2 Subitems":
+          - generic: "2"
+        - button:
+        - button "Start conversation":
+          - generic: "1"
+      - listitem "Product":
+        - button:
+      - listitem: Must API - Cross Product v
+      - listitem: NAB API - Cross Product v
+      - listitem: Dev Team API - Cross Product Horizon
+      - listitem: Epic Status API - Cross Product In Progress - Dev orange
+      - listitem: Sprint API - Cross Product no labels selected
+      - listitem: PRD ETA API - Cross Product Sep 23
+    - list "Epic / workflow Finding Dispute and Reassessment (Q3)":
+      - button "More options for Finding Dispute and Reassessment (Q3)":
+      - heading "Finding Dispute and Reassessment (Q3)" [level=4]
+      - listitem "Product Finding Dispute and Reassessment (Q3)":
+        - button:
+      - listitem: Must Finding Dispute and Reassessment (Q3) v
+      - listitem: NAB Finding Dispute and Reassessment (Q3) v
+      - listitem: Dev Team Finding Dispute and Reassessment (Q3) Rocket
+      - listitem: Epic Status Finding Dispute and Reassessment (Q3) In Progress - Dev orange
+      - listitem: Sprint Finding Dispute and Reassessment (Q3) S52
+      - listitem: PRD ETA Finding Dispute and Reassessment (Q3) Nov 2
+    - list "Epic / workflow Wizard for Add Merchant (Part of Onboarding UI/UX) - MVP":
+      - button "More options for Wizard for Add Merchant (Part of Onboarding UI/UX) - MVP":
+      - heading "Wizard for Add Merchant (Part of Onboarding UI/UX) - MVP" [level=4]
+      - listitem "Product Wizard for Add Merchant (Part of Onboarding UI/UX) - MVP":
+        - button:
+      - listitem: Must Wizard for Add Merchant (Part of Onboarding UI/UX) - MVP v
+      - listitem: NAB Wizard for Add Merchant (Part of Onboarding UI/UX) - MVP v
+      - listitem: Dev Team Wizard for Add Merchant (Part of Onboarding UI/UX) - MVP Rocket
+      - listitem: Epic Status Wizard for Add Merchant (Part of Onboarding UI/UX) - MVP Ready for Dev light_magic
+      - listitem: Sprint Wizard for Add Merchant (Part of Onboarding UI/UX) - MVP no labels selected
+      - listitem: PRD ETA Wizard for Add Merchant (Part of Onboarding UI/UX) - MVP Oct 1
+    - list "Epic / workflow WebID (Q3)":
+      - button "More options for WebID (Q3)":
+      - heading "WebID (Q3)" [level=4]
+      - listitem "Product WebID (Q3)":
+        - button:
+      - listitem: Must WebID (Q3) v
+      - listitem: NAB WebID (Q3) v
+      - listitem: Dev Team WebID (Q3) Rocket
+      - listitem: Epic Status WebID (Q3) Ready for Dev light_magic
+      - listitem: Sprint WebID (Q3) no labels selected
+      - listitem: PRD ETA WebID (Q3) Oct 13
+    - list "Epic / workflow Amend the Monitoring Cadence in Add Merchant to Support the Cadence per Service":
+      - button "More options for Amend the Monitoring Cadence in Add Merchant to Support the Cadence per Service":
+      - heading "Amend the Monitoring Cadence in Add Merchant to Support the Cadence per Service" [level=4]
+      - listitem "Product Amend the Monitoring Cadence in Add Merchant to Support the Cadence per Service":
+        - button "Owner Add Single merchant flow should have the cadence per service (now presenting per portfolio) Adi Geva":
+          - button "Owner Add Single merchant flow should have the cadence per service (now presenting per portfolio) Adi Geva":
+            - button "Adi Geva":
+      - listitem: Must Amend the Monitoring Cadence in Add Merchant to Support the Cadence per Service, Empty Must
+      - listitem: NAB Amend the Monitoring Cadence in Add Merchant to Support the Cadence per Service, Empty NAB
+      - listitem: Dev Team Amend the Monitoring Cadence in Add Merchant to Support the Cadence per Service Rocket
+      - listitem: Epic Status Amend the Monitoring Cadence in Add Merchant to Support the Cadence per Service In Progress - PM sunset
+      - listitem: Sprint Amend the Monitoring Cadence in Add Merchant to Support the Cadence per Service no labels selected
+      - listitem: PRD ETA Amend the Monitoring Cadence in Add Merchant to Support the Cadence per Service, Empty PRD ETA
+    - list "Epic / workflow PLRC Comments Export":
+      - button "More options for PLRC Comments Export":
+      - heading "PLRC Comments Export" [level=4]
+      - listitem "Product PLRC Comments Export":
+        - button "Owner Export as CSV anna":
+          - button "Owner Export as CSV anna":
+            - button "anna":
+      - listitem: Must PLRC Comments Export, Empty Must
+      - listitem: NAB PLRC Comments Export, Empty NAB
+      - listitem: Dev Team PLRC Comments Export Horizon
+      - listitem: Epic Status PLRC Comments Export In Progress - Dev orange
+      - listitem: Sprint PLRC Comments Export S51
+      - listitem: PRD ETA PLRC Comments Export, Empty PRD ETA
+    - list "Epic / workflow Ongoing Data Effort":
+      - button "More options for Ongoing Data Effort":
+      - heading "Ongoing Data Effort" [level=4]
+      - listitem "Product Ongoing Data Effort":
+        - button "Owner ongoing Alla Avgustinov":
+          - button "Owner ongoing Alla Avgustinov":
+            - button "Alla Avgustinov":
+      - listitem: Must Ongoing Data Effort, Empty Must
+      - listitem: NAB Ongoing Data Effort, Empty NAB
+      - listitem: Dev Team Ongoing Data Effort Horizon
+      - listitem: Epic Status Ongoing Data Effort In Progress - Dev orange
+      - listitem: Sprint Ongoing Data Effort no labels selected
+      - listitem: PRD ETA Ongoing Data Effort, Empty PRD ETA
+    - list "Epic / workflow CC - Content sufficiency discovery":
+      - button "More options for CC - Content sufficiency discovery":
+      - heading "CC - Content sufficiency discovery" [level=4]
+      - listitem "Product CC - Content sufficiency discovery":
+        - button "Owner a Gal Sahar":
+          - button "Owner a Gal Sahar":
+            - button "Gal Sahar":
+      - listitem: Must CC - Content sufficiency discovery, Empty Must
+      - listitem: NAB CC - Content sufficiency discovery, Empty NAB
+      - listitem: Dev Team CC - Content sufficiency discovery K9
+      - listitem: Epic Status CC - Content sufficiency discovery no status selected
+      - listitem: Sprint CC - Content sufficiency discovery no labels selected
+      - listitem: PRD ETA CC - Content sufficiency discovery, Empty PRD ETA
+    - list "Q3 summary":
+      - listitem "Epic / workflow":
+        - checkbox
+        - textbox "+ Add epic / workflow"
+    - list "Q3 summary":
+      - listitem "Epic / workflow"
+      - listitem "Product":
+        - generic: "-"
+      - listitem "Must":
+        - generic: 28/32
+      - listitem "NAB":
+        - generic: 26/32
+      - listitem "Dev Team"
+      - listitem "Epic Status"
+      - listitem "Sprint"
+      - listitem "PRD ETA"
+    - list "Q3":
+      - button "Q3 options"
+      - button "Collapse all group items" [expanded]:
+      - heading "Click to Edit Q3" [level=2]:
+        - button "Click to Edit Q3":
+          - generic: Click to Edit
+          - text: Q3
+      - generic: 32 Epic / workflows
+      - generic: / 78 Subitems
+    - list "Q3 column actions":
+      - generic: Header
+      - listitem "Epic / workflow":
+        - checkbox "Select all items in Q3"
+        - button "Sort by Name":
+          - generic: 
+          - generic: 
+        - generic "Epic / workflow":
+          - button "Click to Edit Epic / workflow":
+            - generic: Click to Edit
+            - generic: Epic / workflow
+        - button "Options":
+          - generic: 
+      - listitem "Product":
+        - generic "Product":
+          - button "Click to Edit Product":
+            - generic: Click to Edit
+            - generic: Product
+        - button "Show column information":
+        - button "Options":
+          - generic: 
+        - button "Sort by Product":
+          - generic: 
+          - generic: 
+      - listitem "Must":
+        - generic "Must":
+          - button "Click to Edit Must":
+            - generic: Click to Edit
+            - generic: Must
+        - button "Options":
+          - generic: 
+        - button "Sort by Must":
+          - generic: 
+          - generic: 
+      - listitem "NAB":
+        - generic "NAB":
+          - button "Click to Edit NAB":
+            - generic: Click to Edit
+            - generic: NAB
+        - button "Options":
+          - generic: 
+        - button "Sort by NAB":
+          - generic: 
+          - generic: 
+      - listitem "Dev Team":
+        - generic "Dev Team":
+          - button "Click to Edit Dev Team":
+            - generic: Click to Edit
+            - generic: Dev Team
+        - button "Options":
+          - generic: 
+        - button "Sort by Dev Team":
+          - generic: 
+          - generic: 
+      - listitem "Epic Status":
+        - generic "Epic Status":
+          - button "Click to Edit Epic Status":
+            - generic: Click to Edit
+            - generic: Epic Status
+        - button "Options":
+          - generic: 
+        - button "Sort by Epic Status":
+          - generic: 
+          - generic: 
+      - listitem "Sprint":
+        - generic "Sprint":
+          - button "Click to Edit Sprint":
+            - generic: Click to Edit
+            - generic: Sprint
+        - button "Show column information":
+        - button "Options":
+          - generic: 
+        - button "Sort by Sprint":
+          - generic: 
+          - generic: 
+      - listitem "PRD ETA":
+        - generic "PRD ETA":
+          - button "Click to Edit PRD ETA":
+            - generic: Click to Edit
+            - generic: PRD ETA
+        - button "Options":
+          - generic: 
+        - button "Sort by PRD ETA":
+          - generic: 
+          - generic: 
+      - button "Add column":
+        - button "Options":
+- dialog
+- combobox "AI credits have run out" [disabled]

@@ -12,6 +12,9 @@ audit of the subsystem.
 The parent gives you a small bounded set of product questions (normally 3–7).
 Those questions ARE your scope. Search only enough code to answer them.
 
+Search with your Grep and Glob tools. They bound their own output; a shell grep
+across a repo returns every match straight into context.
+
 - Do not document the whole subsystem or module tree.
 - Do not enumerate every enum, constant, or call chain unless a question needs it.
 - Stop when the questions are answered, or when what remains would not change a
@@ -22,9 +25,12 @@ Those questions ARE your scope. Search only enough code to answer them.
 ## What to produce
 For each supplied question: the answer, and the behavioral rules that support it.
 
-**Cap at ~15 behavioral rules for your pass.** If you have more candidates,
-report the ones that matter to a PM and drop the rest — do not pad. Prioritize
-product-visible behavior over internal plumbing.
+**Return at most ~2,000 tokens, and cap at ~15 behavioral rules.** You may
+explore as widely as the questions require — that cost stays in your context, not
+the parent's — but what you return is a distilled summary, never the
+investigation. If you have more candidates than fit, report the ones that matter
+to a PM and drop the rest; do not pad. Prioritize product-visible behavior over
+internal plumbing.
 
 Each rule is ONE behavior, stated as trigger -> outcome:
 - **ID** — stable (BR-001, BR-002 ...). Never reuse or renumber.

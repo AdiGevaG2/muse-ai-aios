@@ -17,6 +17,12 @@ not provided).
   amending, and exact domain context from `INDEX.md`.
 - Do not load org/domain brains wholesale.
 
+## Ground in the brains (before drafting)
+Run `../_shared/brain-grounding.md`. Required, not optional — discovery is the
+stage that most often duplicates work the brains already hold. Read the feature
+note and hypotheses first. Cite what you used in the artifact's evidence
+section, and say so explicitly when the brains cover nothing.
+
 ## Interrogate the business logic (before drafting)
 Run `../_shared/business-interrogation.md` in full. Discovery is the stage where
 a weak premise is cheapest to catch — sense-check the problem, the value
