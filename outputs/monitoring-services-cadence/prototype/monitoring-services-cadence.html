@@ -119,7 +119,7 @@ tbody tr.clickable:focus-visible{outline:none;box-shadow:inset var(--focus-ring)
 
 /* Modal */
 .overlay{position:fixed;inset:0;z-index:var(--z-modal);background:color-mix(in srgb, var(--bg-overlay) 70%, transparent);backdrop-filter:blur(8px);
-  display:flex;align-items:center;justify-content:center;padding:calc(var(--sp-5xl) + var(--sp-4xl)) var(--sp-4xl) var(--sp-4xl);}
+  display:flex;align-items:center;justify-content:center;padding:calc(var(--sp-5xl) + var(--sp-lg)) var(--sp-4xl) var(--sp-lg);}
 .overlay[hidden]{display:none;}
 .overlay.nested{z-index:var(--z-nested-modal);}
 .modal{width:1250px;max-width:100%;max-height:100%;background:var(--bg-primary);border-radius:var(--r-2xl);box-shadow:var(--shadow-xl);
@@ -131,7 +131,7 @@ tbody tr.clickable:focus-visible{outline:none;box-shadow:inset var(--focus-ring)
 .modal-tools{display:flex;align-items:center;gap:var(--sp-xs);}
 .modal-body{flex:1;overflow-y:auto;display:grid;grid-template-columns:480px 1fr;min-height:0;}
 .modal-left{padding:var(--sp-3xl);display:flex;flex-direction:column;gap:var(--sp-2xl);}
-.modal-right{background:var(--bg-secondary);padding:var(--sp-xl) var(--sp-3xl);display:flex;flex-direction:column;gap:var(--sp-xl);}
+.modal-right{background:var(--bg-secondary);padding:var(--sp-lg) var(--sp-3xl);display:flex;flex-direction:column;gap:var(--sp-lg);}
 .modal-actions{display:flex;justify-content:flex-end;gap:var(--sp-lg);padding:var(--sp-xl) var(--sp-3xl);border-top:1px solid var(--border-secondary);}
 
 /* Confirmation modal (unsaved changes) */
@@ -172,8 +172,8 @@ tbody tr.clickable:focus-visible{outline:none;box-shadow:inset var(--focus-ring)
 .cadence-row .lbl[hidden]{display:none;}
 .hints{display:flex;flex-direction:column;gap:var(--sp-xs);}
 .hints:empty{display:none;}
-.hint{display:flex;gap:var(--sp-sm);align-items:flex-start;margin:0;font-size:14px;line-height:20px;color:var(--text-tertiary);}
-.hint svg{margin-top:var(--sp-xxs);color:var(--fg-quaternary);}
+.hint{display:flex;gap:var(--sp-xs);align-items:flex-start;margin:0;font-size:12px;line-height:18px;color:var(--text-tertiary);}
+.hint svg{width:14px;height:14px;margin-top:var(--sp-xxs);color:var(--fg-quaternary);}
 
 /* Toggle - default md */
 .toggle{display:inline-flex;align-items:center;width:44px;height:24px;padding:var(--sp-xxs);border-radius:var(--r-full);border:none;
@@ -231,7 +231,7 @@ tbody tr.clickable:focus-visible{outline:none;box-shadow:inset var(--focus-ring)
   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
     <path d="M11 7V11M11 15H11.01M21 11C21 16.5228 16.5228 21 11 21C5.47715 21 1 16.5228 1 11C1 5.47715 5.47715 1 11 1C16.5228 1 21 5.47715 21 11Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
-  <p style="margin:0;font-size:14px;line-height:20px;color:var(--text-white,#ffffff);font-variation-settings:'wght' 500;">This is not the finalized design. It's a working prototype for grooming and review — the final spec is delivered separately, in Figma.</p>
+  <p style="margin:0;font-size:14px;line-height:20px;color:var(--text-white,#ffffff);font-variation-settings:'wght' 500;">This is not the finalized design. It's a working prototype for grooming and review. The final spec is delivered separately, in Figma.</p>
 </div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -513,7 +513,7 @@ document.addEventListener('click', e => {
 function save(fail){
   return new Promise(resolve => setTimeout(() => {
     if(fail){ toast('error', 'Changes not saved. Try again.'); resolve(false); }
-    else { saved = JSON.parse(JSON.stringify(services)); toast('success', 'Changes saved', 'Cadence changes apply from the next scheduled scan.'); resolve(true); }
+    else { saved = JSON.parse(JSON.stringify(services)); render(); toast('success', 'Changes saved', 'Cadence changes apply from the next scheduled scan.'); resolve(true); }
   }, 250));
 }
 

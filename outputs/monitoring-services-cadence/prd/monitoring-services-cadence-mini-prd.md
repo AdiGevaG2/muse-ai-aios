@@ -47,7 +47,7 @@ Goal: each service on a portfolio has its own independent cadence and start day,
 7. Biweekly runs every second occurrence of the chosen weekday.
 8. Daily and Quarterly have no "On every" value.
 9. When a service's cadence is Daily, Weekly, or Biweekly, a note under that service's Cadence dropdown reads: "Monitoring G2 Analyst Review is available only for a Monthly or Quarterly cadence." When the cadence is Monthly or Quarterly, no Monitoring G2 Analyst Review note shows. The note follows the cadence shown in the dropdown, including when the screen opens and after a failed save. A Daily, Weekly, or Biweekly cadence does not turn off Monitoring G2 Analyst Review for the portfolio, but findings from that service's scans do not go through Monitoring G2 Analyst Review.
-10. Each service has an on/off toggle. A service turned off and saved stops scanning from its next scan. A scan of that service in progress at the time of saving runs to completion; a scheduled scan that has not started does not run. While a service's toggle is off, its Cadence and "On every" dropdowns are disabled and the month-end note and the Monitoring G2 Analyst Review note do not show. From turning the toggle off until Save General Settings, a note under the dropdowns reads: "This service stops from the next scan cycle. A scan in progress will complete." The note does not show once the change is saved.
+10. Each service has an on/off toggle. A service turned off and saved stops scanning from its next scan. A scan of that service in progress at the time of saving runs to completion; a scheduled scan that has not started does not run. While a service's toggle is off, its Cadence and "On every" dropdowns are disabled and the month-end note and the Monitoring G2 Analyst Review note do not show. From turning the toggle off until Save General Settings, a note under the dropdowns reads: "This service stops from the next scan cycle. A scan in progress will complete." The note does not show once the change is saved, or if the toggle is turned back on before saving.
 11. Turning a service back on does not restore its previous cadence and start day. Its Cadence resets to Monthly and its "On every" to the 1st, the same values a service receives when it is turned on for the first time.
 
 **Show last-scanned date per service (UI)**
@@ -132,8 +132,9 @@ Goal: each service on a portfolio has its own independent cadence and start day,
 - Given a service on a portfolio is on and a scan of that service is in progress
 - When the risk manager or platform admin turns that service's toggle off
 - Then the note "This service stops from the next scan cycle. A scan in progress will complete." shows under that service's dropdowns
-- And after Save General Settings, the scan in progress completes
-- And no further scan of that service runs
+- And after Save General Settings, the note no longer shows
+- And the scan in progress completes
+- And no further scan of that service runs, including a scan scheduled but not started
 
 **Scenario: Turning a service back on resets it to Monthly on the 1st**
 - Given a service was saved as off, and before that its Cadence was Weekly with "On every" set to Tuesday
@@ -162,7 +163,7 @@ Goal: each service on a portfolio has its own independent cadence and start day,
 
 ## Open Questions / Assumptions
 
-- Open decision: today's schedule is keyed by portfolio only, which is why one service's schedule overwrites another's. The spec must key it by portfolio and service together.
+- Open decision: today's schedule is stored per portfolio only, which is why one service's schedule overwrites another's. The spec must store it per portfolio and service together.
 - Open question: who or what is allowed to call these endpoints is not yet defined. Confirm during spec.
 - Open question: whether per-service cadence is achievable from the Core side is unconfirmed. Check with Core team.
 <br>
