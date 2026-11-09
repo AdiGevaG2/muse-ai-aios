@@ -35,7 +35,9 @@ outcome the PRD promises).
 ## Steps
 1. **Write the spec** using `references/spec-template.md` for shape. Stamp the
    PRD version/source. Mark unresolved requirements inline with
-   `[NEEDS CLARIFICATION: ...]` rather than guessing.
+   `[NEEDS CLARIFICATION: ...]` rather than guessing. Write acceptance
+   criteria as Gherkin after running the two-pass exploration in
+   `../_shared/scenario-exploration.md`.
 2. **Clarify — one pass, covering both ambiguity and sense.** Run
    `references/clarify-checklist.md` against the draft: scan PM-owned categories
    (functional scope, domain concepts, UX flow, edge cases, business rules,

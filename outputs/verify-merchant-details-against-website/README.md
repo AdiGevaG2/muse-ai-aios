@@ -1,4 +1,4 @@
-# Verify Merchant Identity Against Website
+# Verify Merchant Details Against Website
 
 **Domain:** atlas
 **Stage:** Mini PRD published to Confluence
@@ -7,8 +7,8 @@
 
 ## Read first
 
-- [Mini PRD](prd/verify-merchant-identity-against-website-mini-prd.md)
-- [Reverse engineering: Core's existing mismatch logic](current-state/verify-merchant-identity-against-website-reverse-engineering.md)
+- [Mini PRD](prd/verify-merchant-details-against-website-mini-prd.md)
+- [Reverse engineering: Core's existing mismatch logic](current-state/verify-merchant-details-against-website-reverse-engineering.md)
 
 ## What this is
 

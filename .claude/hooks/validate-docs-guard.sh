@@ -11,16 +11,22 @@
 # Scope: any .md under outputs/<feature>/, any stage or subfolder. Not
 # README, INDEX, schema files, or anything under an ingestion/ subfolder
 # (ingestion logs are history, not a deliverable).
+#
+# Markers are session-scoped: they live under a subfolder named for the
+# session that wrote the file, so the gate only checks the feature files
+# this session worked on, never files another session left pending.
 set -uo pipefail
 SELF_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=_payload.sh
 source "$SELF_DIR/_payload.sh"
 
-PENDING_DIR="${CLAUDE_PROJECT_DIR:-$SELF_DIR/../..}/.claude/.validate-docs-pending"
-
 hook_have_jq || exit 0
 hook_read_payload
 [[ "$HOOK_PAYLOAD_OK" -eq 1 ]] || exit 0
+
+session_id="$(hook_field '.session_id')"
+[[ -z "$session_id" || "$session_id" == "null" ]] && session_id="default"
+PENDING_DIR="${CLAUDE_PROJECT_DIR:-$SELF_DIR/../..}/.claude/.validate-docs-pending/$session_id"
 
 flagged=""
 

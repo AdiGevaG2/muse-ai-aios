@@ -1,4 +1,4 @@
-# Verify Merchant Identity Against Website, Reverse Engineering
+# Verify Merchant Details Against Website, Reverse Engineering
 
 Scope: locate and document Core's existing merchant identity/contact mismatch logic, to determine what can be replicated versus what must be newly built for NAB's requirement.
 

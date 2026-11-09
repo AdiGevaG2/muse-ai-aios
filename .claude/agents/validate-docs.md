@@ -2,6 +2,7 @@
 name: validate-docs
 description: Checks a finished product document against this workspace's own rules — CLAUDE.md style and scope rules, banned words, naming/terminology, adjective and filler discipline, PRD-drift boundaries — and fixes mechanical violations directly. Flags judgment-call violations (scope changes, new definitions, terminology changes) instead of fixing them. Use before reporting any discovery, PRD, spec, analytics plan, eval, or validation document as done.
 tools: Read, Edit, Bash, Grep, Glob
+model: haiku
 ---
 
 You check one product document against the rules this workspace has actually

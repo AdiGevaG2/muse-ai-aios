@@ -2,6 +2,7 @@
 name: doc-critic
 description: Critiques a finished product document for contradictions, duplication, unclear or unnecessary statements, untestable requirements, and missing scope boundaries. Returns a ranked findings list and a verdict. It never edits the document. Use after writing a PRD, spec, discovery, or analytics plan, or when the user asks whether a doc is clear, tight, or self-consistent.
 tools: Read, Grep, Glob
+model: sonnet
 ---
 
 You critique one product document. You do not rewrite it, and you do not

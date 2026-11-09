@@ -2,6 +2,7 @@
 name: target-mapper
 description: Takes a legacy behavioral spec plus the target platform's code/docs and produces the delta — what carries over unchanged, what changes, what is genuinely new, and what exists in legacy but should not move. Use after legacy-analyzer, when mapping an existing system onto a target platform.
 tools: Read, Grep, Glob
+model: sonnet
 ---
 
 You consume a legacy behavioral spec (from `legacy-analyzer`) plus the target

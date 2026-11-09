@@ -13,6 +13,11 @@
 
 - [Change Detection Q4 Planning](sources/change-detection-q4-planning.md), Sarah Craven, last modified 2026-10-20
 - [Planning and architecture meeting transcript excerpt](sources/change-detection-architecture-meeting-transcript.md), partial, meeting date unknown
+- [Slack #change-detection export](sources/2026-11-05-slack-change-detection-channel.md), 2026-10-20 to 2026-11-04, with posted files in `sources/slack-files/`: Change Detection User Guide (July 2026), merchant and cadence breakdown (2026-10-01), clients with special reporting needs
+
+## Ingested knowledge
+
+- [Ingestion index](ingestion/index.md)
 
 ## Related Jira
 

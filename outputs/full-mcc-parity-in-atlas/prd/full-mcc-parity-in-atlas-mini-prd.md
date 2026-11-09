@@ -16,9 +16,18 @@ Show the MCC result as a finding in a new MCC table on the store record, matchin
 
 <br>
 
+## How MCC Works in Atlas
+
+MCC belongs to a store, never to a merchant. No business use case holds an MCC at the merchant level, so Atlas stores and shows an MCC only against one of the merchant's stores.
+
+- A merchant with no stores has no MCC.
+- When WebID runs and finds a store for the merchant, Atlas predicts an MCC for that store and attaches the predicted code to it.
+
+<br>
+
 ## Problem and Goal
 
-An analyst reviewing a store in Atlas cannot see the predicted code or whether it disagrees with the reported code. That comparison exists for PayPal's integration, but only as a field in the result Atlas sends to PayPal; there is no finding in the product that shows it, and the result does not affect the risk or severity of any finding. A reported code is optional at merchant creation, so Atlas also needs a result for when a scan predicts a code with nothing reported to compare against.
+An analyst reviewing a store in Atlas cannot see the predicted code or whether it disagrees with the reported code. That comparison exists for PayPal's integration, but only as a field in the result Atlas sends to PayPal; there is no finding in the product that shows it, and the result does not affect the risk or severity of any finding. A reported code is an optional field under each store when a merchant is created, so Atlas also needs a result for when a scan predicts a code with nothing reported to compare against.
 
 Goal: an analyst sees the MCC result for a store in its own MCC table, with the same comparison MerchantView makes today, with severity set by the predicted code's category and risk derived from that severity. The primary user is the underwriting/risk analyst.
 
@@ -30,7 +39,7 @@ Scope: this feature is a lift and shift of MerchantView's comparison. The MCC ri
 
 ### Prerequisites
 
-- A store's latest scan produced a predicted code. A reported code is not required; MCC is not a mandatory field when a merchant is added for onboarding or monitoring.
+- A store's latest scan produced a predicted code. A reported code is not required; MCC is an optional field under each store when a merchant is added for onboarding or monitoring.
 
 ### Requirements
 

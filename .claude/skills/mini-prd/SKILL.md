@@ -75,7 +75,8 @@ straight to a developer.
   ("X blocks creation and shows Y"), not "X: blocked, Y shown" or "X → Y"
   shorthand.
 - Acceptance criteria are Given/When/Then scenarios, one per distinct
-  behavior — not a checkbox list. Format:
+  behavior — not a checkbox list. Before writing them, run the two-pass
+  exploration in `../_shared/scenario-exploration.md`. Format:
   ```
   **Scenario: <name>**
   - Given <precondition>
@@ -83,9 +84,8 @@ straight to a developer.
   - When <action>
   - Then <observable, testable result>
   ```
-  Fold a precondition or a read-only display check into an existing
-  scenario's Given/And rather than writing a separate scenario for it —
-  prefer fewer scenarios with more Ands over many single-purpose scenarios.
+  Each distinct case found by the exploration gets its own scenario; do not
+  fold separate cases into another scenario's Given/And.
   Then is the check, not a re-narration of the mechanism already described in
   Feature Behavior. Ban vague terms ("works correctly", "handles errors
   gracefully").

@@ -68,11 +68,32 @@
       "mcp__claude_ai_Atlassian__getTeamworkGraphObject",
       "mcp__claude_ai_Slack__slack_search_public_and_private",
       "mcp__mixpanel__Run-Query",
-      "mcp__claude_ai_monday_com__get_board_items_page"
+      "mcp__claude_ai_monday_com__get_board_items_page",
+      "Edit(outputs/**)",
+      "Write(outputs/**)"
     ]
   },
   "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/turn-timer-start.sh"
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/turn-timer-guard.sh"
+          }
+        ]
+      },
       {
         "matcher": "Write|Edit|NotebookEdit",
         "hooks": [
@@ -101,7 +122,25 @@
         ]
       }
     ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/turn-timer-wait.sh"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/turn-timer-wait.sh"
+          }
+        ]
+      },
       {
         "matcher": "Write|Edit|NotebookEdit",
         "hooks": [
@@ -126,6 +165,10 @@
           {
             "type": "command",
             "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/validate-docs-gate.sh"
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/turn-timer-stop.sh"
           }
         ]
       }

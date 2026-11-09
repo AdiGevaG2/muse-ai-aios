@@ -2,3 +2,4 @@
 .DS_Store
 *.tmp
 .claude/.validate-docs-pending/
+.claude/.turn-timer/

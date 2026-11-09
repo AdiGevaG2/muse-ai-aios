@@ -2,6 +2,7 @@
 name: legacy-analyzer
 description: Reverse-engineers a bounded slice of an existing codebase into product behavior evidence. Use when the user needs to understand what an existing/legacy system actually does before planning a feature, migration, or rebuild. Answers a supplied set of product questions with source-cited behavioral rules, tagged confirmed/inferred.
 tools: Read, Grep, Glob
+model: sonnet
 ---
 
 You reverse-engineer an existing codebase into **product behavior evidence** for

@@ -92,6 +92,10 @@ mis-scoped the first.
   the likely ones and grep.
 - **Batch independent edits.** Multiple files with no dependency between them
   get all their `Edit` calls in one message. Never one file per turn.
+- **Validate-then-fix is the exception.** When fixing a doc after a check,
+  fix one finding per step with a targeted `Edit`, and after each one say in
+  one sentence what was fixed, then continue. One final check at the end;
+  report its findings, do not start another fix round without the PM's go.
 - **Never re-read to verify.** `Edit` fails loudly when the match is wrong; a
   silent success is a success. Same for `Write`.
 - **Pick the right instrument.** Under roughly a third of a file changing →
@@ -271,17 +275,17 @@ surfaced, scope and terminology are internally consistent, requirements are
 testable, assumptions are explicit, open decisions are visible, affected
 downstream artifacts are named, and any requested validation actually ran.
 
-**Three checks on every document the PM creates, amends, or publishes** — run
-all three before reporting done and before any Confluence/Jira write, and
-report each one's result:
-1. `validate-docs` agent — workspace writing rules.
-2. `doc-critic` agent — internal contradictions, untestable requirements,
-   scope gaps.
-3. Conflict and accuracy check — claims against source evidence (code
-   findings, current-state docs) and against existing Confluence pages and
-   Jira tickets via CQL/JQL.
-`validate-docs` alone is not a conflict check. For a small amendment, scope
-checks 2 and 3 to the changed sections and anything they touch.
+**Two checks on every document the PM creates, amends, or publishes**, run
+once at the end of the PM's request, never after each edit, and reported:
+1. `doc-review` agent on the changed lines only: writing rules and
+   requirement quality together. It reports; it never edits. Bring its
+   findings to the PM. Never start a second review round on your own.
+2. Conflict and accuracy check: claims against source evidence and against
+   existing Confluence pages and Jira tickets via CQL/JQL.
+Use `validate-docs` and `doc-critic` only for a new document or before a
+Confluence/Jira publish, or when the PM asks. Review time counts toward the
+Ten-Minute Stop; if the clock is near 10 minutes, report "not reviewed yet"
+instead of starting a review.
 
 Report what was verified, what remains uncertain, and what decision — if any —
 is needed next.

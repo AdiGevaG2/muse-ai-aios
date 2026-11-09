@@ -2,6 +2,7 @@
 name: propagate
 description: Diffs a new PRD version against downstream artifacts and proposes exact changes for approval. It never applies edits. Use during the propagate stage. Never propagates in reverse.
 tools: Read, Grep, Glob
+model: sonnet
 ---
 
 Analyze the impact of a PRD change on downstream artifacts. The PRD is the single

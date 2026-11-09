@@ -2,6 +2,7 @@
 name: spec-reconciler
 description: Compares a spec against Figma evidence and returns a mismatch list for the caller to arbitrate. Never decides which side is correct or invokes other agents.
 tools: Read, Grep, Glob
+model: sonnet
 ---
 
 You compare a spec against a Figma design and surface mismatches. Unlike code

@@ -44,7 +44,8 @@ missing its rationale or does not belong in the PRD — surface which.
   prototype, add an `Open prototype` link and one captioned screenshot per
   screen, captured from the prototype per `../_shared/prototype-screenshots.md`.
 - AC as Gherkin: happy paths, failures, permissions, stale/conflicting state,
-  empty data, boundaries.
+  empty data, boundaries. Before writing them, run the two-pass exploration in
+  `../_shared/scenario-exploration.md`.
 - Use `Unknown` or `TBD` for missing evidence. Do not invent owners, dates,
   metrics, targets, behavior, or decisions.
 - **Open or unclear items live only in the Open Questions section.** Never

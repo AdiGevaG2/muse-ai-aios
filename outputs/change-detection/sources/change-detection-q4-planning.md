@@ -2,7 +2,7 @@
 
 - **Original:** [Change Detection Q4 Planning.docx](https://g2risk-my.sharepoint.com/:w:/r/personal/sarah_craven_g2risksolutions_com/_layouts/15/Doc.aspx?sourcedoc=%7B3575B1CA-A67F-4EEE-967D-977AD65675CE%7D&file=Change%20Detection%20Q4%20Planning.docx&fromShare=true&action=default&mobileredirect=true)
 - **Location:** Sarah Craven's OneDrive, Product / Quarterly Planning
-- **Last modified:** 2026-10-20
+- **Last modified:** 2026-10-27. Re-read on 2026-11-05; the business case, milestone table, M2 scope and decisions needed match this capture.
 - **Captured:** 2026-10-20, text extracted via the Microsoft 365 connector. Tables are flattened to Markdown; wording is unchanged except for extraction artifacts.
 
 ---

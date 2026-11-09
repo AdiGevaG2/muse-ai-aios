@@ -16,7 +16,7 @@
 
 G2RS runs Change Detection, a $1.15M revenue line at about 70% gross margin, on Visualping. Visualping costs $140K a year and now markets content-compliance monitoring that overlaps with G2RS's core business, built partly on G2RS analysts' engagement with it. G2RS will stop using Visualping when the contract ends in September 2027.
 
-The MVP replaces Visualping with an in-house capability that G2RS analysts and clients can use in its place. G2RS monitors each enrolled merchant's pages on a daily, weekly or monthly cadence and captures screenshot evidence for every detected change. Analysts review changes in a queue, remove false positives and edit the significance note. The reviewed changes reach the client as the Excel report the client receives today.
+The MVP replaces Visualping with an in-house capability that G2RS analysts and clients can use in its place. G2RS monitors each enrolled merchant's pages on a daily, weekly, monthly or quarterly cadence and captures screenshot evidence for every detected change. Analysts review changes in a queue, remove false positives and edit the significance note. The reviewed changes reach the client as the Excel report the client receives today.
 
 This PRD covers M0 foundations, M1 monitoring and evidence, and M2 analyst review and client delivery. Configurable monitoring profiles and Atlas component integration follow later, and the foundations are built so those phases reuse them rather than rebuild them.
 
@@ -57,6 +57,15 @@ This PRD covers M0 foundations, M1 monitoring and evidence, and M2 analyst revie
 | G2RS Ops | Delivers the Excel report to the client through the SP File Share. |
 | Client | Has registered for Change Detection on a set of merchants. Receives the reviewed report and acts on the changes in it. |
 
+### Client reporting types
+
+Clients ask for Change Detection reporting in one of four ways today:
+
+1. Report all changes, as G2RS does today, monitoring up to 300 pages per site under the client's contract.
+2. Report only changes in areas the client cares about, such as policy pages.
+3. Report changes on pages the client chose.
+4. Types 2 and 3 together.
+
 ## Scope
 
 ### In Scope - MVP
@@ -71,7 +80,7 @@ This PRD covers M0 foundations, M1 monitoring and evidence, and M2 analyst revie
 **M1: Core monitoring engine and screenshot evidence**
 
 - Merchant enrollment through Atlas: add, remove, and reconcile enrolled merchants against the client's submitted list.
-- A daily, weekly or monthly cadence set per monitor.
+- A daily, weekly, monthly or quarterly cadence set per monitor. Quarterly runs in January, April, July and October.
 - Baseline capture: a monitor's first scan produces no change; its second scan produces the first comparison.
 - Page sources from Atlas, with added filtering where Atlas sources return pages outside the monitored scope.
 - Screenshot evidence for every detected change: current and previous full-page captures, with changed regions highlighted where G2RS can locate them, and the unmarked pair where it cannot. Every capture carries a timestamp and a fingerprint that shows the capture was not altered after it was taken.
@@ -223,7 +232,7 @@ And it shows the current text, the previous text, and the current and previous f
 **So that** each client is monitored at the frequency it registered for
 
 ```gherkin
-Given a monitor has a daily, weekly or monthly cadence
+Given a monitor has a daily, weekly, monthly or quarterly cadence
 When the cadence period ends
 Then G2RS scans the monitored pages for that monitor
 And the scan time is recorded on each capture
@@ -405,7 +414,7 @@ And no unreleased change is shown
 | Action / Capability | Role | Access | Notes |
 | --- | --- | --- | --- |
 | Enroll, remove and reconcile merchants | G2RS analyst | Allowed | |
-| Set a monitor's cadence | G2RS analyst | Allowed | Daily, weekly or monthly |
+| Set a monitor's cadence | G2RS analyst | Allowed | Daily, weekly, monthly or quarterly |
 | Open the review queue and evidence | G2RS analyst | Allowed | |
 | Remove a change as a false positive | G2RS analyst | Allowed | Reason required |
 | Edit the significance note | G2RS analyst | Allowed | Before release only |
@@ -442,13 +451,54 @@ N/A - no prototype
 
 #### Mixpanel
 
-N/A - Change Detection runs on Visualping, and G2RS has no events for it. Daily, weekly and monthly monitor volumes come from Visualping.
+N/A - Change Detection runs on Visualping, and G2RS has no events for it. Monitor volumes come from Visualping.
 
 | Surface / Flow | Coverage | Usage (90-day) | Top Clients |
 | --- | --- | --- | --- |
-| Change Detection on Visualping | N/A - not instrumented in G2RS | N/A - not instrumented in G2RS | NAB, Cliq, Glacier, ING, TabaPay, Fibonatix, CMS, Banka Credins and PayNovus are named in the planning doc; usage ranking is not available |
+| Change Detection on Visualping | N/A - not instrumented in G2RS | N/A - not instrumented in G2RS | By merchant count: NAB 6,494, Paynovus 962, Valmar 581, ING Romania 556, Cliq 370 |
 
-> _*Source:* Change Detection Q4 Planning doc. Client names come from its use case catalog and rule types, not from usage data._
+> _*Source:* [Merchant and cadence breakdown](../sources/slack-files/2026-10-28-merchant-and-cadence-breakdown.xlsx), October 1, 2026._
+
+#### Current clients and cadence
+
+23 clients, one of them stopped, and 10,350 merchants were on Change Detection on October 1, 2026. Counts are merchants, not monitored pages.
+
+> _*Source:* [Merchant and cadence breakdown](../sources/slack-files/2026-10-28-merchant-and-cadence-breakdown.xlsx), provided by Margo through Sarah Craven on October 28, 2026. Totals per cadence are summed from the sheet._
+
+| Cadence | Clients | Merchants |
+| --- | --- | --- |
+| Daily | 3 | 6,600 |
+| Weekly, Fridays | 4 | 476 |
+| Monthly, mid-month | 2 | 661 |
+| Monthly, end of month | 13 | 2,553 |
+| Quarterly, January, April, July, October | 1 | 60 |
+| **Total** | **23** | **10,350** |
+
+| Client | Cadence | Merchants |
+| --- | --- | --- |
+| Glacier Payments | Daily | 85 |
+| NAB, North American Bancard, Specialty Markets | Daily | 6,494 |
+| Paynovate (Loyaltek) | Daily | 21 |
+| Cliq, Inc. | Weekly, Fridays | 370 |
+| Cospay Limited, Cardaq | Weekly, Fridays | 65 |
+| Merchant E | Weekly, Fridays | 41 |
+| Pixxles | Weekly, Fridays | 0, waiting on client data |
+| Fibonatix | Monthly, mid-month | 80 |
+| Valmar Merchant Services | Monthly, mid-month | 581 |
+| Axos | Monthly, end of month | 206 |
+| Banka Credins | Monthly, end of month | 91 |
+| Complete Merchant Solutions, dba Nexio | Monthly, end of month | 15 |
+| ING Romania | Monthly, end of month | 556 |
+| Marqeta | Monthly, end of month | 152 |
+| North American Banking Company | Monthly, end of month | Not counted, service stopped for non-payment |
+| Paynetics EAD | Monthly, end of month | 111 |
+| Paynovus | Monthly, end of month | 962 |
+| TabaPay, Inc., three lists | Monthly, end of month | 321 |
+| Viking Service | Monthly, end of month | 76 |
+| VPO | Monthly, end of month | 42 |
+| Steven AB | Monthly, end of month | 8 |
+| Uspex (Lancelot Pay LTD) | Monthly, end of month | 13 |
+| Fiserv (First Data USA) | Quarterly | 60 |
 
 ### Success Metrics
 
@@ -511,7 +561,10 @@ N/A - Change Detection runs on Visualping, and G2RS has no events for it. Daily,
 | Check whether Visualping supports change severity and whether analysts use it. | TBD | Spec | M | Product |
 | Check whether Visualping reports changes without a screenshot, and how G2RS reports them. | TBD | Spec | M | Product |
 | Check whether Visualping history can be exported for historical purposes. | TBD | Launch | M | Data |
-| Pull daily, weekly and monthly monitor volumes from Visualping. | TBD | Spec | H | Data |
+| Pull monitored page counts per client from Visualping. | TBD | Spec | H | Data |
+| Decide which client reporting types the MVP supports, and whether type 1, report all changes, ends when current contracts end. | Sarah Craven | PRD | H | Product |
+| Define the areas a type 2 client can choose, and who selects the pages for a type 3 client. | Sarah Craven | PRD | H | Product |
+| Decide which run days the MVP keeps: Fridays for weekly, mid-month or end of month for monthly, and the run day for quarterly. | Sarah Craven | Spec | H | Product |
 | Ask Margo to set the team up as Visualping users and walk through the analyst flow. | TBD | Spec | H | Product |
 | Confirm the relationship to Jira GPM-37 and G2ENG-15038, "Change Detection Integration with Single Platform", which plans Change Detection in Single Platform while this PRD builds it in Atlas. | TBD | PRD | M | Product |
 | Decide the billing unit: URL, page or page-type bundle, and whether the 300-pages-per-site cap becomes a per-client page budget. | TBD | M3 | M | Product |
@@ -531,6 +584,8 @@ N/A - Change Detection runs on Visualping, and G2RS has no events for it. Daily,
 
 - `outputs/change-detection/sources/change-detection-q4-planning.md`: business case, milestones, use case catalog, rule types, decisions needed and follow-ups.
 - `outputs/change-detection/sources/change-detection-architecture-meeting-transcript.md`: vendor cost, contract end, POC status, Core model question, Visualping portal walkthrough.
+- `outputs/change-detection/sources/slack-files/2026-10-28-merchant-and-cadence-breakdown.xlsx`: clients, merchant counts and cadence, including the quarterly cadence.
+- `outputs/change-detection/sources/2026-11-05-slack-change-detection-channel.md`: client reporting types, October 27, 2026.
 - `domains/atlas/second-brain/ingestion/crolex.md`: Watcher POC diff modes and status; no reliable change rate.
 - `domains/atlas/second-brain/ingestion/crawler-capability-gaps.md`: per-page vendor pricing limits monitoring to individual pages; persistent storage dependency.
 - `domains/atlas/second-brain/ingestion/crawler-consolidation.md`: no persistent storage for crawled content on CSX.

@@ -27,8 +27,8 @@ Goal: each service on a portfolio has its own independent cadence and start day,
 
 ## Feature Behavior
 
-**Figma**
-- [Settings - Atlas](https://www.figma.com/design/xX0m6rHUVqimK3G9iv0LHC/Settings---Unified-Platform?node-id=6148-11282&t=wAbvlAzgDvOcl8jK-4), embedded on the Confluence page.
+**Prototype**
+- [Open prototype](https://claude.ai/artifact/AofXT5gd9E6wtndwq2DgQK)
 
 ### Prerequisites
 

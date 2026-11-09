@@ -24,15 +24,23 @@ last pull is over 2 days old.
 The repo is Dana Fridman's. It is read-only except for the two write-back paths
 in step 5.
 
-## Scope: the feature's flow only
+## Scope: the feature's journey only
 
-By default, every prototype, in quick mode and full builds, shows the full
-screen the feature lives on, but only the user flow this feature, PRD, or
-requirement covers is interactive: the steps of the flow and the states the
-requirements name. Every other control on the screen, including navigation,
-sidebars, buttons, tabs, filters, and links to other areas, is visible but does
-nothing when clicked. Screens outside the flow are not built. Make another
-capability interactive only when the PM asks for it.
+Build only the screens this feature needs. Every prototype, in quick mode and
+full builds, starts on the platform's first screen. The PM clicks through the
+navigation path that leads to the feature, one screen at a time. From there,
+every scenario in the PRD or request is a path the PM can click through in the
+UI, step by step, including the states each scenario names. Each screen on the
+path is complete, as the real screen is: every button, text, object,
+container, banner, and the full layout. Only elements that are part of the
+journey or a PRD scenario are clickable. Every other element, including other
+navigation items, sidebars, buttons, tabs, filters, and links to other areas,
+is shown but does nothing when clicked. Screens off the path are not built.
+
+When the feature applies to some merchants and not others, the first 3
+merchants on the list are the ones that have it. Every merchant after them
+does not. Make another capability interactive only when the PM asks
+for it.
 
 ## Quick mode: static or one-page prototypes
 
