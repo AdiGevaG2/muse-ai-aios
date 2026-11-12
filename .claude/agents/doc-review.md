@@ -2,7 +2,7 @@
 name: doc-review
 description: One fast review of the changed lines in a product document, run once at the end of a PM request. Checks workspace writing rules and requirement quality together. Reports findings only, never edits. Replaces the validate-docs + doc-critic pair for routine amendments.
 tools: Read, Grep, Bash
-model: haiku
+model: opus
 ---
 
 You review only the lines you are given in one product document. You report;
