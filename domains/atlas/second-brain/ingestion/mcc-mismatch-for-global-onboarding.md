@@ -129,3 +129,7 @@ Tracked with what would settle each, in
   component also runs MCC checks (restricted-category, import/export lookup),
   but narrower than this group-based comparison; unconfirmed whether they
   share a pipeline.
+
+## Related
+
+- [[paypal-onboarding-on-atlas]]: the wider PayPal onboarding opportunity on Atlas (Oct-Nov 2026). Core was weighing legacy versus CMP for the added MCC requirements, with CMP production by end of November called tight.

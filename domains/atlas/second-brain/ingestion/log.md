@@ -3,6 +3,25 @@
 Append-only. Newest first. One line per ingest/update: what came in, which pages
 were created/updated, which links were drawn.
 
+- **2026-11-12** - "PayPal questions_4Nov.docx" SLA working doc ingested to
+  domain brain from a PM paste (M365 returned 502). Stored at
+  `source/2026-11-11-paypal-questions-4nov-doc.md`. Updated
+  [[paypal-onboarding-on-atlas]]: PayPal's 500-700 ms onboarding SLA vs G2
+  component p95 table, 2.5 min MCC+WebID vs 2-minute async guidance flagged,
+  inline-check speed-up ideas, TPS 250/120, caching and coverage answers, POC
+  product input table. Resolved WSL/CRAM/OR expansions; SD left as [hunch].
+
+- **2026-11-12** - Internal "Re: PayPal" email thread (2026-10-12 to
+  2026-11-11) ingested to domain brain from a PM-supplied .eml export (M365
+  search timed out). Stored at
+  `source/2026-11-11-paypal-onboarding-atlas-email-thread.md`. Created
+  [[paypal-onboarding-on-atlas]]: PayPal's ask, Atlas-over-GO/SP reasoning, API
+  coverage, SLA statements table, callback conflict (Ron Cohen vs Shmuel Blitz)
+  left open, pricing context. Linked to [[mcc-mismatch-for-global-onboarding]]
+  (added a back-link there), [[scam-network-intelligence]],
+  [[unified-platform-architecture]], [[merchant-risk-classification-pipeline]],
+  [[network-intelligence]].
+
 - **2026-10-08** - Gal Sahar's `MCC Groups mapping.xlsx` (two copies)
   ingested to domain brain via the M365 connector. Stored at
   `source/2026-09-06-mcc-groups-mapping-xlsx.md`. Updated
