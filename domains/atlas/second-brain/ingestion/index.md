@@ -49,6 +49,11 @@ Updated on every ingest.
   streaming path, graph traversal, and where product claims meet the build.
 - [[mcc-mismatch-for-global-onboarding]] — PayPal's gating requirement, why the
   MV logic doesn't reach GO, and the phase-1 scoping decision.
+- [[paypal-onboarding-on-atlas]] - PayPal wants onboarding checks through the
+  Atlas API, sandbox by mid-December 2026. Inline checks while the merchant is
+  present, async deeper checks. PayPal's 500-700 ms SLA against 30 s to 2.5 min
+  component SLAs, TPS, POC product inputs, callback conflict, Scam Network
+  Detection not API-ready, pricing context.
 - [[mcc-verification-brick-and-mortar]] — Visa HK's ask to extend MCC
   verification beyond eCommerce to physical merchants; no predicted-MCC signal
   exists for B&M today, unscoped.
@@ -75,6 +80,8 @@ Updated on every ingest.
 | Gal Sahar, MCC Risk brief V1 / v2 (re-check 2026-10-08) | No change since the 2026-09-01 capture; not re-ingested |
 | Sunniva Wong email, Visa HK MCC B&M expansion (2026-08-25, fwd 2026-09-10) | Ingested. Market problem only, no roadmap/technical assessment exists yet |
 | Adyen IP-mismatch email thread (2026-09-07 to 2026-09-09) | Ingested. All content [verbal], none confirmed against MV code or FSD docs |
+| Internal "Re: PayPal" email thread (2026-10-12 to 2026-11-11) | Ingested. All [verbal]. Pricing xlsx, decks, and SOW not opened |
+| "PayPal questions_4Nov.docx" SLA working doc (status 4 Nov, notes to 11 Nov) | Ingested from PM paste. Table cells flattened; comments and revision history not captured |
 | G2RS GO VARS Update deck, Fiserv (2025-07-25) | Ingested. Text-only extraction; architecture diagram (slide 16) and Gantt bar positions not captured |
 
 Known gaps in what we hold: the graph/ecosystem deep-dive, WebID, product-level
