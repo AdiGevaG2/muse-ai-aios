@@ -2,3 +2,5 @@
 .DS_Store
 *.tmp
 .claude/.validate-docs-pending/
+
+.claude/settings.local.json

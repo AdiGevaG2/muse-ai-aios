@@ -59,6 +59,13 @@ Updated on every ingest.
   component: 13 website-based checks (name/location/currency match, product and
   MCC restrictions, T&C/refund/delivery/privacy/card-brand/contact-us, SSL),
   each a 0-4 risk flag. Mid-build July 2025, crawling and test-data gaps open.
+- [[front-site-detection-in-app]] - FSD Phase 1 in the application: CMP
+  finding (sub-type 389, score 80) plus a reasoning paragraph, proposed as a
+  Critical finding in the existing findings model. CMP-to-UI path unverified;
+  presentation still TBD. Adds GTM Brief: two deployment modes, WIP $0.50
+  pricing, and a 90%-vs-85% precision conflict. Adds detection-logic page:
+  CMP input/output contract, outcome-code table, per-category thresholds,
+  static code gaps, and a reported 0.5%-to-0.05% drop in finding volume.
 
 ## Source coverage
 
@@ -76,6 +83,9 @@ Updated on every ingest.
 | Sunniva Wong email, Visa HK MCC B&M expansion (2026-08-25, fwd 2026-09-10) | Ingested. Market problem only, no roadmap/technical assessment exists yet |
 | Adyen IP-mismatch email thread (2026-09-07 to 2026-09-09) | Ingested. All content [verbal], none confirmed against MV code or FSD docs |
 | G2RS GO VARS Update deck, Fiserv (2025-07-25) | Ingested. Text-only extraction; architecture diagram (slide 16) and Gantt bar positions not captured |
+| Gal Sahar, "FSD in Phase 1 - Guide for the Application Team" Claude Doc (2026-10-26, rev 137) | Ingested. Journey diagram not captured; 4 of the 5 Confluence pages it cites not read |
+| Confluence `CATS` 4031382506, "GTM Brief - Front-Site Detection (FSD)" (v20, 2026-09-09) | Ingested. Lossy markdown conversion: macros and inline comments dropped |
+| Confluence `CATS` 4349263873, "FSD Current Detection Logic and Integration in Legacy Core and CMP" (updated 2026-10-15) | Ingested from a paste of the page view. Diagrams, links and macros not captured |
 
 Known gaps in what we hold: the graph/ecosystem deep-dive, WebID, product-level
 algorithms, and the Web Shield / single-platform unification session were all
