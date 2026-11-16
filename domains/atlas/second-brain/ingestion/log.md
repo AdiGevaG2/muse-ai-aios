@@ -3,6 +3,7 @@
 Append-only. Newest first. One line per ingest/update: what came in, which pages
 were created/updated, which links were drawn.
 
+- **2026-11-13** - Manager message challenging org-wide merchant status (jurisdiction, vertical, Intuit product-line cases) ingested to the domain brain. Created [[cross-portfolio-merchant-decision-scope]]; linked to [[merchantview]].
 - **2026-10-08** - Gal Sahar's `MCC Groups mapping.xlsx` (two copies)
   ingested to domain brain via the M365 connector. Stored at
   `source/2026-09-06-mcc-groups-mapping-xlsx.md`. Updated

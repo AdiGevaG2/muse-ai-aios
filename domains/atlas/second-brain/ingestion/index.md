@@ -17,6 +17,10 @@ Updated on every ingest.
   one. Groups answer "same business?", per-MCC tiers answer "how risky?".
   Full code-to-group membership now held; carries a `Group Risk` conflict.
 
+- [[cross-portfolio-merchant-decision-scope]] - should Approved, Rejected, or
+  Terminated apply org-wide or per portfolio; manager's jurisdiction, vertical,
+  and Intuit product-line cases, and the missing identity layer question.
+
 ## Entities
 
 ### EverC
