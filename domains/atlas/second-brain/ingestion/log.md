@@ -3,6 +3,8 @@
 Append-only. Newest first. One line per ingest/update: what came in, which pages
 were created/updated, which links were drawn.
 
+- **2026-11-13** - Manager message challenging org-wide merchant status (jurisdiction, vertical, Intuit product-line cases) ingested to the domain brain. Created [[cross-portfolio-merchant-decision-scope]]; linked to [[merchantview]].
+
 - **2026-11-12** - "PayPal questions_4Nov.docx" SLA working doc ingested to
   domain brain from a PM paste (M365 returned 502). Stored at
   `source/2026-11-11-paypal-questions-4nov-doc.md`. Updated
