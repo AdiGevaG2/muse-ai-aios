@@ -5,6 +5,14 @@ were created/updated, which links were drawn.
 
 - **2026-11-13** - Manager message challenging org-wide merchant status (jurisdiction, vertical, Intuit product-line cases) ingested to the domain brain. Created [[cross-portfolio-merchant-decision-scope]]; linked to [[merchantview]].
 
+- **2026-11-13** - Change Detection categories proposal (pasted, author
+  unknown) ingested to domain brain. Stored at
+  `source/2026-11-13-change-detection-categories-proposal.md`. Created
+  [[change-detection-categories]]; updated [[change-detection]] and index.
+  Linked to [[crawler-capability-gaps]], [[crawler-consolidation]],
+  [[go-policy-analysis-vars-fiserv]]. No conflicts; materiality gap narrowed,
+  not closed.
+
 - **2026-11-12** - "PayPal questions_4Nov.docx" SLA working doc ingested to
   domain brain from a PM paste (M365 returned 502). Stored at
   `source/2026-11-11-paypal-questions-4nov-doc.md`. Updated
@@ -24,6 +32,15 @@ were created/updated, which links were drawn.
   [[unified-platform-architecture]], [[merchant-risk-classification-pipeline]],
   [[network-intelligence]].
 
+- **2026-11-08** - Re-checked Change Detection Q4 Planning against the
+  2026-11-06 version. Updated source capture and [[change-detection]]: price
+  changes row now maps to Marketing content (TBD). No other content changes.
+- **2026-11-08** - Sarah Craven's Change Detection Q4 Planning doc ingested to
+  domain brain from the 2026-10-20 capture. Stored at
+  `source/2026-10-20-change-detection-q4-planning.md`. Created
+  [[change-detection]]; linked to [[go-policy-analysis-vars-fiserv]],
+  [[atlas-architecture]], [[crawler-capability-gaps]], [[crawler-consolidation]].
+  Source conflicts surfaced: M1 date before M0, M3 gating, M4/M5 numbering.
 - **2026-10-08** - Gal Sahar's `MCC Groups mapping.xlsx` (two copies)
   ingested to domain brain via the M365 connector. Stored at
   `source/2026-09-06-mcc-groups-mapping-xlsx.md`. Updated
