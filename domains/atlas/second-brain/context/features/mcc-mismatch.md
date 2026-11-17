@@ -109,7 +109,7 @@ that arose ("volumes") has no recorded answer in the Core folder either.
 
 ## Sources read
 
-- `outputs/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` (verified 2026-08-30)
+- `outputs/paypal-atlas/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` (verified 2026-08-30)
 - SharePoint, Gal Sahar › `MCC score and UX`:
   - `MCC Risk - Unified Output & Client Configuration v2.docx` (mod. 2026-08-19)
   - `mcc-risk-card-prototype-v2.html` (mod. 2026-08-09)

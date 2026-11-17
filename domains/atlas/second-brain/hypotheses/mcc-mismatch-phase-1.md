@@ -10,7 +10,7 @@
     groupings  [documented] SharePoint › Gal Sahar › `MCC score and UX` › `MCC Risk - Unified Output & Client Configuration v2.docx`, `mcc-risk-card-prototype-v2.html`
   - GO already consumes MCC through MLRC, but not the mismatch relationship  [verbal] Adi Geva, 2026-09-01
   - No mismatch comparison or `MCC_MISCODE` generation was found in
-    `mlrc-analysis`, `mlrc-finding`, `mlrc-merchant`, or `mlrc-bff`  [documented] `outputs/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md`
+    `mlrc-analysis`, `mlrc-finding`, `mlrc-merchant`, or `mlrc-bff`  [documented] `outputs/paypal-atlas/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md`
   - Mismatch logic "currently sits in MV", and GO is integrated into CMP/MLRC
     not MV  [documented] stakeholder email summary (Yonatan Eisenberg; Ishai Froind), supplied by PM 2026-09-01
 - **Evidence against:**
@@ -32,7 +32,7 @@
 - **Belief:** Nobody has recorded how PayPal consumes mismatch — UI, API,
   callback, or file export — and a UI-only result will not satisfy them.
 - **Evidence for:**
-  - No verified PayPal API, callback, file, or report output was found  [documented] `outputs/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` § Gaps
+  - No verified PayPal API, callback, file, or report output was found  [documented] `outputs/paypal-atlas/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` § Gaps
   - Core's brief and prototype describe an in-app card and portfolio settings,
     naming no external delivery channel  [documented] SharePoint › Gal Sahar › `MCC score and UX` › `MCC Risk - Unified Output & Client Configuration v2.docx`
   - The stakeholder email establishes mismatch as a hard requirement for the GO
@@ -53,12 +53,12 @@
   merchant until it is decided whether one declared code applies to every store.
 - **Evidence for:**
   - Reported MCC belongs to the UP merchant while findings belong to stores,
-    and the store model has no store-specific reported MCC  [documented] `outputs/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` (`StoreEntity.java`)
+    and the store model has no store-specific reported MCC  [documented] `outputs/paypal-atlas/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` (`StoreEntity.java`)
   - The merchant model supports multiple MCCs but the external create API
     accepts one and the portal displays the first; multi-MCC comparison
-    behavior is undefined  [documented] `outputs/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md`
+    behavior is undefined  [documented] `outputs/paypal-atlas/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md`
   - MV avoided this by evaluating at the scanned-URL level, where a registered
-    URL carries its own reported and detected MCC  [documented] `outputs/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` § Merchant View
+    URL carries its own reported and detected MCC  [documented] `outputs/paypal-atlas/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` § Merchant View
 - **Evidence against:**
   - _(none yet)_
 - **Open questions:**
@@ -74,7 +74,7 @@
   MCC in the portal, so it would not surface to the analyst.
 - **Evidence for:**
   - The inspected BFF classifies only category IDs 10000–19999 as MCC, while
-    MV's mismatch category is ID 76  [documented] `outputs/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` (`FindingServiceImpl.java`)
+    MV's mismatch category is ID 76  [documented] `outputs/paypal-atlas/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` (`FindingServiceImpl.java`)
 - **Evidence against:**
   - _(none yet)_
 - **Open questions:**
