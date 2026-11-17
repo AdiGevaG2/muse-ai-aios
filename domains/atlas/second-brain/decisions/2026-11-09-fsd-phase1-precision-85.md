@@ -1,0 +1,14 @@
+### FSD Phase 1 precision target is 85% - 2026-11-09
+- **Status:** decided
+- **Decision:** The precision target for FSD findings released in Phase 1 is 85%.
+- **Rationale:** The GTM Brief carries two figures: above 90% for "critical" grade findings and 85% as the success metric. The PM chose 85%. The PM did not state further reasoning.
+- **Applies to:** FSD in the application, Phase 1.
+- **Evidence:**
+  - Success metric "precision 85% (Only high probability)"  [documented] `source/2026-09-09-gtm-brief-front-site-detection-confluence-cats-4031382506.md`
+  - Phase 1 releases only "critical" grade findings at above 90% precision  [documented] `source/2026-09-09-gtm-brief-front-site-detection-confluence-cats-4031382506.md`, repeated in `source/2026-10-26-fsd-phase1-guide-for-application-team.md`
+  - PM chose 85%  [verbal] Adi Geva, 2026-11-09
+- **Explicitly not doing:**
+  - Holding Phase 1 to the above-90% figure  [verbal] Adi Geva, 2026-11-09
+- **What would reverse this:** Measured precision on released FSD findings below 85%, or the data science owner confirming the released threshold is set to a different precision.
+- **Remaining ambiguities:** Whether the model threshold that produces the "critical" grade changes to match 85%, or whether 85% is the floor the released findings must stay above while the threshold stays at 90%. How precision is measured, on what sample, and by whom. The GTM Brief and the Phase 1 guide still state above 90%.
+- **Supersedes:** none

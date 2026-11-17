@@ -1,0 +1,14 @@
+### FSD findings show in the application for onboarding and monitoring in Phase 1 - 2026-11-09
+- **Status:** decided
+- **Decision:** In Phase 1, the application shows FSD findings on merchants scanned at onboarding and on merchants under monitoring.
+- **Rationale:** The GTM Brief sells FSD in two modes: a pre-activation onboarding scan and a portfolio clean-up across active merchants. Showing findings only at onboarding would leave the clean-up mode without a place in the application. The PM did not state further reasoning.
+- **Applies to:** FSD in the application, Phase 1.
+- **Evidence:**
+  - FSD deploys as an onboarding pre-scan, as a "quota" portfolio clean-up on a cadence such as twice a year, or both  [documented] `source/2026-09-09-gtm-brief-front-site-detection-confluence-cats-4031382506.md`
+  - The Phase 1 guide's FSD-versus-TL table frames FSD as an onboarding screen only  [documented] `source/2026-10-26-fsd-phase1-guide-for-application-team.md`
+  - PM chose onboarding and monitoring  [verbal] Adi Geva, 2026-11-09
+- **Explicitly not doing:**
+  - Showing FSD findings only on onboarding scans  [verbal] Adi Geva, 2026-11-09
+- **What would reverse this:** The CMP or Atlas ingestion delivers FSD findings only for onboarding scans in Phase 1, or the portfolio clean-up mode is dropped from the FSD offering.
+- **Remaining ambiguities:** Whether the CMP publishes FSD results for monitoring scans; the guide documents only `core-prod-fast-onboarding-findings`. How a monitoring FSD finding is presented and alerted on, relative to an onboarding one. Whether the "before activation" wording in the guide changes to cover active merchants.
+- **Supersedes:** none

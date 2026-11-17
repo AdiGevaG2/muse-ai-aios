@@ -102,3 +102,12 @@ relevant repository and approved product artifact.
 - **Definition:** `[documented-retired]` Atlas service-family name
 	used in target repositories.
 - **Source of truth:** Target repository structure.
+
+### Front Site Detection (FSD)
+- **Definition:** `[verbal]` A service that checks whether the website a
+	merchant declares shows its real business, or is a cover for a different
+	business. For example, a merchant declares a handbag store, but the store is
+	a cover for processing payments for a pharmaceutical business the merchant
+	did not disclose.
+- **Source of truth:** Adi Geva, 2026-11-09;
+	`outputs/front-site-detection-service/prd/front-site-detection-service-mini-prd.md`.

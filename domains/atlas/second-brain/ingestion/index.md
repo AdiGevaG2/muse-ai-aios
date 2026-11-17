@@ -74,6 +74,13 @@ Updated on every ingest.
 - [[change-detection-categories]] - Proposed taxonomy of 13 business-meaning
   change categories (multi-label, hierarchical) plus site health and control
   presence check classes; countdown and materiality rules. Author unknown.
+- [[front-site-detection-in-app]] - FSD Phase 1 in the application: CMP
+  finding (sub-type 389, score 80) plus a reasoning paragraph, proposed as a
+  Critical finding in the existing findings model. CMP-to-UI path unverified;
+  presentation still TBD. Adds GTM Brief: two deployment modes, WIP $0.50
+  pricing, and a 90%-vs-85% precision conflict. Adds detection-logic page:
+  CMP input/output contract, outcome-code table, per-category thresholds,
+  static code gaps, and a reported 0.5%-to-0.05% drop in finding volume.
 
 ## Source coverage
 
@@ -95,6 +102,9 @@ Updated on every ingest.
 | Sarah Craven, Change Detection Q4 Planning (2026-10-20) | Ingested from the 2026-10-20 local capture; live SharePoint copy not re-checked (Microsoft 365 connector needs auth) |
 | Change Detection categories proposal (pasted 2026-11-13) | Ingested. Author, date and cited User Guide / WellHello / analyst examples not in hand |
 | G2RS GO VARS Update deck, Fiserv (2025-07-25) | Ingested. Text-only extraction; architecture diagram (slide 16) and Gantt bar positions not captured |
+| Gal Sahar, "FSD in Phase 1 - Guide for the Application Team" Claude Doc (2026-10-26, rev 137) | Ingested. Journey diagram not captured; 4 of the 5 Confluence pages it cites not read |
+| Confluence `CATS` 4031382506, "GTM Brief - Front-Site Detection (FSD)" (v20, 2026-09-09) | Ingested. Lossy markdown conversion: macros and inline comments dropped |
+| Confluence `CATS` 4349263873, "FSD Current Detection Logic and Integration in Legacy Core and CMP" (updated 2026-10-15) | Ingested from a paste of the page view. Diagrams, links and macros not captured |
 
 Known gaps in what we hold: the graph/ecosystem deep-dive, WebID, product-level
 algorithms, and the Web Shield / single-platform unification session were all

@@ -3,3 +3,4 @@
 *.tmp
 .claude/.validate-docs-pending/
 .claude/.turn-timer/
+.claude/settings.local.json

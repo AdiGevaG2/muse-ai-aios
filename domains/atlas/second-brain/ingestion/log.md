@@ -3,6 +3,17 @@
 Append-only. Newest first. One line per ingest/update: what came in, which pages
 were created/updated, which links were drawn.
 
+- **2026-11-16** - Confluence CATS 4349263873 "FSD Current Detection Logic
+  and Integration in Legacy Core and CMP" (Gal Sahar, updated 2026-10-15)
+  ingested to domain brain. Stored at
+  `source/2026-10-15-fsd-detection-logic-legacy-core-cmp-confluence-cats-4349263873.md`.
+  Updated [[front-site-detection-in-app]] with a "From the detection-logic
+  page" section: CMP contract, outcome codes, per-category thresholds, code
+  gaps, reported volume drop. Surfaced 4 conflicts/threads (flag rate 0.5% vs
+  0.05%, threshold per category not per portfolio, no screenshot field,
+  end-to-end delivery untraced). Removed it from "Sources referenced but not
+  read". No other pages edited, per the FSD-only scope.
+
 - **2026-11-13** - Manager message challenging org-wide merchant status (jurisdiction, vertical, Intuit product-line cases) ingested to the domain brain. Created [[cross-portfolio-merchant-decision-scope]]; linked to [[merchantview]].
 
 - **2026-11-13** - Change Detection categories proposal (pasted, author
@@ -32,9 +43,38 @@ were created/updated, which links were drawn.
   [[unified-platform-architecture]], [[merchant-risk-classification-pipeline]],
   [[network-intelligence]].
 
+- **2026-11-09** - PM decision recorded: FSD Phase 1 precision target is 85%.
+  Created `decisions/2026-11-09-fsd-phase1-precision-85.md`; updated
+  conflict 1 on [[front-site-detection-in-app]].
+
+- **2026-11-09** - PM decision recorded: FSD shows in the application for
+  onboarding and monitoring in Phase 1. Created
+  `decisions/2026-11-09-fsd-phase1-onboarding-and-monitoring.md`; updated
+  conflict 2 on [[front-site-detection-in-app]].
+
+- **2026-11-09** - Confluence CATS 4031382506 "GTM Brief - Front-Site
+  Detection (FSD)" (v20, 2026-09-09) ingested to domain brain. Stored at
+  `source/2026-09-09-gtm-brief-front-site-detection-confluence-cats-4031382506.md`.
+  Updated [[front-site-detection-in-app]] with a "From the GTM Brief" section:
+  probability-plus-threshold model, signal detail, deployment modes, WIP
+  pricing, success metrics, Global Payments pilot. Surfaced 3 conflicts with
+  the Phase 1 guide (precision 90% vs 85%, onboarding-only vs portfolio
+  clean-up, outcome code vs per-portfolio threshold). No other pages edited.
+
+- **2026-11-09** - Gal Sahar's "FSD in Phase 1 - Guide for the Application
+  Team" Claude Doc (byline 2026-10-26, rev 137) ingested to domain brain.
+  Stored at `source/2026-10-26-fsd-phase1-guide-for-application-team.md`.
+  Created [[front-site-detection-in-app]] (CMP contract, critical-risk
+  positioning, proposed Phase 1 presentation, roadmap, 7 open questions).
+  Linked out to [[merchantview]], [[merchant-ip-whois-mismatch]],
+  [[mcc-risk-scoring]], [[scam-network-intelligence]],
+  [[network-intelligence]], [[atlas-architecture]]; no other pages edited, per
+  the FSD-only scope.
+
 - **2026-11-08** - Re-checked Change Detection Q4 Planning against the
   2026-11-06 version. Updated source capture and [[change-detection]]: price
   changes row now maps to Marketing content (TBD). No other content changes.
+
 - **2026-11-08** - Sarah Craven's Change Detection Q4 Planning doc ingested to
   domain brain from the 2026-10-20 capture. Stored at
   `source/2026-10-20-change-detection-q4-planning.md`. Created
