@@ -1,7 +1,7 @@
 # Content Compliance Gaps: MerchantView vs Atlas - Mini PRD
 
 **TL;DR:**
-Seven Content Compliance capabilities that MerchantView clients have are missing or incomplete in Atlas. This doc shows each one as it works in MerchantView, what Atlas has, the gap, and what to build. It also adds a Content section to the merchant findings page.
+Four Content Compliance capabilities that MerchantView clients have are missing or incomplete in Atlas. This doc shows each one as it works in MerchantView, what Atlas has, the gap, and what to build. It also adds a Content section to the merchant findings page.
 
 <br>
 
@@ -11,20 +11,19 @@ Seven Content Compliance capabilities that MerchantView clients have are missing
 - **Content finding**: one restricted content category detected on one URL of a merchant website.
 - **Reported URL**: a website URL the client submitted for the merchant.
 - **Unreported URL**: a website URL G2 found for the merchant that the client did not submit.
-- **Undisclosed merchant**: a merchant with a website G2 found that the client did not submit.
 - **Censored category**: a content category whose evidence images are hidden until a user reveals them.
 
 <br>
 
 ## Problem and Goal
 
-Atlas replaces MerchantView, and every MerchantView client must migrate. Reverse engineering of both codebases found seven Content Compliance capabilities that MerchantView clients have and Atlas lacks or has in part. Capabilities that work the same for every finding type, such as notes, snooze, PDF reports and webhooks, are not part of this doc.
+Atlas replaces MerchantView, and every MerchantView client must migrate. Reverse engineering of both codebases found four Content Compliance capabilities that MerchantView clients have and Atlas lacks or has in part. Capabilities that work the same for every finding type, such as notes, snooze, PDF reports and webhooks, are not part of this doc. Atlas will not carry over the MerchantView content summary widgets, the Content Violations dashboard chart, or separate risk levels for reported and unreported URLs.
 
 Goal: a MerchantView client registered for Content Compliance who moves to Atlas keeps every capability listed below.
 
 **Why we need it:** MerchantView clients cannot migrate to Atlas without losing these Content Compliance capabilities.
 
-**Value for the client:** the client keeps the content evidence, content risk settings and content summaries it uses in MerchantView.
+**Value for the client:** the client keeps the content evidence and content scanning languages it uses in MerchantView.
 
 <br>
 
@@ -35,10 +34,7 @@ Goal: a MerchantView client registered for Content Compliance who moves to Atlas
 | 1 | Block on child sexual abuse imagery | Missing in Atlas |
 | 2 | Keyword and text evidence | Partial in Atlas |
 | 3 | Censoring of every image on a URL | Partial in Atlas |
-| 4 | Content summary widgets | Missing in Atlas |
-| 5 | Content Violations dashboard chart | Missing in Atlas |
-| 6 | Separate risk for reported and unreported URLs | Partial in Atlas |
-| 7 | Content scanning in more languages | Missing in Atlas |
+| 4 | Content scanning in more languages | Missing in Atlas |
 
 <br>
 
@@ -112,15 +108,17 @@ Clients do not see the matched keyword, the text excerpt, the highlight or the s
 
 1. Client opens evidence for a finding on a URL.
 2. If any finding on that URL is in a censored category, every finding's evidence images on that URL show a censored placeholder.
-3. Client clicks the placeholder to reveal the image.
+3. Any client user clicks the placeholder to reveal the image. Users with the Auditor role see the evidence uncensored.
 
-Source: merchantviewui `evidence-screenshot.component.html:5-6`; `evidence-screenshot.component.ts:39-43`; `scan-item.factory.ts`, censor handling.
+MerchantView censors the other findings on purpose. The evidence of another category on the same website can show the same explicit content. US employees are not allowed to be exposed to explicit content at work. Prostitution was added to the censored categories after a client received Prostitution evidence with explicit content and no warning.
+
+Source: Confluence, MerchantView Manual, [Explicit Content Censoring Mechanism](https://g2rs.atlassian.net/wiki/spaces/MM/pages/4026499236/Explicit+Content+Censoring+Mechanism), section 3; Jira [PRD-850](https://g2rs.atlassian.net/browse/PRD-850); merchantviewui `evidence-screenshot.component.html:5-6`; `evidence-screenshot.component.ts:39-43`; `scan-item.factory.ts`, censor handling.
 
 ### Atlas today
 
 1. Client opens evidence for a finding in a censored category.
 2. The screenshot shows "Sensitive Content", "This screenshot contains sensitive content" and "Click to reveal evidence".
-3. A user with the reveal permission clicks to reveal it.
+3. A user with the reveal permission clicks to reveal it. A user without it sees "You do not have permission to reveal it" and cannot reveal the screenshot.
 
 Atlas censors only the evidence of the censored category itself. Other findings on the same URL show their images uncensored. Atlas has two censor rules: the category's censor setting in the evidence popup, and a second rule that censors only categories under "Adult".
 
@@ -128,119 +126,17 @@ Source: marketview-portal `EvidencePopup.tsx:75, 114, 298-325`; `Strings.ts:550-
 
 ### Gap
 
-Atlas shows uncensored images from a URL that has a censored finding. Atlas applies two different censor rules.
+Atlas shows uncensored images from a URL that has a censored finding. Atlas applies two censor rules. In MerchantView any client user can reveal a censored image. In Atlas only a user with the reveal permission can.
 
 ### Requirement
 
 1. If any finding on a URL is in a censored category, Atlas censors every evidence image of every finding on that URL.
 2. Atlas decides censoring by one rule: the category's censor setting.
-3. Revealing a censored image requires the reveal permission.
+3. Any client user can click a censored image to reveal it. No permission is required.
 
 <br>
 
-## Gap 4: Content Summary Widgets
-
-### MerchantView today
-
-1. Client opens the Summary page.
-2. Under "Reported URLs", the widget "Content Violations" shows the count by risk level.
-3. Under "Unreported URLs", three widgets show:
-   - "Undisclosed merchants with content violations".
-   - "Undisclosed merchants without content violations".
-   - "Content violations without payment page".
-4. Client clicks a widget.
-5. The Findings grid opens with the matching filter applied.
-
-Source: merchantviewui `summary.component.html:17-73`; `predefined-filter.service.ts`, content filters.
-
-### Atlas today
-
-None of these widgets exist.
-
-Searched: all marketview-portal source for "content violation" and "undisclosed".
-
-### Gap
-
-Atlas has no content violation summary and no click-through to the matching findings.
-
-### Requirement
-
-1. Atlas shows the count of content violations on reported URLs, by risk level.
-2. Atlas shows the count of undisclosed merchants with content violations.
-3. Atlas shows the count of undisclosed merchants without content violations.
-4. Atlas shows the count of content violations on sites without a payment page.
-5. Clicking a count opens the findings list filtered to those findings.
-
-<br>
-
-## Gap 5: Content Violations Dashboard Chart
-
-### MerchantView today
-
-1. Client opens the Dashboard.
-2. The pie chart "Content Violations" shows content violations by category, with a legend.
-3. Client filters the chart.
-
-Source: merchantviewui `dashboard-layout.component.html:35-44`; mvserver `ExecutiveDashboardService.groovy:123-135, 406`.
-
-### Atlas today
-
-No "Content Violations" chart was found.
-
-Searched: all marketview-portal source for "content violation".
-
-### Gap
-
-Atlas has no chart of content violations by category.
-
-### Requirement
-
-1. The Atlas dashboard shows a "Content Violations" chart of content violations by category.
-2. The chart has a legend and a filter.
-
-<br>
-
-## Gap 6: Separate Risk for Reported and Unreported URLs
-
-### MerchantView today
-
-1. Client opens Risk Control Center and selects "Risk Matrix".
-2. The page lists every category, with a "Reported" and an "Unreported" risk level for each.
-3. Client clicks "Edit matrix".
-4. Client clicks a Reported or Unreported cell and selects Critical, High, Medium, Low or No Risk.
-5. Client clicks "Save", or "Discard" to cancel.
-6. Client clicks the download icon with the tooltip "Download risk configuration".
-7. `RiskConfiguration.csv` downloads with the columns "Finding Type", "Category", "Category Description", "Reported Risk" and "Unreported Risk".
-
-A content finding on a reported URL takes the Reported level. A content finding on an unreported URL takes the Unreported level. The content summary widgets in Gap 4 use these levels.
-
-Source: merchantviewui `navbar.component.ts:24`; `risk-matrix.component.ts:55-182`; `risk-matrix.component.html:11-100`; `risk-matrix.service.ts:94-102`; `predefined-filter.service.ts`, severity filters.
-
-### Atlas today
-
-1. Client opens Settings and the category configuration.
-2. Each category has one risk level, with the source "Default" or "Custom".
-3. With "Custom", client selects one risk level.
-
-Atlas portfolio rules can combine categories, for example alcohol with no payment page sets no risk.
-
-Source: marketview-portal `settings/resources/Strings.ts:59-73`; mlrc-account `AccountPortfolioCategoryConfigDto.java:59, 64`; mlrc-risk `portfolio-rules-alcohol-no-payment.json`.
-
-### Gap
-
-Atlas has one risk level per content category. It cannot set a different level for an unreported URL.
-
-### Requirement
-
-1. For each content category, Atlas shows a risk level for reported URLs and a risk level for unreported URLs.
-2. Client sets either level to Critical, High, Medium, Low or No Risk.
-3. A content finding on a reported URL takes the reported level.
-4. A content finding on an unreported URL takes the unreported level.
-5. Client can download the configuration as a CSV with the columns "Finding Type", "Category", "Category Description", "Reported Risk" and "Unreported Risk".
-
-<br>
-
-## Gap 7: Content Scanning in More Languages
+## Gap 4: Content Scanning in More Languages
 
 ### MerchantView today
 
@@ -282,7 +178,9 @@ Atlas cannot turn on content scanning in French, Spanish, German, Japanese, Dutc
 
 ### Content Categories
 
-The content categories are the 192 categories below.
+This list sets which findings appear in the Content section: a finding in one of these 166 categories goes to the Content section, and a finding in any other category does not.
+
+The list has not been compared against the MerchantView and Atlas category lists. Categories that MerchantView has and Atlas lacks, and categories Atlas has that MerchantView clients do not need, are not known.
 
 | Category Type | Category | Category ID |
 | --- | --- | --- |
@@ -461,7 +359,6 @@ Source: ContentCompliance_Categories.csv, the rows marked Active and not marked 
 
 **Scenario: Child sexual abuse imagery blocked**
 - Given a URL has one finding in the child sexual abuse material category and one finding in another category
-- And the user has the reveal permission
 - When the user opens evidence for either finding
 - Then every image shows "Image unavailable due to explicit content"
 - And no reveal action is available
@@ -475,29 +372,7 @@ Source: ContentCompliance_Categories.csv, the rows marked Active and not marked 
 - Given a URL has one finding in a censored category and one finding in an uncensored category
 - When the client opens evidence for the uncensored finding
 - Then its images show the censored placeholder
-- And a user with the reveal permission can reveal them
-
-**Scenario: Content summary click-through**
-- Given 4 content violations on reported URLs, 3 of them High
-- When the client opens the summary
-- Then the reported URLs content violations count shows 3 High
-- And clicking it opens the findings list with those 3 findings
-
-**Scenario: Content Violations chart**
-- Given content violations in two categories
-- When the client opens the dashboard
-- Then the "Content Violations" chart shows both categories with their counts
-
-**Scenario: Reported and unreported risk**
-- Given content category A is High for reported URLs and Low for unreported URLs
-- When findings of category A appear on one reported URL and one unreported URL
-- Then the finding on the reported URL is High
-- And the finding on the unreported URL is Low
-
-**Scenario: Export risk configuration**
-- Given the client opens the category configuration
-- When the client downloads the configuration
-- Then a CSV downloads with one row per category and the columns "Finding Type", "Category", "Category Description", "Reported Risk" and "Unreported Risk"
+- And any client user can click the placeholder to reveal them
 
 **Scenario: Content scanning in French**
 - Given G2 staff turned on French for an account
@@ -519,10 +394,6 @@ Source: ContentCompliance_Categories.csv, the rows marked Active and not marked 
 
 **Baseline**
 - MerchantView clients registered for Content Compliance: TBD. Source: MerchantView client configuration.
-- MerchantView use of the summary widgets, dashboard chart and risk matrix: TBD. Source: MerchantView Mixpanel project.
-
-**Recorded data**
-- Risk levels: reported and unreported level per content category, change date and user.
 
 <br>
 
@@ -532,8 +403,6 @@ Source: ContentCompliance_Categories.csv, the rows marked Active and not marked 
 - Check with engineering whether Atlas page screenshots include the individual images found on the page, or only full-page screenshots.
 - Check whether Atlas applies the MerchantView signup scan rule: content findings shown only with a score of 0 or at least 80, and never "Premier League Tickets".
 - Decide whether the card-brand warning on regulated categories is in scope: "This category is regulated by the credit card brands and may incur fines." It is missing in Atlas and applies to any regulated category.
-- Decide whether a change to a risk level re-grades existing findings or applies from the next scan.
-- Decide the starting reported and unreported risk levels for each existing Atlas client.
 - Check with engineering how content findings appear in Atlas reports: MerchantView reports link each content finding to its evidence and list keywords.
 - Confirm the migration date that sets why now.
 - Check with engineering whether the Atlas scanning engine detects page language without an account setting; only the Atlas portal, account, finding and API layer code was searched.
