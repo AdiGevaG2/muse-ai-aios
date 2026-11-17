@@ -45,6 +45,7 @@ Goal: A true FSD result appears on the merchant as a Critical finding with its r
 2. Each listing has its own on/off toggle, so FSD is enabled for Onboarding and for Monitoring separately.
 3. Under Monitoring Services, FSD has its own cadence, with the same frequency and day options as every other monitoring service.
 4. When FSD is off for a stage, scans at that stage do not run FSD and create no Suspected Front Site finding.
+5. In a new portfolio, Front Site Detection is on by default under Onboarding Services and under Monitoring Services.
 
 ### Requirements
 
@@ -55,7 +56,7 @@ Goal: A true FSD result appears on the merchant as a Critical finding with its r
    - Name: "Suspected Front Site".
    - Evidence icon, shown only when Core returns evidence, such as a screenshot.
    - Severity: Critical.
-   - Risk.
+   - Risk: Critical.
    - Decision.
 5. The merchant's overall risk is calculated from all its findings, the same way as for every other finding.
 6. In the merchants list, the categories column shows "FSD" for the merchant, as a standalone service.
@@ -63,12 +64,13 @@ Goal: A true FSD result appears on the merchant as a Critical finding with its r
 8. The application opens the evidence view, which shows:
    - The analyzed URL.
    - A screenshot of the full page of the site.
-   - The FSD explanation Core returns in `evidence_text`, as the headline of the side panel. An explanation of more than one sentence shows as bullet points.
+   - The FSD explanation Core returns in `evidence_text`, at the top of the side panel. An explanation of more than one point shows as bullet points. The explanation shows in full, with no length limit.
    - "About this check" as a footnote at the bottom of the side panel, below a divider: fixed text, the same on every Suspected Front Site finding: "Checks whether the website a merchant declares shows its real business, or is a cover for a different business."
 9. The analyst takes the same actions on the finding that exist for every other finding.
 
 **What is not shown**
-- An FSD false result does not create a finding.
+- An FSD false result does not create a finding, and the merchant screen shows no FSD section, the same as any other service scan with no findings.
+- A Suspected Front Site finding triggers no alert.
 - The finding entry does not show the explanation. The explanation appears only in the evidence view.
 - If Core returns no evidence, the finding entry shows no evidence icon, and the evidence view shows the explanation without a screenshot.
 - The application does not show an "FSD: clear" or "verified" state. No finding can mean the site was skipped, data was missing, or processing failed.
@@ -77,7 +79,8 @@ Goal: A true FSD result appears on the merchant as a Critical finding with its r
 - Users who can see a merchant's findings see the Suspected Front Site finding. No FSD-specific permission exists.
 
 **API**
-- Core runs FSD only on scans where FSD is turned on. It is off by default.
+- Core runs FSD only on scans that request it. The application requests FSD on every scan of a stage where FSD is enabled in the portfolio settings.
+- Core returns FSD results for Onboarding scans and for Monitoring scans.
 - Core returns FSD as true or false, with the explanation and the analyzed URL.
 - The finding arrives in the scan's findings, after the other findings. Core keeps the other findings unchanged.
 - FSD true is a finding with sub-type 389. Every other FSD result arrives as sub-type 1012 and is FSD false. This includes results where the page was empty, the domain failed validation, or processing failed.
@@ -93,7 +96,7 @@ Goal: A true FSD result appears on the merchant as a Critical finding with its r
 - And Core returns FSD true
 - When the analyst opens the merchant screen
 - Then the merchant screen shows a separate section titled "FSD"
-- And the FSD section shows one entry with only these fields: name "Suspected Front Site", evidence icon, severity Critical, risk, and decision
+- And the FSD section shows one entry with only these fields: name "Suspected Front Site", evidence icon, severity Critical, risk Critical, and decision
 - And the merchants list shows "FSD" in the merchant's categories column
 - And no "Signals" category appears for the finding
 - And the explanation does not appear on the finding entry
@@ -103,7 +106,7 @@ Goal: A true FSD result appears on the merchant as a Critical finding with its r
 - And Core returned evidence for the finding
 - When the analyst clicks the evidence icon on the finding entry
 - Then the evidence view shows the analyzed URL and a screenshot of the full page of the site
-- And the side panel shows the FSD explanation from Core as its headline
+- And the top of the side panel shows the FSD explanation from Core
 - And the bottom of the side panel shows "About this check" with the fixed FSD description
 
 **Scenario: No evidence from Core hides the evidence icon**
@@ -120,6 +123,7 @@ Goal: A true FSD result appears on the merchant as a Critical finding with its r
 - And Core returns FSD false
 - When the analyst opens the merchant screen
 - Then no Suspected Front Site finding appears
+- And no FSD section appears
 - And no "FSD: clear" or "verified" state appears
 
 **Scenario: FSD is a service in portfolio settings**
@@ -135,7 +139,7 @@ Goal: A true FSD result appears on the merchant as a Critical finding with its r
 ## Data
 
 **Baseline**
-- Share of scanned sites flagged by FSD: TBD; not measured for the application. Expected about 0.5% of a portfolio per the GTM Brief. Reported at about 0.05%, 5 per 10,000 sites, on the legacy pipeline since late September 2026, per the detection-logic page. Source: Core FSD results for FSD-enabled scans.
+- Share of scanned sites flagged by FSD: TBD; not measured for the application. Expected about 0.5% of a portfolio per the GTM Brief. Source: Core FSD results for FSD-enabled scans.
 
 **Success measure**
 - Increase precision of released FSD findings: 85% or higher.
@@ -149,15 +153,5 @@ Goal: A true FSD result appears on the merchant as a Critical finding with its r
 
 ## Open Questions / Assumptions
 
-- Confirm with Core that FSD results are delivered for Monitoring scans. The Phase 1 guide and the detection-logic page document only the onboarding topics.
-- Confirm with Yonatan Eisenberg how the application gets a full-page screenshot of the site for the evidence view. The FSD output in the detection-logic page has no screenshot field.
-- Confirm with Core that it returns the explanation as separate points the application can show as bullet points. The Phase 1 guide shows it as one paragraph.
-- Confirm with Gal Sahar the cause of the drop in FSD findings from 0.5% to 0.05% since late September 2026, before setting the flag-volume baseline.
-- Decide whether the FSD section appears on the merchant screen when FSD returns false.
-- Decide the risk value shown on the Suspected Front Site entry.
-- Decide which alert fires for a Suspected Front Site finding, and who receives it.
-- Confirm the maximum length of the FSD explanation to design for.
-- Confirm with Gal Sahar whether the threshold that releases Critical findings changes to match the 85% precision target. The GTM Brief and the Phase 1 guide state above 90%.
-- Run an end-to-end test that traces an FSD result from Core into the merchant screen.
-- Add the trigger for doing this now.
-- Decide whether Front Site Detection is on or off by default in a new portfolio.
+- Assumption: Core returns a full-page screenshot of the site with each Suspected Front Site finding.
+- Assumption: Core returns the explanation as separate points the application shows as bullet points.
