@@ -51,14 +51,23 @@ Goal: Users associate a merchant with the portfolios they need, remove it from t
 **Portfolio access**
 - Users see only the portfolios they have access to, in every message, list, and email.
 
+**Monitoring question after approval**
+
+After a user approves a merchant whose monitoring is off in the current portfolio, Atlas asks whether to add it to monitoring. Approval is described in Review and Decide. It shows:
+- Heading: "Add [merchant name] to monitoring?"
+- Message: "[Merchant name] is Approved. Monitoring scans this merchant on a schedule and notifies you when a new risk finding appears."
+- The buttons Add to monitoring and Not now.
+
+When the user selects Add to monitoring, Atlas opens the monitoring modal. When the user selects Not now, or closes the question with X or Escape, the merchant stays Approved with monitoring off, and the merchant page shows the Turn On Monitoring link.
+
 **Monitoring modal**
 
-The modal opens after a user approves a merchant whose monitoring is off in the current portfolio, or selects the Turn On Monitoring link. Approval is described in Review and Decide. The modal does not change the merchant's status in the current portfolio. It shows:
+The modal opens when a user selects Add to monitoring after an approval, or selects the Turn On Monitoring link. The modal does not change the merchant's status in the current portfolio. It shows:
 - Heading: "Add [merchant name] to monitoring"
 - Message: "Monitoring scans this merchant on a schedule and notifies you when a new risk finding appears."
 - Every portfolio the user has access to, each with its services and each service's scan frequency.
 - Portfolios where the merchant is Rejected or Terminated show in the list, but the user cannot select them.
-- The current portfolio is selected. If it has no services with monitoring, the first portfolio in the list is selected instead. The user can select more than one.
+- The current portfolio is selected. If it has no services with monitoring, the first portfolio in the list that has services with monitoring, and where the merchant is not Rejected or Terminated, is selected instead. The user can select more than one.
 - The buttons Add merchant to monitoring and Go back.
 
 When the user selects portfolios and then Add merchant to monitoring:
@@ -145,13 +154,14 @@ When the user selects Go back, nothing changes. After an approval, the merchant 
 **Scenario: Monitoring modal after approval**
 - Given a merchant with monitoring off in portfolio A, and a user with access to portfolios A, B, and C
 - When the user approves the merchant in portfolio A
-- Then the modal lists portfolios A, B, and C, each with its services and scan frequencies
+- Then Atlas asks whether to add it to monitoring
+- And after the user selects Add to monitoring, the modal lists portfolios A, B, and C, each with its services and scan frequencies
 - And portfolio A is selected
 - And after the user selects Add merchant to monitoring, monitoring is on in portfolio A and the merchant is on the Monitoring tab there
 
 **Scenario: Monitoring in a new portfolio**
 - Given a merchant associated with portfolio A only, and a user with access to portfolios A, B, and C
-- When the user approves it, selects portfolios A and C in the modal, and selects Add merchant to monitoring
+- When the user approves it, selects Add to monitoring, selects portfolios A and C in the modal, and selects Add merchant to monitoring
 - Then it is Approved in portfolio A and To Review in portfolio C
 - And monitoring is on in portfolios A and C
 - And it is not associated with portfolio B
@@ -163,9 +173,16 @@ When the user selects Go back, nothing changes. After an approval, the merchant 
 - And the user cannot select portfolio B
 
 **Scenario: Current portfolio has no monitoring services**
-- Given portfolio A has no services with monitoring, and portfolio B is first in the list
-- When a user in portfolio A approves a merchant
-- Then the modal selects portfolio B
+- Given portfolio A has no services with monitoring, the merchant is Terminated in portfolio B, and portfolio C has services with monitoring
+- And the list shows portfolios B and C in that order
+- When a user in portfolio A approves the merchant and selects Add to monitoring
+- Then the modal selects portfolio C
+
+**Scenario: Not now after approval**
+- Given a merchant with monitoring off in portfolio A
+- When a user in portfolio A approves it and selects Not now
+- Then the merchant is Approved with monitoring off
+- And the merchant page shows the Turn On Monitoring link next to the Monitoring off label
 
 **Scenario: Go back from the monitoring modal**
 - Given the monitoring modal is open after an approval
@@ -183,7 +200,7 @@ When the user selects Go back, nothing changes. After an approval, the merchant 
 - Given merchant Z is Terminated in portfolio A
 - When a user adds a merchant with merchant Z's client merchant key to portfolio B, by single add or bulk upload, and sends it to Onboarding
 - Then merchant Z is To Review in portfolio B, on the Onboarding tab, and stays Terminated in portfolio A
-- And when a user later adds it to portfolio A through the add merchant flow, by single add or bulk upload, it is To Review in portfolio A
+- And when a user later adds it to portfolio A by single add or bulk upload, it is To Review in portfolio A
 
 **Scenario: Add a merchant to another portfolio**
 - Given a merchant Approved and monitored in portfolio A

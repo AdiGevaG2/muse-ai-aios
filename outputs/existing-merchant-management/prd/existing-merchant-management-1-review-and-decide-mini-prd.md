@@ -82,7 +82,7 @@ Each status applies to one portfolio. Changing it in one portfolio does not chan
 3. The user selects Approve.
 4. The status changes to Approved in the current portfolio.
 5. Atlas sends an email. See Notifications.
-6. If monitoring is off in the current portfolio, Atlas opens the monitoring modal. Whatever the user does there, the merchant stays Approved. The modal is described in Portfolio Assignment and Monitoring.
+6. If monitoring is off in the current portfolio, Atlas asks whether to add the merchant to monitoring. If the user selects Add to monitoring, Atlas opens the monitoring modal, where the user selects the portfolios. Whatever the user does in either step, the merchant stays Approved. Both steps are described in Portfolio Assignment and Monitoring.
 - If the user selects Go back in step 2, nothing changes.
 
 **Reject a merchant**
@@ -145,11 +145,11 @@ Each status applies to one portfolio. Changing it in one portfolio does not chan
 - Then Atlas asks to confirm, names portfolio A, and shows Approve and Go back
 - And after the user selects Approve, it is Approved in portfolio A and To Review in portfolio B
 
-**Scenario: Approval opens the monitoring modal**
+**Scenario: Approval asks about monitoring**
 - Given a merchant with monitoring off in portfolio A
 - When a user in portfolio A approves it
 - Then it is Approved in portfolio A
-- And the monitoring modal opens
+- And Atlas asks whether to add it to monitoring
 
 **Scenario: Email respects portfolio access**
 - Given a merchant in portfolios A and B, user X with access to A and B, and user Y with access to B only
