@@ -41,7 +41,7 @@ output format, delivery channel, volumes, or what PayPal counts as a mismatch.
 | Core | Computes the full comparison, verdicts, and tiers | Documented design only, code unread |
 | WebShield | Unknown | Source unavailable |
 
-[documented] `../../../../outputs/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` (verified 2026-08-30)
+[documented] `../../../../outputs/paypal-atlas/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md` (verified 2026-08-30)
 [documented] `../source/2026-09-01-mcc-score-and-ux-folder.md` (Core row)
 
 ## MerchantView's rule — the verified reference
@@ -58,7 +58,7 @@ The only mismatch behavior confirmed in code anywhere:
   both groups, an explanation, and other MCCs in each group; exports include
   mismatch.
 
-[documented] `../../../../outputs/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md`
+[documented] `../../../../outputs/paypal-atlas/paypal-mcc-mismatch/current-state/paypal-mcc-mismatch-reverse-engineering.md`
 
 Note the URL-level evaluation — MV sidesteps a problem UP has (below) by putting
 both sides of the pair on the same object.
