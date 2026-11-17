@@ -26,9 +26,11 @@ straight to a developer.
   Goal, Prototype, Feature Behavior, Acceptance Criteria, Data, Open Questions /
   Assumptions.
 - Prototype: required when `outputs/<feature-name>/prototype/` holds a
-  prototype. An `Open prototype` link plus one captioned screenshot per screen,
-  captured from the prototype per `../_shared/prototype-screenshots.md`. Omit
-  the section only when no prototype exists.
+  prototype. An `Open prototype` link plus 4-5 captioned screenshots, captured
+  from the prototype per `../_shared/prototype-screenshots.md`: the entry
+  screen, the main action, one error, the confirmation, and the empty state if
+  the flow has one. Never one per state. Omit the section only when no
+  prototype exists.
   Drop "Open Questions / Assumptions" entirely if there is nothing to put in
   it — don't leave it empty with a placeholder. Separate top-level sections
   with a `<br>` line, matching the template.
@@ -110,5 +112,10 @@ straight to a developer.
 ## Output
 
 `outputs/<feature-name>/prd/<feature-name>-mini-prd.md`.
+
+Checks run once, at the end, after every requested artifact is written: one
+validate-docs pass on the mini PRD, and the prototype design review. Run them
+in parallel. Apply fixes, then
+recapture only the screenshots the fixes changed.
 
 After writing, report the artifact and any open items, then stop.

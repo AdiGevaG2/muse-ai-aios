@@ -59,6 +59,12 @@ Updated on every ingest.
   component: 13 website-based checks (name/location/currency match, product and
   MCC restrictions, T&C/refund/delivery/privacy/card-brand/contact-us, SSL),
   each a 0-4 risk flag. Mid-build July 2025, crawling and test-data gaps open.
+- [[change-detection]] - Visualping replacement by Sept 2027, built as a shared
+  Atlas change-signal source. M0-M4 milestones, seven client rule types, open
+  billing-unit and re-trigger decisions. Source has date/numbering conflicts.
+- [[change-detection-categories]] - Proposed taxonomy of 13 business-meaning
+  change categories (multi-label, hierarchical) plus site health and control
+  presence check classes; countdown and materiality rules. Author unknown.
 
 ## Source coverage
 
@@ -75,6 +81,8 @@ Updated on every ingest.
 | Gal Sahar, MCC Risk brief V1 / v2 (re-check 2026-10-08) | No change since the 2026-09-01 capture; not re-ingested |
 | Sunniva Wong email, Visa HK MCC B&M expansion (2026-08-25, fwd 2026-09-10) | Ingested. Market problem only, no roadmap/technical assessment exists yet |
 | Adyen IP-mismatch email thread (2026-09-07 to 2026-09-09) | Ingested. All content [verbal], none confirmed against MV code or FSD docs |
+| Sarah Craven, Change Detection Q4 Planning (2026-10-20) | Ingested from the 2026-10-20 local capture; live SharePoint copy not re-checked (Microsoft 365 connector needs auth) |
+| Change Detection categories proposal (pasted 2026-11-13) | Ingested. Author, date and cited User Guide / WellHello / analyst examples not in hand |
 | G2RS GO VARS Update deck, Fiserv (2025-07-25) | Ingested. Text-only extraction; architecture diagram (slide 16) and Gantt bar positions not captured |
 
 Known gaps in what we hold: the graph/ecosystem deep-dive, WebID, product-level
