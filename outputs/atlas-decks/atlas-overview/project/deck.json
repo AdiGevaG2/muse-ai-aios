@@ -1,0 +1,150 @@
+{
+  "v": 4,
+  "attachments": {},
+  "createdOnFiles": {
+    "at": "2026-11-12T09:20:00Z",
+    "v": 1
+  },
+  "designSystems": [
+    {
+      "artifact": "https://claude.ai/artifact/WwpH7cSUR2BXRTrMvea6nD",
+      "copiedAt": "2026-11-12T09:30:00Z",
+      "namespace": "g2rs",
+      "title": "G2 Risk Solutions Design System",
+      "version": null
+    }
+  ],
+  "faces": {
+    "figtree": {
+      "family": "Figtree",
+      "href": "https://fonts.googleapis.com/css2?family=Figtree:wght@400..800&display=swap"
+    },
+    "inter": {
+      "family": "Inter",
+      "href": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    }
+  },
+  "lists": "css",
+  "order": [
+    "cover",
+    "agenda",
+    "who",
+    "problem",
+    "promise",
+    "concept",
+    "journey",
+    "checks",
+    "685832a8",
+    "rm-q3-done",
+    "rm-q3-spill",
+    "rm-q4",
+    "rm-q4-build",
+    "next",
+    "950308e0",
+    "b6b6d05e",
+    "faad0465",
+    "f-monctl",
+    "f-status",
+    "f-evidence",
+    "f-review",
+    "f-batch",
+    "f-snooze",
+    "f-comments",
+    "f-mrep",
+    "f-mmp",
+    "f-urlrep",
+    "f-hier",
+    "f-users",
+    "f-cc",
+    "f-mrh",
+    "f-connected",
+    "f-policies",
+    "f-compass",
+    "f-cadence",
+    "f-mcc",
+    "f-identity",
+    "f-webid",
+    "f-wsl",
+    "f-underwriting",
+    "f-disputes",
+    "f-notify",
+    "f-frontsite",
+    "f-scams",
+    "f-traffic",
+    "f-change",
+    "f-assign",
+    "f-activity",
+    "f-wizard",
+    "f-manage",
+    "f-reports",
+    "f-summary",
+    "f-help",
+    "f-api",
+    "f-graph",
+    "f-webcomp",
+    "f-categories",
+    "f-migration",
+    "f-bespoke",
+    "f-ui",
+    "f-aisum",
+    "f-lang",
+    "f-cd2",
+    "f-home",
+    "f-inapp",
+    "f-timeline",
+    "f-views",
+    "f-profile",
+    "f-riskset",
+    "f-sim",
+    "f-mlr",
+    "f-premig",
+    "close",
+    "e9b74729",
+    "migration",
+    "measures",
+    "rm-q4-define",
+    "add",
+    "monitor",
+    "findings",
+    "intel"
+  ],
+  "sections": {
+    "s1": {
+      "description": "Opening and agenda",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "Why Atlas: who we are and the problem",
+      "start": "who"
+    },
+    "s3": {
+      "description": "How Atlas works, step by step",
+      "start": "concept"
+    },
+    "s3b": {
+      "description": "Feature spotlights: what each feature gives you",
+      "start": "f-monctl"
+    },
+    "s4": {
+      "before": "close",
+      "description": "How we build",
+      "seq": 0,
+      "start": null
+    },
+    "s5": {
+      "before": "close",
+      "description": "Roadmap: this quarter and 2027",
+      "seq": 0,
+      "start": null
+    },
+    "s6": {
+      "description": "Wrap-up and next steps",
+      "start": "close"
+    },
+    "s7": {
+      "description": "Appendix, internal only: migration and measures",
+      "start": "migration"
+    }
+  },
+  "title": "Atlas Overview"
+}

@@ -1,0 +1,1881 @@
+categories Category ID,categories Name,Category Types Name
+1,default,
+2,Adult Content,Content
+3,Gambling,Content
+4,Pharmaceuticals,Content
+5,Premier League Tickets,Content
+6,Alcohol,Content
+7,Beastiality,Content
+8,Moto,Payment Page
+9,Rape/Hate/Violence,Content
+10,Child Pornography,Content
+11,Card Payment,Payment Page
+12,Webcams,Content
+13,Security,Security Problem
+14,Counterfeit/Stolen goods,Content
+15,Brand Damaging Goods,Content
+16,Illegal By State Law,Content
+17,Cashing Checks,Content
+18,Collecting Debts,Content
+19,Credit Restoration Services,Content
+20,Door To Door Sales,Content
+21,Pyramid Schemes,Content
+22,Prostitution,Content
+23,Bath Salts,Content
+24,K2,Content
+25,Modification Chips,Content
+26,HD DVD and Blu-ray Disc Decryption Devices,Content
+27,Salvia Divinorum,Content
+28,Affiliate,Content
+29,Cybersquatting,Reputation
+30,Ads Trap,Content
+31,Website Authenticity Warning,Security Problem
+32,Firearms,Content
+33,PayPal,Payment Page
+34,Tobacco,Content
+35,Electronic Cigarettes,Content
+36,Illegal Substances,Content
+37,Complaints,Reputation
+38,Digital Wallet,Payment Page
+39,Fraud,Reputation
+40,Dating Service,Content
+41,Third Party Payment Service Provider Unused,Third Party Payment Provider
+42,Payment Page Affiliation,Link
+43,Copyright Infringement,Content
+44,Cyber Locker,Content
+45,Nutraceuticals,Content
+46,Questionable Substances,Content
+47,Medical Devices,Content
+48,Misuse/Invalid Seal,Security Problem
+49,Negative Option Marketing,Content
+50,Injected Links,Security Problem
+51,Adult Website Support,Content
+52,Inactive Payment Environment,Payment Page
+53,Jammers/Signal Blockers,Content
+54,Sex Toys,Content
+55,Malicious Cyber Activity,Security Problem
+56,Bitcoin,Payment Page
+57,Fake IDs And Government Documents,Content
+58,Payday Loans,Content
+59,Online,Availability
+60,Offline,Availability
+61,Redirect,Availability
+62,Get-Rich-Quick Schemes,Content
+63,Gift Cards,Content
+64,Website Not Secure,Security Problem
+65,Payoneer,Payment Page
+66,Pfizer,Content
+67,Gambling - Casino,Content
+68,Gambling - Sports,Content
+69,Gambling - Horse,Content
+70,Affiliation Network,Content
+71,IP Address,IP
+72,Potential Transaction Launderer,Link
+73,Undisclosed Merchant,Link
+74,Associated,Link
+75,Associator,Link
+76,MCC Miscode,MCC
+77,Online Shop index,Content
+78,Loans,Content
+79,Cold Weapons,Content
+80,Country,IP
+81,Unauthorized 3rd Party Service Provider,Third Party Payment Provider
+82,Online Pharmacies,Content
+83,Psychic services,Content
+84,Health Beauty Spas,Content
+85,Fantasy sports,Content
+86,Sports forecasting or odds making,Content
+87,Amyl Nitrite Inhalants,Content
+88,Marijuana,Content
+89,Drug paraphernalia,Content
+90,Fireworks,Content
+91,Gunpowder and other explosives,Content
+92,Ammunitions,Content
+93,Forex,Content
+94,Financial Institution,Content
+95,Bearer Shares,Content
+96,Airlines,Content
+97,Bail bonds,Content
+98,Bankruptcy lawyers,Content
+99,Cell Phones,Content
+100,Computer Technical Support,Content
+101,Centralized travel reservation services,Content
+102,Credit card and identity theft protection,Content
+103,Cruises,Content
+104,In-game currency,Payment Page
+105,Mortgage or real estate consulting,Content
+106,Marijuana Dispensaries Index,Content
+107,Mugshot removal,Content
+108,Real estate opportunities,Content
+109,Securities Brokers & Investment Consultants,Content
+110,Telemarketing,Content
+111,Timeshares,Content
+112,Bakeries,Content
+113,Miscellaneous Food Stores,Content
+114,Social media activity,Content
+115,Using third Party Payment Service Provider,Third Party Payment Provider
+116,virtual currency,Payment Page
+117,VISA,Payment Page
+118,Bad History,Reputation
+119,Moving Company,Content
+120,Diners Club International,Payment Page
+121,JCB,Payment Page
+122,Discover,Payment Page
+123,MasterCard,Payment Page
+124,Amex,Payment Page
+125,Offline Payment,Payment Page
+126,Unavailable,Availability
+127,Lawn Garden/Nurseries,Content
+128,Payment Page,Payment Page
+129,OFAC Individual Violation,Public Records
+130,Third Party Payment Service Provider,Content
+131,Diplomatic Entities,Content
+132,Digital Marketing,Content
+133,Academic Fraud,Content
+134,Cultural Artifacts,Content
+135,Official Identifications,Content
+136,Fulfillment Centers,Content
+137,Prepaid Cards,Content
+138,Extended Warranty,Content
+139,Sex Offenders USA,Public Records
+140,Criminal Records USA,Public Records
+141,MCC,MCC
+142,Contact Us Page,Website Section
+143,Privacy Policy Page,Website Section
+144,Racism,Content
+145,Cart Pages,Payment Page
+146,Rush my order,Payment Page
+147,Donations,Payment Page
+148,OFAC Address Violation,Public Records
+149,Payment Services Agent,Content
+150,Prepaid,Content
+151,Network/SaaS Providers,Content
+152,Uses Affiliates,Link
+153,Is Affiliate,Link
+154,Mobile Application,Mobile Application
+155,Alipay,Payment Page
+156,Internal Currency,Payment Page
+157,Buy Now Page,Payment Page
+158,Terms and Conditions Page,Website Section
+159,Buyer Account,Link
+160,Match,Public Records
+161,Selling Bitcoin,Content
+162,Brands,Content
+163,Hosting Provider,Content
+164,Password Protected,Availability
+165,Test Transaction Validated,Test Transaction
+166,Olympic Games Tickets,Content
+167,Google Analytics,Analytics Service Provider
+168,Google Adsense,Analytics Service Provider
+169,Stripe,Third Party Payment Provider
+170,Unsupported Redirect,Link
+171,Unsupervised Money Transfer,Content
+172,Pharma OTC,Content
+173,Eye Drops,Content
+174,URL Detected by EverCompliant,Web ID
+175,Teeth Whitening,Content
+176,Crawling Block Attempt,Security Problem
+177,Deer Antler Velvet,Content
+178,APK Link,Hyperlink
+179,Digital Wallet Sites,Content
+180,Binary Options Trade,Content
+181,Illegal Wildlife Trade,Content
+182,Gift Cards or e-Vouchers Payment,Payment Page
+183,Missing Address,Policies
+184,General Stores,Content
+185,Verified Undisclosed Merchant,Link
+186,Verified Transaction Launderer,Link
+187,Test Transaction Executed,Test Transaction
+188,Test Transaction Not Completed,Test Transaction
+189,Test Transaction Not Verified,Test Transaction
+190,Sage,Third Party Payment Provider
+191,China UnionPay,Payment Page
+192,Adult Entertainment,Content
+193,Card Brands Notification Record,Reputation
+194,Pricing Patterns,Payment Page
+195,WeChat,Payment Page
+196,e-Vouchers,Payment Page
+197,Test Transaction Verified not Matched,Test Transaction
+198,Web Services,Content
+199,Online Gaming,Content
+200,Crowdfunding,Content
+201,Multi-level marketing,Content
+202,IP Rights Protected,Content
+203,IP Rights Infringement,Content
+204,Generic URL,Policies
+205,Wire Transfer,Payment Page
+206,Amazon Pay,Payment Page
+207,Trustly Payment,Payment Page
+208,Keywords Matching,Keyword
+209,Precious Metals,Content
+210,Cosmetics-new,Content
+211,Hair Extensions,Content
+212,Keywords Matching High,Keyword
+213,Keywords Matching Medium,Keyword
+214,Keywords Matching Low,Keyword
+215,Pharma/ Illegal Substances Indication,Keyword
+216,High Risk MCC,MCC
+217,Crypto Currency,Content
+218,Age Verification,Policies
+219,Ticketing-new,Content
+220,Amazon Pay Not Suppressed,Content
+221,Illegal Substances Indication,Keyword
+222,Marijuana Indication,Keyword
+223,Melatonin Indication,Keyword
+224,Prescription Drug Indication,Keyword
+225,Sexual Enhancement Products Indication,Keyword
+226,Illegal Food Additives Indication,Keyword
+227,Tretinoin Indication,Keyword
+228,Veterinary Products Indication,Keyword
+229,Facebook Store Affiliation,Payment Page
+230,Insurance,Content
+231,Members-Only Section,Website Section
+232,Adyen,Payment Page
+233,CBD Products,Content
+234,Insufficient Data,Suspicious Flags
+235,Transaction Laundering Blacklist,Reputation
+236,Government Documents and Identifications Indication,Keyword
+237,Parked Page- new,Availability
+238,Negative Option Billing Indication,Keyword
+239,Cancellation Link Not Present,Policies
+240,Cancellation Link Noncompliant,Policies
+241,Trial Period Noncompliant,Policies
+242,Business Phone Number not Present,Policies
+243,Corona Virus indication,Keyword
+244,No Traffic Data,Policies
+245,Policy Violation,Policies
+246,Licensed Pharmacy,Policies
+247,Unlicensed Pharmacy,Policies
+248,Non-compliant History,Reputation
+249,Racism indication,Keyword
+250,Business with countries under sanction,Reputation
+251,Child Pornography HE,Content
+252,Rape/Hate/Violence HE,Content
+253,Beastiality HE,Content
+254,Prostitution HE,Content
+255,Illegal Substances HE,Content
+256,Modification chips and circumvention devices HE,Content
+257,Illegal wildlife trade HE,Content
+258,Copyright Infringement HE,Content
+259,US Unlicensed Cannabis dispensaries,Policies
+260,US Licensed Cannabis dispensaries,Policies
+261,Cyber Locker blacklist,Policies
+262,Groups of Interest,Reputation
+263,Hemp and cannabis-derived products,Content
+264,Wells Fargo Prohibited URLs,Reputation
+265,Website Ownership Details,Policies
+266,Missing Website Ownership Details,Policies
+267,Locked category id do not use it,Security Problem
+268,Website Security Unknown,Security Problem
+269,PS - Hemp,Content
+270,PS - CBD,Content
+271,PS - Firearms Accessories,Content
+272,PS - Firearms - Other,Content
+273,Edible CBD,Content
+274,Smokable CBD,Content
+275,Cannabis Seeds,Content
+276,CBD Oil,Content
+277,Non-Edible CBD,Content
+278,THC Variants,Content
+279,Counterfeit or Sold Documents,Content
+280,Ghost Guns,Content
+281,Stored Value,Content
+282,Marketplaces,Content
+283,IPTV,Content
+284,VISA Services,Content
+285,Social Media Marketing Resellers,Content
+286,Third Party Payment Service Providers,Content
+287,Auto-trading tools,Content
+288,VPN,Content
+289,Kratom,Content
+290,Steroids,Content
+291,NFT,Content
+292,Non-Profit,Content
+293,crowdfunding-new,Content
+294,CFDs,Content
+295,Firearms-Antique,Content
+296,Airsoft and Paintball Guns,Content
+297,Crypto Exchange,Content
+298,Recurring Billing,Signals
+299,SARMs,Content
+300,Violative Peptides,Content
+301,Lorem Ipsum,Signals
+302,IV treatments,Content
+303,Medical spas,Content
+304,Erotic Massage Parlors,Content
+305,CAT_305,Content
+306,CAT_306,Content
+307,CAT_307,Content
+308,CAT_308,Content
+309,CAT_309,Content
+310,CAT_310,Content
+311,CAT_311,Content
+312,CAT_312,Content
+313,CAT_313,Content
+314,CAT_314,Content
+315,CAT_315,Content
+316,CAT_316,Content
+317,CAT_317,Content
+318,CAT_318,Content
+319,CAT_319,Content
+320,CAT_320,Content
+321,CAT_321,Content
+322,CAT_322,Content
+323,CAT_323,Content
+324,Verified Bad Addresses,Signals
+325,High Risk Jurisdictions,Signals
+326,PO Box,Signals
+327,CAT_327,Signals
+328,CAT_328,Keyword
+329,CAT_329,Signals
+330,CAT_330,Signals
+331,CAT_331,Signals
+332,CAT_332,Signals
+333,CAT_333,Signals
+334,CAT_334,Signals
+335,CAT_335,Signals
+336,CAT_336,Signals
+337,CAT_337,Signals
+338,CAT_338,Signals
+339,CAT_339,Signals
+340,CAT_340,Signals
+341,CAT_341,Signals
+342,CAT_342,Signals
+343,CAT_343,Signals
+344,Payment Page Internal,Website Section
+345,Shipping or Return Page,Website Section
+346,About Us Page,Website Section
+347,Missing Shipping and Return,Insights
+348,Missing About Us Page,Insights
+350,Traffic Data,Signals
+351,Address Detected,Website Section
+352,Email Detected,Website Section
+353,Phone Detected,Website Section
+354,Company Name Detected,Website Section
+355,Address Mismatch,Signals
+356,Email Mismatch,Signals
+357,Phone Mismatch,Signals
+358,Company Name Mismatch,Signals
+359,Missing Email,Insights
+360,Missing Phone,Insights
+361,Missing Company Name,Insights
+362,Data Protection,Signals
+363,Matched Email,Website Section
+364,Matched Phone,Website Section
+365,Company name Matched,Website Section
+366,Address Matched,Website Section
+370,Unverified FFL,Reputation
+371,Adverse Media,Reputation
+372,Verified FFL,Reputation
+373,NABP,Known Bad
+374,CBNR_test,Known Bad
+375,Social Media,Signals
+376,Website Hosting Country,Signals
+377,Lawsuit and Legal search,Signals
+378,Drop shipping indication,Signals
+379,Unusual Pricing,Signals
+380,Missing Search Option,Signals
+381,Website Traffic Data,Signals
+382,Other service providers and payment options,Signals
+383,Google Analytics Tag,Signals
+384,Missing or Invalid Email,Signals
+385,Support Email without reply,Signals
+386,Support Email with reply,Signals
+387,Seized Domain,Known Bad
+388,Card Brands Notification Records,Reputation
+389,Suspected Front Site,Signals
+400,Missing MCC,Insights
+401,Missing T&C,Insights
+402,Missing Privacy Page,Insights
+403,Missing Contact Us,Insights
+404,Affiliate links on Home Page,Insights
+405,Low Alexa Rank,Insights
+406,Irregular Distribution of votes,Insights
+407,Suspicious Review Activity,Insights
+408,Trustpilot Irregular Distribution of votes,Insights
+409,Sitejabber Irregular Distribution of votes,Insights
+410,No Tranco Rank,Insights
+411,Unknown Storefront,Storefront Platform
+412,Shopify Storefront,Storefront Platform
+413,Wix Storefront,Storefront Platform
+414,Woocommerce Storefront,Storefront Platform
+420,Possible MCC fraud,Insights
+501,Transaction Amount Limit Warning,Test Transaction
+502,Transaction Amount Limit Exceeded,Test Transaction
+503,Transactions Pattern Anomaly,Test Transaction
+504,Transactions Volume From Payer Limit Warning,Test Transaction
+505,Transactions Volume From Payer Limit Exceeded,Test Transaction
+506,Transactions Volume Limit Warning,Test Transaction
+507,Transactions Volume Limit Exceeded,Test Transaction
+508,Refund Volume From Payer Limit Warning,Test Transaction
+509,Refund Volume From Payer Limit Exceeded,Test Transaction
+510,Refund Volume Ratio Limit Warning,Test Transaction
+511,Refund Volume Ratio Limit Exceeded,Test Transaction
+512,Refund Volume Limit Warning,Test Transaction
+513,Refund Volume Limit Exceeded,Test Transaction
+514,Credit Count Ratio Limit Warning,Test Transaction
+515,Credit Count Ratio Limit Exceeded,Test Transaction
+516,Credit Volume Ratio Limit Warning,Test Transaction
+517,Credit Volume Ratio Limit Exceeded,Test Transaction
+518,Credit Volume From Payer Limit Warning,Test Transaction
+519,Credit Volume From Payer Limit Exceeded,Test Transaction
+520,Credit Volume Limit Warning,Test Transaction
+521,Credit Volume Limit Exceeded,Test Transaction
+522,Meta Robots Nofollow,Security Problem
+523,Meta Robots Noindex,Security Problem
+600,Scamadviser,Reputation
+601,Trustpilot,Reputation
+602,Sitejabber,Reputation
+603,Web of Trust,Reputation
+604,Alexa,Traffic
+605,Scamadviser Pageviews,Traffic
+606,Whois Data,Whois
+607,Site Data,Website Section
+608,IP Country,Whois
+609,Registrant Country,Whois
+610,Tranco,Traffic
+611,PSP Key,Website Section
+700,Test,Keyword
+701,AI Generated Explicit Adult Content,Content
+702,Penny auctions,Content
+703,Fraudulent government services or assistance,Content
+704,Deceptive marketing,Content
+705,High Yield Investment Scams,Content
+706,Buy-Now-Pay-Later,Content
+707,P2P money transmitters,Content
+708,Escrow services,Content
+709,Funded prop trading,Content
+710,Exchangers,Content
+711,Registered Charities,Content
+712,Telehealth services,Content
+713,Sim/Phone cards,Content
+714,testtest,Content
+715,testtesttest,Content
+716,NFTs POC,Content
+717,Telehealth Services POC,Content
+718,Penny Auctions POC,Content
+719,NPOs POC,Content
+720,Fraudulent Gov Assistance POC,Content
+721,Deceptive Marketing POC,Content
+722,Escrow Services POC,Content
+723,Drop Shipping POC,Content
+724,Medical Tourism POC,Content
+725,Fraud as a service POC,Content
+726,Travelers Checks POC,Content
+727,Mod Chips POC,Content
+728,Pyramid Schemes POC,Content
+729,Get Rich Quick POC,Content
+730,MLM POC,Content
+731,TPPP POC,Content
+732,Cashing Checks POC,Content
+733,Collecting Debts POC,Content
+734,Credit Restoration POC,Content
+735,Insurance POC,Content
+736,Airlines POC,Content
+737,Securities Broker POC,Content
+738,Adult Entertainment POC,Content
+739,Violative Peptides POC,Content
+740,Illicit Drugs POC,Content
+741,Cyberlocker POC,Content
+742,Donations_RBE,Payment Page
+743,Bankruptcy-related Services,Content
+744,Topical Hemp,Content
+745,Ingestible CBD,Content
+746,"Marijuana Plants, Products & Cannabis Seeds",Content
+747,Smokable Hemp,Content
+748,Higher-Risk Cannabinoids,Content
+749,AI Deepfake Tools,Content
+992,not sent to pharma model,Audit
+993,Embedder no content,Audit
+994,No VML Decision,Audit
+995,Audit Pharma,Audit
+996,Unsupported Language,Audit
+997,Not Enough Text,Audit
+998,Empty Text,Audit
+999,Audit,Audit
+1001,Medical,Content
+1002,Cannabis,Content
+1003,Sports,Content
+1004,Bar/Restaurants/Food,Content
+1005,Movies,Content
+1006,bodybuilding,Content
+1007,Cosmetics,Content
+1008,Pets,Content
+1009,Healthy Lifestyle,Content
+1010,Medical - all,Inner
+1011,Porn - all,Inner
+1012,Clean,Content
+1013,Account Suspended - old,Availability
+1014,Gambling - all,Inner
+1015,Tobacco - all,Inner
+1016,Alcohol - all,Inner
+1017,Parked Page,Availability
+1018,Account Suspended,Availability
+1019,Car Parts,Content
+1020,Drugs - all,Inner
+1021,Weapons - all,Inner
+1022,No Payment Page,Payment Page
+1024,Negative Smoking,Content
+1025,Real Estate related,Content
+1026,Electronic Parts,Content
+1027,Finance - all,Inner
+1028,Mobile_Application_APK,Hyperlink
+1029,Tenants Screening / Home Inspection,Content
+1030,Insurance sites,Content
+1031,Login Page,Content
+1032,Unverified Payment Provider,Third Party Payment Provider
+1033,Coffee,Content
+1034,Finance Related,Content
+1035,Consulting Services,Content
+1036,Security Cameras,Content
+1037,Fishing,Content
+1038,Hunting,Content
+1039,Jewelry,Content
+1040,Laboratory Equipment,Content
+1041,Taxidermy,Content
+1042,Church,Content
+1043,Casino Hotels,Content
+1044,Gambling Equipment,Content
+1045,Shooting Ranges,Content
+1046,Ticketing,Content
+1047,Law firms,Content
+1100,MCC Type Reported,MCC
+1101,MCC Type Detected,MCC
+1102,MCC Type Verified,MCC
+1103,MCC Type Mismatch Detected,MCC
+4027,Salvia Rule,Content
+4046,Questionable Rule,Content
+4130,Third Party Service Providers Reference Rule,Content
+10000,0742,MCC
+10001,0763,MCC
+10002,5813,MCC
+10003,5921,MCC
+10004,6050,MCC
+10005,5111,MCC
+10006,5198,MCC
+10007,5231,MCC
+10008,5943,MCC
+10009,5950,MCC
+10010,5970,MCC
+10011,5192,MCC
+10012,5733,MCC
+10013,5735,MCC
+10014,5942,MCC
+10015,5945,MCC
+10016,5994,MCC
+10017,7929,MCC
+10018,5815,MCC
+10019,8351,MCC
+10020,9211,MCC
+10021,2842,MCC
+10022,7210,MCC
+10023,7211,MCC
+10024,7216,MCC
+10025,7217,MCC
+10026,7349,MCC
+10027,7251,MCC
+10028,7341,MCC
+10029,5131,MCC
+10030,5137,MCC
+10031,5139,MCC
+10032,5611,MCC
+10033,5621,MCC
+10034,5641,MCC
+10035,5651,MCC
+10036,5655,MCC
+10037,5661,MCC
+10038,5681,MCC
+10039,5691,MCC
+10040,5697,MCC
+10041,5948,MCC
+10042,5949,MCC
+10043,4812,MCC
+10044,4814,MCC
+10045,4821,MCC
+10046,4899,MCC
+10047,4813,MCC
+10048,4815,MCC
+10049,5961,MCC
+10050,5065,MCC
+10051,5732,MCC
+10052,1520,MCC
+10053,1731,MCC
+10054,1740,MCC
+10055,1750,MCC
+10056,1761,MCC
+10057,1771,MCC
+10058,1799,MCC
+10059,4900,MCC
+10060,5039,MCC
+10061,5051,MCC
+10062,5072,MCC
+10063,5074,MCC
+10064,5085,MCC
+10065,5169,MCC
+10066,5211,MCC
+10067,5937,MCC
+10068,7394,MCC
+10069,7692,MCC
+10070,5971,MCC
+10071,7829,MCC
+10072,7832,MCC
+10073,7841,MCC
+10074,7922,MCC
+10075,7993,MCC
+10076,7994,MCC
+10077,7996,MCC
+10078,5631,MCC
+10079,5698,MCC
+10080,5699,MCC
+10081,5944,MCC
+10082,7296,MCC
+10083,7631,MCC
+10084,7012,MCC
+10085,9701,MCC
+10086,5411,MCC
+10087,5422,MCC
+10088,5441,MCC
+10089,5462,MCC
+10090,5811,MCC
+10091,5812,MCC
+10092,5814,MCC
+10093,5451,MCC
+10094,9222,MCC
+10095,9311,MCC
+10096,9399,MCC
+10097,9402,MCC
+10098,9405,MCC
+10099,1711,MCC
+10100,5021,MCC
+10101,5200,MCC
+10102,5531,MCC
+10103,5712,MCC
+10104,5713,MCC
+10105,5714,MCC
+10106,5718,MCC
+10107,5719,MCC
+10108,5722,MCC
+10109,7629,MCC
+10110,7641,MCC
+10111,5960,MCC
+10112,5962,MCC
+10113,5963,MCC
+10114,5964,MCC
+10115,5965,MCC
+10116,5966,MCC
+10117,5967,MCC
+10118,5968,MCC
+10119,5969,MCC
+10120,9411,MCC
+10121,9223,MCC
+10122,7322,MCC
+10123,4829,MCC
+10124,6010,MCC
+10125,6011,MCC
+10126,9950,MCC
+10127,6529,MCC
+10128,6530,MCC
+10129,6531,MCC
+10130,6532,MCC
+10131,6533,MCC
+10132,6534,MCC
+10133,6535,MCC
+10134,7524,MCC
+10135,7778,MCC
+10136,7833,MCC
+10137,9753,MCC
+10138,7276,MCC
+10139,7321,MCC
+10140,8931,MCC
+10141,6012,MCC
+10142,6300,MCC
+10143,6399,MCC
+10144,6381,MCC
+10145,7995,MCC
+10146,3551,MCC
+10147,3555,MCC
+10148,3560,MCC
+10149,3564,MCC
+10150,3582,MCC
+10151,3597,MCC
+10152,3624,MCC
+10153,3628,MCC
+10154,3662,MCC
+10155,3667,MCC
+10156,3669,MCC
+10157,3676,MCC
+10158,3679,MCC
+10159,3682,MCC
+10160,3708,MCC
+10161,3712,MCC
+10162,3728,MCC
+10163,3731,MCC
+10164,3737,MCC
+10165,3738,MCC
+10166,3761,MCC
+10167,3762,MCC
+10168,3764,MCC
+10169,3766,MCC
+10170,3767,MCC
+10171,3768,MCC
+10172,3769,MCC
+10173,3771,MCC
+10174,3773,MCC
+10175,3774,MCC
+10176,3792,MCC
+10177,3794,MCC
+10178,3796,MCC
+10179,7800,MCC
+10180,7801,MCC
+10181,7802,MCC
+10182,5947,MCC
+10183,5992,MCC
+10184,0780,MCC
+10185,5193,MCC
+10186,5261,MCC
+10187,5499,MCC
+10188,5977,MCC
+10189,4119,MCC
+10190,5047,MCC
+10191,5975,MCC
+10192,5976,MCC
+10193,8011,MCC
+10194,8021,MCC
+10195,8031,MCC
+10196,8041,MCC
+10197,8042,MCC
+10198,8043,MCC
+10199,8049,MCC
+10200,8050,MCC
+10201,8062,MCC
+10202,8071,MCC
+10203,8099,MCC
+10204,8734,MCC
+10205,8044,MCC
+10206,8731,MCC
+10207,5407,MCC
+10208,6611,MCC
+10209,6760,MCC
+10210,6051,MCC
+10211,6211,MCC
+10212,5972,MCC
+10213,5094,MCC
+10214,6513,MCC
+10215,7297,MCC
+10216,7298,MCC
+10217,7230,MCC
+10218,4816,MCC
+10219,5045,MCC
+10220,5734,MCC
+10221,7372,MCC
+10222,7379,MCC
+10223,7622,MCC
+10224,5817,MCC
+10225,5251,MCC
+10226,2741,MCC
+10227,5978,MCC
+10228,7339,MCC
+10229,7361,MCC
+10230,8398,MCC
+10231,8641,MCC
+10232,8651,MCC
+10233,8699,MCC
+10234,5122,MCC
+10235,5912,MCC
+10236,5044,MCC
+10237,5946,MCC
+10238,7221,MCC
+10239,7333,MCC
+10240,7395,MCC
+10241,7332,MCC
+10242,7273,MCC
+10243,2791,MCC
+10244,4225,MCC
+10245,7261,MCC
+10246,7277,MCC
+10247,7278,MCC
+10248,7299,MCC
+10249,7311,MCC
+10250,7338,MCC
+10251,7342,MCC
+10252,7375,MCC
+10253,7392,MCC
+10254,7393,MCC
+10255,7399,MCC
+10256,8111,MCC
+10257,8911,MCC
+10258,8999,MCC
+10259,7623,MCC
+10260,9700,MCC
+10261,5973,MCC
+10262,8661,MCC
+10263,7911,MCC
+10264,8211,MCC
+10265,8220,MCC
+10266,8241,MCC
+10267,8244,MCC
+10268,8249,MCC
+10269,8299,MCC
+10270,5941,MCC
+10271,5996,MCC
+10272,7032,MCC
+10273,7932,MCC
+10274,7933,MCC
+10275,7941,MCC
+10276,7992,MCC
+10277,7997,MCC
+10278,5046,MCC
+10279,5099,MCC
+10280,5199,MCC
+10281,5300,MCC
+10282,5310,MCC
+10283,5311,MCC
+10284,5331,MCC
+10285,5399,MCC
+10286,5931,MCC
+10287,5932,MCC
+10288,5997,MCC
+10289,5999,MCC
+10290,7699,MCC
+10291,9751,MCC
+10292,5309,MCC
+10293,5933,MCC
+10294,5993,MCC
+10295,4411,MCC
+10296,4722,MCC
+10297,4723,MCC
+10298,5998,MCC
+10299,7011,MCC
+10300,7033,MCC
+10301,7991,MCC
+10302,7999,MCC
+10303,3590,MCC
+10304,3501,MCC
+10305,3502,MCC
+10306,3503,MCC
+10307,3504,MCC
+10308,3505,MCC
+10309,3506,MCC
+10310,3507,MCC
+10311,3508,MCC
+10312,3509,MCC
+10313,3510,MCC
+10314,3511,MCC
+10315,3512,MCC
+10316,3513,MCC
+10317,3514,MCC
+10318,3515,MCC
+10319,3516,MCC
+10320,3517,MCC
+10321,3518,MCC
+10322,3519,MCC
+10323,3520,MCC
+10324,3521,MCC
+10325,3522,MCC
+10326,3523,MCC
+10327,3524,MCC
+10328,3525,MCC
+10329,3526,MCC
+10330,3527,MCC
+10331,3528,MCC
+10332,3529,MCC
+10333,3530,MCC
+10334,3531,MCC
+10335,3532,MCC
+10336,3533,MCC
+10337,3534,MCC
+10338,3535,MCC
+10339,3536,MCC
+10340,3537,MCC
+10341,3538,MCC
+10342,3539,MCC
+10343,3540,MCC
+10344,3541,MCC
+10345,3542,MCC
+10346,3543,MCC
+10347,3544,MCC
+10348,3545,MCC
+10349,3546,MCC
+10350,3547,MCC
+10351,3548,MCC
+10352,3549,MCC
+10353,3550,MCC
+10354,3552,MCC
+10355,3553,MCC
+10356,3554,MCC
+10357,3556,MCC
+10358,3557,MCC
+10359,3558,MCC
+10360,3559,MCC
+10361,3561,MCC
+10362,3562,MCC
+10363,3563,MCC
+10364,3565,MCC
+10365,3566,MCC
+10366,3567,MCC
+10367,3568,MCC
+10368,3569,MCC
+10369,3570,MCC
+10370,3571,MCC
+10371,3572,MCC
+10372,3573,MCC
+10373,3574,MCC
+10374,3575,MCC
+10375,3576,MCC
+10376,3577,MCC
+10377,3578,MCC
+10378,3579,MCC
+10379,3580,MCC
+10380,3581,MCC
+10381,3583,MCC
+10382,3584,MCC
+10383,3585,MCC
+10384,3586,MCC
+10385,3587,MCC
+10386,3588,MCC
+10387,3589,MCC
+10388,3697,MCC
+10389,3591,MCC
+10390,3592,MCC
+10391,3593,MCC
+10392,3594,MCC
+10393,3595,MCC
+10394,3596,MCC
+10395,3598,MCC
+10396,3599,MCC
+10397,3600,MCC
+10398,3601,MCC
+10399,3602,MCC
+10400,3603,MCC
+10401,3604,MCC
+10402,3605,MCC
+10403,3606,MCC
+10404,3607,MCC
+10405,3608,MCC
+10406,3609,MCC
+10407,3610,MCC
+10408,3611,MCC
+10409,3612,MCC
+10410,3613,MCC
+10411,3614,MCC
+10412,3615,MCC
+10413,3616,MCC
+10414,3617,MCC
+10415,3618,MCC
+10416,3619,MCC
+10417,3620,MCC
+10418,3621,MCC
+10419,3622,MCC
+10420,3623,MCC
+10421,3625,MCC
+10422,3626,MCC
+10423,3627,MCC
+10424,3629,MCC
+10425,3630,MCC
+10426,3631,MCC
+10427,3632,MCC
+10428,3633,MCC
+10429,3634,MCC
+10430,3635,MCC
+10431,3636,MCC
+10432,3637,MCC
+10433,3638,MCC
+10434,3639,MCC
+10435,3640,MCC
+10436,3641,MCC
+10437,3642,MCC
+10438,3643,MCC
+10439,3644,MCC
+10440,3645,MCC
+10441,3646,MCC
+10442,3647,MCC
+10443,3648,MCC
+10444,3649,MCC
+10445,3650,MCC
+10446,3651,MCC
+10447,3652,MCC
+10448,3653,MCC
+10449,3654,MCC
+10450,3655,MCC
+10451,3656,MCC
+10452,3657,MCC
+10453,3658,MCC
+10454,3659,MCC
+10455,3660,MCC
+10456,3661,MCC
+10457,3663,MCC
+10458,3664,MCC
+10459,3665,MCC
+10460,3666,MCC
+10461,3668,MCC
+10462,3670,MCC
+10463,3671,MCC
+10464,3672,MCC
+10465,3673,MCC
+10466,3674,MCC
+10467,3675,MCC
+10468,3677,MCC
+10469,3678,MCC
+10470,3680,MCC
+10471,3681,MCC
+10472,3683,MCC
+10473,3684,MCC
+10474,3685,MCC
+10475,3686,MCC
+10476,3687,MCC
+10477,3688,MCC
+10478,3689,MCC
+10479,3690,MCC
+10480,3691,MCC
+10481,3692,MCC
+10482,3693,MCC
+10483,3694,MCC
+10484,3695,MCC
+10485,3696,MCC
+10486,3715,MCC
+10487,3698,MCC
+10488,3699,MCC
+10489,3700,MCC
+10490,3701,MCC
+10491,3702,MCC
+10492,3703,MCC
+10493,3704,MCC
+10494,3705,MCC
+10495,3706,MCC
+10496,3707,MCC
+10497,3709,MCC
+10498,3710,MCC
+10499,3711,MCC
+10500,3713,MCC
+10501,3714,MCC
+10502,3716,MCC
+10503,3717,MCC
+10504,3718,MCC
+10505,3719,MCC
+10506,3720,MCC
+10507,3721,MCC
+10508,3722,MCC
+10509,3723,MCC
+10510,3724,MCC
+10511,3725,MCC
+10512,3726,MCC
+10513,3727,MCC
+10514,3729,MCC
+10515,3730,MCC
+10516,3732,MCC
+10517,3733,MCC
+10518,3734,MCC
+10519,3735,MCC
+10520,3736,MCC
+10521,3739,MCC
+10522,3740,MCC
+10523,3741,MCC
+10524,3742,MCC
+10525,3743,MCC
+10526,3744,MCC
+10527,3745,MCC
+10528,3746,MCC
+10529,3747,MCC
+10530,3748,MCC
+10531,3749,MCC
+10532,3750,MCC
+10533,3751,MCC
+10534,3752,MCC
+10535,3753,MCC
+10536,3754,MCC
+10537,3755,MCC
+10538,3756,MCC
+10539,3757,MCC
+10540,3758,MCC
+10541,3759,MCC
+10542,3760,MCC
+10543,3763,MCC
+10544,3765,MCC
+10545,3770,MCC
+10546,3772,MCC
+10547,3775,MCC
+10548,3776,MCC
+10549,3777,MCC
+10550,3778,MCC
+10551,3779,MCC
+10552,3780,MCC
+10553,3781,MCC
+10554,3782,MCC
+10555,3783,MCC
+10556,3784,MCC
+10557,3785,MCC
+10558,3786,MCC
+10559,3787,MCC
+10560,3788,MCC
+10561,3789,MCC
+10562,3790,MCC
+10563,3791,MCC
+10564,3793,MCC
+10565,3795,MCC
+10566,3797,MCC
+10567,3798,MCC
+10568,3799,MCC
+10569,3800,MCC
+10570,3801,MCC
+10571,3802,MCC
+10572,3803,MCC
+10573,3804,MCC
+10574,3805,MCC
+10575,3806,MCC
+10576,3807,MCC
+10577,3808,MCC
+10578,3810,MCC
+10579,3811,MCC
+10580,3812,MCC
+10581,3813,MCC
+10582,3814,MCC
+10583,3815,MCC
+10584,3817,MCC
+10585,3818,MCC
+10586,3819,MCC
+10587,3820,MCC
+10588,3821,MCC
+10589,4761,MCC
+10590,4011,MCC
+10591,4111,MCC
+10592,4112,MCC
+10593,4121,MCC
+10594,4131,MCC
+10595,4214,MCC
+10596,4215,MCC
+10597,4457,MCC
+10598,4468,MCC
+10599,4511,MCC
+10600,4582,MCC
+10601,4784,MCC
+10602,4789,MCC
+10603,5013,MCC
+10604,5172,MCC
+10605,5271,MCC
+10606,5511,MCC
+10607,5521,MCC
+10608,7531,MCC
+10609,5532,MCC
+10610,5533,MCC
+10611,5541,MCC
+10612,5542,MCC
+10613,5551,MCC
+10614,5561,MCC
+10615,5571,MCC
+10616,5592,MCC
+10617,5598,MCC
+10618,5599,MCC
+10619,5935,MCC
+10620,5940,MCC
+10621,5983,MCC
+10622,7534,MCC
+10623,3000,MCC
+10624,7511,MCC
+10625,7512,MCC
+10626,7513,MCC
+10627,7519,MCC
+10628,7523,MCC
+10629,3001,MCC
+10630,3004,MCC
+10631,7535,MCC
+10632,7538,MCC
+10633,7542,MCC
+10634,7549,MCC
+10635,3005,MCC
+10636,3006,MCC
+10637,3007,MCC
+10638,3009,MCC
+10639,3010,MCC
+10640,3014,MCC
+10641,3015,MCC
+10642,8675,MCC
+10643,3016,MCC
+10644,3017,MCC
+10645,3002,MCC
+10646,3003,MCC
+10647,3020,MCC
+10648,3021,MCC
+10649,3022,MCC
+10650,3025,MCC
+10651,3008,MCC
+10652,3026,MCC
+10653,3028,MCC
+10654,3011,MCC
+10655,3012,MCC
+10656,3013,MCC
+10657,3029,MCC
+10658,3031,MCC
+10659,3033,MCC
+10660,3034,MCC
+10661,3018,MCC
+10662,3019,MCC
+10663,3037,MCC
+10664,3038,MCC
+10665,3040,MCC
+10666,3023,MCC
+10667,3024,MCC
+10668,3041,MCC
+10669,3042,MCC
+10670,3027,MCC
+10671,3044,MCC
+10672,3045,MCC
+10673,3030,MCC
+10674,3048,MCC
+10675,3032,MCC
+10676,3049,MCC
+10677,3050,MCC
+10678,3035,MCC
+10679,3036,MCC
+10680,3051,MCC
+10681,3056,MCC
+10682,3039,MCC
+10683,3057,MCC
+10684,3059,MCC
+10685,3063,MCC
+10686,3043,MCC
+10687,3064,MCC
+10688,3065,MCC
+10689,3046,MCC
+10690,3047,MCC
+10691,3066,MCC
+10692,3067,MCC
+10693,3069,MCC
+10694,3070,MCC
+10695,3052,MCC
+10696,3053,MCC
+10697,3054,MCC
+10698,3055,MCC
+10699,3071,MCC
+10700,3073,MCC
+10701,3058,MCC
+10702,3075,MCC
+10703,3060,MCC
+10704,3061,MCC
+10705,3062,MCC
+10706,3077,MCC
+10707,3078,MCC
+10708,3079,MCC
+10709,3081,MCC
+10710,3082,MCC
+10711,3083,MCC
+10712,3084,MCC
+10713,3085,MCC
+10714,3086,MCC
+10715,3087,MCC
+10716,3076,MCC
+10717,3088,MCC
+10718,3090,MCC
+10719,3092,MCC
+10720,3094,MCC
+10721,3095,MCC
+10722,3096,MCC
+10723,3097,MCC
+10724,3098,MCC
+10725,3100,MCC
+10726,3110,MCC
+10727,3115,MCC
+10728,3089,MCC
+10729,3118,MCC
+10730,3125,MCC
+10731,3126,MCC
+10732,3129,MCC
+10733,3131,MCC
+10734,3132,MCC
+10735,3133,MCC
+10736,3099,MCC
+10737,3135,MCC
+10738,3102,MCC
+10739,3103,MCC
+10740,3105,MCC
+10741,3106,MCC
+10742,3136,MCC
+10743,3111,MCC
+10744,3112,MCC
+10745,3138,MCC
+10746,3117,MCC
+10747,3141,MCC
+10748,3143,MCC
+10749,3145,MCC
+10750,3127,MCC
+10751,3146,MCC
+10752,3130,MCC
+10753,3148,MCC
+10754,3151,MCC
+10755,3159,MCC
+10756,3161,MCC
+10757,3164,MCC
+10758,3137,MCC
+10759,3171,MCC
+10760,3172,MCC
+10761,3174,MCC
+10762,3144,MCC
+10763,3175,MCC
+10764,3176,MCC
+10765,3177,MCC
+10766,3178,MCC
+10767,3154,MCC
+10768,3156,MCC
+10769,3180,MCC
+10770,3190,MCC
+10771,3191,MCC
+10772,3165,MCC
+10773,3167,MCC
+10774,3170,MCC
+10775,3192,MCC
+10776,3193,MCC
+10777,3195,MCC
+10778,3196,MCC
+10779,3197,MCC
+10780,3198,MCC
+10781,3200,MCC
+10782,3203,MCC
+10783,3181,MCC
+10784,3182,MCC
+10785,3183,MCC
+10786,3184,MCC
+10787,3185,MCC
+10788,3186,MCC
+10789,3187,MCC
+10790,3188,MCC
+10791,3204,MCC
+10792,3206,MCC
+10793,3211,MCC
+10794,3215,MCC
+10795,3216,MCC
+10796,3218,MCC
+10797,3222,MCC
+10798,3223,MCC
+10799,3199,MCC
+10800,3226,MCC
+10801,3228,MCC
+10802,3233,MCC
+10803,3235,MCC
+10804,3207,MCC
+10805,3236,MCC
+10806,3212,MCC
+10807,3213,MCC
+10808,3239,MCC
+10809,3240,MCC
+10810,3217,MCC
+10811,3243,MCC
+10812,3219,MCC
+10813,3220,MCC
+10814,3221,MCC
+10815,3245,MCC
+10816,3246,MCC
+10817,3247,MCC
+10818,3248,MCC
+10819,3229,MCC
+10820,3231,MCC
+10821,3251,MCC
+10822,3234,MCC
+10823,3252,MCC
+10824,3254,MCC
+10825,3238,MCC
+10826,3256,MCC
+10827,3259,MCC
+10828,3241,MCC
+10829,3242,MCC
+10830,3260,MCC
+10831,3261,MCC
+10832,3262,MCC
+10833,3266,MCC
+10834,3267,MCC
+10835,3268,MCC
+10836,3275,MCC
+10837,3253,MCC
+10838,3276,MCC
+10839,3277,MCC
+10840,3279,MCC
+10841,3280,MCC
+10842,3281,MCC
+10843,3282,MCC
+10844,3263,MCC
+10845,3292,MCC
+10846,3294,MCC
+10847,3295,MCC
+10848,3296,MCC
+10849,3297,MCC
+10850,3298,MCC
+10851,3361,MCC
+10852,3284,MCC
+10853,3285,MCC
+10854,3286,MCC
+10855,3287,MCC
+10856,3291,MCC
+10857,3293,MCC
+10858,3299,MCC
+10859,3351,MCC
+10860,3352,MCC
+10861,3353,MCC
+10862,3354,MCC
+10863,3355,MCC
+10864,3357,MCC
+10865,3359,MCC
+10866,3360,MCC
+10867,3362,MCC
+10868,3364,MCC
+10869,3366,MCC
+10870,3368,MCC
+10871,3370,MCC
+10872,3374,MCC
+10873,3376,MCC
+10874,3380,MCC
+10875,3381,MCC
+10876,3385,MCC
+10877,3386,MCC
+10878,3387,MCC
+10879,3388,MCC
+10880,3389,MCC
+10881,3390,MCC
+10882,3391,MCC
+10883,3393,MCC
+10884,3394,MCC
+10885,3395,MCC
+10886,3396,MCC
+10887,3398,MCC
+10888,3399,MCC
+10889,3400,MCC
+10890,3405,MCC
+10891,3409,MCC
+10892,3411,MCC
+10893,3412,MCC
+10894,3414,MCC
+10895,3419,MCC
+10896,3420,MCC
+10897,3421,MCC
+10898,3423,MCC
+10899,3425,MCC
+10900,3427,MCC
+10901,3428,MCC
+10902,3429,MCC
+10903,3430,MCC
+10904,3431,MCC
+10905,3432,MCC
+10906,3433,MCC
+10907,3434,MCC
+10908,3435,MCC
+10909,3436,MCC
+10910,3437,MCC
+10911,3438,MCC
+10912,3439,MCC
+10913,3440,MCC
+10914,3441,MCC
+10915,9752,MCC
+10916,3068,MCC
+10917,3072,MCC
+10918,3074,MCC
+10919,3080,MCC
+10920,3091,MCC
+10921,3093,MCC
+10922,3101,MCC
+10923,3104,MCC
+10924,3107,MCC
+10925,3108,MCC
+10926,3109,MCC
+10927,3113,MCC
+10928,3114,MCC
+10929,3116,MCC
+10930,3119,MCC
+10931,3120,MCC
+10932,3121,MCC
+10933,3122,MCC
+10934,3123,MCC
+10935,3124,MCC
+10936,3128,MCC
+10937,3134,MCC
+10938,3139,MCC
+10939,3140,MCC
+10940,3142,MCC
+10941,3147,MCC
+10942,3149,MCC
+10943,3150,MCC
+10944,3152,MCC
+10945,3153,MCC
+10946,3155,MCC
+10947,3157,MCC
+10948,3158,MCC
+10949,3160,MCC
+10950,3162,MCC
+10951,3163,MCC
+10952,3166,MCC
+10953,3168,MCC
+10954,3169,MCC
+10955,3173,MCC
+10956,3179,MCC
+10957,3189,MCC
+10958,3194,MCC
+10959,3201,MCC
+10960,3202,MCC
+10961,3205,MCC
+10962,3208,MCC
+10963,3209,MCC
+10964,3210,MCC
+10965,3214,MCC
+10966,3224,MCC
+10967,3225,MCC
+10968,3227,MCC
+10969,3230,MCC
+10970,3232,MCC
+10971,3237,MCC
+10972,3244,MCC
+10973,3249,MCC
+10974,3250,MCC
+10975,3255,MCC
+10976,3257,MCC
+10977,3258,MCC
+10978,3264,MCC
+10979,3265,MCC
+10980,3269,MCC
+10981,3270,MCC
+10982,3271,MCC
+10983,3272,MCC
+10984,3273,MCC
+10985,3274,MCC
+10986,3278,MCC
+10987,3283,MCC
+10988,3288,MCC
+10989,3289,MCC
+10990,3290,MCC
+10991,3356,MCC
+10992,3358,MCC
+10993,3363,MCC
+10994,3365,MCC
+10995,3367,MCC
+10996,3369,MCC
+10997,3371,MCC
+10998,3372,MCC
+10999,3373,MCC
+11000,3375,MCC
+11001,3377,MCC
+11002,3378,MCC
+11003,3379,MCC
+11004,3382,MCC
+11005,3383,MCC
+11006,3384,MCC
+11007,3392,MCC
+11008,3397,MCC
+11009,3401,MCC
+11010,3402,MCC
+11011,3403,MCC
+11012,3404,MCC
+11013,3406,MCC
+11014,3407,MCC
+11015,3408,MCC
+11016,3410,MCC
+11017,3413,MCC
+11018,3415,MCC
+11019,3416,MCC
+11020,3417,MCC
+11021,3418,MCC
+11022,3422,MCC
+11023,3424,MCC
+11024,3426,MCC
+11025,5995,MCC
+11026,7998,MCC
+11027,9406,MCC
+11028,6540,MCC
+11029,6538,MCC
+11030,6537,MCC
+11031,6536,MCC
+11032,5818,MCC
+11033,5816,MCC
+11034,5715,MCC
+11035,3825,MCC
+11036,3832,MCC
+11037,3809,MCC
+11038,7295,MCC
+11039,9702,MCC
+11040,5974,MCC
+11041,0743,MCC
+11042,0744,MCC
+11043,3816,MCC
+11044,3822,MCC
+11045,3823,MCC
+11046,3824,MCC
+11047,3826,MCC
+11048,3827,MCC
+11049,3828,MCC
+11050,3829,MCC
+11051,3830,MCC
+11052,3831,MCC
+11053,5552,MCC
+11054,3833,MCC
+11055,3834,MCC
+11056,3835,MCC
+11057,3836,MCC
+11058,3837,MCC
+11059,3838,MCC
+11060,3839,MCC
+11061,6539,MCC
+11062,3300,MCC
+11063,3301,MCC
+11064,3302,MCC
+11065,3303,MCC
+11066,3308,MCC
+11074,5262,MCC
+11075,5723,MCC
+19985,9998,MCC
+19986,9999,MCC
+19987,0000,MCC
+19988,0001,MCC
+19989,0000 - Restricted Activity Detected,MCC
+19990,0000 - Illegal Activity Detected,MCC
+19991,MCC not detected - new,MCC
+19992,Not enough text mcc9 - new,MCC
+19993,Error in mcc9 service - new,MCC
+19994,High risk mcc from mcc9 service - new,MCC
+19995,High risk mcc from mcc9 service,Audit
+19996,Error in mcc9 service,Audit
+19997,Not enough text mcc9,Audit
+19998,MCC not detected,Audit
+19999,MCC unsupported,MCC
+20000,360 Photo Contest,Platforms
+20001,3dcart Shopping Cart,Platforms
+20002,ActivityHero,Platforms
+20003,Agree.com,Platforms
+20004,AmeriCommerce Payments,Platforms
+20005,AND CO,Platforms
+20006,Aplos Donations,Platforms
+20007,athletechs Registrations,Platforms
+20008,AVP,Platforms
+20009,BetterUnite,Platforms
+20010,BigCommerce,Platforms
+20011,Boatyard,Platforms
+20012,Breezeworks,Platforms
+20013,BSA Payment Platform,Platforms
+20014,Buildertrend,Platforms
+20015,Clarity.fm,Platforms
+20016,Classy.org,Platforms
+20017,Common Goal Systems,Platforms
+20018,Constant Contact,Platforms
+20019,CustomMade,Platforms
+20020,DoJiggy,Platforms
+20021,Ecwid,Platforms
+20022,Eventzilla,Platforms
+20023,Formstack,Platforms
+20024,FreshBooks,Platforms
+20025,Fusebill,Platforms
+20026,fuseSPORT,Platforms
+20027,Giggio,Platforms
+20028,GreatAt,Platforms
+20029,"Horizon Dynamic Web Designs, LLC.",Platforms
+20030,HPE order,Platforms
+20031,ImpactFlow,Platforms
+20032,Infusionsoft,Platforms
+20033,Invoice Ninja,Platforms
+20034,invoiceASAP,Platforms
+20035,JobNimbus,Platforms
+20036,Joist,Platforms
+20037,JotForm,Platforms
+20038,Kashoo Payments,Platforms
+20039,LeagueLobster,Platforms
+20040,Leaguer,Platforms
+20041,Ludus,Platforms
+20042,mHelpDesk Payments,Platforms
+20043,MissionMinder,Platforms
+20044,MyNetWire,Platforms
+20045,MyStudio Academy,Platforms
+20046,OneParish,Platforms
+20047,Our Lodge Page,Platforms
+20048,Passare,Platforms
+20049,PatientConnect365 Payments,Platforms
+20050,PayRent.com,Platforms
+20051,Planning Pod,Platforms
+20052,Plooto Inc,Platforms
+20053,Pointman,Platforms
+20054,PREto3,Platforms
+20055,Rank One Sport Camp Software,Platforms
+20056,Shirtmasters,Platforms
+20057,SignUpGenius,Platforms
+20058,SportsPlus Sports Platform,Platforms
+20059,SwimTopia,Platforms
+20060,SWRemote,Platforms
+20061,TeamSnap Payments,Platforms
+20062,Ticketbud,Platforms
+20063,Time To Pet,Platforms
+20064,TournamentTiger,Platforms
+20065,Ularas Payments,Platforms
+20066,UltraCart Payments,Platforms
+20067,UTR Powered By Oracle,Platforms
+20068,Visibook,Platforms
+20069,Webconnex Payments,Platforms
+20070,WebStarts Store,Platforms
+20071,WeDidIt,Platforms
+20072,Wizevents,Platforms
+20073,Workiz,Platforms
+20074,Yapsody App,Platforms
+20075,YBB Technology,Platforms
+20076,Zoho,Platforms
+20077,99taxis,Platforms
+20078,AmazonServicesLLC,Platforms
+20079,ApaleoGmbH,Platforms
+20080,DidiChuxing,Platforms
+20081,EasyTaxiLatam,Platforms
+20082,ExpediaCommerceInc,Platforms
+20083,EzypayPtyLtd,Platforms
+20084,Flypay,Platforms
+20085,GantnerNv,Platforms
+20086,GoFundMe,Platforms
+20087,Hotmart,Platforms
+20088,IFoodCOM,Platforms
+20089,MaxiMobility,Platforms
+20090,ModMed,Platforms
+20091,Monetizze,Platforms
+20092,Mystoreno,Platforms
+20093,OLXBrasil,Platforms
+20094,Posthaus,Platforms
+20095,RappiCOM,Platforms
+20096,RentleOY,Platforms
+20097,Schibsted,Platforms
+20098,Sportsengine,Platforms
+20099,Sympla,Platforms
+20100,TicketingGroup,Platforms
+20101,Uber,Platforms
+20102,UberDirect,Platforms
+20103,VTEXCommerce,Platforms
+20104,Ventrata,Platforms
+20105,Wix,Platforms
+20106,ZoopTecnologia,Platforms
+20107,Xsolla (USA) Inc.,Platforms
+20108,Suraway Ltd.,Platforms
+20109,DaoPay GmbH,Platforms
+20110,Skrill Ltd (Quick Checkout),Platforms
+20111,Skrill Ltd,Platforms
+20112,CASHBILL SPOLKA AKCYJNA,Platforms
+20113,Icepay B.V.,Platforms
+20114,TinTel B.V.,Platforms
+20115,PPRO Financial Ltd,Platforms
+20116,Micropayment AG,Platforms
+20117,TargetMedia B.V.,Platforms
+20118,Skrill Ltd (PayON),Platforms
+20119,eMerchantPay Limited,Platforms
+20120,Micropayment GmbH,Platforms
+20121,Centrobill Limited,Platforms
+20122,Payssion Limited,Platforms
+20123,PayCific International AG,Platforms
+20124,Dotpay S.A.,Platforms
+20125,HIPAY SAS (hi media),Platforms
+20126,Paysafe Financial Services Ltd. (NetellerGo),Platforms
+20127,Paymentwall Inc.,Platforms
+20128,Emergent Payments Inc.,Platforms
+20129,Mollie B.V.,Platforms
+20130,Global Collect Services B.V.,Platforms
+20131,euPago - Instituicao de Pagamento LDA,Platforms
+20132,Safecharge Limited,Platforms
+20133,CURO Payments B.V.,Platforms
+20134,Processing Partners Inc.,Platforms
+20135,CASHDASH UK LIMITED,Platforms
+20136,Adyen B.V.,Platforms
+20137,HIPAY SAS (fullservice),Platforms
+20138,DPA Multimedia EURL,Platforms
+20139,Docdata Payments B.V.,Platforms
+20140,BD Multimedia SA,Platforms
+20141,RPDP Robert Paszkowski,Platforms
+20142,Secure Trading Financial Services Limited,Platforms
+20143,Playerize Inc,Platforms
+20144,GOPAY s.r.o.,Platforms
+20145,Virtual Goods S.R.L,Platforms
+20146,Compay GmbH,Platforms
+20147,IDC Games S.L.,Platforms
+20148,FABRYKA GRACZY SPOLKA Z OGRANICZONA ODPOWIEDZIALNOSCIA,Platforms
+20149,ModusLink B.V.,Platforms
+20150,BillPro Limited,Platforms
+20151,Rentabiliweb Europe SAS,Platforms
+20152,Buckaroo B.V.,Platforms
+20153,DialCom24 Sp. z o.o.,Platforms
+20154,Skrill Inc. (Quick Checkout),Platforms
+20155,PayGol SPA,Platforms
+20156,ePlatnosci sp. z o.o. sp. k.,Platforms
+20157,Boacompra Ltda,Platforms
+20158,Merchandise.game BVBA,Platforms
+20159,MoneyMatrix Limited,Platforms
+20160,Mistral Pay Ltd,Platforms
+20161,WorldPay AP Ltd,Platforms
+20162,Kalixa Accept Limited,Platforms
+20163,Iruvey Corporation S.A.,Platforms
+20164,"SIA ""Royal Pay Europe""",Platforms
+20165,C.V. Smart2Pay Global Services U.A.,Platforms
+20166,Acapture B.V.,Platforms
+20167,CYBERservices S.A.,Platforms
+20168,PrimeiroPay S.a.r.l.,Platforms
+20169,International Payout Systems Inc,Platforms
+20170,MultiSafepay B.V.,Platforms
+20171,CommDoo GmbH,Platforms
+20172,PXP Financial Limited,Platforms
+20173,AccentPay Limited,Platforms
+20174,"UAB ""ZEN Global""",Platforms
+20175,Ipay See d.o.o.,Platforms
+20176,24-pay s.r.o.,Platforms
+20177,Worldpay Sweden AB,Platforms
+20178,Syspay Limited,Platforms
+20179,Adyen N.V.,Platforms
+20180,Smart Payment Solutions Private Limited,Platforms
+20181,Payvision B.V.,Platforms
+20182,UAB Alternative Payments,Platforms
+20183,Omoney Technology Co. Limited,Platforms
+20184,Maxx-XS BV,Platforms
+20185,Mastercard Payment Gateway Services Client Finance Limited,Platforms
+20186,Wirecard Bank AG,Platforms
+20187,EPG Financial Services Ltd.,Platforms
+20188,Digitalpayment GmbH,Platforms
+20189,Allied Wallet Ltd,Platforms
+20190,HydroPay s.r.o.,Platforms
+20191,UAB Glocash Payment,Platforms
+20192,Tumilo GmbH,Platforms
+20193,SIA AirPay,Platforms
+20194,Rootpay Spolka z ograniczona odpowiedzialnoscia,Platforms
+20195,Support Email is Missing,Signals
+20196,Support Email is Invalid,Signals
+20197,Support Email Sent,Signals
+20198,3304,MCC
+20199,3305,MCC
+20200,3840,MCC
+20201,3841,MCC
+20202,3842,MCC
+20203,3843,MCC
+20204,3844,MCC
+20205,3845,MCC
+20206,3846,MCC
+20207,3847,MCC
+20208,3848,MCC
+20209,3849,MCC
+20210,3850,MCC
+20211,3851,MCC
+20212,3852,MCC
+20213,3853,MCC
+20214,3854,MCC
+20215,3855,MCC
+20216,3856,MCC
+20217,3857,MCC
+20218,3858,MCC
+20219,3859,MCC
+20220,3860,MCC
+20221,3861,MCC
+20222,3862,MCC
+20223,3863,MCC
+20224,3864,MCC
+20225,3865,MCC
+20226,3866,MCC
+20227,3867,MCC
+20228,3868,MCC
+20229,3869,MCC
+20230,3870,MCC
+20231,3871,MCC
+20232,3872,MCC
+20233,3873,MCC
+20234,3874,MCC
+20235,3875,MCC
+20236,3876,MCC
+20237,3877,MCC
+20238,3878,MCC
+20239,3879,MCC
+20240,3880,MCC
+20241,3881,MCC
+20242,3882,MCC
+20243,3883,MCC
+20244,3306,MCC
+20245,3884,MCC
+20246,3885,MCC
+20247,3886,MCC
+

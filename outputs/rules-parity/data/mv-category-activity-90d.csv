@@ -1,0 +1,1880 @@
+category_id,name,category_type,mv_auto_findings_90d,mv_manual_findings_90d,status
+1,default,,0,0,none
+2,Adult Content,Content,31576,1887,auto
+3,Gambling,Content,95233,833,auto
+4,Pharmaceuticals,Content,77816,2493,auto
+5,Premier League Tickets,Content,26,8,auto
+6,Alcohol,Content,146957,1226,auto
+7,Beastiality,Content,1,0,auto
+8,Moto,Payment Page,0,22,manual-only
+9,Rape/Hate/Violence,Content,0,0,none
+10,Child Pornography,Content,1,0,auto
+11,Card Payment,Payment Page,0,0,none
+12,Webcams,Content,10,109,auto
+13,Security,Security Problem,2,75,auto
+14,Counterfeit/Stolen goods,Content,10,12,auto
+15,Brand Damaging Goods,Content,0,0,none
+16,Illegal By State Law,Content,0,0,none
+17,Cashing Checks,Content,0,18,manual-only
+18,Collecting Debts,Content,6,47,auto
+19,Credit Restoration Services,Content,27,56,auto
+20,Door To Door Sales,Content,0,0,none
+21,Pyramid Schemes,Content,0,0,none
+22,Prostitution,Content,3681,14,auto
+23,Bath Salts,Content,0,0,none
+24,K2,Content,0,0,none
+25,Modification Chips,Content,2,22,auto
+26,HD DVD and Blu-ray Disc Decryption Devices,Content,0,0,none
+27,Salvia Divinorum,Content,0,0,none
+28,Affiliate,Content,33579,1485,auto
+29,Cybersquatting,Reputation,0,4,manual-only
+30,Ads Trap,Content,0,2,manual-only
+31,Website Authenticity Warning,Security Problem,0,0,none
+32,Firearms,Content,20900,457,auto
+33,PayPal,Payment Page,162,1519,auto
+34,Tobacco,Content,9077,429,auto
+35,Electronic Cigarettes,Content,10769,3214,auto
+36,Illegal Substances,Content,1918,420,auto
+37,Complaints,Reputation,11029,499,auto
+38,Digital Wallet,Payment Page,0,122,manual-only
+39,Fraud,Reputation,10,65,auto
+40,Dating Service,Content,13466,215,auto
+41,Third Party Payment Service Provider Unused,Third Party Payment Provider,0,0,none
+42,Payment Page Affiliation,Link,0,0,none
+43,Copyright Infringement,Content,9,0,auto
+44,Cyber Locker,Content,8090,120,auto
+45,Nutraceuticals,Content,94058,2011,auto
+46,Questionable Substances,Content,72,141,auto
+47,Medical Devices,Content,11,1607,auto
+48,Misuse/Invalid Seal,Security Problem,0,0,none
+49,Negative Option Marketing,Content,1368,18,auto
+50,Injected Links,Security Problem,0,24,manual-only
+51,Adult Website Support,Content,0,0,none
+52,Inactive Payment Environment,Payment Page,0,39,manual-only
+53,Jammers/Signal Blockers,Content,494,57,auto
+54,Sex Toys,Content,10911,327,auto
+55,Malicious Cyber Activity,Security Problem,0,0,none
+56,Bitcoin,Payment Page,0,48,manual-only
+57,Fake IDs And Government Documents,Content,1,29,auto
+58,Payday Loans,Content,1,12,auto
+59,Online,Availability,14745423,25439,auto
+60,Offline,Availability,3375660,8814,auto
+61,Redirect,Availability,2083750,6587,auto
+62,Get-Rich-Quick Schemes,Content,1,2,auto
+63,Gift Cards,Content,12429,5445,auto
+64,Website Not Secure,Security Problem,224257,8,auto
+65,Payoneer,Payment Page,0,0,none
+66,Pfizer,Content,0,0,none
+67,Gambling - Casino,Content,0,0,none
+68,Gambling - Sports,Content,0,0,none
+69,Gambling - Horse,Content,0,0,none
+70,Affiliation Network,Content,0,201,manual-only
+71,IP Address,IP,0,0,none
+72,Potential Transaction Launderer,Link,966613,0,auto
+73,Undisclosed Merchant,Link,937527,204,auto
+74,Associated,Link,3716849,77,auto
+75,Associator,Link,2302474,0,auto
+76,MCC Miscode,MCC,101194,57,auto
+77,Online Shop index,Content,3,1875,auto
+78,Loans,Content,2049,2234,auto
+79,Cold Weapons,Content,9662,1065,auto
+80,Country,IP,0,0,none
+81,Unauthorized 3rd Party Service Provider,Third Party Payment Provider,0,0,none
+82,Online Pharmacies,Content,0,0,none
+83,Psychic services,Content,14,63,auto
+84,Health Beauty Spas,Content,86231,214,auto
+85,Fantasy sports,Content,1395,11,auto
+86,Sports forecasting or odds making,Content,204,34,auto
+87,Amyl Nitrite Inhalants,Content,0,0,none
+88,Marijuana,Content,17982,1385,auto
+89,Drug paraphernalia,Content,17546,805,auto
+90,Fireworks,Content,728,14,auto
+91,Gunpowder and other explosives,Content,0,0,none
+92,Ammunitions,Content,0,0,none
+93,Forex,Content,607,28,auto
+94,Financial Institution,Content,0,375,manual-only
+95,Bearer Shares,Content,0,0,none
+96,Airlines,Content,0,85,manual-only
+97,Bail bonds,Content,0,0,none
+98,Bankruptcy lawyers,Content,0,16,manual-only
+99,Cell Phones,Content,0,75,manual-only
+100,Computer Technical Support,Content,47308,323,auto
+101,Centralized travel reservation services,Content,0,0,none
+102,Credit card and identity theft protection,Content,0,0,none
+103,Cruises,Content,0,0,none
+104,In-game currency,Payment Page,0,0,none
+105,Mortgage or real estate consulting,Content,0,140,manual-only
+106,Marijuana Dispensaries Index,Content,0,0,none
+107,Mugshot removal,Content,0,0,none
+108,Real estate opportunities,Content,0,0,none
+109,Securities Brokers & Investment Consultants,Content,0,252,manual-only
+110,Telemarketing,Content,0,0,none
+111,Timeshares,Content,0,0,none
+112,Bakeries,Content,0,0,none
+113,Miscellaneous Food Stores,Content,0,0,none
+114,Social media activity,Content,0,0,none
+115,Using third Party Payment Service Provider,Third Party Payment Provider,2167,464,auto
+116,virtual currency,Payment Page,0,10,manual-only
+117,VISA,Payment Page,18,4479,auto
+118,Bad History,Reputation,2,16,auto
+119,Moving Company,Content,0,0,none
+120,Diners Club International,Payment Page,0,402,manual-only
+121,JCB,Payment Page,0,438,manual-only
+122,Discover,Payment Page,0,1338,manual-only
+123,MasterCard,Payment Page,18,4354,auto
+124,Amex,Payment Page,15,3469,auto
+125,Offline Payment,Payment Page,0,44,manual-only
+126,Unavailable,Availability,0,0,none
+127,Lawn Garden/Nurseries,Content,667,37,auto
+128,Payment Page,Payment Page,4422722,25648,auto
+129,OFAC Individual Violation,Public Records,0,0,none
+130,Third Party Payment Service Provider,Content,0,0,none
+131,Diplomatic Entities,Content,0,2,manual-only
+132,Digital Marketing,Content,0,9,manual-only
+133,Academic Fraud,Content,2050,14,auto
+134,Cultural Artifacts,Content,2,9,auto
+135,Official Identifications,Content,0,0,none
+136,Fulfillment Centers,Content,0,0,none
+137,Prepaid Cards,Content,34,2,auto
+138,Extended Warranty,Content,0,2,manual-only
+139,Sex Offenders USA,Public Records,0,0,none
+140,Criminal Records USA,Public Records,0,0,none
+141,MCC,MCC,0,0,none
+142,Contact Us Page,Website Section,7112020,83,auto
+143,Privacy Policy Page,Website Section,4482572,97,auto
+144,Racism,Content,24,12,auto
+145,Cart Pages,Payment Page,0,0,none
+146,Rush my order,Payment Page,0,0,none
+147,Donations,Payment Page,295831,54,auto
+148,OFAC Address Violation,Public Records,0,0,none
+149,Payment Services Agent,Content,0,0,none
+150,Prepaid,Content,0,0,none
+151,Network/SaaS Providers,Content,0,0,none
+152,Uses Affiliates,Link,0,0,none
+153,Is Affiliate,Link,0,0,none
+154,Mobile Application,Mobile Application,2,624,auto
+155,Alipay,Payment Page,0,4,manual-only
+156,Internal Currency,Payment Page,0,4,manual-only
+157,Buy Now Page,Payment Page,0,0,none
+158,Terms and Conditions Page,Website Section,2707317,83,auto
+159,Buyer Account,Link,0,0,none
+160,Match,Public Records,0,0,none
+161,Selling Bitcoin,Content,0,0,none
+162,Brands,Content,41,65,auto
+163,Hosting Provider,Content,23131,1469,auto
+164,Password Protected,Availability,37788,6729,auto
+165,Test Transaction Validated,Test Transaction,2,18,auto
+166,Olympic Games Tickets,Content,0,2,manual-only
+167,Google Analytics,Analytics Service Provider,0,0,none
+168,Google Adsense,Analytics Service Provider,0,0,none
+169,Stripe,Third Party Payment Provider,0,2,manual-only
+170,Unsupported Redirect,Link,0,0,none
+171,Unsupervised Money Transfer,Content,5,40,auto
+172,Pharma OTC,Content,4,492,auto
+173,Eye Drops,Content,285,587,auto
+174,URL Detected by EverCompliant,Web ID,3898872,278321,auto
+175,Teeth Whitening,Content,285,99,auto
+176,Crawling Block Attempt,Security Problem,112707,1,auto
+177,Deer Antler Velvet,Content,0,0,none
+178,APK Link,Hyperlink,0,0,none
+179,Digital Wallet Sites,Content,0,53,manual-only
+180,Binary Options Trade,Content,512,0,auto
+181,Illegal Wildlife Trade,Content,10,4,auto
+182,Gift Cards or e-Vouchers Payment,Payment Page,0,13,manual-only
+183,Missing Address,Policies,17,72,auto
+184,General Stores,Content,0,0,none
+185,Verified Undisclosed Merchant,Link,0,0,none
+186,Verified Transaction Launderer,Link,0,0,none
+187,Test Transaction Executed,Test Transaction,0,0,none
+188,Test Transaction Not Completed,Test Transaction,0,0,none
+189,Test Transaction Not Verified,Test Transaction,0,0,none
+190,Sage,Third Party Payment Provider,0,0,none
+191,China UnionPay,Payment Page,0,157,manual-only
+192,Adult Entertainment,Content,0,46,manual-only
+193,Card Brands Notification Record,Reputation,0,0,none
+194,Pricing Patterns,Payment Page,0,4,manual-only
+195,WeChat,Payment Page,0,6,manual-only
+196,e-Vouchers,Payment Page,0,0,none
+197,Test Transaction Verified not Matched,Test Transaction,0,0,none
+198,Web Services,Content,85520,739,auto
+199,Online Gaming,Content,19731,1508,auto
+200,Crowdfunding,Content,2,4,auto
+201,Multi-level marketing,Content,0,9,manual-only
+202,IP Rights Protected,Content,143936,9015,auto
+203,IP Rights Infringement,Content,16507,3907,auto
+204,Generic URL,Policies,1192,28,auto
+205,Wire Transfer,Payment Page,0,21,manual-only
+206,Amazon Pay,Payment Page,90144,66,auto
+207,Trustly Payment,Payment Page,0,2,manual-only
+208,Keywords Matching,Keyword,38454,0,auto
+209,Precious Metals,Content,11407,179,auto
+210,Cosmetics-new,Content,10823,1894,auto
+211,Hair Extensions,Content,0,35,manual-only
+212,Keywords Matching High,Keyword,16641,2,auto
+213,Keywords Matching Medium,Keyword,11797,0,auto
+214,Keywords Matching Low,Keyword,2353,0,auto
+215,Pharma/ Illegal Substances Indication,Keyword,0,0,none
+216,High Risk MCC,MCC,0,0,none
+217,Crypto Currency,Content,3720,18,auto
+218,Age Verification,Policies,0,0,none
+219,Ticketing-new,Content,12016,284,auto
+220,Amazon Pay Not Suppressed,Content,0,0,none
+221,Illegal Substances Indication,Keyword,14898,0,auto
+222,Marijuana Indication,Keyword,90327,0,auto
+223,Melatonin Indication,Keyword,5863,0,auto
+224,Prescription Drug Indication,Keyword,44878,0,auto
+225,Sexual Enhancement Products Indication,Keyword,5804,0,auto
+226,Illegal Food Additives Indication,Keyword,993,0,auto
+227,Tretinoin Indication,Keyword,897,0,auto
+228,Veterinary Products Indication,Keyword,850,0,auto
+229,Facebook Store Affiliation,Payment Page,8,0,auto
+230,Insurance,Content,0,57,manual-only
+231,Members-Only Section,Website Section,0,0,none
+232,Adyen,Payment Page,1253,2,auto
+233,CBD Products,Content,0,0,none
+234,Insufficient Data,Suspicious Flags,164882,0,auto
+235,Transaction Laundering Blacklist,Reputation,35,0,auto
+236,Government Documents and Identifications Indication,Keyword,326,0,auto
+237,Parked Page- new,Availability,349254,942,auto
+238,Negative Option Billing Indication,Keyword,0,0,none
+239,Cancellation Link Not Present,Policies,0,0,none
+240,Cancellation Link Noncompliant,Policies,0,0,none
+241,Trial Period Noncompliant,Policies,0,0,none
+242,Business Phone Number not Present,Policies,0,0,none
+243,Corona Virus indication,Keyword,1301,0,auto
+244,No Traffic Data,Policies,0,0,none
+245,Policy Violation,Policies,0,0,none
+246,Licensed Pharmacy,Policies,0,0,none
+247,Unlicensed Pharmacy,Policies,0,0,none
+248,Non-compliant History,Reputation,1950,0,auto
+249,Racism indication,Keyword,171,0,auto
+250,Business with countries under sanction,Reputation,0,21,manual-only
+251,Child Pornography HE,Content,0,0,none
+252,Rape/Hate/Violence HE,Content,0,0,none
+253,Beastiality HE,Content,0,0,none
+254,Prostitution HE,Content,0,0,none
+255,Illegal Substances HE,Content,0,0,none
+256,Modification chips and circumvention devices HE,Content,0,0,none
+257,Illegal wildlife trade HE,Content,0,0,none
+258,Copyright Infringement HE,Content,0,0,none
+259,US Unlicensed Cannabis dispensaries,Policies,0,0,none
+260,US Licensed Cannabis dispensaries,Policies,0,0,none
+261,Cyber Locker blacklist,Policies,0,9,manual-only
+262,Groups of Interest,Reputation,0,0,none
+263,Hemp and cannabis-derived products,Content,0,0,none
+264,Wells Fargo Prohibited URLs,Reputation,0,0,none
+265,Website Ownership Details,Policies,0,0,none
+266,Missing Website Ownership Details,Policies,0,0,none
+267,Locked category id do not use it,Security Problem,0,0,none
+268,Website Security Unknown,Security Problem,418270,6,auto
+269,PS - Hemp,Content,0,2,manual-only
+270,PS - CBD,Content,0,55,manual-only
+271,PS - Firearms Accessories,Content,0,55,manual-only
+272,PS - Firearms - Other,Content,0,21,manual-only
+273,Edible CBD,Content,15091,333,auto
+274,Smokable CBD,Content,5153,47,auto
+275,Cannabis Seeds,Content,1737,20,auto
+276,CBD Oil,Content,15260,224,auto
+277,Non-Edible CBD,Content,4655,520,auto
+278,THC Variants,Content,3895,101,auto
+279,Counterfeit or Sold Documents,Content,4582,22,auto
+280,Ghost Guns,Content,6035,657,auto
+281,Stored Value,Content,19938,131,auto
+282,Marketplaces,Content,10467,513,auto
+283,IPTV,Content,4329,127,auto
+284,VISA Services,Content,11142,17,auto
+285,Social Media Marketing Resellers,Content,3499,11,auto
+286,Third Party Payment Service Providers,Content,32101,445,auto
+287,Auto-trading tools,Content,6082,361,auto
+288,VPN,Content,1839,65,auto
+289,Kratom,Content,2143,72,auto
+290,Steroids,Content,1143,7,auto
+291,NFT,Content,0,0,none
+292,Non-Profit,Content,0,0,none
+293,crowdfunding-new,Content,0,0,none
+294,CFDs,Content,0,0,none
+295,Firearms-Antique,Content,0,0,none
+296,Airsoft and Paintball Guns,Content,0,0,none
+297,Crypto Exchange,Content,0,0,none
+298,Recurring Billing,Signals,111739,4,auto
+299,SARMs,Content,931,13,auto
+300,Violative Peptides,Content,4097,49,auto
+301,Lorem Ipsum,Signals,5911,5,auto
+302,IV treatments,Content,42049,596,auto
+303,Medical spas,Content,71943,806,auto
+304,Erotic Massage Parlors,Content,1790,8,auto
+305,CAT_305,Content,195,0,auto
+306,CAT_306,Content,16619,337,auto
+307,CAT_307,Content,24,6,auto
+308,CAT_308,Content,0,0,none
+309,CAT_309,Content,0,146,manual-only
+310,CAT_310,Content,0,0,none
+311,CAT_311,Content,10497,273,auto
+312,CAT_312,Content,18761,2581,auto
+313,CAT_313,Content,4697,273,auto
+314,CAT_314,Content,7683,1844,auto
+315,CAT_315,Content,0,0,none
+316,CAT_316,Content,730,271,auto
+317,CAT_317,Content,605,11,auto
+318,CAT_318,Content,0,0,none
+319,CAT_319,Content,0,0,none
+320,CAT_320,Content,0,0,none
+321,CAT_321,Content,0,0,none
+322,CAT_322,Content,0,0,none
+323,CAT_323,Content,0,0,none
+324,Verified Bad Addresses,Signals,13279,2,auto
+325,High Risk Jurisdictions,Signals,4581,0,auto
+326,PO Box,Signals,298094,2472,auto
+327,CAT_327,Signals,36689,264,auto
+328,CAT_328,Keyword,0,0,none
+329,CAT_329,Signals,0,0,none
+330,CAT_330,Signals,0,0,none
+331,CAT_331,Signals,0,0,none
+332,CAT_332,Signals,0,0,none
+333,CAT_333,Signals,0,0,none
+334,CAT_334,Signals,0,0,none
+335,CAT_335,Signals,0,0,none
+336,CAT_336,Signals,0,0,none
+337,CAT_337,Signals,0,0,none
+338,CAT_338,Signals,0,0,none
+339,CAT_339,Signals,0,0,none
+340,CAT_340,Signals,0,0,none
+341,CAT_341,Signals,0,0,none
+342,CAT_342,Signals,0,0,none
+343,CAT_343,Signals,0,0,none
+344,Payment Page Internal,Website Section,0,0,none
+345,Shipping or Return Page,Website Section,1268949,61,auto
+346,About Us Page,Website Section,6232648,83,auto
+347,Missing Shipping and Return,Insights,1454,0,auto
+348,Missing About Us Page,Insights,977,0,auto
+350,Traffic Data,Signals,0,0,none
+351,Address Detected,Website Section,0,0,none
+352,Email Detected,Website Section,3921881,52,auto
+353,Phone Detected,Website Section,2671173,27,auto
+354,Company Name Detected,Website Section,906,0,auto
+355,Address Mismatch,Signals,0,70,manual-only
+356,Email Mismatch,Signals,2315275,0,auto
+357,Phone Mismatch,Signals,3191177,0,auto
+358,Company Name Mismatch,Signals,568,21,auto
+359,Missing Email,Insights,0,0,none
+360,Missing Phone,Insights,0,0,none
+361,Missing Company Name,Insights,0,0,none
+362,Data Protection,Signals,0,0,none
+363,Matched Email,Website Section,0,0,none
+364,Matched Phone,Website Section,0,0,none
+365,Company name Matched,Website Section,0,0,none
+366,Address Matched,Website Section,0,0,none
+370,Unverified FFL,Reputation,0,125,manual-only
+371,Adverse Media,Reputation,0,27,manual-only
+372,Verified FFL,Reputation,0,1069,manual-only
+373,NABP,Known Bad,231,0,auto
+374,CBNR_test,Known Bad,0,0,none
+375,Social Media,Signals,10,1891,auto
+376,Website Hosting Country,Signals,0,0,none
+377,Lawsuit and Legal search,Signals,0,20,manual-only
+378,Drop shipping indication,Signals,0,589,manual-only
+379,Unusual Pricing,Signals,0,327,manual-only
+380,Missing Search Option,Signals,0,186,manual-only
+381,Website Traffic Data,Signals,10,5304,auto
+382,Other service providers and payment options,Signals,10,2596,auto
+383,Google Analytics Tag,Signals,10,2185,auto
+384,Missing or Invalid Email,Signals,0,46,manual-only
+385,Support Email without reply,Signals,0,0,none
+386,Support Email with reply,Signals,0,583,manual-only
+387,Seized Domain,Known Bad,0,0,none
+388,Card Brands Notification Records,Reputation,158,80,auto
+389,Suspected Front Site,Signals,260,0,auto
+400,Missing MCC,Insights,0,0,none
+401,Missing T&C,Insights,0,0,none
+402,Missing Privacy Page,Insights,0,0,none
+403,Missing Contact Us,Insights,0,0,none
+404,Affiliate links on Home Page,Insights,0,0,none
+405,Low Alexa Rank,Insights,0,0,none
+406,Irregular Distribution of votes,Insights,5,0,auto
+407,Suspicious Review Activity,Insights,0,0,none
+408,Trustpilot Irregular Distribution of votes,Insights,19,0,auto
+409,Sitejabber Irregular Distribution of votes,Insights,0,0,none
+410,No Tranco Rank,Insights,8599,0,auto
+411,Unknown Storefront,Storefront Platform,0,0,none
+412,Shopify Storefront,Storefront Platform,0,0,none
+413,Wix Storefront,Storefront Platform,0,0,none
+414,Woocommerce Storefront,Storefront Platform,0,0,none
+420,Possible MCC fraud,Insights,0,0,none
+501,Transaction Amount Limit Warning,Test Transaction,0,0,none
+502,Transaction Amount Limit Exceeded,Test Transaction,0,0,none
+503,Transactions Pattern Anomaly,Test Transaction,0,0,none
+504,Transactions Volume From Payer Limit Warning,Test Transaction,0,0,none
+505,Transactions Volume From Payer Limit Exceeded,Test Transaction,0,0,none
+506,Transactions Volume Limit Warning,Test Transaction,0,0,none
+507,Transactions Volume Limit Exceeded,Test Transaction,0,0,none
+508,Refund Volume From Payer Limit Warning,Test Transaction,0,0,none
+509,Refund Volume From Payer Limit Exceeded,Test Transaction,0,0,none
+510,Refund Volume Ratio Limit Warning,Test Transaction,0,0,none
+511,Refund Volume Ratio Limit Exceeded,Test Transaction,0,0,none
+512,Refund Volume Limit Warning,Test Transaction,0,0,none
+513,Refund Volume Limit Exceeded,Test Transaction,0,0,none
+514,Credit Count Ratio Limit Warning,Test Transaction,0,0,none
+515,Credit Count Ratio Limit Exceeded,Test Transaction,0,0,none
+516,Credit Volume Ratio Limit Warning,Test Transaction,0,0,none
+517,Credit Volume Ratio Limit Exceeded,Test Transaction,0,0,none
+518,Credit Volume From Payer Limit Warning,Test Transaction,0,0,none
+519,Credit Volume From Payer Limit Exceeded,Test Transaction,0,0,none
+520,Credit Volume Limit Warning,Test Transaction,0,0,none
+521,Credit Volume Limit Exceeded,Test Transaction,0,0,none
+522,Meta Robots Nofollow,Security Problem,2355,0,auto
+523,Meta Robots Noindex,Security Problem,4438,0,auto
+600,Scamadviser,Reputation,2598,0,auto
+601,Trustpilot,Reputation,1962,0,auto
+602,Sitejabber,Reputation,8892,0,auto
+603,Web of Trust,Reputation,8843,0,auto
+604,Alexa,Traffic,0,0,none
+605,Scamadviser Pageviews,Traffic,1497,0,auto
+606,Whois Data,Whois,9207,0,auto
+607,Site Data,Website Section,9235,0,auto
+608,IP Country,Whois,9265,0,auto
+609,Registrant Country,Whois,2432,0,auto
+610,Tranco,Traffic,692,0,auto
+611,PSP Key,Website Section,0,0,none
+700,Test,Keyword,0,0,none
+701,AI Generated Explicit Adult Content,Content,0,40,manual-only
+702,Penny auctions,Content,0,0,none
+703,Fraudulent government services or assistance,Content,0,0,none
+704,Deceptive marketing,Content,0,0,none
+705,High Yield Investment Scams,Content,0,0,none
+706,Buy-Now-Pay-Later,Content,0,0,none
+707,P2P money transmitters,Content,0,0,none
+708,Escrow services,Content,0,0,none
+709,Funded prop trading,Content,0,0,none
+710,Exchangers,Content,0,0,none
+711,Registered Charities,Content,0,0,none
+712,Telehealth services,Content,0,0,none
+713,Sim/Phone cards,Content,0,0,none
+714,testtest,Content,0,0,none
+715,testtesttest,Content,0,0,none
+716,NFTs POC,Content,0,0,none
+717,Telehealth Services POC,Content,0,0,none
+718,Penny Auctions POC,Content,0,0,none
+719,NPOs POC,Content,0,0,none
+720,Fraudulent Gov Assistance POC,Content,0,0,none
+721,Deceptive Marketing POC,Content,0,0,none
+722,Escrow Services POC,Content,0,0,none
+723,Drop Shipping POC,Content,0,0,none
+724,Medical Tourism POC,Content,0,0,none
+725,Fraud as a service POC,Content,0,0,none
+726,Travelers Checks POC,Content,0,0,none
+727,Mod Chips POC,Content,0,0,none
+728,Pyramid Schemes POC,Content,0,0,none
+729,Get Rich Quick POC,Content,0,0,none
+730,MLM POC,Content,0,0,none
+731,TPPP POC,Content,0,0,none
+732,Cashing Checks POC,Content,0,0,none
+733,Collecting Debts POC,Content,0,0,none
+734,Credit Restoration POC,Content,0,0,none
+735,Insurance POC,Content,0,0,none
+736,Airlines POC,Content,0,0,none
+737,Securities Broker POC,Content,0,0,none
+738,Adult Entertainment POC,Content,0,0,none
+739,Violative Peptides POC,Content,0,0,none
+740,Illicit Drugs POC,Content,0,0,none
+741,Cyberlocker POC,Content,0,0,none
+742,Donations_RBE,Payment Page,0,0,none
+743,Bankruptcy-related Services,Content,0,1,manual-only
+744,Topical Hemp,Content,0,0,none
+745,Ingestible CBD,Content,0,0,none
+746,"Marijuana Plants, Products & Cannabis Seeds",Content,0,0,none
+747,Smokable Hemp,Content,0,0,none
+748,Higher-Risk Cannabinoids,Content,0,0,none
+749,AI Deepfake Tools,Content,0,0,none
+992,not sent to pharma model,Audit,0,0,none
+993,Embedder no content,Audit,0,0,none
+994,No VML Decision,Audit,569,0,auto
+995,Audit Pharma,Audit,177,0,auto
+996,Unsupported Language,Audit,86,0,auto
+997,Not Enough Text,Audit,34204,0,auto
+998,Empty Text,Audit,5338,0,auto
+999,Audit,Audit,18,0,auto
+1001,Medical,Content,0,0,none
+1002,Cannabis,Content,0,0,none
+1003,Sports,Content,0,0,none
+1004,Bar/Restaurants/Food,Content,0,0,none
+1005,Movies,Content,0,0,none
+1006,bodybuilding,Content,0,0,none
+1007,Cosmetics,Content,0,0,none
+1008,Pets,Content,0,0,none
+1009,Healthy Lifestyle,Content,0,0,none
+1010,Medical - all,Inner,0,0,none
+1011,Porn - all,Inner,0,0,none
+1012,Clean,Content,0,0,none
+1013,Account Suspended - old,Availability,0,0,none
+1014,Gambling - all,Inner,0,0,none
+1015,Tobacco - all,Inner,0,0,none
+1016,Alcohol - all,Inner,0,0,none
+1017,Parked Page,Availability,0,0,none
+1018,Account Suspended,Availability,0,0,none
+1019,Car Parts,Content,0,0,none
+1020,Drugs - all,Inner,0,0,none
+1021,Weapons - all,Inner,0,0,none
+1022,No Payment Page,Payment Page,0,0,none
+1024,Negative Smoking,Content,0,0,none
+1025,Real Estate related,Content,0,0,none
+1026,Electronic Parts,Content,0,0,none
+1027,Finance - all,Inner,0,0,none
+1028,Mobile_Application_APK,Hyperlink,0,0,none
+1029,Tenants Screening / Home Inspection,Content,0,0,none
+1030,Insurance sites,Content,0,0,none
+1031,Login Page,Content,0,0,none
+1032,Unverified Payment Provider,Third Party Payment Provider,0,0,none
+1033,Coffee,Content,0,0,none
+1034,Finance Related,Content,0,0,none
+1035,Consulting Services,Content,0,0,none
+1036,Security Cameras,Content,0,0,none
+1037,Fishing,Content,0,0,none
+1038,Hunting,Content,0,0,none
+1039,Jewelry,Content,0,0,none
+1040,Laboratory Equipment,Content,0,0,none
+1041,Taxidermy,Content,0,0,none
+1042,Church,Content,0,0,none
+1043,Casino Hotels,Content,0,0,none
+1044,Gambling Equipment,Content,0,0,none
+1045,Shooting Ranges,Content,0,0,none
+1046,Ticketing,Content,0,0,none
+1047,Law firms,Content,0,0,none
+1100,MCC Type Reported,MCC,3353582,0,auto
+1101,MCC Type Detected,MCC,408472,0,auto
+1102,MCC Type Verified,MCC,202312,0,auto
+1103,MCC Type Mismatch Detected,MCC,177168,0,auto
+4027,Salvia Rule,Content,0,0,none
+4046,Questionable Rule,Content,0,0,none
+4130,Third Party Service Providers Reference Rule,Content,0,0,none
+10000,0742,MCC,20105,0,auto
+10001,0763,MCC,15010,0,auto
+10002,5813,MCC,15056,0,auto
+10003,5921,MCC,15913,0,auto
+10004,6050,MCC,15,0,auto
+10005,5111,MCC,4506,0,auto
+10006,5198,MCC,1883,0,auto
+10007,5231,MCC,2931,0,auto
+10008,5943,MCC,5468,0,auto
+10009,5950,MCC,1066,0,auto
+10010,5970,MCC,8281,0,auto
+10011,5192,MCC,4102,0,auto
+10012,5733,MCC,5425,0,auto
+10013,5735,MCC,1787,0,auto
+10014,5942,MCC,16642,0,auto
+10015,5945,MCC,24000,2,auto
+10016,5994,MCC,1823,0,auto
+10017,7929,MCC,5298,0,auto
+10018,5815,MCC,5109,0,auto
+10019,8351,MCC,35035,0,auto
+10020,9211,MCC,510,0,auto
+10021,2842,MCC,3003,0,auto
+10022,7210,MCC,1542,0,auto
+10023,7211,MCC,4681,0,auto
+10024,7216,MCC,1971,0,auto
+10025,7217,MCC,2943,0,auto
+10026,7349,MCC,17046,0,auto
+10027,7251,MCC,347,0,auto
+10028,7341,MCC,0,0,none
+10029,5131,MCC,2163,0,auto
+10030,5137,MCC,3738,0,auto
+10031,5139,MCC,362,0,auto
+10032,5611,MCC,10389,0,auto
+10033,5621,MCC,13234,0,auto
+10034,5641,MCC,6525,0,auto
+10035,5651,MCC,30396,8,auto
+10036,5655,MCC,6337,0,auto
+10037,5661,MCC,11245,0,auto
+10038,5681,MCC,302,0,auto
+10039,5691,MCC,36229,0,auto
+10040,5697,MCC,1096,0,auto
+10041,5948,MCC,4304,0,auto
+10042,5949,MCC,9060,1,auto
+10043,4812,MCC,8805,0,auto
+10044,4814,MCC,5831,1,auto
+10045,4821,MCC,61,0,auto
+10046,4899,MCC,2181,0,auto
+10047,4813,MCC,34,0,auto
+10048,4815,MCC,6,0,auto
+10049,5961,MCC,6,0,auto
+10050,5065,MCC,11396,0,auto
+10051,5732,MCC,30812,0,auto
+10052,1520,MCC,45759,0,auto
+10053,1731,MCC,19357,0,auto
+10054,1740,MCC,3908,0,auto
+10055,1750,MCC,7779,0,auto
+10056,1761,MCC,12398,0,auto
+10057,1771,MCC,6190,0,auto
+10058,1799,MCC,43430,0,auto
+10059,4900,MCC,13559,0,auto
+10060,5039,MCC,31155,0,auto
+10061,5051,MCC,2899,0,auto
+10062,5072,MCC,8671,0,auto
+10063,5074,MCC,8207,0,auto
+10064,5085,MCC,25144,0,auto
+10065,5169,MCC,3557,0,auto
+10066,5211,MCC,13650,0,auto
+10067,5937,MCC,233,0,auto
+10068,7394,MCC,12480,0,auto
+10069,7692,MCC,3013,0,auto
+10070,5971,MCC,8197,4,auto
+10071,7829,MCC,5504,0,auto
+10072,7832,MCC,7517,0,auto
+10073,7841,MCC,290,8,auto
+10074,7922,MCC,14422,0,auto
+10075,7993,MCC,443,0,auto
+10076,7994,MCC,2266,0,auto
+10077,7996,MCC,3237,0,auto
+10078,5631,MCC,43842,0,auto
+10079,5698,MCC,849,0,auto
+10080,5699,MCC,24792,0,auto
+10081,5944,MCC,26204,2,auto
+10082,7296,MCC,715,0,auto
+10083,7631,MCC,1168,0,auto
+10084,7012,MCC,512,0,auto
+10085,9701,MCC,0,0,none
+10086,5411,MCC,35129,0,auto
+10087,5422,MCC,4300,0,auto
+10088,5441,MCC,4358,0,auto
+10089,5462,MCC,9261,0,auto
+10090,5811,MCC,10156,0,auto
+10091,5812,MCC,132601,0,auto
+10092,5814,MCC,54070,0,auto
+10093,5451,MCC,1055,0,auto
+10094,9222,MCC,920,0,auto
+10095,9311,MCC,4969,0,auto
+10096,9399,MCC,34107,0,auto
+10097,9402,MCC,823,0,auto
+10098,9405,MCC,78,0,auto
+10099,1711,MCC,47916,0,auto
+10100,5021,MCC,2674,0,auto
+10101,5200,MCC,13719,0,auto
+10102,5531,MCC,372,0,auto
+10103,5712,MCC,30110,0,auto
+10104,5713,MCC,8926,0,auto
+10105,5714,MCC,4418,0,auto
+10106,5718,MCC,1214,0,auto
+10107,5719,MCC,16553,0,auto
+10108,5722,MCC,18929,0,auto
+10109,7629,MCC,2614,0,auto
+10110,7641,MCC,1041,0,auto
+10111,5960,MCC,1236,0,auto
+10112,5962,MCC,498,0,auto
+10113,5963,MCC,976,0,auto
+10114,5964,MCC,2224,0,auto
+10115,5965,MCC,6060,0,auto
+10116,5966,MCC,9352,430,auto
+10117,5967,MCC,36392,537,auto
+10118,5968,MCC,3569,129,auto
+10119,5969,MCC,36376,0,auto
+10120,9411,MCC,0,0,none
+10121,9223,MCC,357,0,auto
+10122,7322,MCC,427,0,auto
+10123,4829,MCC,1049,0,auto
+10124,6010,MCC,9776,0,auto
+10125,6011,MCC,141,0,auto
+10126,9950,MCC,0,0,none
+10127,6529,MCC,0,0,none
+10128,6530,MCC,0,0,none
+10129,6531,MCC,6,0,auto
+10130,6532,MCC,271,0,auto
+10131,6533,MCC,8,0,auto
+10132,6534,MCC,0,0,none
+10133,6535,MCC,0,0,none
+10134,7524,MCC,0,0,none
+10135,7778,MCC,0,0,none
+10136,7833,MCC,0,0,none
+10137,9753,MCC,0,0,none
+10138,7276,MCC,8456,0,auto
+10139,7321,MCC,470,0,auto
+10140,8931,MCC,47115,0,auto
+10141,6012,MCC,21772,452,auto
+10142,6300,MCC,22562,0,auto
+10143,6399,MCC,5,0,auto
+10144,6381,MCC,2,0,auto
+10145,7995,MCC,67725,1618,auto
+10146,3551,MCC,0,0,none
+10147,3555,MCC,0,0,none
+10148,3560,MCC,0,0,none
+10149,3564,MCC,0,0,none
+10150,3582,MCC,2,0,auto
+10151,3597,MCC,2,0,auto
+10152,3624,MCC,0,0,none
+10153,3628,MCC,0,0,none
+10154,3662,MCC,0,0,none
+10155,3667,MCC,0,0,none
+10156,3669,MCC,6,0,auto
+10157,3676,MCC,2,0,auto
+10158,3679,MCC,2,0,auto
+10159,3682,MCC,0,0,none
+10160,3708,MCC,0,0,none
+10161,3712,MCC,0,0,none
+10162,3728,MCC,2,0,auto
+10163,3731,MCC,0,0,none
+10164,3737,MCC,0,0,none
+10165,3738,MCC,0,0,none
+10166,3761,MCC,0,0,none
+10167,3762,MCC,0,0,none
+10168,3764,MCC,0,0,none
+10169,3766,MCC,0,0,none
+10170,3767,MCC,0,0,none
+10171,3768,MCC,0,0,none
+10172,3769,MCC,0,0,none
+10173,3771,MCC,0,0,none
+10174,3773,MCC,0,0,none
+10175,3774,MCC,0,0,none
+10176,3792,MCC,0,0,none
+10177,3794,MCC,0,0,none
+10178,3796,MCC,0,0,none
+10179,7800,MCC,10,0,auto
+10180,7801,MCC,29,0,auto
+10181,7802,MCC,9,0,auto
+10182,5947,MCC,27438,0,auto
+10183,5992,MCC,15553,0,auto
+10184,0780,MCC,31268,23,auto
+10185,5193,MCC,3010,0,auto
+10186,5261,MCC,10136,0,auto
+10187,5499,MCC,54789,2,auto
+10188,5977,MCC,41869,0,auto
+10189,4119,MCC,1134,0,auto
+10190,5047,MCC,14782,0,auto
+10191,5975,MCC,4343,0,auto
+10192,5976,MCC,2177,0,auto
+10193,8011,MCC,77986,0,auto
+10194,8021,MCC,50497,0,auto
+10195,8031,MCC,1229,0,auto
+10196,8041,MCC,18704,0,auto
+10197,8042,MCC,13131,0,auto
+10198,8043,MCC,6214,0,auto
+10199,8049,MCC,2902,0,auto
+10200,8050,MCC,9117,0,auto
+10201,8062,MCC,10167,0,auto
+10202,8071,MCC,4105,2,auto
+10203,8099,MCC,91109,2,auto
+10204,8734,MCC,2253,0,auto
+10205,8044,MCC,0,0,none
+10206,8731,MCC,0,0,none
+10207,5407,MCC,0,0,none
+10208,6611,MCC,0,0,none
+10209,6760,MCC,6,0,auto
+10210,6051,MCC,4785,293,auto
+10211,6211,MCC,11245,769,auto
+10212,5972,MCC,839,0,auto
+10213,5094,MCC,2408,0,auto
+10214,6513,MCC,101055,0,auto
+10215,7297,MCC,7325,0,auto
+10216,7298,MCC,37258,2,auto
+10217,7230,MCC,73240,4,auto
+10218,4816,MCC,86082,1694,auto
+10219,5045,MCC,16452,0,auto
+10220,5734,MCC,12232,0,auto
+10221,7372,MCC,39622,0,auto
+10222,7379,MCC,12383,0,auto
+10223,7622,MCC,1854,0,auto
+10224,5817,MCC,13838,0,auto
+10225,5251,MCC,18828,8,auto
+10226,2741,MCC,17366,0,auto
+10227,5978,MCC,81,0,auto
+10228,7339,MCC,1049,0,auto
+10229,7361,MCC,3191,0,auto
+10230,8398,MCC,94095,0,auto
+10231,8641,MCC,13185,0,auto
+10232,8651,MCC,1156,0,auto
+10233,8699,MCC,10870,0,auto
+10234,5122,MCC,1496,602,auto
+10235,5912,MCC,89224,3155,auto
+10236,5044,MCC,1339,0,auto
+10237,5946,MCC,5396,0,auto
+10238,7221,MCC,10879,0,auto
+10239,7333,MCC,13608,0,auto
+10240,7395,MCC,652,0,auto
+10241,7332,MCC,0,0,none
+10242,7273,MCC,14870,673,auto
+10243,2791,MCC,573,0,auto
+10244,4225,MCC,27135,0,auto
+10245,7261,MCC,7016,0,auto
+10246,7277,MCC,6537,0,auto
+10247,7278,MCC,2357,0,auto
+10248,7299,MCC,75074,0,auto
+10249,7311,MCC,40075,0,auto
+10250,7338,MCC,3283,0,auto
+10251,7342,MCC,4294,0,auto
+10252,7375,MCC,1298,0,auto
+10253,7392,MCC,51649,0,auto
+10254,7393,MCC,7621,0,auto
+10255,7399,MCC,77774,0,auto
+10256,8111,MCC,35425,0,auto
+10257,8911,MCC,16360,0,auto
+10258,8999,MCC,80408,0,auto
+10259,7623,MCC,3500,0,auto
+10260,9700,MCC,2,0,auto
+10261,5973,MCC,1535,0,auto
+10262,8661,MCC,20743,0,auto
+10263,7911,MCC,10570,0,auto
+10264,8211,MCC,33036,0,auto
+10265,8220,MCC,25879,0,auto
+10266,8241,MCC,1423,0,auto
+10267,8244,MCC,7471,0,auto
+10268,8249,MCC,6711,0,auto
+10269,8299,MCC,57478,0,auto
+10270,5941,MCC,35622,0,auto
+10271,5996,MCC,7436,0,auto
+10272,7032,MCC,6919,0,auto
+10273,7932,MCC,466,0,auto
+10274,7933,MCC,760,0,auto
+10275,7941,MCC,13048,0,auto
+10276,7992,MCC,4505,0,auto
+10277,7997,MCC,45886,0,auto
+10278,5046,MCC,18621,0,auto
+10279,5099,MCC,18685,0,auto
+10280,5199,MCC,10378,0,auto
+10281,5300,MCC,2139,0,auto
+10282,5310,MCC,957,0,auto
+10283,5311,MCC,4126,0,auto
+10284,5331,MCC,6664,0,auto
+10285,5399,MCC,43805,0,auto
+10286,5931,MCC,4419,0,auto
+10287,5932,MCC,2295,0,auto
+10288,5997,MCC,186,0,auto
+10289,5999,MCC,81140,0,auto
+10290,7699,MCC,10820,0,auto
+10291,9751,MCC,0,0,none
+10292,5309,MCC,176,0,auto
+10293,5933,MCC,1385,0,auto
+10294,5993,MCC,16789,4747,auto
+10295,4411,MCC,915,0,auto
+10296,4722,MCC,20128,0,auto
+10297,4723,MCC,8,0,auto
+10298,5998,MCC,821,0,auto
+10299,7011,MCC,65995,0,auto
+10300,7033,MCC,6587,0,auto
+10301,7991,MCC,7635,0,auto
+10302,7999,MCC,23540,0,auto
+10303,3590,MCC,9,0,auto
+10304,3501,MCC,755,0,auto
+10305,3502,MCC,243,0,auto
+10306,3503,MCC,62,0,auto
+10307,3504,MCC,139,0,auto
+10308,3505,MCC,8,0,auto
+10309,3506,MCC,2,0,auto
+10310,3507,MCC,0,0,none
+10311,3508,MCC,62,0,auto
+10312,3509,MCC,185,0,auto
+10313,3510,MCC,116,0,auto
+10314,3511,MCC,0,0,none
+10315,3512,MCC,10,0,auto
+10316,3513,MCC,28,0,auto
+10317,3514,MCC,0,0,none
+10318,3515,MCC,6,0,auto
+10319,3516,MCC,84,0,auto
+10320,3517,MCC,3,0,auto
+10321,3518,MCC,0,0,none
+10322,3519,MCC,2,0,auto
+10323,3520,MCC,16,0,auto
+10324,3521,MCC,0,0,none
+10325,3522,MCC,0,0,none
+10326,3523,MCC,1,0,auto
+10327,3524,MCC,0,0,none
+10328,3525,MCC,0,0,none
+10329,3526,MCC,0,0,none
+10330,3527,MCC,1,0,auto
+10331,3528,MCC,4,0,auto
+10332,3529,MCC,2,0,auto
+10333,3530,MCC,34,0,auto
+10334,3531,MCC,0,0,none
+10335,3532,MCC,0,0,none
+10336,3533,MCC,15,0,auto
+10337,3534,MCC,0,0,none
+10338,3535,MCC,4,0,auto
+10339,3536,MCC,0,0,none
+10340,3537,MCC,0,0,none
+10341,3538,MCC,4,0,auto
+10342,3539,MCC,0,0,none
+10343,3540,MCC,2,0,auto
+10344,3541,MCC,8,0,auto
+10345,3542,MCC,4,0,auto
+10346,3543,MCC,12,0,auto
+10347,3544,MCC,0,0,none
+10348,3545,MCC,38,0,auto
+10349,3546,MCC,0,0,none
+10350,3547,MCC,0,0,none
+10351,3548,MCC,4,0,auto
+10352,3549,MCC,0,0,none
+10353,3550,MCC,0,0,none
+10354,3552,MCC,45,0,auto
+10355,3553,MCC,4,0,auto
+10356,3554,MCC,2,0,auto
+10357,3556,MCC,0,0,none
+10358,3557,MCC,0,0,none
+10359,3558,MCC,0,0,none
+10360,3559,MCC,0,0,none
+10361,3561,MCC,6,0,auto
+10362,3562,MCC,72,0,auto
+10363,3563,MCC,0,0,none
+10364,3565,MCC,0,0,none
+10365,3566,MCC,0,0,none
+10366,3567,MCC,0,0,none
+10367,3568,MCC,0,0,none
+10368,3569,MCC,2,0,auto
+10369,3570,MCC,0,0,none
+10370,3571,MCC,0,0,none
+10371,3572,MCC,0,0,none
+10372,3573,MCC,8,0,auto
+10373,3574,MCC,0,0,none
+10374,3575,MCC,0,0,none
+10375,3576,MCC,2,0,auto
+10376,3577,MCC,26,0,auto
+10377,3578,MCC,0,0,none
+10378,3579,MCC,34,0,auto
+10379,3580,MCC,0,0,none
+10380,3581,MCC,10,0,auto
+10381,3583,MCC,6,0,auto
+10382,3584,MCC,0,0,none
+10383,3585,MCC,0,0,none
+10384,3586,MCC,0,0,none
+10385,3587,MCC,0,0,none
+10386,3588,MCC,0,0,none
+10387,3589,MCC,2,0,auto
+10388,3697,MCC,4,0,auto
+10389,3591,MCC,3,0,auto
+10390,3592,MCC,0,0,none
+10391,3593,MCC,0,0,none
+10392,3594,MCC,0,0,none
+10393,3595,MCC,26,0,auto
+10394,3596,MCC,2,0,auto
+10395,3598,MCC,0,0,none
+10396,3599,MCC,22,0,auto
+10397,3600,MCC,0,0,none
+10398,3601,MCC,0,0,none
+10399,3602,MCC,0,0,none
+10400,3603,MCC,0,0,none
+10401,3604,MCC,71,0,auto
+10402,3605,MCC,0,0,none
+10403,3606,MCC,0,0,none
+10404,3607,MCC,0,0,none
+10405,3608,MCC,0,0,none
+10406,3609,MCC,0,0,none
+10407,3610,MCC,0,0,none
+10408,3611,MCC,0,0,none
+10409,3612,MCC,4,0,auto
+10410,3613,MCC,38,0,auto
+10411,3614,MCC,18,0,auto
+10412,3615,MCC,63,0,auto
+10413,3616,MCC,0,0,none
+10414,3617,MCC,18,0,auto
+10415,3618,MCC,2,0,auto
+10416,3619,MCC,6,0,auto
+10417,3620,MCC,0,0,none
+10418,3621,MCC,15,0,auto
+10419,3622,MCC,0,0,none
+10420,3623,MCC,0,0,none
+10421,3625,MCC,2596,0,auto
+10422,3626,MCC,0,0,none
+10423,3627,MCC,2,0,auto
+10424,3629,MCC,8,0,auto
+10425,3630,MCC,0,0,none
+10426,3631,MCC,7,0,auto
+10427,3632,MCC,0,0,none
+10428,3633,MCC,0,0,none
+10429,3634,MCC,0,0,none
+10430,3635,MCC,0,0,none
+10431,3636,MCC,0,0,none
+10432,3637,MCC,28,0,auto
+10433,3638,MCC,22,0,auto
+10434,3639,MCC,0,0,none
+10435,3640,MCC,109,0,auto
+10436,3641,MCC,2,0,auto
+10437,3642,MCC,11,0,auto
+10438,3643,MCC,3,0,auto
+10439,3644,MCC,35,0,auto
+10440,3645,MCC,0,0,none
+10441,3646,MCC,0,0,none
+10442,3647,MCC,0,0,none
+10443,3648,MCC,14,0,auto
+10444,3649,MCC,23,0,auto
+10445,3650,MCC,26,0,auto
+10446,3651,MCC,6,0,auto
+10447,3652,MCC,12,0,auto
+10448,3653,MCC,0,0,none
+10449,3654,MCC,0,0,none
+10450,3655,MCC,0,0,none
+10451,3656,MCC,0,0,none
+10452,3657,MCC,0,0,none
+10453,3658,MCC,0,0,none
+10454,3659,MCC,0,0,none
+10455,3660,MCC,9,0,auto
+10456,3661,MCC,2,0,auto
+10457,3663,MCC,4,0,auto
+10458,3664,MCC,0,0,none
+10459,3665,MCC,263,0,auto
+10460,3666,MCC,0,0,none
+10461,3668,MCC,0,0,none
+10462,3670,MCC,2,0,auto
+10463,3671,MCC,0,0,none
+10464,3672,MCC,2,0,auto
+10465,3673,MCC,0,0,none
+10466,3674,MCC,7,0,auto
+10467,3675,MCC,2,0,auto
+10468,3677,MCC,0,0,none
+10469,3678,MCC,4,0,auto
+10470,3680,MCC,0,0,none
+10471,3681,MCC,0,0,none
+10472,3683,MCC,0,0,none
+10473,3684,MCC,10,0,auto
+10474,3685,MCC,0,0,none
+10475,3686,MCC,2,0,auto
+10476,3687,MCC,12,0,auto
+10477,3688,MCC,0,0,none
+10478,3689,MCC,0,0,none
+10479,3690,MCC,21,0,auto
+10480,3691,MCC,0,0,none
+10481,3692,MCC,42,0,auto
+10482,3693,MCC,0,0,none
+10483,3694,MCC,1,0,auto
+10484,3695,MCC,2,0,auto
+10485,3696,MCC,0,0,none
+10486,3715,MCC,2,0,auto
+10487,3698,MCC,0,0,none
+10488,3699,MCC,0,0,none
+10489,3700,MCC,112,0,auto
+10490,3701,MCC,0,0,none
+10491,3702,MCC,0,0,none
+10492,3703,MCC,4,0,auto
+10493,3704,MCC,0,0,none
+10494,3705,MCC,0,0,none
+10495,3706,MCC,0,0,none
+10496,3707,MCC,0,0,none
+10497,3709,MCC,124,0,auto
+10498,3710,MCC,47,0,auto
+10499,3711,MCC,0,0,none
+10500,3713,MCC,2,0,auto
+10501,3714,MCC,0,0,none
+10502,3716,MCC,0,0,none
+10503,3717,MCC,0,0,none
+10504,3718,MCC,0,0,none
+10505,3719,MCC,0,0,none
+10506,3720,MCC,2,0,auto
+10507,3721,MCC,4,0,auto
+10508,3722,MCC,47,0,auto
+10509,3723,MCC,0,0,none
+10510,3724,MCC,3,0,auto
+10511,3725,MCC,1,0,auto
+10512,3726,MCC,1,0,auto
+10513,3727,MCC,0,0,none
+10514,3729,MCC,0,0,none
+10515,3730,MCC,0,0,none
+10516,3732,MCC,0,0,none
+10517,3733,MCC,0,0,none
+10518,3734,MCC,0,0,none
+10519,3735,MCC,2,0,auto
+10520,3736,MCC,0,0,none
+10521,3739,MCC,2,0,auto
+10522,3740,MCC,2,0,auto
+10523,3741,MCC,0,0,none
+10524,3742,MCC,34,0,auto
+10525,3743,MCC,1,0,auto
+10526,3744,MCC,0,0,none
+10527,3745,MCC,62,0,auto
+10528,3746,MCC,0,0,none
+10529,3747,MCC,2,0,auto
+10530,3748,MCC,0,0,none
+10531,3749,MCC,0,0,none
+10532,3750,MCC,42,0,auto
+10533,3751,MCC,43,0,auto
+10534,3752,MCC,0,0,none
+10535,3753,MCC,0,0,none
+10536,3754,MCC,0,0,none
+10537,3755,MCC,0,0,none
+10538,3756,MCC,0,0,none
+10539,3757,MCC,0,0,none
+10540,3758,MCC,0,0,none
+10541,3759,MCC,0,0,none
+10542,3760,MCC,0,0,none
+10543,3763,MCC,9,0,auto
+10544,3765,MCC,0,0,none
+10545,3770,MCC,2,0,auto
+10546,3772,MCC,0,0,none
+10547,3775,MCC,0,0,none
+10548,3776,MCC,0,0,none
+10549,3777,MCC,0,0,none
+10550,3778,MCC,48,0,auto
+10551,3779,MCC,18,0,auto
+10552,3780,MCC,2,0,auto
+10553,3781,MCC,0,0,none
+10554,3782,MCC,0,0,none
+10555,3783,MCC,0,0,none
+10556,3784,MCC,0,0,none
+10557,3785,MCC,0,0,none
+10558,3786,MCC,0,0,none
+10559,3787,MCC,0,0,none
+10560,3788,MCC,0,0,none
+10561,3789,MCC,6,0,auto
+10562,3790,MCC,20,0,auto
+10563,3791,MCC,0,0,none
+10564,3793,MCC,0,0,none
+10565,3795,MCC,0,0,none
+10566,3797,MCC,0,0,none
+10567,3798,MCC,0,0,none
+10568,3799,MCC,0,0,none
+10569,3800,MCC,0,0,none
+10570,3801,MCC,0,0,none
+10571,3802,MCC,0,0,none
+10572,3803,MCC,0,0,none
+10573,3804,MCC,0,0,none
+10574,3805,MCC,0,0,none
+10575,3806,MCC,0,0,none
+10576,3807,MCC,4,0,auto
+10577,3808,MCC,0,0,none
+10578,3810,MCC,0,0,none
+10579,3811,MCC,0,0,none
+10580,3812,MCC,24,0,auto
+10581,3813,MCC,2,0,auto
+10582,3814,MCC,0,0,none
+10583,3815,MCC,0,0,none
+10584,3817,MCC,0,0,none
+10585,3818,MCC,2,0,auto
+10586,3819,MCC,0,0,none
+10587,3820,MCC,0,0,none
+10588,3821,MCC,0,0,none
+10589,4761,MCC,2,0,auto
+10590,4011,MCC,162,0,auto
+10591,4111,MCC,2287,0,auto
+10592,4112,MCC,652,0,auto
+10593,4121,MCC,12744,0,auto
+10594,4131,MCC,1346,0,auto
+10595,4214,MCC,14055,0,auto
+10596,4215,MCC,7304,0,auto
+10597,4457,MCC,2648,0,auto
+10598,4468,MCC,4726,0,auto
+10599,4511,MCC,1253,0,auto
+10600,4582,MCC,1088,0,auto
+10601,4784,MCC,471,0,auto
+10602,4789,MCC,11710,0,auto
+10603,5013,MCC,4242,0,auto
+10604,5172,MCC,1888,0,auto
+10605,5271,MCC,363,0,auto
+10606,5511,MCC,17330,2,auto
+10607,5521,MCC,7205,0,auto
+10608,7531,MCC,13891,0,auto
+10609,5532,MCC,4283,0,auto
+10610,5533,MCC,32709,0,auto
+10611,5541,MCC,6902,0,auto
+10612,5542,MCC,4317,0,auto
+10613,5551,MCC,1621,0,auto
+10614,5561,MCC,1996,0,auto
+10615,5571,MCC,4029,0,auto
+10616,5592,MCC,205,0,auto
+10617,5598,MCC,116,0,auto
+10618,5599,MCC,6284,0,auto
+10619,5935,MCC,962,0,auto
+10620,5940,MCC,4464,0,auto
+10621,5983,MCC,3226,0,auto
+10622,7534,MCC,896,0,auto
+10623,3000,MCC,82,0,auto
+10624,7511,MCC,0,0,none
+10625,7512,MCC,4880,0,auto
+10626,7513,MCC,1064,0,auto
+10627,7519,MCC,735,0,auto
+10628,7523,MCC,21241,0,auto
+10629,3001,MCC,2,0,auto
+10630,3004,MCC,2,0,auto
+10631,7535,MCC,1024,0,auto
+10632,7538,MCC,37303,0,auto
+10633,7542,MCC,11664,0,auto
+10634,7549,MCC,4025,0,auto
+10635,3005,MCC,0,0,none
+10636,3006,MCC,0,0,none
+10637,3007,MCC,4,0,auto
+10638,3009,MCC,6,0,auto
+10639,3010,MCC,4,0,auto
+10640,3014,MCC,0,0,none
+10641,3015,MCC,0,0,none
+10642,8675,MCC,726,0,auto
+10643,3016,MCC,0,0,none
+10644,3017,MCC,0,0,none
+10645,3002,MCC,0,0,none
+10646,3003,MCC,0,0,none
+10647,3020,MCC,6,0,auto
+10648,3021,MCC,0,0,none
+10649,3022,MCC,640,0,auto
+10650,3025,MCC,2,0,auto
+10651,3008,MCC,0,0,none
+10652,3026,MCC,0,0,none
+10653,3028,MCC,0,0,none
+10654,3011,MCC,2,0,auto
+10655,3012,MCC,8,0,auto
+10656,3013,MCC,4,0,auto
+10657,3029,MCC,0,0,none
+10658,3031,MCC,2,0,auto
+10659,3033,MCC,0,0,none
+10660,3034,MCC,0,0,none
+10661,3018,MCC,0,0,none
+10662,3019,MCC,0,0,none
+10663,3037,MCC,0,0,none
+10664,3038,MCC,0,0,none
+10665,3040,MCC,6,0,auto
+10666,3023,MCC,0,0,none
+10667,3024,MCC,0,0,none
+10668,3041,MCC,0,0,none
+10669,3042,MCC,0,0,none
+10670,3027,MCC,0,0,none
+10671,3044,MCC,0,0,none
+10672,3045,MCC,0,0,none
+10673,3030,MCC,32,0,auto
+10674,3048,MCC,8,0,auto
+10675,3032,MCC,4,0,auto
+10676,3049,MCC,0,0,none
+10677,3050,MCC,4,0,auto
+10678,3035,MCC,4,0,auto
+10679,3036,MCC,0,0,none
+10680,3051,MCC,0,0,none
+10681,3056,MCC,0,0,none
+10682,3039,MCC,0,0,none
+10683,3057,MCC,10,0,auto
+10684,3059,MCC,0,0,none
+10685,3063,MCC,0,0,none
+10686,3043,MCC,0,0,none
+10687,3064,MCC,0,0,none
+10688,3065,MCC,0,0,none
+10689,3046,MCC,0,0,none
+10690,3047,MCC,13,0,auto
+10691,3066,MCC,16,0,auto
+10692,3067,MCC,2,0,auto
+10693,3069,MCC,20,0,auto
+10694,3070,MCC,0,0,none
+10695,3052,MCC,2,0,auto
+10696,3053,MCC,0,0,none
+10697,3054,MCC,0,0,none
+10698,3055,MCC,0,0,none
+10699,3071,MCC,0,0,none
+10700,3073,MCC,0,0,none
+10701,3058,MCC,5,0,auto
+10702,3075,MCC,0,0,none
+10703,3060,MCC,0,0,none
+10704,3061,MCC,0,0,none
+10705,3062,MCC,0,0,none
+10706,3077,MCC,4,0,auto
+10707,3078,MCC,4,0,auto
+10708,3079,MCC,0,0,none
+10709,3081,MCC,0,0,none
+10710,3082,MCC,2,0,auto
+10711,3083,MCC,0,0,none
+10712,3084,MCC,7,0,auto
+10713,3085,MCC,0,0,none
+10714,3086,MCC,0,0,none
+10715,3087,MCC,0,0,none
+10716,3076,MCC,4,0,auto
+10717,3088,MCC,0,0,none
+10718,3090,MCC,0,0,none
+10719,3092,MCC,0,0,none
+10720,3094,MCC,0,0,none
+10721,3095,MCC,0,0,none
+10722,3096,MCC,0,0,none
+10723,3097,MCC,0,0,none
+10724,3098,MCC,2,0,auto
+10725,3100,MCC,62,0,auto
+10726,3110,MCC,0,0,none
+10727,3115,MCC,0,0,none
+10728,3089,MCC,18,0,auto
+10729,3118,MCC,0,0,none
+10730,3125,MCC,0,0,none
+10731,3126,MCC,0,0,none
+10732,3129,MCC,0,0,none
+10733,3131,MCC,0,0,none
+10734,3132,MCC,0,0,none
+10735,3133,MCC,0,0,none
+10736,3099,MCC,14,0,auto
+10737,3135,MCC,0,0,none
+10738,3102,MCC,12,0,auto
+10739,3103,MCC,0,0,none
+10740,3105,MCC,0,0,none
+10741,3106,MCC,0,0,none
+10742,3136,MCC,4,0,auto
+10743,3111,MCC,0,0,none
+10744,3112,MCC,0,0,none
+10745,3138,MCC,0,0,none
+10746,3117,MCC,0,0,none
+10747,3141,MCC,0,0,none
+10748,3143,MCC,0,0,none
+10749,3145,MCC,0,0,none
+10750,3127,MCC,0,0,none
+10751,3146,MCC,0,0,none
+10752,3130,MCC,0,0,none
+10753,3148,MCC,0,0,none
+10754,3151,MCC,0,0,none
+10755,3159,MCC,0,0,none
+10756,3161,MCC,2,0,auto
+10757,3164,MCC,0,0,none
+10758,3137,MCC,0,0,none
+10759,3171,MCC,0,0,none
+10760,3172,MCC,0,0,none
+10761,3174,MCC,0,0,none
+10762,3144,MCC,2,0,auto
+10763,3175,MCC,0,0,none
+10764,3176,MCC,0,0,none
+10765,3177,MCC,0,0,none
+10766,3178,MCC,0,0,none
+10767,3154,MCC,0,0,none
+10768,3156,MCC,0,0,none
+10769,3180,MCC,0,0,none
+10770,3190,MCC,0,0,none
+10771,3191,MCC,0,0,none
+10772,3165,MCC,2,0,auto
+10773,3167,MCC,0,0,none
+10774,3170,MCC,0,0,none
+10775,3192,MCC,0,0,none
+10776,3193,MCC,0,0,none
+10777,3195,MCC,0,0,none
+10778,3196,MCC,0,0,none
+10779,3197,MCC,0,0,none
+10780,3198,MCC,0,0,none
+10781,3200,MCC,0,0,none
+10782,3203,MCC,0,0,none
+10783,3181,MCC,0,0,none
+10784,3182,MCC,0,0,none
+10785,3183,MCC,0,0,none
+10786,3184,MCC,0,0,none
+10787,3185,MCC,0,0,none
+10788,3186,MCC,0,0,none
+10789,3187,MCC,0,0,none
+10790,3188,MCC,0,0,none
+10791,3204,MCC,0,0,none
+10792,3206,MCC,4,0,auto
+10793,3211,MCC,0,0,none
+10794,3215,MCC,2,0,auto
+10795,3216,MCC,0,0,none
+10796,3218,MCC,0,0,none
+10797,3222,MCC,0,0,none
+10798,3223,MCC,0,0,none
+10799,3199,MCC,0,0,none
+10800,3226,MCC,0,0,none
+10801,3228,MCC,0,0,none
+10802,3233,MCC,0,0,none
+10803,3235,MCC,0,0,none
+10804,3207,MCC,0,0,none
+10805,3236,MCC,0,0,none
+10806,3212,MCC,0,0,none
+10807,3213,MCC,10,0,auto
+10808,3239,MCC,0,0,none
+10809,3240,MCC,0,0,none
+10810,3217,MCC,0,0,none
+10811,3243,MCC,0,0,none
+10812,3219,MCC,5,0,auto
+10813,3220,MCC,2,0,auto
+10814,3221,MCC,2,0,auto
+10815,3245,MCC,0,0,none
+10816,3246,MCC,0,0,none
+10817,3247,MCC,0,0,none
+10818,3248,MCC,0,0,none
+10819,3229,MCC,6,0,auto
+10820,3231,MCC,2,0,auto
+10821,3251,MCC,0,0,none
+10822,3234,MCC,0,0,none
+10823,3252,MCC,0,0,none
+10824,3254,MCC,0,0,none
+10825,3238,MCC,0,0,none
+10826,3256,MCC,2,0,auto
+10827,3259,MCC,0,0,none
+10828,3241,MCC,0,0,none
+10829,3242,MCC,0,0,none
+10830,3260,MCC,0,0,none
+10831,3261,MCC,0,0,none
+10832,3262,MCC,0,0,none
+10833,3266,MCC,0,0,none
+10834,3267,MCC,0,0,none
+10835,3268,MCC,0,0,none
+10836,3275,MCC,0,0,none
+10837,3253,MCC,2,0,auto
+10838,3276,MCC,0,0,none
+10839,3277,MCC,0,0,none
+10840,3279,MCC,0,0,none
+10841,3280,MCC,0,0,none
+10842,3281,MCC,0,0,none
+10843,3282,MCC,0,0,none
+10844,3263,MCC,0,0,none
+10845,3292,MCC,4,0,auto
+10846,3294,MCC,0,0,none
+10847,3295,MCC,4,0,auto
+10848,3296,MCC,0,0,none
+10849,3297,MCC,0,0,none
+10850,3298,MCC,0,0,none
+10851,3361,MCC,2,0,auto
+10852,3284,MCC,0,0,none
+10853,3285,MCC,0,0,none
+10854,3286,MCC,0,0,none
+10855,3287,MCC,2,0,auto
+10856,3291,MCC,6,0,auto
+10857,3293,MCC,0,0,none
+10858,3299,MCC,12,0,auto
+10859,3351,MCC,46,0,auto
+10860,3352,MCC,0,0,none
+10861,3353,MCC,0,0,none
+10862,3354,MCC,2,0,auto
+10863,3355,MCC,7,0,auto
+10864,3357,MCC,66,0,auto
+10865,3359,MCC,0,0,none
+10866,3360,MCC,0,0,none
+10867,3362,MCC,0,0,none
+10868,3364,MCC,2,0,auto
+10869,3366,MCC,22,0,auto
+10870,3368,MCC,0,0,none
+10871,3370,MCC,4,0,auto
+10872,3374,MCC,0,0,none
+10873,3376,MCC,0,0,none
+10874,3380,MCC,0,0,none
+10875,3381,MCC,10,0,auto
+10876,3385,MCC,0,0,none
+10877,3386,MCC,2,0,auto
+10878,3387,MCC,5,0,auto
+10879,3388,MCC,0,0,none
+10880,3389,MCC,21,0,auto
+10881,3390,MCC,4,0,auto
+10882,3391,MCC,0,0,none
+10883,3393,MCC,10,0,auto
+10884,3394,MCC,0,0,none
+10885,3395,MCC,10,0,auto
+10886,3396,MCC,2,0,auto
+10887,3398,MCC,0,0,none
+10888,3399,MCC,2,0,auto
+10889,3400,MCC,4,0,auto
+10890,3405,MCC,4,0,auto
+10891,3409,MCC,2,0,auto
+10892,3411,MCC,0,0,none
+10893,3412,MCC,11,0,auto
+10894,3414,MCC,0,0,none
+10895,3419,MCC,0,0,none
+10896,3420,MCC,0,0,none
+10897,3421,MCC,2,0,auto
+10898,3423,MCC,0,0,none
+10899,3425,MCC,0,0,none
+10900,3427,MCC,0,0,none
+10901,3428,MCC,0,0,none
+10902,3429,MCC,0,0,none
+10903,3430,MCC,0,0,none
+10904,3431,MCC,2,0,auto
+10905,3432,MCC,0,0,none
+10906,3433,MCC,0,0,none
+10907,3434,MCC,0,0,none
+10908,3435,MCC,0,0,none
+10909,3436,MCC,0,0,none
+10910,3437,MCC,0,0,none
+10911,3438,MCC,4,0,auto
+10912,3439,MCC,0,0,none
+10913,3440,MCC,0,0,none
+10914,3441,MCC,24,0,auto
+10915,9752,MCC,0,0,none
+10916,3068,MCC,0,0,none
+10917,3072,MCC,330,0,auto
+10918,3074,MCC,0,0,none
+10919,3080,MCC,0,0,none
+10920,3091,MCC,0,0,none
+10921,3093,MCC,0,0,none
+10922,3101,MCC,0,0,none
+10923,3104,MCC,0,0,none
+10924,3107,MCC,0,0,none
+10925,3108,MCC,0,0,none
+10926,3109,MCC,6,0,auto
+10927,3113,MCC,0,0,none
+10928,3114,MCC,2,0,auto
+10929,3116,MCC,0,0,none
+10930,3119,MCC,0,0,none
+10931,3120,MCC,0,0,none
+10932,3121,MCC,0,0,none
+10933,3122,MCC,0,0,none
+10934,3123,MCC,0,0,none
+10935,3124,MCC,0,0,none
+10936,3128,MCC,0,0,none
+10937,3134,MCC,0,0,none
+10938,3139,MCC,0,0,none
+10939,3140,MCC,0,0,none
+10940,3142,MCC,0,0,none
+10941,3147,MCC,0,0,none
+10942,3149,MCC,0,0,none
+10943,3150,MCC,0,0,none
+10944,3152,MCC,0,0,none
+10945,3153,MCC,2,0,auto
+10946,3155,MCC,0,0,none
+10947,3157,MCC,0,0,none
+10948,3158,MCC,0,0,none
+10949,3160,MCC,0,0,none
+10950,3162,MCC,0,0,none
+10951,3163,MCC,0,0,none
+10952,3166,MCC,0,0,none
+10953,3168,MCC,0,0,none
+10954,3169,MCC,0,0,none
+10955,3173,MCC,0,0,none
+10956,3179,MCC,0,0,none
+10957,3189,MCC,0,0,none
+10958,3194,MCC,0,0,none
+10959,3201,MCC,0,0,none
+10960,3202,MCC,0,0,none
+10961,3205,MCC,0,0,none
+10962,3208,MCC,0,0,none
+10963,3209,MCC,0,0,none
+10964,3210,MCC,0,0,none
+10965,3214,MCC,0,0,none
+10966,3224,MCC,0,0,none
+10967,3225,MCC,0,0,none
+10968,3227,MCC,0,0,none
+10969,3230,MCC,6,0,auto
+10970,3232,MCC,0,0,none
+10971,3237,MCC,0,0,none
+10972,3244,MCC,0,0,none
+10973,3249,MCC,0,0,none
+10974,3250,MCC,0,0,none
+10975,3255,MCC,0,0,none
+10976,3257,MCC,0,0,none
+10977,3258,MCC,0,0,none
+10978,3264,MCC,0,0,none
+10979,3265,MCC,0,0,none
+10980,3269,MCC,0,0,none
+10981,3270,MCC,0,0,none
+10982,3271,MCC,0,0,none
+10983,3272,MCC,2,0,auto
+10984,3273,MCC,8,0,auto
+10985,3274,MCC,0,0,none
+10986,3278,MCC,0,0,none
+10987,3283,MCC,0,0,none
+10988,3288,MCC,0,0,none
+10989,3289,MCC,0,0,none
+10990,3290,MCC,0,0,none
+10991,3356,MCC,1,0,auto
+10992,3358,MCC,0,0,none
+10993,3363,MCC,0,0,none
+10994,3365,MCC,0,0,none
+10995,3367,MCC,0,0,none
+10996,3369,MCC,0,0,none
+10997,3371,MCC,0,0,none
+10998,3372,MCC,0,0,none
+10999,3373,MCC,0,0,none
+11000,3375,MCC,0,0,none
+11001,3377,MCC,0,0,none
+11002,3378,MCC,0,0,none
+11003,3379,MCC,0,0,none
+11004,3382,MCC,0,0,none
+11005,3383,MCC,0,0,none
+11006,3384,MCC,0,0,none
+11007,3392,MCC,0,0,none
+11008,3397,MCC,0,0,none
+11009,3401,MCC,0,0,none
+11010,3402,MCC,0,0,none
+11011,3403,MCC,0,0,none
+11012,3404,MCC,0,0,none
+11013,3406,MCC,0,0,none
+11014,3407,MCC,0,0,none
+11015,3408,MCC,0,0,none
+11016,3410,MCC,0,0,none
+11017,3413,MCC,0,0,none
+11018,3415,MCC,0,0,none
+11019,3416,MCC,0,0,none
+11020,3417,MCC,0,0,none
+11021,3418,MCC,0,0,none
+11022,3422,MCC,0,0,none
+11023,3424,MCC,2,0,auto
+11024,3426,MCC,0,0,none
+11025,5995,MCC,18219,0,auto
+11026,7998,MCC,512,0,auto
+11027,9406,MCC,233,0,auto
+11028,6540,MCC,571,0,auto
+11029,6538,MCC,2,0,auto
+11030,6537,MCC,0,0,none
+11031,6536,MCC,8,0,auto
+11032,5818,MCC,2226,0,auto
+11033,5816,MCC,18026,1448,auto
+11034,5715,MCC,142,0,auto
+11035,3825,MCC,0,0,none
+11036,3832,MCC,18,0,auto
+11037,3809,MCC,0,0,none
+11038,7295,MCC,0,0,none
+11039,9702,MCC,275,0,auto
+11040,5974,MCC,0,0,none
+11041,0743,MCC,222,0,auto
+11042,0744,MCC,0,0,none
+11043,3816,MCC,54,0,auto
+11044,3822,MCC,0,0,none
+11045,3823,MCC,2,0,auto
+11046,3824,MCC,0,0,none
+11047,3826,MCC,6,0,auto
+11048,3827,MCC,0,0,none
+11049,3828,MCC,0,0,none
+11050,3829,MCC,0,0,none
+11051,3830,MCC,0,0,none
+11052,3831,MCC,0,0,none
+11053,5552,MCC,914,0,auto
+11054,3833,MCC,0,0,none
+11055,3834,MCC,11,0,auto
+11056,3835,MCC,0,0,none
+11057,3836,MCC,9,0,auto
+11058,3837,MCC,0,0,none
+11059,3838,MCC,2,0,auto
+11060,3839,MCC,0,0,none
+11061,6539,MCC,0,0,none
+11062,3300,MCC,0,0,none
+11063,3301,MCC,0,0,none
+11064,3302,MCC,0,0,none
+11065,3303,MCC,0,0,none
+11066,3308,MCC,0,0,none
+11074,5262,MCC,152,0,auto
+11075,5723,MCC,493,0,auto
+19985,9998,MCC,0,0,none
+19986,9999,MCC,2,0,auto
+19987,0000,MCC,0,0,none
+19988,0001,MCC,0,0,none
+19989,0000 - Restricted Activity Detected,MCC,0,0,none
+19990,0000 - Illegal Activity Detected,MCC,0,0,none
+19991,MCC not detected - new,MCC,0,0,none
+19992,Not enough text mcc9 - new,MCC,0,0,none
+19993,Error in mcc9 service - new,MCC,0,0,none
+19994,High risk mcc from mcc9 service - new,MCC,0,0,none
+19995,High risk mcc from mcc9 service,Audit,0,0,none
+19996,Error in mcc9 service,Audit,0,0,none
+19997,Not enough text mcc9,Audit,0,0,none
+19998,MCC not detected,Audit,0,0,none
+19999,MCC unsupported,MCC,0,0,none
+20000,360 Photo Contest,Platforms,0,0,none
+20001,3dcart Shopping Cart,Platforms,0,0,none
+20002,ActivityHero,Platforms,0,0,none
+20003,Agree.com,Platforms,0,0,none
+20004,AmeriCommerce Payments,Platforms,0,0,none
+20005,AND CO,Platforms,0,0,none
+20006,Aplos Donations,Platforms,0,0,none
+20007,athletechs Registrations,Platforms,0,0,none
+20008,AVP,Platforms,0,0,none
+20009,BetterUnite,Platforms,0,0,none
+20010,BigCommerce,Platforms,0,0,none
+20011,Boatyard,Platforms,0,0,none
+20012,Breezeworks,Platforms,0,0,none
+20013,BSA Payment Platform,Platforms,0,0,none
+20014,Buildertrend,Platforms,0,0,none
+20015,Clarity.fm,Platforms,0,0,none
+20016,Classy.org,Platforms,0,0,none
+20017,Common Goal Systems,Platforms,0,0,none
+20018,Constant Contact,Platforms,0,0,none
+20019,CustomMade,Platforms,0,0,none
+20020,DoJiggy,Platforms,0,0,none
+20021,Ecwid,Platforms,0,0,none
+20022,Eventzilla,Platforms,0,0,none
+20023,Formstack,Platforms,0,0,none
+20024,FreshBooks,Platforms,0,0,none
+20025,Fusebill,Platforms,0,0,none
+20026,fuseSPORT,Platforms,0,0,none
+20027,Giggio,Platforms,0,0,none
+20028,GreatAt,Platforms,0,0,none
+20029,"Horizon Dynamic Web Designs, LLC.",Platforms,0,0,none
+20030,HPE order,Platforms,0,0,none
+20031,ImpactFlow,Platforms,0,0,none
+20032,Infusionsoft,Platforms,0,0,none
+20033,Invoice Ninja,Platforms,0,0,none
+20034,invoiceASAP,Platforms,0,0,none
+20035,JobNimbus,Platforms,0,0,none
+20036,Joist,Platforms,0,0,none
+20037,JotForm,Platforms,0,0,none
+20038,Kashoo Payments,Platforms,0,0,none
+20039,LeagueLobster,Platforms,0,0,none
+20040,Leaguer,Platforms,0,0,none
+20041,Ludus,Platforms,0,0,none
+20042,mHelpDesk Payments,Platforms,0,0,none
+20043,MissionMinder,Platforms,0,0,none
+20044,MyNetWire,Platforms,0,0,none
+20045,MyStudio Academy,Platforms,0,0,none
+20046,OneParish,Platforms,0,0,none
+20047,Our Lodge Page,Platforms,0,0,none
+20048,Passare,Platforms,0,0,none
+20049,PatientConnect365 Payments,Platforms,0,0,none
+20050,PayRent.com,Platforms,0,0,none
+20051,Planning Pod,Platforms,0,0,none
+20052,Plooto Inc,Platforms,0,0,none
+20053,Pointman,Platforms,0,0,none
+20054,PREto3,Platforms,0,0,none
+20055,Rank One Sport Camp Software,Platforms,0,0,none
+20056,Shirtmasters,Platforms,0,0,none
+20057,SignUpGenius,Platforms,0,0,none
+20058,SportsPlus Sports Platform,Platforms,0,0,none
+20059,SwimTopia,Platforms,0,0,none
+20060,SWRemote,Platforms,0,0,none
+20061,TeamSnap Payments,Platforms,0,0,none
+20062,Ticketbud,Platforms,0,0,none
+20063,Time To Pet,Platforms,0,0,none
+20064,TournamentTiger,Platforms,0,0,none
+20065,Ularas Payments,Platforms,0,0,none
+20066,UltraCart Payments,Platforms,0,0,none
+20067,UTR Powered By Oracle,Platforms,0,0,none
+20068,Visibook,Platforms,0,0,none
+20069,Webconnex Payments,Platforms,0,0,none
+20070,WebStarts Store,Platforms,0,0,none
+20071,WeDidIt,Platforms,0,0,none
+20072,Wizevents,Platforms,0,0,none
+20073,Workiz,Platforms,0,0,none
+20074,Yapsody App,Platforms,0,0,none
+20075,YBB Technology,Platforms,0,0,none
+20076,Zoho,Platforms,0,0,none
+20077,99taxis,Platforms,0,0,none
+20078,AmazonServicesLLC,Platforms,0,0,none
+20079,ApaleoGmbH,Platforms,0,0,none
+20080,DidiChuxing,Platforms,0,0,none
+20081,EasyTaxiLatam,Platforms,0,0,none
+20082,ExpediaCommerceInc,Platforms,0,0,none
+20083,EzypayPtyLtd,Platforms,0,0,none
+20084,Flypay,Platforms,0,0,none
+20085,GantnerNv,Platforms,0,0,none
+20086,GoFundMe,Platforms,0,0,none
+20087,Hotmart,Platforms,0,0,none
+20088,IFoodCOM,Platforms,0,0,none
+20089,MaxiMobility,Platforms,0,0,none
+20090,ModMed,Platforms,0,0,none
+20091,Monetizze,Platforms,0,0,none
+20092,Mystoreno,Platforms,0,0,none
+20093,OLXBrasil,Platforms,0,0,none
+20094,Posthaus,Platforms,0,0,none
+20095,RappiCOM,Platforms,0,0,none
+20096,RentleOY,Platforms,0,0,none
+20097,Schibsted,Platforms,0,0,none
+20098,Sportsengine,Platforms,0,0,none
+20099,Sympla,Platforms,0,0,none
+20100,TicketingGroup,Platforms,0,0,none
+20101,Uber,Platforms,0,0,none
+20102,UberDirect,Platforms,0,0,none
+20103,VTEXCommerce,Platforms,0,0,none
+20104,Ventrata,Platforms,0,0,none
+20105,Wix,Platforms,0,0,none
+20106,ZoopTecnologia,Platforms,0,0,none
+20107,Xsolla (USA) Inc.,Platforms,0,0,none
+20108,Suraway Ltd.,Platforms,0,0,none
+20109,DaoPay GmbH,Platforms,0,0,none
+20110,Skrill Ltd (Quick Checkout),Platforms,0,0,none
+20111,Skrill Ltd,Platforms,0,0,none
+20112,CASHBILL SPOLKA AKCYJNA,Platforms,0,0,none
+20113,Icepay B.V.,Platforms,0,0,none
+20114,TinTel B.V.,Platforms,0,0,none
+20115,PPRO Financial Ltd,Platforms,0,0,none
+20116,Micropayment AG,Platforms,0,0,none
+20117,TargetMedia B.V.,Platforms,0,0,none
+20118,Skrill Ltd (PayON),Platforms,0,0,none
+20119,eMerchantPay Limited,Platforms,0,0,none
+20120,Micropayment GmbH,Platforms,0,0,none
+20121,Centrobill Limited,Platforms,0,0,none
+20122,Payssion Limited,Platforms,0,0,none
+20123,PayCific International AG,Platforms,0,0,none
+20124,Dotpay S.A.,Platforms,0,0,none
+20125,HIPAY SAS (hi media),Platforms,0,0,none
+20126,Paysafe Financial Services Ltd. (NetellerGo),Platforms,0,0,none
+20127,Paymentwall Inc.,Platforms,0,0,none
+20128,Emergent Payments Inc.,Platforms,0,0,none
+20129,Mollie B.V.,Platforms,0,0,none
+20130,Global Collect Services B.V.,Platforms,0,0,none
+20131,euPago - Instituicao de Pagamento LDA,Platforms,0,0,none
+20132,Safecharge Limited,Platforms,0,0,none
+20133,CURO Payments B.V.,Platforms,0,0,none
+20134,Processing Partners Inc.,Platforms,0,0,none
+20135,CASHDASH UK LIMITED,Platforms,0,0,none
+20136,Adyen B.V.,Platforms,0,0,none
+20137,HIPAY SAS (fullservice),Platforms,0,0,none
+20138,DPA Multimedia EURL,Platforms,0,0,none
+20139,Docdata Payments B.V.,Platforms,0,0,none
+20140,BD Multimedia SA,Platforms,0,0,none
+20141,RPDP Robert Paszkowski,Platforms,0,0,none
+20142,Secure Trading Financial Services Limited,Platforms,0,0,none
+20143,Playerize Inc,Platforms,0,0,none
+20144,GOPAY s.r.o.,Platforms,0,0,none
+20145,Virtual Goods S.R.L,Platforms,0,0,none
+20146,Compay GmbH,Platforms,0,0,none
+20147,IDC Games S.L.,Platforms,0,0,none
+20148,FABRYKA GRACZY SPOLKA Z OGRANICZONA ODPOWIEDZIALNOSCIA,Platforms,0,0,none
+20149,ModusLink B.V.,Platforms,0,0,none
+20150,BillPro Limited,Platforms,0,0,none
+20151,Rentabiliweb Europe SAS,Platforms,0,0,none
+20152,Buckaroo B.V.,Platforms,0,0,none
+20153,DialCom24 Sp. z o.o.,Platforms,0,0,none
+20154,Skrill Inc. (Quick Checkout),Platforms,0,0,none
+20155,PayGol SPA,Platforms,0,0,none
+20156,ePlatnosci sp. z o.o. sp. k.,Platforms,0,0,none
+20157,Boacompra Ltda,Platforms,0,0,none
+20158,Merchandise.game BVBA,Platforms,0,0,none
+20159,MoneyMatrix Limited,Platforms,0,0,none
+20160,Mistral Pay Ltd,Platforms,0,0,none
+20161,WorldPay AP Ltd,Platforms,0,0,none
+20162,Kalixa Accept Limited,Platforms,0,0,none
+20163,Iruvey Corporation S.A.,Platforms,0,0,none
+20164,"SIA ""Royal Pay Europe""",Platforms,0,0,none
+20165,C.V. Smart2Pay Global Services U.A.,Platforms,0,0,none
+20166,Acapture B.V.,Platforms,0,0,none
+20167,CYBERservices S.A.,Platforms,0,0,none
+20168,PrimeiroPay S.a.r.l.,Platforms,0,0,none
+20169,International Payout Systems Inc,Platforms,0,0,none
+20170,MultiSafepay B.V.,Platforms,0,0,none
+20171,CommDoo GmbH,Platforms,0,0,none
+20172,PXP Financial Limited,Platforms,0,0,none
+20173,AccentPay Limited,Platforms,0,0,none
+20174,"UAB ""ZEN Global""",Platforms,0,0,none
+20175,Ipay See d.o.o.,Platforms,0,0,none
+20176,24-pay s.r.o.,Platforms,0,0,none
+20177,Worldpay Sweden AB,Platforms,0,0,none
+20178,Syspay Limited,Platforms,0,0,none
+20179,Adyen N.V.,Platforms,0,0,none
+20180,Smart Payment Solutions Private Limited,Platforms,0,0,none
+20181,Payvision B.V.,Platforms,0,0,none
+20182,UAB Alternative Payments,Platforms,0,0,none
+20183,Omoney Technology Co. Limited,Platforms,0,0,none
+20184,Maxx-XS BV,Platforms,0,0,none
+20185,Mastercard Payment Gateway Services Client Finance Limited,Platforms,0,0,none
+20186,Wirecard Bank AG,Platforms,0,0,none
+20187,EPG Financial Services Ltd.,Platforms,0,0,none
+20188,Digitalpayment GmbH,Platforms,0,0,none
+20189,Allied Wallet Ltd,Platforms,0,0,none
+20190,HydroPay s.r.o.,Platforms,0,0,none
+20191,UAB Glocash Payment,Platforms,0,0,none
+20192,Tumilo GmbH,Platforms,0,0,none
+20193,SIA AirPay,Platforms,0,0,none
+20194,Rootpay Spolka z ograniczona odpowiedzialnoscia,Platforms,0,0,none
+20195,Support Email is Missing,Signals,0,0,none
+20196,Support Email is Invalid,Signals,0,0,none
+20197,Support Email Sent,Signals,0,560,manual-only
+20198,3304,MCC,0,0,none
+20199,3305,MCC,0,0,none
+20200,3840,MCC,0,0,none
+20201,3841,MCC,0,0,none
+20202,3842,MCC,0,0,none
+20203,3843,MCC,0,0,none
+20204,3844,MCC,0,0,none
+20205,3845,MCC,0,0,none
+20206,3846,MCC,0,0,none
+20207,3847,MCC,0,0,none
+20208,3848,MCC,0,0,none
+20209,3849,MCC,0,0,none
+20210,3850,MCC,0,0,none
+20211,3851,MCC,0,0,none
+20212,3852,MCC,0,0,none
+20213,3853,MCC,0,0,none
+20214,3854,MCC,0,0,none
+20215,3855,MCC,0,0,none
+20216,3856,MCC,0,0,none
+20217,3857,MCC,0,0,none
+20218,3858,MCC,0,0,none
+20219,3859,MCC,0,0,none
+20220,3860,MCC,0,0,none
+20221,3861,MCC,0,0,none
+20222,3862,MCC,0,0,none
+20223,3863,MCC,0,0,none
+20224,3864,MCC,0,0,none
+20225,3865,MCC,0,0,none
+20226,3866,MCC,0,0,none
+20227,3867,MCC,0,0,none
+20228,3868,MCC,0,0,none
+20229,3869,MCC,0,0,none
+20230,3870,MCC,0,0,none
+20231,3871,MCC,0,0,none
+20232,3872,MCC,0,0,none
+20233,3873,MCC,0,0,none
+20234,3874,MCC,0,0,none
+20235,3875,MCC,0,0,none
+20236,3876,MCC,0,0,none
+20237,3877,MCC,0,0,none
+20238,3878,MCC,0,0,none
+20239,3879,MCC,0,0,none
+20240,3880,MCC,0,0,none
+20241,3881,MCC,0,0,none
+20242,3882,MCC,0,0,none
+20243,3883,MCC,0,0,none
+20244,3306,MCC,0,0,none
+20245,3884,MCC,0,0,none
+20246,3885,MCC,0,0,none
+20247,3886,MCC,1,0,auto

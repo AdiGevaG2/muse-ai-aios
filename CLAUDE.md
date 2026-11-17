@@ -54,7 +54,9 @@ Size the work to the ask. A prompt should take minutes, not hours.
   it or grep it once with `-n` for line anchors — then read only those ranges. A
   third exploratory search means you are hunting, not locating: stop and edit
   what you already found.
-- `/compact` between phases, `/clear` between features.
+- `/compact` between phases, `/clear` between features. When a prompt switches
+  to a different feature or task than the session has been on, say in one line
+  "New task: run /clear first" before doing the work.
 
 ### Ten-Minute Stop
 
